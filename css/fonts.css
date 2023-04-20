@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ocr-b-10-bt');
+@font-face {
+    font-family: "DB Helvethaica X";
+    src: url("/fonts/DB\ Helvethaica\ X\ v3.2/DB Helvethaica X v3.2.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "GT Flexa";
+    src: url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.eot");
+    src: url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.svg#GT Flexa") format("svg");
+}
+
+:root {
+    --ocrB: 'OCR-B 10 BT', sans-serif;
+    --baiJamjureeReg: 'Bai Jamjuree', sans-serif;
+    --dbHelvethaicaX: 'DB Helvethaica X';
+    --gtFlexa: 'GT Flexa';
+}
+
+/* FONT FAMILY */
+.font-ocrb {
+    font-family: var(--ocrB);
+}
+
+.font-baiJamjuree {
+    font-family: var(--baiJamjureeReg);
+}
+
+.font-dbHelvethaica {
+    font-family: var(--dbHelvethaicaX);
+}
+
+.font-gtFlexa {
+    font-family: var(--gtFlexa);
+}
+/* FONT FAMILY */

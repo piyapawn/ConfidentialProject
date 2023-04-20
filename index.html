@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/animationKeyframes.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/loadPage.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- START Intro Pages -->
+    <div class="page page1" id="intro1">
+        <a href="#intro2" id="firstText" onclick='loadPage("intro2", "intro1")'>( find the access )</a>
+    </div>
+
+    <div class="page page2" id="intro2">
+        <div id="imgBg">
+            <img id="intro2Bg" src="/Assets/Picture and Vdo/bg_intro.png" alt="">
+            <div id="accessText">
+                <button id="accessButton" onclick='loadPage("intro3", "intro2"), activeFade()'>access("www")</button>
+            </div>
+        </div>
+        <div class="light"></div>
+    </div>
+
+    <div class="fade" id="fadingEffect"></div>
+
+    <div class="page page3" id="intro3">
+        <section id="sec1">
+            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        </section>
+        <section id="sec2">
+            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        </section>
+        <section id="sec3">
+            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        </section>
+        <section id="sec4">
+            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        </section>
+        <img id="scroll-white" src="/Assets/Picture and Vdo/scroll_white.png" alt="">
+    </div>
+     <!-- END Intro Pages -->
+
+    <script>
+        var pos = document.documentElement
+        pos.addEventListener('mousemove', e => {
+            pos.style.setProperty('--x', e.clientX + 'px')
+            pos.style.setProperty('--y', e.clientY + 'px')
+        })
+    </script>
+</body>
+</html>

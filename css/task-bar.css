@@ -1,0 +1,207 @@
+/* ~~~~~ TASK BUTTON ~~~~~ */
+#task-button {
+    position: absolute;
+    font-weight: var(--dbHelvethaicaX);
+    font-size: 1.5em;
+    width: 10.25vw;
+    height: 5vw;
+    color: white;
+    bottom: 25.5vh;
+    left: -2.6vw;
+    border: 1px solid black;
+    transition: 0.5s;
+    animation: taskButtonFlashing 0.8s alternate infinite;
+    animation-play-state: paused;
+    transform: rotate(-90deg);
+    cursor: pointer;
+}
+/* ~~~~~ TASK BUTTON ~~~~~ */
+
+
+
+/* ~~~~~ TASK BAR AREA ~~~~~ */
+#task-bar {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 25vw;
+    height: 95.3vh;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+    transform: translateX(-25.1vw);
+    transition: 0.5s;
+}
+
+/* ~~~ TASK ALL ROW ~~~ */
+.task-row1 {
+    height: 19vh;
+    display: flex;
+    justify-content: space-between;
+}
+.task-row2 {
+    height: 56vh;
+}
+.task-row3 {
+    height: 20.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.task-hidden-about {
+    height: 75vh;
+    transform: translateY(-95.5vh) translateX(-25vw);
+    transition: 0.5s;
+}
+/* ~~~ TASK ROW ~~~ */
+
+
+/* ~~ TASK ROW1 ~~ */
+.task-col1 {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    justify-content: center;
+    align-items: end;
+    width: 12.5vw;
+}
+/* ~ COL ELEMENT ~ */
+#employee-element, #id-element, #username-show-element {
+    width: 12.5vw;
+    height: 9.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+#employee-element {
+    justify-content: start;
+    align-items: end;
+}
+#id-element {
+    justify-content: start;
+    align-items: start;
+}
+#username-show-element {
+    justify-content: center;
+    align-items: end;
+}
+/* ~~ COL TEXT ~~ */
+#employee-text, #id-text, #username-text {
+    padding: 0;
+    margin: 0 0 0 10px;
+    font-size: 1.5em;
+}
+.id-text {
+    width: 7vw;
+    padding-left: 0.5vw;
+    font-size: 1.2em;
+    border: 1px solid black;
+}
+/* ~~ TASK ROW1 ~~ */
+
+
+/* ~~ TASK ROW2 ~~ */
+.task-topics {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+    height: 9.3vh;
+}
+.topic-text-box {
+    width: 15vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#tasks {
+    justify-content: start;
+}
+.zone {
+    border-bottom: 1px solid black;
+}
+.square-check {
+    width: 15px;
+    height: 15px;
+    margin-left: 3vw;
+    border: 1px solid black;
+}
+.zone .square-check {
+    border: 1px solid var(--grey2);
+}
+.topic-text-box {
+    width: 15vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+/* TEXT */
+#database-tour-text {
+    text-decoration: none;
+}
+#tasks-text {
+    margin-left: 2vw;
+}
+/* ~~ TASK ROW2 ~~ */
+
+
+/* ~~ TASK ROW3 ~~ */
+.task-row3 {
+    height: 20.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+#about-text {
+    margin: 40px;
+    font-size: 1.5em;
+}
+/* ~~ TASK ROW3 ~~ */
+
+
+/* ~~ TASK HIDDEN ABOUT ~~ */
+.task-hidden-about {
+    height: 75vh;
+    transform: translateY(-95.5vh) translateX(-25vw);
+    transition: 0.5s;
+}
+.about-info-row1, .about-info-row2, .about-info-row3 {
+    display: flex;
+}
+.about-info-row1 {
+    height: 20vh;
+    justify-content: start;
+    align-items: center;
+}
+.about-info-row2 {
+    height: 47vh;
+    justify-content: center;
+    align-items: end;
+}
+.about-info-row3 {
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+}
+/* TEXT & PIC */
+#back-arrow-pic {
+    width: 3vw;
+    
+}
+.about-info-text {
+    margin: 3vw;
+}
+#about-info-pic {
+    width: 10vw;
+}
+#about-info-backbutton {
+    padding: 0;
+    width: 3vw;
+    margin-left: 2vw;
+    border: 0;
+    cursor: pointer;
+}
+/* ~~ TASK HIDDEN ABOUT ~~ */
+/* ~~~~~ TASK BAR AREA ~~~~~ */

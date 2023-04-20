@@ -1,0 +1,258 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.login-page {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100vh;
+}
+
+.head {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4.5vh;
+    overflow-wrap: normal;
+    border-color:black;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+}
+
+#text-head1, #text-head2 {
+    overflow: visible;
+    position: absolute;
+    margin: 8px 0 5px 0;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    word-break: normal;
+    transform: translateX(146%);
+    animation: textRunning 20s linear infinite;
+}
+
+#text-head2 {
+    animation-delay: 10s;
+}
+
+.row2 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 75vh;
+    overflow-wrap: normal;
+    border-color:black;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+}
+
+.row3 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 20.5vh;
+}
+
+.col1 {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    border-color: black;
+    border-right: 1px;
+    border-right-style: solid;
+}
+
+.col2 {
+    margin: 0;
+    padding: 0;
+    width: 20vw;
+    border-color: black;
+    border-right: 1px;
+    border-right-style: solid;
+}
+
+.col3 {
+    margin: 0;
+    padding: 0;
+    width: 75vw;
+}
+
+#username-box, #user-pic-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10.25vh;
+    bottom: 0;
+    border-color: black;
+    border-top: 1px;
+    border-top-style: solid;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    transition: 0.5s;
+}
+
+#user-pic-box {
+    transform: translateY(64.75vh);
+}
+
+.avatar-text {
+    width: 15vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatar-text p {
+    font-size: 1.5em;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+#picture-pick {
+    display: flex;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 64.75vh;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+    transition: 0.5s;
+}
+
+.picture-wrap {
+    display: inline-block;
+    overflow-y: scroll;
+    margin: 10px;
+    height: 60vh;
+}
+
+/* width */
+.picture-wrap::-webkit-scrollbar {
+    /* display: none; */
+    width: 1.5vw;
+}
+
+/* Track */
+.picture-wrap::-webkit-scrollbar-track {
+  background: white;
+}
+ 
+/* Handle */
+.picture-wrap::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border: 5px solid white;
+}
+
+/* Handle on hover */
+.picture-wrap::-webkit-scrollbar-thumb:hover {
+  background: blue; 
+}
+
+.picture-wrap::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+}
+
+.picture-wrap::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 30vh;
+}
+
+.img-select-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+#circle {
+    margin: 0 10px 0 10px;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    animation: dotFlashing 0.75s infinite;
+}
+
+#input {
+    margin: 0;
+    padding: 0 10px 0 10px;
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#next-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 10px 0 10px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.fa-angle-up {
+    display: block;
+    font-size: 2.5em;
+}
+
+.fa-pen-to-square {
+    display: none;
+    font-size: 2em;
+}
+
+i {
+    transition: 0.5s
+}
+
+
+.welcome-pic {
+    margin-left: 10vw;
+    width: 20vw;
+}
+
+.gif-wrap {
+    height: 63vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.data-tracking-text {
+    font-size: 1.8em;
+}
+
+.data-text-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+}
+
+#www-logo {
+    width: 65vw;
+}

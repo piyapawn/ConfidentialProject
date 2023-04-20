@@ -1,0 +1,75 @@
+/* BLACK SCREEN TO TRANSPARENT */
+@keyframes blackToTransparent {
+    0% {
+        background: black;
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+/* SCREEN FADE BLACK */
+@keyframes fadeBlack {
+    0% {
+        width:0%;
+        left:0%;
+        right:100%;
+        background: black;
+
+    }
+    45% {
+        width:100%;
+        left:0%;
+        right:100%;
+    }
+    55% {
+        width:100%;
+        left:0%;
+        right:100%;
+    }
+    100% {
+        width:0%;
+        left:100%;
+        right:0%;
+        background: black;
+    }
+}
+
+/* TEXT RUNNING */
+@keyframes textRunning {
+    0% {
+        transform: translateX(146%);  
+    }
+    100% {
+        transform: translateX(-146%);
+    }
+}
+/* TEXT RUNNING */
+
+
+
+/* DOT FLASHING */
+@keyframes dotFlashing {
+    0% {
+        background-color: var(--yellow);  
+    }
+    100% {
+        background-color: white; 
+    }
+}
+/* DOT FLASHING */
+
+
+
+/* TASK BUTTON FLASHING */
+@keyframes taskButtonFlashing {
+    0% {
+        background-color: black;
+        color: white;
+    }
+    100% {
+        background-color: var(--yellow);
+        color: black;
+    }
+}
+/* TASK BUTTON FLASHING */
