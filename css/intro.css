@@ -1,4 +1,11 @@
+:root {
+    --cursor: none;
+    cursor: var(--cursor);
+}
+
 body {
+    max-width: 1920px;
+    max-height: 1920px;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -14,13 +21,12 @@ body {
     display: flex;
     /* overflow-y: scroll; */
 }
-.page.page1, .page.page2 {
+.page.page1 {
     width: 100%;
     height: 100%;
-    background-color: white;
 }
 
-.page.page3 {
+.page.page2 {
     display: block;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
@@ -29,24 +35,23 @@ body {
     height: 100vh;
 }
 
-.page.page3::-webkit-scrollbar {
+.page.page2::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
 
 #intro1 {
     display: block;
-    z-index: 1;
     opacity: 1;
+    transition: 0.5s;
 }
 
-#intro2, #intro3 {
+#intro2 {
     display: none;
-    z-index: -999;
     opacity: 0;
+    transition: 0.5s;
 }
 
 #firstText {
-    font-family: var(--ocrB);
     font-size: 20px;
     text-decoration: none;
     position: absolute;
@@ -56,12 +61,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    color: blue;
-}
-
-#firstText:hover {
-    color: rgb(30, 30, 87);
-    transition: 0.25s;
+    z-index: 5;
 }
 
 #firstButton {
@@ -77,16 +77,22 @@ body {
 }
 
 #imgBg {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: blue;
-    position: relative;
 }
 
-#intro2Bg {
+.intro1-bg {
     width: 100%;
-    display: block;
     margin: auto;
+}
+
+#intro1-pic {
+    display: block;
+}
+
+#intro1-gif {
+    display: none;
 }
 
 #accessText {
@@ -102,7 +108,6 @@ body {
 }
 
 #accessButton {
-    font-family: var(--ocrB);
     font-size: 1.15vw;
     font-weight: bold;
     margin: 0;
@@ -114,9 +119,7 @@ body {
     left: 82.8%;
     transform: translateX(-50%) translateY(-50%);
     cursor: pointer;
-    background-color: white;
     border: 0;
-    color: blue;
     opacity: 0;
 }
 
@@ -126,6 +129,7 @@ body {
 }
 
 .light {
+    display: block;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -133,70 +137,34 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    background: radial-gradient(circle at var(--x) var(--y), transparent 5%, rgb(0, 0, 0, 0.95) 10%);
+    /* background: radial-gradient(circle at var(--x) var(--y), transparent 4%, rgba(255, 255, 255, 1) 10%); */
+    background: radial-gradient(
+        circle 5vmax at var(--cursorX) var(--cursorY),
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 80%,
+        rgba(255, 255, 255, 1) 100%
+    );
     transition: all 1s;
+    pointer-events: none;
 }
 
-.fade {
+/* .light::before {
+    content: '';
+    display: block;
     width: 100%;
     height: 100%;
-    background-color: black;
-    position: relative;
-}
+    position: fixed;
+    cursor: none;
+    background: radial-gradient(
+        circle 5vmax at var(--cursorX) var(--cursorY),
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 80%,
+        rgba(255, 255, 255, 1) 100%
+    )
+} */
 
-#fadingEffect {
-    position:absolute;
-    top:0; bottom:0;
-    width:100%;
-    background-color: transparent;
-    z-index: -999;
-    animation-delay: 2s;
-}
-
-@keyframes fadeBlack {
-    0% {
-        width:0%;
-        left:0%;
-        right:100%;
-        background: black;
-
-    }
-    45% {
-        width:100%;
-        left:0%;
-        right:100%;
-    }
-    55% {
-        width:100%;
-        left:0%;
-        right:100%;
-    }
-    100% {
-        width:0%;
-        left:100%;
-        right:0%;
-        background: black;
-    }
-}
-
-@keyframes blackToTransparent {
-    0% {
-        background: black;
-    }
-    100% {
-        background: transparent;
-    }
-}
-
-#text1Intro3 {
-    /* text-align: center;
-    top: 11%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-    font-family: var(--dbHelvethaicaX);
+.text1Intro3 {
     font-size: 25px;
-    color: yellow;
 }
 
 section {
@@ -209,7 +177,6 @@ section {
     border-style: solid;
     border-width: 3px;
     border-color: white;
-    background-color: black;
 }
 
 #scroll-white {
