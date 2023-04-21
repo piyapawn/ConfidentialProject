@@ -1,37 +1,10 @@
 /* BLACK SCREEN TO TRANSPARENT */
-@keyframes blackToTransparent {
+@keyframes whiteToTransparent {
     0% {
-        background: black;
+        background: white;
     }
     100% {
         background: transparent;
-    }
-}
-
-/* SCREEN FADE BLACK */
-@keyframes fadeBlack {
-    0% {
-        width:0%;
-        left:0%;
-        right:100%;
-        background: black;
-
-    }
-    45% {
-        width:100%;
-        left:0%;
-        right:100%;
-    }
-    55% {
-        width:100%;
-        left:0%;
-        right:100%;
-    }
-    100% {
-        width:0%;
-        left:100%;
-        right:0%;
-        background: black;
     }
 }
 
