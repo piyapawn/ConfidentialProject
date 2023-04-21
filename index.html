@@ -6,52 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
     <link rel="stylesheet" href="/css/animationKeyframes.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/loadPage.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="background-black">
     <!-- START Intro Pages -->
-    <div class="page page1" id="intro1">
-        <a href="#intro2" id="firstText" onclick='loadPage("intro2", "intro1")'>( find the access )</a>
+    <div class="page page1 background-white" id="intro1">
+        <p class="font-ocrb font-blue" id="firstText">( find the access )</p>
+        <div id="imgBg">
+            <img class="intro1-bg" id="intro1-pic" src="/Assets/PictureAndVdo/bg_intro.png" alt="">
+            <img class="intro1-bg" id="intro1-gif" src="/Assets/PictureAndVdo/gif_intro.gif" alt="">
+            <div id="accessText">
+                <button class="background-white font-ocrb font-blue" id="accessButton" onclick='loadPage("intro1", "intro2"), activeFade()'>
+                    access("www")
+                </button>
+            </div>
+        </div>
+        <div class="light" id="light"></div>
     </div>
 
     <div class="page page2" id="intro2">
-        <div id="imgBg">
-            <img id="intro2Bg" src="/Assets/Picture and Vdo/bg_intro.png" alt="">
-            <div id="accessText">
-                <button id="accessButton" onclick='loadPage("intro3", "intro2"), activeFade()'>access("www")</button>
-            </div>
-        </div>
-        <div class="light"></div>
-    </div>
-
-    <div class="fade" id="fadingEffect"></div>
-
-    <div class="page page3" id="intro3">
-        <section id="sec1">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="background-black" id="sec1">
+            <h3 class="text1Intro3 font-dbHelvethaica font-yellow">ในโลกอินเตอร์เน็ต</h3>
         </section>
-        <section id="sec2">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="background-black" id="sec2">
+            <h3 class="text1Intro3 font-dbHelvethaica font-yellow">ในโลกอินเตอร์เน็ต</h3>
         </section>
-        <section id="sec3">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="background-black" id="sec3">
+            <h3 class="text1Intro3 font-dbHelvethaica font-yellow">ในโลกอินเตอร์เน็ต</h3>
         </section>
-        <section id="sec4">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="background-black" id="sec4">
+            <h3 class="text1Intro3 font-dbHelvethaica font-yellow">ในโลกอินเตอร์เน็ต</h3>
         </section>
-        <img id="scroll-white" src="/Assets/Picture and Vdo/scroll_white.png" alt="">
+        <img id="scroll-white" src="/Assets/PictureAndVdo/scroll_white.png" alt="">
     </div>
      <!-- END Intro Pages -->
 
     <script>
-        var pos = document.documentElement
-        pos.addEventListener('mousemove', e => {
-            pos.style.setProperty('--x', e.clientX + 'px')
-            pos.style.setProperty('--y', e.clientY + 'px')
-        })
+        // var pos = document.documentElement
+        // pos.addEventListener('mousemove', e => {
+        //     pos.style.setProperty('--x', e.clientX + 'px')
+        //     pos.style.setProperty('--y', e.clientY + 'px')
+        // })
+
+        function update(e){
+            var x = e.clientX || e.touches[0].clientX
+            var y = e.clientY || e.touches[0].clientY
+
+            document.documentElement.style.setProperty('--cursorX', x + 'px')
+            document.documentElement.style.setProperty('--cursorY', y + 'px')
+        }
+
+        document.addEventListener('mousemove',update)
+        document.addEventListener('touchmove',update)
     </script>
 </body>
 </html>
