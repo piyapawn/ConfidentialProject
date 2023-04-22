@@ -48,12 +48,18 @@ function activeFade() {
         intro1Pic.style.display = "none"
         intro1Gif.style.display = "block"
     }, 2000);
+}
 
-    // let fade = document.getElementById("fadingEffect")
-    // fade.style.zIndex = 10
-    // fade.style.animation = "fadeBlack 4s ease-in alternate"
-    // fade.style.animationDelay = "2s"
-    // setTimeout(() => {
-    //     fade.style.display = "none"
-    // }, 6000);
+function revealButtonClick() {
+    document.getElementById('accept-gif').style.display = 'none'
+}
+
+function acceptButtonClick() {
+    let intro3 = document.getElementById("intro3");
+    intro3.style.transform = "translateY(-100%)";
+    intro3.style.transition = "0.5s";
+
+    let body = document.getElementsByTagName("body")[0]
+    body.style.background = "white"
+    loadHTML('login.html', 200)
 }
