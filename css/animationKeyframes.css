@@ -11,10 +11,10 @@
 /* TEXT RUNNING */
 @keyframes textRunning {
     0% {
-        transform: translateX(146%);  
+        transform: translateX(100vw);  
     }
     100% {
-        transform: translateX(-146%);
+        transform: translateX(-108vw);
     }
 }
 /* TEXT RUNNING */
