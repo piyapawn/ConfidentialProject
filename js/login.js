@@ -12,14 +12,12 @@ let input
 let picturePick
 let picNumber
 let spaceTextArea
-// Task Bar Variables
-let taskButton
-let taskBar
-let usernameText
-let aboutInfo
 
 // Declare Variables (after Window Load)
 function windowLoad() {
+    // Load Task Bar Variables
+    taskBarVariablesLoad()
+
     userpicBox = document.getElementById("user-pic-box")
     usernameBox = document.getElementById("username-box")
 
@@ -33,14 +31,12 @@ function windowLoad() {
     picturePick = document.getElementById("picture-pick")
     picNumber = document.getElementsByClassName("img-select-button")
 
-    // Task Bar Variables
-    taskButton = document.getElementById("task-button")
-    taskBar = document.getElementById("task-bar")
-    usernameText = document.getElementById("username-text")
-    aboutInfo = document.getElementsByClassName("task-hidden-about")
     spaceTextArea = document.getElementById("space-text-area")
 
-    document.getElementsByTagName("body")[0].style.opacity = 1
+    document.getElementsByTagName("body")[0].style.animation = 'fade-in 0.5s'
+
+    // Task Bar
+    taskButtonTransform('x', -5)
 }
 
 let picSelectCheck = false
@@ -69,15 +65,15 @@ function openAndCloseNav() {
             circleDot[0].style.backgroundColor = 'var(--yellow)'
             picSelectCheck = true
             if(nameFillCheck) {
-                taskButton.style.animationPlayState = 'running'
-                taskButton.style.transform = 'rotate(-90deg) translateY(0vw)'
+                taskButtonFlashing('r')
+                taskButtonTransform('y', 0)
             }
         }
         else {
             userpicBox.style.backgroundColor = 'var(--white2)'
             circleDot[0].style.animationPlayState = 'running'
-            taskButton.style.animationPlayState = 'paused'
-            taskButton.style.transform = 'rotate(-90deg) translateY(-5vw)'
+            taskButtonFlashing('p')
+            taskButtonTransform('y', -5)
             picSelectCheck = false
         }
     }
@@ -105,8 +101,8 @@ function editUsername() {
         usernameText.innerHTML = input.value
         nameFillCheck = true
         if(picSelectCheck) {
-            taskButton.style.animationPlayState = 'running'
-            taskButton.style.transform = 'rotate(-90deg) translateY(0vw)'
+            taskButtonFlashing('r')
+            taskButtonTransform('y', 0)
         }
     }
     else {
@@ -119,8 +115,8 @@ function editUsername() {
         editButton.style.display = 'none'
         usernameBox.style.backgroundColor = 'var(--white2)'
         circleDot[1].style.animationPlayState = 'running'
-        taskButton.style.animationPlayState = 'paused'
-        taskButton.style.transform = 'rotate(-90deg) translateY(-5vw)'
+        taskButtonFlashing('p')
+        taskButtonTransform('y', -5)
         nameFillCheck = false
     }
     editCheck++
@@ -145,35 +141,17 @@ function selectPic(picNum) {
     }
 }
 
-// Task Bar Click
-let taskCheck = 0
-function taskbarClick() {
+// Task Bar Check
+function taskbarCheck() {
     console.log("Pic check: "+picSelectCheck+" Name check: "+nameFillCheck)
     if(picSelectCheck && nameFillCheck) {
-        taskButton.style.animationPlayState = 'running'
-        taskButton.style.transform = 'rotate(-90deg) translateY(0vw)'
-        if(taskCheck%2 == 0) {
-            taskButton.style.transform = 'translateX(25vw) rotate(-90deg)'
-            taskBar.style.transform = 'translateX(0vw)'
-        }
-        else {
-            taskButton.style.transform = 'translateX(0vw) rotate(-90deg)'
-            taskBar.style.transform = 'translateX(-25.1vw)'
-        }
-        taskCheck++
+        taskButtonFlashing('r')
+        taskButtonTransform('y', 0)
+        taskBarOpenOrClose()
     }
     else {
-        taskButton.style.animationPlayState = 'paused'
-        taskButton.style.transform = 'rotate(-90deg) translateY(-5vw)'
+        taskButtonFlashing('p')
+        taskButtonTransform('x', -5)
         alert('Please fill out all fields.')
-    }
-}
-// Task Bar About Click
-function aboutClick(clickNum) {
-    if(clickNum === 0) {
-        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(0vw)'
-    }
-    else {
-        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(-25vw)'
     }
 }

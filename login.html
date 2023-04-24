@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/task-bar.css">
     <link rel="stylesheet" href="/css/login.css">
     <script src="/js/login.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
     <title>World Wide Weave</title>
 </head>
 <body onload="windowLoad()">
@@ -129,7 +131,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
         <!-- Task Button -->
-        <button class="background-black" id="task-button" onclick="taskbarClick()">TASK</button>
+        <button class="background-black font-white" id="task-button" onclick="taskbarCheck()">TASK</button>
 
         <!-- TASK BAR -->
         <div class="task-bar background-white1" id="task-bar">
@@ -157,7 +159,7 @@
                 <div class="task-topics" id="database-tour">
                     <div class="square-check background-white"></div>
                     <div class="topic-text-box">
-                        <a href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</a>
+                        <a href="#" class="font-ocrb font-blue" id="database-tour-text" onclick="loadHTML('databaseTour.html', 500)">DATABASE TOUR</a>
                     </div>
                 </div>
                 <!-- Tasks -->
@@ -197,14 +199,14 @@
 
             <!-- TASK ROW 3 -->
             <div class="task-row3">
-                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick(0)">ABOUT</a>
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
             </div>
             <!--/ TASK ROW 1 -->
 
             <!-- ABOUT -->
             <div class="task-hidden-about background-white1">
                 <div class="about-info-row1">
-                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick(1)">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
                         <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
                     </button>
                 </div>
