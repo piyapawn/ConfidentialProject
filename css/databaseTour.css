@@ -1,0 +1,17 @@
+body {
+    max-width: 1920px;
+    max-height: 1080px;
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transition: 0.5s;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bg {
+    display: block;
+    height: 500vh;
+}
