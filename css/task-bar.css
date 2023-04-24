@@ -1,19 +1,21 @@
 /* ~~~~~ TASK BUTTON ~~~~~ */
 #task-button {
-    position: absolute;
+    position: fixed;
     font-weight: var(--dbHelvethaicaX);
     font-size: 1.5em;
     width: 10.25vw;
     height: 5vw;
-    color: white;
     bottom: 25.5vh;
     left: -2.6vw;
     border: 1px solid black;
     transition: 0.5s;
-    animation: taskButtonFlashing 0.8s alternate infinite;
-    animation-play-state: paused;
-    transform: rotate(-90deg) translateY(-5vw);
+    transform: rotate(-90deg) translateY(0vw);
     cursor: pointer;
+}
+/* Optional */
+.task-button-hover:hover {
+    background-color: var(--yellow);
+    color: var(--blue);
 }
 /* ~~~~~ TASK BUTTON ~~~~~ */
 
@@ -21,7 +23,7 @@
 
 /* ~~~~~ TASK BAR AREA ~~~~~ */
 #task-bar {
-    position: absolute;
+    position: fixed;
     margin: 0;
     padding: 0;
     width: 25vw;
@@ -88,10 +90,10 @@
 /* ~~ COL TEXT ~~ */
 #employee-text, #id-text, #username-text {
     padding: 0;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 2vw;
     font-size: 1.5em;
 }
-.id-text {
+#id-text {
     width: 7vw;
     padding-left: 0.5vw;
     font-size: 1.2em;
