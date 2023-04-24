@@ -25,6 +25,10 @@
 .font-grey {
     color: var(--grey2);
 }
+
+.font-white {
+    color: var(--white);
+}
 /* FONT COLOR */
 
 

@@ -7,6 +7,9 @@
         background: transparent;
     }
 }
+/* BLACK SCREEN TO TRANSPARENT */
+
+
 
 /* TEXT RUNNING */
 @keyframes textRunning {
@@ -46,3 +49,27 @@
     }
 }
 /* TASK BUTTON FLASHING */
+
+
+
+/* FADE IN OPACITRY 0 TO 1 */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* FADE IN OPACITRY 0 TO 1 */
+
+/* FADE OUT OPACITRY 1 TO 0 */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* FADE OUT OPACITRY 1 TO 0 */
