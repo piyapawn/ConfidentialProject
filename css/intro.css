@@ -31,7 +31,7 @@ body {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
     height: 100vh;
 }
 
@@ -49,12 +49,14 @@ body {
     display: none;
     opacity: 0;
     transition: 0.5s;
+    z-index: 5;
 }
 
 #intro3 {
     display: none;
     opacity: 0;
     transition: 0.5s;
+    z-index: 1;
 }
 
 #firstText {
@@ -143,7 +145,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: radial-gradient(circle at var(--x) var(--y), transparent 4%, rgba(255, 255, 255, 1) 10%); */
     background: radial-gradient(
         circle 5vmax at var(--cursorX) var(--cursorY),
         rgba(255, 255, 255, 0) 0%,
@@ -154,23 +155,8 @@ body {
     pointer-events: none;
 }
 
-/* .light::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    cursor: none;
-    background: radial-gradient(
-        circle 5vmax at var(--cursorX) var(--cursorY),
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.5) 80%,
-        rgba(255, 255, 255, 1) 100%
-    )
-} */
-
-.text1Intro3 {
-    font-size: 25px;
+#text1Intro2 {
+    font-size: 2em;
 }
 
 section {
@@ -190,8 +176,177 @@ section {
     bottom: 30px; left: 30px;
 }
 
-/* INTRO 2 IMAGE */
 
+
+
+
+
+
+
+/* --- INTRO 2 IMAGE --- */
+.sec2-allpic, .sec3-allpic, .sec4-allpic {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+}
+/* -- Section 2 Picture Position -- */
+#sec2-pic3 {
+    top: 0vh;
+    left: 5.3vw;
+}
+#sec2-pic14 {
+    top: 0vh;
+    left: 29vw;
+}
+#sec2-pic2 {
+    top: 9.1vh;
+    left: 13vw;
+}
+#sec2-pic6 {
+    top: 13.6vh;
+    left: 20.8vw;
+}
+#sec2-pic4 {
+    top: 4.5vh;
+    left: 31.5vw;
+}
+#sec2-pic5 {
+    top: 27vh;
+    left: 5.3vw;
+}
+#sec2-pic25 {
+    top: 22.5vh;
+    left: 16vw;
+}
+#sec2-pic39 {
+    top: 18vh;
+    left: 31.8vw;
+}
+#sec2-pic10 {
+    top: 27vh;
+    left: 24vw;
+}
+#sec2-pic19 {
+    top: 27vh;
+    left: 37.1vw;
+}
+#sec2-pic9 {
+    top: 17.9vh;
+    left: 42.3vw;
+}
+#sec2-pic8 {
+    top: 36.1vh;
+    left: 34.5vw;
+}
+#sec2-pic7 {
+    top: 36.1vh;
+    left: 13.5vw;
+}
+#sec2-pic13 {
+    top: 45.2vh;
+    left: 18.8vw;
+}
+#sec2-pic29 {
+    top: 36.2vh;
+    left: 50vw;
+}
+#sec2-pic23 {
+    top: 49.8vh;
+    left: 52.7vw;
+}
+#sec2-pic28 {
+    top: 59vh;
+    left: 47.5vw;
+}
+#sec2-pic34 {
+    top: 59vh;
+    left: 55.3vw;
+}
+#sec2-pic27 {
+    top: 68vh;
+    left: 60.55vw;
+}
+#sec2-pic35 {
+    top: 49.8vh;
+    left: 65.8vw;
+}
+#sec2-pic30 {
+    top: 40.7vh;
+    left: 71.1vw;
+}
+#sec2-pic24 {
+    top: 49.8vh;
+    left: 76.3vw;
+}
+#sec2-pic32 {
+    top: 27.2vh;
+    left: 78.9vw;
+}
+#sec2-pic22 {
+    top: 63.3vh;
+    left: 70.8vw;
+}
+#sec2-pic37 {
+    top: 58.7vh;
+    right: 0vw;
+}
+#sec2-pic38 {
+    top: 67.9vh;
+    right: 5.5vw;
+}
+#sec2-pic17 {
+    top: 72.5vh;
+    right: 13.4vw;
+}
+#sec2-pic11 {
+    top: 77.1vh;
+    right: 10.8vw;
+}
+#sec2-pic31 {
+    bottom: 9.1vh;
+    right: 21.5vw;
+}
+#sec2-pic18 {
+    bottom: 4.4vh;
+    right: 26.8vw;
+}
+#sec2-pic33 {
+    bottom: 0vh;
+    right: 16.2vw;
+}
+#sec2-pic36 {
+    bottom: 0vh;
+    right: 3vw;
+}
+#sec2-pic16 {
+    bottom: 9.2vh;
+    right: 50vw;
+}
+#sec2-pic21 {
+    bottom: 9.2vh;
+    left: 34.2vw;
+}
+#sec2-pic20 {
+    bottom: 18.3vh;
+    left: 34.2vw;
+}
+#sec2-pic15 {
+    bottom: 13.8vh;
+    left: 21vw;
+}
+#sec2-pic26 {
+    bottom: 18.3vh;
+    left: 18.4vw;
+}
+#sec2-pic1 {
+    bottom: 18.3vh;
+    left: 10.5vw;
+}
+#sec2-pic12 {
+    top: 45.4vh;
+    left: 44.8vw;
+}
+/* -- Section 3 Picture Position -- */
 
 /* ----- INTRO 3 ----- */
 
