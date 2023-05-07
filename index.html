@@ -17,7 +17,7 @@
     <!-- START Intro Pages -->
 
     <!-- Intro 1 -->
-    <div class="page page1 background-white" id="intro1" style="display: none;">
+    <div class="page page1 background-white" id="intro1">
         <p class="font-ocrb font-blue" id="firstText">( find the access )</p>
         <div id="imgBg">
             <img class="intro1-bg" id="intro1-pic" src="/Assets/PictureAndVdo/bg_intro.png" alt="">
@@ -33,24 +33,38 @@
     <!--/ Intro 1 -->
 
     <!-- Intro 2 -->
-    <div class="page page2" id="intro2" onscroll="intro2Scroll()" style="display: inline-block; opacity: 1;">
+    <div class="page page2" id="intro2" onscroll="intro2Scroll()">
         <section class="background-black" id="intro2-sec1">
             <h3 class="text1Intro2 font-dbHelvethaica font-yellow" id="text1Intro2">ในโลกอินเตอร์เน็ต</h3>
         </section>
         <section class="intro2-section background-black" id="intro2-sec2">
+            <div class="sec2-all-text-boxes background-blue" id="sec2-textBox1">
+                <p class="sec2-all-text font-dbHelvethaica font-white" id="sec2-text1"></p>
+            </div>
+            <div class="sec2-all-text-boxes background-blue" id="sec2-textBox2">
+                <p class="sec2-all-text font-dbHelvethaica font-white" id="sec2-text2"></p>
+            </div>
         </section>
         <section class="intro2-section background-black" id="intro2-sec3">
+            <div class="sec3-all-text-boxes background-blue" id="sec3-textBox1">
+                <p class="sec3-all-text font-dbHelvethaica font-white" id="sec3-text1"></p>
+            </div>
+            <div class="sec3-all-text-boxes background-blue" id="sec3-textBox2">
+                <p class="sec3-all-text font-dbHelvethaica font-white" id="sec3-text2"></p>
+            </div>
         </section>
         <section class="intro2-section background-black" id="intro2-sec4">
+            <div class="sec4-all-text-boxes background-blue" id="sec4-textBox1">
+                <p class="sec4-all-text font-dbHelvethaica font-white" id="sec4-text1"></p>
+            </div>
         </section>
-        <section class="intro2-section background-black" id="intro2-sec5">
-        </section>
+        <section class="intro2-section background-black" id="intro2-sec5"></section>
         <img id="scroll-white" src="/Assets/PictureAndVdo/scroll_white.png" alt="">
     </div>
     <!--/ Intro 2 -->
 
     <!-- Intro 3 -->
-    <div class="page page3" id="intro3" style="display: none; opacity: 1;">
+    <div class="page page3" id="intro3" style="display: inline-block; opacity: 1;">
         <section class="background-white" id="intro3-sec1">
             <img class="intro1-bg" src="/Assets/PictureAndVdo/bg_intro.jpg" alt="">
         </section>
@@ -72,7 +86,7 @@
                             <p class="font-dbHelvethaica content-text">คุณยินยอมที่จะ</p>
                         </div>
                         <div class="intro3-sub-content" id="sub-content2">
-                            <p class="font-dbHelvethaica font-grey content-text">
+                            <p class="font-dbHelvethaica font-grey2 content-text">
                                 ให้เราสามารถติดตามและเก็บรวมรวบข้อมูล</br>จากบราวเซอร์ของคุณและส่งกลับไปยังองค์กรของเรา
                             </p>
                             <img id="accept-gif" src="/Assets/PictureAndVdo/accept.gif" alt="" width="364.63" height="62.4px">
@@ -103,12 +117,6 @@
      <!-- END Intro Pages -->
 
     <script>
-        // var pos = document.documentElement
-        // pos.addEventListener('mousemove', e => {
-        //     pos.style.setProperty('--x', e.clientX + 'px')
-        //     pos.style.setProperty('--y', e.clientY + 'px')
-        // })
-
         function update(e){
             var x = e.clientX || e.touches[0].clientX
             var y = e.clientY || e.touches[0].clientY

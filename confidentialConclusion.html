@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/animationKeyframes.css">
+    <link rel="stylesheet" href="/css/task-bar.css">
+    <link rel="stylesheet" href="/css/confidentialConclusion.css">
+    <script src="/js/confidentialConclusion.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/currentTime.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>Confidential 3</title>
+</head>
+<body onload="windowLoad()">
+    <!-- Left Nav -->
+    <div class="task-space background-dark-grey"></div>
+    <div class="all-content-area">
+        <!-- Top Nav -->
+        <div class="top-nav background-dark-grey">
+            <div class="top-nav-all-text" id="top-nav-left">
+                <p class="top-nav-text font-dbHelvethaica font-yellow">: ACCESS_CONFIDENTIAL</p>
+            </div>
+            <div class="top-nav-all-text" id="top-nav-middle">
+                <p class="top-nav-text font-dbHelvethaica font-white">EMPLOYEE ID. fa554635</p>
+            </div>
+            <div class="top-nav-all-text" id="top-nav-right">
+                <p class="top-nav-text time-text font-dbHelvethaica font-white" id="time-text"></p>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- LEFT CONCLUSION -->
+            <div class="left-content background-dark-grey">
+                <p class="left-text font-dbHelvethaica font-white" id="left-text">
+                    คุณเองก็ถูกจับตามอง<br>และเป็นไปตามแผนที่เราวางไว้<br><br><br>เช่นเดียวกับผู้คนทั่วโลก<br>ที่ใช้อินเทอร์เน็ต
+                </p>
+                <button class="background-transparent" id="scroll-button" onclick="loadHTML('confidentialEnd.html', 500)">
+                    <img src="/Assets/PictureAndVdo/scroll_white.png" alt="" width="100%">
+                </button>
+            </div>
+
+            <!-- RIGHT CONCLUSION PRE -->
+            <div class="right-content background-dark-grey" id="right-content-pre">
+                <div class="right-content-background background-grid-grey2"></div>
+                <div class="grey-text-box" id="grey-text-box-1">
+                    <img src="/Assets/PictureAndVdo/confidential3/box_2you_llreadthis.png" alt="">
+                </div>
+                <div class="grey-text-box" id="grey-text-box-2">
+                    <img src="/Assets/PictureAndVdo/confidential3/box_3you_llclickthis.png" alt="">
+                </div>
+                <button class="background-yellow" id="next-button" onclick="nextToConclusion()">
+                    <img src="/Assets/PictureAndVdo/confidential3/button_next.png" alt="" width="80%">
+                </button>
+            </div>
+
+            <!-- RIGHT CONCLUSION 1 -->
+            <div class="right-content background-white2" id="right-content-conclusion">
+                <!-- Text Run -->
+                <div class="bottom-text-run background-black" id="bottom-text-run">
+                    <p class="text-run font-ocrb font-yellow">everything you see, we planed.</p>
+                </div>
+
+                <!-- Left Content -->
+                <div class="conclusion-content" id="conclusion-content-left">
+                    <!-- Subject Data -->
+                    <div class="subject-data">
+                        <p class="font-dbHelvethaica" id="subject-data-text">SUBJECT-DATA</p>
+                    </div>
+                    <!-- Employee ID -->
+                    <div class="employee-id">
+                        <div class="employee-id-box" id="employee-id-box-1">
+                            <p class="employee-id-text font-dbHelvethaica" id="employee-id-text">employee id:</p>
+                        </div>
+                        <div class="employee-id-box" id="employee-id-box-2">
+                            <p class="employee-id-text font-ocrb" id="name-text">FA222</p>
+                        </div>
+                    </div>
+                    <!-- Notice -->
+                    <div class="notice background-yellow" id="notice">
+                        <div class="notice-topic" id="notice-topic">
+                            <img src="/Assets/PictureAndVdo/confidential3/icon_notice.png" alt="">
+                            <p class="font-ocrb font-blue" id="notice-topic-text">NOTICE</p>
+                        </div>
+                        <div class="notice-text-box" id="notice-text-box">
+                            <div class="notice-info">
+                                <li class="notice-info-text font-dbHelvethaica">เราวิเคราะห์ข้อมูลด้วยนโยบาย</li>
+                                <p class="notice-info-text font-dbHelvethaica">' ทุกสิ่งที่คุณเลือก = สิ่งที่คุณเป็น '</p>
+                                <li class="notice-info-text font-dbHelvethaica">ข้อมูลนี้เก็บภายในเวลา 10 นาที</li>
+                            </div>
+                        </div>
+                        <div class="notice-select-box" id="notice-select-box">
+                            <div class="notice-select-info">
+                                <p class="notice-select-text font-dbHelvethaica">คุณคิดว่าข้อมูลนี้มีความถูกต้องมากแค่ไหน</p>
+                                <div class="notice-select-choices">
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องทั้งหมด')">ถูกต้องทั้งหมด</button>
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องบางส่วน')">ถูกต้องบางส่วน</button>
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ไม่ถูกต้องเลย')">ไม่ถูกต้องเลย</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="notice-next-button background-transparent" id="notice-next-button" onclick="noticeNext()">
+                            <img src="/Assets/PictureAndVdo/confidential3/button_next.png" alt="" height="80%">
+                        </button>
+                        <p class="font-dbHelvethaica font-blue" id="selected-text"></p>
+                    </div>
+                    <!-- Time Card -->
+                    <div class="time-card">
+                        <div class="time-card-topic">
+                            <p class="font-dbHelvethaica" id="time-card-topic-text">timecard :</p>
+                        </div>
+                        <div class="time-card-all-zone">
+                            <div class="time-card-box">
+                                <div class="time-card-task-zone" id="time-card-zone-1">
+                                    <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-1">TASK / ZONE 1</p>
+                                </div>
+                                <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                    <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-1">IN : 00.01 AM</p>
+                                </div>
+                            </div>
+                            <div class="time-card-box">
+                                <div class="time-card-task-zone" id="time-card-zone-1">
+                                    <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-2">TASK / ZONE 2</p>
+                                </div>
+                                <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                    <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-2">IN : 00.01 AM</p>
+                                </div>
+                            </div>
+                            <div class="time-card-box">
+                                <div class="time-card-task-zone" id="time-card-zone-1">
+                                    <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-3">TASK / ZONE 3</p>
+                                </div>
+                                <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                    <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-3">IN : 00.01 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="conclusion-content" id="conclusion-content-right">
+                    <!-- Categories -->
+                    <div class="categories-and-human-gif">
+                        <div class="categories">
+                            <div class="category-topic">
+                                <p class="category-topic-text font-dbHelvethaica">categories : </p>
+                            </div>
+                            <div class="category-box">
+                                <p class="category-box-text font-dbHelvethaica font-blue">สนใจการพัฒนาตัวเอง</p>
+                            </div>
+                            <div class="category-box">
+                                <p class="category-box-text font-dbHelvethaica font-blue">การสร้างสรรค์สิ่งใหม่ๆ</p>
+                            </div>
+                        </div>
+                        <div class="human-gif">
+                            <img id="human-gif" src="/Assets/PictureAndVdo/confidential3/gif_ascii-profile.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="categories-info">
+                        <div class="categories-info-text-wrap">
+                            <p class="categories-info-text font-baiJamjuree font-blue" id="categories-info-text">
+                                เป็นคนที่มักใช้สัญชาตญาณ มีความคิด
+                            <br>สร้างสรรค์ รักอิสระ มีความคิดที่อยาก
+                            <br>เปลี่ยนสังคม เป็นคนที่ช่างดูแลเอาใจใส่
+                            <br>มีความรับผิดชอบ และชอบให้กำลังใจผู้อื่น
+                            </p>
+                            <div class="text-line" id="line-1"></div>
+                            <div class="text-line" id="line-2"></div>
+                            <div class="text-line" id="line-3"></div>
+                            <div class="text-line" id="line-4"></div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <!-- DELETE BUTTON PAGE -->
+            <div class="delete-data-button background-white" id="delete-data-page" onclick="openActionClick()">
+                <img id="delete-data-icon" src="/Assets/PictureAndVdo/confidential3/icon_deletedata1.png" alt="">
+                <div class="dd-page-content" id="dd-page-content">
+                    <div class="dd-page-head">
+                        <img id="delete-data-big-icon" src="/Assets/PictureAndVdo/confidential3/ele_topic.png" alt="" height="35%">
+                    </div>
+                    <div class="dd-page-wrap" id="">
+                        <div class="dd-page-wrap-left">
+                            <div class="dd-page-wrap-text">
+                                <p class="font-dbHelvethaica font-blue" id="dd-page-wrap-topic-text">เครือข่ายย่อยที่มีข้อมูลชุดนี้ :</p>
+                                <div class="period" id="period">
+                                    <p class="font-dbHelvethaica" id="period-text">ระยะเวลาดำเนินการ</p>
+                                    <div class="period-time background-yellow" id="period-time">
+                                        <p class="font-dbHelvethaica" id="period-time-text">1 - 2 วินาที</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CAPSULE -->
+                            <div class="dd-capsule" id="dd-capsule">
+                                <div class="capsule-half-left">
+                                    <p class="half-left-text font-ocrb font-blue">social media</p>
+                                    <p class="half-left-text font-ocrb font-blue">Website</p>
+                                    <p class="half-left-text font-ocrb font-blue">data broker</p>
+                                    <p class="half-left-text font-ocrb font-blue">advertise</p>
+                                    <p class="half-left-text-service font-ocrb font-blue">service</p>
+                                </div>
+                                <div class="capsule-half-right">
+                                    <button class="capsule-delete-button background-transparent font-ocrb font-blue" id="capsule-delete-button" onclick="openActionClick()">DELETE</button>
+                                </div>
+                            </div>
+                            <!-- DELETE GAUGE -->
+                            <div class="delete-gauge-page" id="delete-gauge-page">
+                                <div class="delete-gauge-area-1">
+                                    <div class="delete-guage background-white" id="delete-gauge-1">
+                                        <div class="delete-gauge-topic">
+                                            <li class="delete-gauge-topic-text font-ocrb font-blue">Social media</li>
+                                        </div>
+                                        <div class="delete-gauge-bar-wrap background-transparent">
+                                            <input class="delete-gauge-slider background-transparent" id="delete-gauge-slider-1" type="range" value="0" min="0" max="100" oninput="sliderChange(this.value, 1)">
+                                            <div class="bar" id="bar1"></div>
+                                            <p class="complete-bar-text font-ocrb font-blue">COMPLETE</p>
+                                        </div>
+                                    </div>
+                                    <div class="gauge-level" id="gauge-level1">
+                                        <div class="gauge-level-bar" id="gauge-level1-bar1">
+                                            <sup class="font-dbHelvethaica">1</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">คลิกลบ</p>
+                                        </div>
+                                        <div class="gauge-level-bar" id="gauge-level1-bar2">
+                                            <sup class="font-dbHelvethaica">2</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">ข้อมูลยังคงอยู่ในระบบ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="delete-gauge-area-2">
+                                    <div class="delete-guage background-white" id="delete-gauge-2">
+                                        <div class="delete-gauge-topic">
+                                            <li class="delete-gauge-topic-text font-ocrb font-blue">Website</li>
+                                            <li class="delete-gauge-topic-text font-ocrb font-blue">data broker</li>
+                                            <li class="delete-gauge-topic-text font-ocrb font-blue">advertise</li>
+                                            <p class="delete-gauge-topic-text-service font-ocrb font-blue">service</p>
+                                        </div>
+                                        <div class="delete-gauge-bar-wrap">
+                                            <input class="delete-gauge-slider" id="delete-gauge-slider-2" type="range" value="0" min="0" max="100" oninput="sliderChange(this.value, 2)">
+                                            <div class="bar" id="bar2"></div>
+                                            <div class="bar" id="bar3"></div>
+                                            <div class="bar" id="bar4"></div>
+                                            <div class="bar" id="small-bar"></div>
+                                            <p class="complete-bar-text font-ocrb font-blue">COMPLETE</p>
+                                        </div>
+                                    </div>
+                                    <div class="gauge-level" id="gauge-level2">
+                                        <div class="gauge-level-bar" id="gauge-level2-bar1">
+                                            <sup class="font-dbHelvethaica">1</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">ส่งฟอร์มคำขอใช้สิทธิ</p>
+                                        </div>
+                                        <div class="gauge-level-bar" id="gauge-level2-bar2">
+                                            <sup class="font-dbHelvethaica">2</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">รอตรวจสอบตัวต้นเจ้าของ</p>
+                                        </div>
+                                        <div class="gauge-level-bar" id="gauge-level2-bar3">
+                                            <sup class="font-dbHelvethaica">3</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">รอพิจารณาว่าบริษัทมีเหตุที่จะปฏิเสธคำร้องหรือไม่</p>
+                                        </div>
+                                        <div class="gauge-level-bar" id="gauge-level2-bar4">
+                                            <sup class="font-dbHelvethaica">4</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">แจ้งผลการพิจารณา</p>
+                                        </div>
+                                        <div class="gauge-level-bar" id="gauge-level2-bar5">
+                                            <sup class="font-dbHelvethaica">5</sup>
+                                            <p class="gauge-level-text font-dbHelvethaica">บันทึกการขอใช้สิทธิของเจ้าของข้อมูล</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="continue-button background-yellow font-dbHelvethaica font-blue" id="continue-button" onclick="continueDeleteClick()">ดำเนินการต่อ</button>
+                            </div>
+                        </div>
+                        <div class="dd-page-wrap-right">
+                            <!-- Human Profile -->
+                            <div class="dd-page-wrap-right-human background-white2" id="dd-page-wrap-right-human">
+                                <div class="dd-wrap-right-header">
+                                    <p class="dd-wrap-right-header-text font-dbHelvethaica font-blue" id="header-text-left">DATA</p>
+                                    <p class="dd-wrap-right-header-text font-dbHelvethaica font-blue" id="header-text-right">100%</p>
+                                </div>
+                                <div class="dd-wrap-right-content">
+                                    <div class="dd-wrap-right-human-gif">
+                                        <img id="dd-wrap-right-human-gif" src="/Assets/PictureAndVdo/confidential3/hmfull.gif" alt="" height="100%">
+                                    </div>
+                                    <div class="dd-wrap-right-profile">
+                                        <img id="profile-pic" src="/Assets/PictureAndVdo/ASCII-art (63) 3.png" alt="" width="75%">
+                                        <p class="profile-text font-dbHelvethaica">USERNAME</p>
+                                        <p class="profile-text font-dbHelvethaica">PROFILE</p>
+                                        <p class="profile-text font-dbHelvethaica">IP ADDRESS</p>
+                                        <p class="profile-text font-dbHelvethaica" style="margin-bottom: 1.5vw;">TIMECARD</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ebook Hidden -->
+                            <div class="dd-page-wrap-right-hidden">
+                                <div class="hidden-text-wrap">
+                                    <p class="font-dbHelvethaica font-blue" id="hidden-text">
+                                        ถ้าไม่อยากเสียเวลา
+                                    <br>ลบข้อมูลเช่นนี้ในอนาคต
+                                    <br>สามารถเรียนรู้ได้ที่
+                                    </p>
+                                </div>
+                                <div class="hidden-e-book">
+                                    <button class="e-book-button background-yellow" onclick="openEbookLink()">
+                                        <img src="/Assets/PictureAndVdo/confidential3/icon_confidentiall.png" alt="">
+                                    </button>
+                                    <p class="font-superSpace font-blue" id="e-book-text">เอกสารลับ<br>ฉบับสุดท้าย</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="dd-back-button background-transparent" id="dd-back-button" onclick="backActionClick()">
+                        <img src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- DELETE COMPLETE -->
+    <div class="completed-delete background-transparent" id="completed-delete">
+        <div class="completed-delete-wrap">
+            <img id="deleted-text-background-image" src="/Assets/PictureAndVdo/ele_foundtarget.png" alt="">
+            <div class="completed-delete-text-area">
+                <p class="completed-delete-text font-superSpace font-blue" id="completed-delete-text-topic">[ การดำเนินการลบยังไม่สมบูรณ์ ]</p>
+                <li class="completed-delete-text font-dbHelvethaica">ระยะเวลาดำเนินการ : <span class="font-blue" id="period-span-text"></span></li>
+                <li class="completed-delete-text font-dbHelvethaica">ข้อมูลคงเหลือในระบบ : <span class="font-blue">100%</span></li>
+            </div>
+            <div class="completed-delete-button-area">
+                <button class="completed-delete-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedDelete()">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+    <!-- Task Button -->
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+    <!-- TASK BAR -->
+    <div class="task-bar background-white1" id="task-bar">
+        <!-- TASK ROW 1 -->
+        <div class="task-row1">
+            <div class="task-col1">
+                <div id="employee-element">
+                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                </div>  
+            </div>
+            <div class="task-col2">
+                <div id="username-show-element">
+                    <p class="font-dbHelvethaica" id="username-text"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- TASK ROW 2 -->
+        <div class="task-row2 background-white1">
+            <!-- Database Tour -->
+            <div class="task-topics" id="database-tour">
+                <div class="square-check background-white"></div>
+                <div class="topic-text-box">
+                    <a href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</a>
+                </div>
+            </div>
+            <!-- Tasks -->
+            <div class="task-topics" id="tasks">
+                <p class="font-ocrb" id="tasks-text">TASKS</p>
+            </div>
+            <!-- Zone 1 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 01 : WORLD</p>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 02 : WIDE</p>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 03 : WEAVE</p>
+                </div>
+            </div>
+            <!-- Confidential Zone -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">CONFIDENTIAL ZONE</p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 2 -->
+
+        <!-- TASK ROW 3 -->
+        <div class="task-row3">
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- ABOUT -->
+        <div class="task-hidden-about background-white1">
+            <div class="about-info-row1">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" al width="100%"t="">
+                </button>
+            </div>
+            <div class="about-info-row2">
+                <p class="font-baiJamjuree about-info-text">
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                </p>
+            </div>
+            <div class="about-info-row3">
+                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            </div>
+        </div>
+        <!--/ ABOUT -->
+    </div>
+    <!--/ TASK BAR -->
+
+    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+</body>
+</html>

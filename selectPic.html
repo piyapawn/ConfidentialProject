@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/animationKeyframes.css">
+    <link rel="stylesheet" href="/css/task-bar.css">
+    <link rel="stylesheet" href="/css/selectPic.css">
+    <script src="/js/selectPic.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>Select Picture</title>
+</head>
+<body onload="windowLoad()">
+    <div class="task-space background-white1"></div>
+    <div class="select-pic-area">
+        <div class="guide" id="guide">
+            <button class="guide-close-button background-blue" onclick="closeGuide()"></button>
+            <div class="guide-text-box background-blue">
+                <p class="guide-text font-dbHelvethaica font-white">วางเม้าส์บนรูปภาพ</p>
+                <p class="guide-text font-dbHelvethaica font-white">เพื่อดูรายละเอียด</p>
+            </div>
+        </div>
+
+        <div class="select-pic-wrap background-grey1 background-grid-white1">
+            <div class="col" id="col-1">
+                <div class="pic-box" id="pic-box-e3" onmouseover="hoverPicture('e3')" onmouseout="notHoverPicture('e3')">
+                    <button class="close-button background-transparent" id="close-button-e3" onclick="unselectPicture('e3')"></button>
+                    <div class="pic-wrap" id="pic-wrap-e3" onclick="selectPicture('e3')">
+                        <img class="picture" id="picture-e3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e3.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-o3" onmouseover="hoverPicture('o3')" onmouseout="notHoverPicture('o3')">
+                    <button class="close-button background-transparent" id="close-button-o3" onclick="unselectPicture('o3')"></button>
+                    <div class="pic-wrap" id="pic-wrap-o3" onclick="selectPicture('o3')">
+                        <img class="picture" id="picture-o3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o3.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-o2" onmouseover="hoverPicture('o2')" onmouseout="notHoverPicture('o2')">
+                    <button class="close-button background-transparent" id="close-button-o2" onclick="unselectPicture('o2')"></button>
+                    <div class="pic-wrap" id="pic-wrap-o2" onclick="selectPicture('o2')">
+                        <img class="picture" id="picture-o2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o2.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-e2" onmouseover="hoverPicture('e2')" onmouseout="notHoverPicture('e2')">
+                    <button class="close-button background-transparent" id="close-button-e2" onclick="unselectPicture('e2')"></button>
+                    <div class="pic-wrap" id="pic-wrap-e2" onclick="selectPicture('e2')">
+                        <img class="picture" id="picture-e2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e2.png" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="col-2">
+                <div class="pic-box" id="pic-box-o6"onmouseover="hoverPicture('o6')" onmouseout="notHoverPicture('o6')">
+                    <button class="close-button background-transparent" id="close-button-o6" onclick="unselectPicture('o6')"></button>
+                    <div class="pic-wrap" id="pic-wrap-o6" onclick="selectPicture('o6')">
+                        <img class="picture" id="picture-o6" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o6.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-c1" onmouseover="hoverPicture('c1')" onmouseout="notHoverPicture('c1')">
+                    <button class="close-button background-transparent" id="close-button-c1" onclick="unselectPicture('c1')"></button>
+                    <div class="pic-wrap" id="pic-wrap-c1" onclick="selectPicture('c1')">
+                        <img class="picture" id="picture-c1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c1.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-e1" onmouseover="hoverPicture('e1')" onmouseout="notHoverPicture('e1')">
+                    <button class="close-button background-transparent" id="close-button-e1" onclick="unselectPicture('e1')"></button>
+                    <div class="pic-wrap" id="pic-wrap-e1" onclick="selectPicture('e1')">
+                        <img class="picture" id="picture-e1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e1.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-c4" onmouseover="hoverPicture('c4')" onmouseout="notHoverPicture('c4')">
+                    <button class="close-button background-transparent" id="close-button-c4" onclick="unselectPicture('c4')"></button>
+                    <div class="pic-wrap" id="pic-wrap-c4" onclick="selectPicture('c4')">
+                        <img class="picture" id="picture-c4" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c4.png" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="col-3">
+                <div class="pic-box" id="pic-box-a1" onmouseover="hoverPicture('a1')" onmouseout="notHoverPicture('a1')">
+                    <button class="close-button background-transparent" id="close-button-a1" onclick="unselectPicture('a1')"></button>
+                    <div class="pic-wrap" id="pic-wrap-a1" onclick="selectPicture('a1')">
+                        <img class="picture" id="picture-a1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a1.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-a3" onmouseover="hoverPicture('a3')" onmouseout="notHoverPicture('a3')">
+                    <button class="close-button background-transparent" id="close-button-a3" onclick="unselectPicture('a3')"></button>
+                    <div class="pic-wrap" id="pic-wrap-a3" onclick="selectPicture('a3')">
+                        <img class="picture" id="picture-a3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a3.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-a2" onmouseover="hoverPicture('a2')" onmouseout="notHoverPicture('a2')">
+                    <button class="close-button background-transparent" id="close-button-a2" onclick="unselectPicture('a2')"></button>
+                    <div class="pic-wrap" id="pic-wrap-a2" onclick="selectPicture('a2')">
+                        <img class="picture" id="picture-a2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a2.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="pic-box" id="pic-box-c2" onmouseover="hoverPicture('c2')" onmouseout="notHoverPicture('c2')">
+                    <button class="close-button background-transparent" id="close-button-c2" onclick="unselectPicture('c2')"></button>
+                    <div class="pic-wrap" id="pic-wrap-c2" onclick="selectPicture('c2')">
+                        <img class="picture" id="picture-c2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c2.png" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-e3">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/e3.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-o3">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/o3.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-o2">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/o2.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-e2">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/e2.jpg" alt="" width="100%">
+            </div>
+
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-o6">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/o6.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-c1">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/c1.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-e1">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/e1.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-c4">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/c4.jpg" alt="" width="100%">
+            </div>
+
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-a1">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/a1.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-a3">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/a3.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-a2">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/a2.jpg" alt="" width="100%">
+            </div>
+            <div class="pic-wrap-hidden" id="pic-wrap-hidden-c2">
+                <img class="picture" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพสี/c2.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+    <div class="right-area background-white1">
+        <div class="text-area">
+            <p class="text font-dbHelvethaica">เลือก 4 ลักษณะการโพส</p>
+            <p class="text font-dbHelvethaica">ของกลุ่มเป้าหมาย</p>
+            <p class="text font-dbHelvethaica">ที่ต้องการเก็บข้อมูล</p>
+        </div>
+        <div class="num-of-selected-pic">
+            <div class="ok-button-area">
+                <button class="ok-button background-yellow font-dbHelvethaica font-blue" id="ok-button" onclick="setLocalSelectedPic(), loadHTML('', 500)">[ ตกลง ]</button>
+            </div>
+            <div class="num-of-selected-area">
+                <div class="selected-text-area">
+                    <p class="selected-text font-dbHelvethaica font-blue">selected</p>
+                </div>
+                <div class="num-square">
+                    <p class="num-selected-text font-dbHelvethaica font-blue" id="num-selected-text">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="completed-select background-transparent" id="completed-select">
+        <div class="completed-select-wrap">
+            <img id="selected-text-background-image" src="/Assets/PictureAndVdo/ele_โหลดหาเป้าหมาย.png" alt="">
+            <div class="completed-select-text-area">
+                <p class="completed-select-text font-dbHelvethaica" id="completed-select-text-topic">คุณได้เลือกครบ 4 รูปแล้ว</p>
+                <p class="completed-select-text font-dbHelvethaica">หากต้องการเปลี่ยนรูป</p>
+                <p class="completed-select-text font-dbHelvethaica">คลิกกากบาทรูปที่ไม่ต้องการเพื่อนำออก</p>
+            </div>
+            <div class="completed-select-button-area">
+                <button class="completed-select-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedSelect()">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+    <!-- Task Button -->
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+    <!-- TASK BAR -->
+    <div class="task-bar background-white1" id="task-bar">
+        <!-- TASK ROW 1 -->
+        <div class="task-row1">
+            <div class="task-col1">
+                <div id="employee-element">
+                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                </div>  
+            </div>
+            <div class="task-col2">
+                <div id="username-show-element">
+                    <p class="font-dbHelvethaica" id="username-text"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- TASK ROW 2 -->
+        <div class="task-row2 background-white1">
+            <!-- Database Tour -->
+            <div class="task-topics" id="database-tour">
+                <div class="square-check background-white"></div>
+                <div class="topic-text-box">
+                    <a href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</a>
+                </div>
+            </div>
+            <!-- Tasks -->
+            <div class="task-topics" id="tasks">
+                <p class="font-ocrb" id="tasks-text">TASKS</p>
+            </div>
+            <!-- Zone 1 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 01 : WORLD</p>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 02 : WIDE</p>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 03 : WEAVE</p>
+                </div>
+            </div>
+            <!-- Confidential Zone -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">CONFIDENTIAL ZONE</p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 2 -->
+
+        <!-- TASK ROW 3 -->
+        <div class="task-row3">
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- ABOUT -->
+        <div class="task-hidden-about background-white1">
+            <div class="about-info-row1">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                </button>
+            </div>
+            <div class="about-info-row2">
+                <p class="font-baiJamjuree about-info-text">
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                </p>
+            </div>
+            <div class="about-info-row3">
+                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            </div>
+        </div>
+        <!--/ ABOUT -->
+    </div>
+    <!--/ TASK BAR -->
+
+    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+</body>
+</html>
