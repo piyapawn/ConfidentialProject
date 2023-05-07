@@ -29,7 +29,7 @@
     0% {
         background-color: var(--yellow);  
     }
-    100% {
+    50% {
         background-color: white; 
     }
 }

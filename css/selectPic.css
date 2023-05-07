@@ -1,0 +1,401 @@
+:root {
+    --boxShadowImage: none;
+    --picWrapHeight-e3: 100%;
+    --picWrapHeight-o3: 100%;
+    --picWrapHeight-o2: 100%;
+    --picWrapHeight-e2: 100%;
+    --picWrapHeight-o6: 100%;
+    --picWrapHeight-c1: 100%;
+    --picWrapHeight-e1: 100%;
+    --picWrapHeight-c4: 100%;
+    --picWrapHeight-a1: 100%;
+    --picWrapHeight-a3: 100%;
+    --picWrapHeight-a2: 100%;
+    --picWrapHeight-c2: 100%;
+}
+
+body {
+    max-width: 1920px;
+    max-height: 1080px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.select-pic-area {
+    display: flex;
+    width: calc(var(--grid)*24);
+    height: 100vh;
+    border: none;
+    overflow-y: overlay;
+}
+.right-area {
+    width: calc(var(--grid)*14);
+    height: 100vh;
+    border: none;
+    border-left: 1px solid black;
+}
+
+/* width */
+.select-pic-area::-webkit-scrollbar {
+    position: absolute;
+    width: calc(var(--grid)/2);
+}
+/* Track */
+.select-pic-area::-webkit-scrollbar-track {
+    background: var(--white1);
+    margin-top: var(--grid);
+    margin-bottom: var(--grid);
+    margin-left: var(--grid);
+    border-radius: 3px;
+    border: 1px solid var(--black);
+}
+/* Handle */
+.select-pic-area::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    border: 7px solid transparent;
+    box-shadow:
+        inset 0 0 0 1px black,
+        inset 0 0 0 5px var(--yellow);
+}
+
+.guide {
+    position: absolute;
+    bottom: calc(var(--grid)*1);
+    right: calc(var(--grid)*16);
+    width: calc(var(--grid)*5);
+    height: calc(var(--grid)*3);
+    z-index: 25;
+}
+.guide-close-button {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: var(--grid);
+    height: var(--grid);
+    border: 1px solid black;
+    border-bottom: 1px solid var(--blue);
+    transition: 0.25s;
+    cursor: pointer;
+    z-index: 5;
+}
+.guide-close-button:before, .guide-close-button:after {
+    position: absolute;
+    top: 0;
+    left: calc(var(--grid)/2.2);
+    content: ' ';
+    height: var(--grid);
+    width: 3px;
+    background-color: var(--white1);
+}
+.guide-close-button:before {
+    transform: rotate(45deg);
+}
+.guide-close-button:after {
+    transform: rotate(-45deg);
+}
+.guide-text-box {
+    position: absolute;
+    top: var(--grid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--grid)*5);
+    height: calc(var(--grid)*2);
+    border: 1px solid black;
+}
+.guide-text {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5vw;
+}
+
+/* .grid-bg {
+    display: grid;
+    grid-template-columns: repeat(24, var(--grid));
+    grid-template-rows: repeat(22, var(--grid));
+}
+.grid-block {
+    border: 1px solid var(--white1);
+} */
+
+.select-pic-wrap {
+    margin: 0;
+    width: 100%;
+    height: calc(var(--grid)*49);
+    /* overflow-y: scroll; */
+    display: flex;
+}
+
+.col {
+    margin-top: calc(var(--grid)*2);
+    margin-left: var(--grid);
+    width: calc(var(--grid)*6);
+}
+
+
+.pic-box {
+    position: relative;
+    margin-bottom: var(--grid);
+    width: 100%;
+}
+#pic-box-e3 {
+    height: calc(var(--grid)*10);
+}
+#pic-box-o3 {
+    height: calc(var(--grid)*11);
+}
+#pic-box-o2 {
+    height: calc(var(--grid)*9);
+}
+#pic-box-e2 {
+    height: calc(var(--grid)*12);
+}
+#pic-box-o6 {
+    height: calc(var(--grid)*12);
+}
+#pic-box-c1 {
+    height: calc(var(--grid)*9);
+}
+#pic-box-e1 {
+    height: calc(var(--grid)*12);
+}
+#pic-box-c4 {
+    height: calc(var(--grid)*9);
+}
+#pic-box-a1 {
+    height: calc(var(--grid)*10);
+}
+#pic-box-a3 {
+    height: calc(var(--grid)*12);
+}
+#pic-box-a2 {
+    height: calc(var(--grid)*3);
+}
+#pic-box-c2 {
+    height: calc(var(--grid)*12);
+}
+.pic-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+.pic-wrap::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--boxShadowImage);
+    top: 0;
+}
+
+.pic-selected {
+    width: calc(var(--grid)*6);
+    height: calc(2.557vw*9);
+    border: 8px solid blue;
+    display: none;
+}
+#pic-selected-e3 {
+    top: calc(var(--grid)*2);
+    left: calc(var(--grid)*3 - 0.3vw);
+}
+
+.picture {
+    height: 100%;
+    border: 1px solid black;
+}
+
+.close-button {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0.5vw;
+    top: 0.5vw;
+    width: var(--grid);
+    height: var(--grid);
+    border: none;
+    transition: 0.25s;
+    cursor: pointer;
+    z-index: 20;
+}
+.close-button:hover {
+  transform: scale(1.05);
+}
+.close-button:before, .close-button:after {
+    position: absolute;
+    top: 0;
+    left: calc(var(--grid)/2.2);
+    content: ' ';
+    height: var(--grid);
+    width: 3px;
+    background-color: var(--blue);
+}
+.close-button:before {
+    transform: rotate(45deg);
+}
+.close-button:after {
+    transform: rotate(-45deg);
+}
+
+.pic-wrap-hidden {
+    display: none;
+    position: absolute;
+    width: calc(var(--grid)*8);
+    top: calc(var(--grid)*3);
+    left: calc(var(--grid)*10);
+    z-index: 20;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    width: 100%;
+    height: 45%;
+}
+.text {
+    margin: 0 0 0 8vw;
+    padding: 0;
+    font-size: 3vw;
+}
+
+.num-of-selected-pic {
+    display: flex;
+    width: 100%;
+    height: 45%;
+}
+
+.ok-button-area {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin-right: calc(var(--grid)*0.5);
+    width: 40%;
+}
+.ok-button {
+    display: none;
+    width: calc(var(--grid)*2.5);
+    height: calc(var(--grid)*1);
+    font-size: 1.5vw;
+    border: 1px solid black;
+    transition: 0.15s;
+    cursor: pointer;
+}
+.ok-button:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.num-of-selected-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    width: 60%;
+}
+.selected-text-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--grid)*5);
+    height: calc(var(--grid)*2);
+}
+.selected-text {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5vw;
+}
+.num-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--grid)*5);
+    height: calc(var(--grid)*5);
+    border: 1px solid black;
+}
+.num-selected-text {
+    margin: 0;
+    padding: 0;
+    font-size: 15vw;
+}
+
+.completed-select {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+.completed-select-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--grid)*9);
+    height: calc(var(--grid)*6);
+}
+#selected-text-background-image {
+    position: absolute;
+    width: 100%;
+}
+
+.completed-select-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: calc(var(--grid)*3.5);
+    z-index: 10;
+}
+.completed-select-text {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5vw;
+}
+#completed-select-text-topic {
+    font-size: 1.8vw;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+}
+
+.completed-select-button-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(var(--grid)*2.5);
+    z-index: 10;
+}
+.completed-select-button {
+    width: calc(var(--grid)*2.5);
+    height: calc(var(--grid)*1);
+    border: 1px solid black;
+    font-size: 1.5vw;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    transition: 0.15s;
+    cursor: pointer;
+}
+.completed-select-button:hover {
+    background-color: var(--blue);
+    color: white;
+}

@@ -30,32 +30,32 @@ body {
     display: block;
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
-    /* scroll-snap-type: y mandatory; */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
     height: 100vh;
 }
 
-.page.page2::-webkit-scrollbar, .page.page3::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
+/* .page.page2::-webkit-scrollbar, .page.page3::-webkit-scrollbar {
+    display: none;
+} */
 
 #intro1 {
     display: block;
-    opacity: 1;
     transition: 0.5s;
+    opacity: 1;
 }
 
 #intro2 {
     display: none;
-    opacity: 0;
     transition: 0.5s;
+    opacity: 0;
     z-index: 5;
 }
 
 #intro3 {
     display: none;
-    opacity: 0;
     transition: 0.5s;
+    opacity: 0;
     z-index: 1;
 }
 
@@ -169,6 +169,9 @@ section {
     width: 100vw;
     height: 100vh;
 }
+#intro2-sec5 {
+    height: 1vh;
+}
 
 #scroll-white {
     width: 4%;
@@ -180,16 +183,41 @@ section {
 
 
 
-
-
-
-/* --- INTRO 2 IMAGE --- */
+/* --- INTRO 2 Texts & Images --- */
+.sec2-all-text-boxes, .sec3-all-text-boxes, .sec4-all-text-boxes, 
 .sec2-allpic, .sec3-allpic, .sec4-allpic {
     display: inline-block;
     position: absolute;
     opacity: 0;
 }
-/* -- Section 2 Picture Position -- */
+.sec2-all-text-boxes, .sec3-all-text-boxes, .sec4-all-text-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.5vh;
+    border: 1px solid white;
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: 0 100%;
+}
+.sec2-all-text-boxes, .sec3-all-text-boxes {
+    width: 11vw;
+}
+.sec4-all-text-boxes {
+    width: 18vw;
+}
+.sec2-all-text, .sec3-all-text, .sec4-all-text {
+    font-size: 2em;
+}
+/* -- Section 2 Texts & Images Position -- */
+#sec2-textBox1 {
+    top: 45.3vh;
+    left: 31.5vw;
+}
+#sec2-textBox2 {
+    top: 45.3vh;
+    right: 10vw;
+}
 #sec2-pic3 {
     top: 0vh;
     left: 5.3vw;
@@ -346,7 +374,178 @@ section {
     top: 45.4vh;
     left: 44.8vw;
 }
-/* -- Section 3 Picture Position -- */
+/* -- Section 3 Texts & Images Position -- */
+#sec3-textBox1 {
+    top: 32vh;
+    right: 21vw;
+}
+#sec3-textBox2 {
+    top: 36.5vh;
+    right: 13vw;
+}
+#sec3-pic37 {
+    top: 0vh;
+    left: 5.2vw;
+}
+#sec3-pic36 {
+    top: 4.4vh;
+    left: 13.1vw;
+}
+#sec3-pic39 {
+    top: 4.4vh;
+    left: 29vw;
+}
+#sec3-pic9 {
+    top: 9vh;
+    left: 23.6vw;
+}
+#sec3-pic38 {
+    top: 18.1vh;
+    left: 18.3vw;
+}
+#sec3-pic12 {
+    top: 27.2vh;
+    left: 5.2vw;
+}
+#sec3-pic25 {
+    top: 31.6vh;
+    left: 13vw;
+}
+#sec3-pic24 {
+    top: 27.2vh;
+    left: 23.6vw;
+}
+#sec3-pic6 {
+    top: 41vh;
+    left: 18.2vw;
+}
+#sec3-pic31 {
+    top: 41vh;
+    left: 34.3vw;
+}
+#sec3-pic34 {
+    top: 32.1vh;
+    left: 34.3vw;
+}
+#sec3-pic2 {
+    top: 21.3vh;
+    left: 37vw;
+}
+#sec3-pic4 {
+    top: 14vh;
+    left: 42.3vw;
+}
+#sec3-pic7 {
+    top: 32.1vh;
+    left: 42.3vw;
+}
+#sec3-pic17 {
+    top: 27.8vh;
+    right: 34.2vw;
+}
+#sec3-pic13 {
+    top: 18.7vh;
+    right: 23.7vw;
+}
+#sec3-pic32 {
+    top: 50vh;
+    right: 0vw;
+}
+#sec3-pic22 {
+    top: 45.8vh;
+    right: 13.1vw;
+}
+#sec3-pic23 {
+    top: 54.5vh;
+    right: 7.8vw;
+}
+#sec3-pic33 {
+    top: 54.5vh;
+    right: 23.6vw;
+}
+#sec3-pic1 {
+    bottom: 23.2vh;
+    right: 18.3vw;
+}
+#sec3-pic10 {
+    bottom: 18vh;
+    right: 10.5vw;
+}
+#sec3-pic15 {
+    bottom: 18vh;
+    right: 0vw;
+}
+#sec3-pic28 {
+    bottom: 9vh;
+    right: 6.6vw;
+}
+#sec3-pic8 {
+    bottom: 5vh;
+    right: 13vw;
+}
+#sec3-pic14 {
+    bottom: 5vh;
+    right: 26.3vw;
+}
+#sec3-pic35 {
+    bottom: 9.3vh;
+    right: 23.6vw;
+}
+#sec3-pic16 {
+    bottom: 23.2vh;
+    right: 34.5vw;
+}
+#sec3-pic30 {
+    bottom: 32vh;
+    right: 32vw;
+}
+#sec3-pic27 {
+    bottom: 41vh;
+    right: 34.5vw;
+}
+#sec3-pic21 {
+    bottom: 49.5vh;
+    right: 30.5vw;
+}
+#sec3-pic26 {
+    bottom: 45vh;
+    right: 39.7vw;
+}
+#sec3-pic3 {
+    bottom: 37vh;
+    right: 45vw;
+}
+#sec3-pic19 {
+    bottom: 31.8vh;
+    left: 36.7vw;
+}
+#sec3-pic20 {
+    bottom: 31.8vh;
+    left: 36.7vw;
+    display: none;
+}
+#sec3-pic11 {
+    bottom: 18.6vh;
+    left: 29vw;
+}
+#sec3-pic29 {
+    bottom: 36.5vh;
+    left: 29vw;
+}
+#sec3-pic18 {
+    bottom: 27.3vh;
+    left: 21vw;
+}
+#sec3-pic5 {
+    bottom: 36.5vh;
+    left: 15.7vw;
+}
+/* -- Section 3 Texts & Images Position -- */
+#sec4-textBox1 {
+    bottom: 41vh;
+    left: 41vw;
+}
+
 
 /* ----- INTRO 3 ----- */
 

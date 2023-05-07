@@ -9,6 +9,8 @@
     --grey2: #999999;
     --dark-grey: #494949;
     --black: #000000;
+
+    --grid: 2.565vw;
 }
 
 
@@ -22,12 +24,24 @@
     color: var(--blue);
 }
 
-.font-grey {
+.font-grey1 {
+    color: var(--grey1);
+}
+.font-grey2 {
     color: var(--grey2);
+}
+.font-dark-grey {
+    color: var(--dark-grey);
 }
 
 .font-white {
     color: var(--white);
+}
+.font-white1 {
+    color: var(--white1);
+}
+.font-white2 {
+    color: var(--white2);
 }
 /* FONT COLOR */
 
@@ -72,5 +86,19 @@
 
 .background-black {
     background-color: var(--black);
+}
+
+.background-grid-white1 {
+    background-size: var(--grid) var(--grid);
+    background-image:
+        linear-gradient(to right, var(--white1) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--white1) 1px, transparent 1px);
+}
+.background-grid-grey2 {
+    background-size: var(--grid) var(--grid);
+    background-image:
+        linear-gradient(to right, var(--grey2) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grey2) 1px, transparent 1px);
+    opacity: 0.3;
 }
 /* BACKGROUND COLOR */

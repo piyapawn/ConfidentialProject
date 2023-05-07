@@ -7,6 +7,12 @@
     font-weight: 100;
 }
 @font-face {
+    font-family: "Super Space";
+    src: url("/fonts/SuperSpace/Superspace\ Bold\ ver\ 1.00.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
     font-family: "GT Flexa";
     src: url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.eot");
     src: url("//db.onlinewebfonts.com/t/b88ced40599ee76946d2aa71611109b4.eot?#iefix") format("embedded-opentype"),
@@ -21,6 +27,7 @@
     --baiJamjureeReg: 'Bai Jamjuree', sans-serif;
     --dbHelvethaicaX: 'DB Helvethaica X';
     --gtFlexa: 'GT Flexa';
+    --superSpace: 'Super Space';
 }
 
 /* FONT FAMILY */
@@ -38,5 +45,9 @@
 
 .font-gtFlexa {
     font-family: var(--gtFlexa);
+}
+
+.font-superSpace {
+    font-family: var(--superSpace);
 }
 /* FONT FAMILY */
