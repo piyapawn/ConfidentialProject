@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
+    background-size: contain;
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+.col01 {
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    width: 8.8%;
+    height: 100%;
+}
+
+.col02 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.contentRow {
+    display: flex;
+    flex: 1;
+}
+
+/* Create a custom checkbox */
+.checkBrick {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 15px;
+    /* margin-bottom: 8px; */
+    height: 35px;
+    width: 35px;
+}
+
+.checkItem {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 4px;
+    padding-right: 8px;
+    width: 100%;
+}
+
+.box {
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+}
+
+.headTimestamp {
+    align-items: end;
+    background-color: #EAEAEA;
+    border-style: solid;
+    border-width: 0.5px;
+    border-left-width: 0px;
+    border-color: black;
+    display: flex;
+    height: 16%;
+    text-align: center;
+    width: 100%;
+}
+
+.guideBox {
+    position: absolute;
+    left: 13%;
+    bottom: 9%;
+}
+
+#missionGuide {
+    width: initial;
+    height: initial;
+}
+
+.buttonNext {
+    position: absolute;
+    left: 90%;
+    background: none;
+    bottom: 15%;
+    border: none;
+    cursor: pointer;
+    animation: blink 1.3s infinite;
+}
+
+.buttonNext:hover {
+    opacity: 100%;
+}
+
+#buttonImg {
+    width: 30px;
+    height: 30px;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+#iconStatus {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+}
+
+.statusBox {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    left: 58%;
+    position: absolute;
+    top: 41%;
+    width: 252px;
+    height: 195px;
+}
+
+.textStatus {
+    font-size: 20px
+}
+
+.timeItem {
+    color: #0D3BFC;
+    flex-grow: 1;
+    font-size: 20px;
+    padding-bottom: 1%;
+    padding-right: 6%;
+}
+
+.userIP {
+    background-color: #D0FF0B;
+}
+
+.zoneLogo {
+    align-items: center;
+    flex: 1;
+}
+
+#logoZone01 {
+    width: initial;
+    height: initial;
+    margin-left: 10.5%;
+    margin-top: 5%;
+}
+
+#targetIP {
+    margin-left: 8.5%;
+    margin-top: 16.5%;
+    width: initial;
+    height: initial;
+}
+
+#skeleton {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    height: initial;
+    width: initial;
+}
+
+.zoneUserIP {
+    flex: 1;
+}
+
+/* customer content styling */
+.customer {
+    background-color: #E1E1E1;
+    display: none;
+    flex-direction: row;
+    width: 92%;
+    height: 86.2%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.ctm01 button {
+    border: none;
+    background: none;
+    bottom: 5%;
+    cursor: pointer;
+    position: absolute;
+    left: 5%;
+}
+
+.guideBox button {
+    border: none;
+    background: none;
+}
+
+#ctmBt {
+    position: absolute;
+    left: 40%;
+    top: 7.5%;
+    cursor: pointer;
+}
+
+.ctm01 p {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 50%;
+}
+
+.ctm01 {
+    width: 40%;
+    position: relative;
+}
+
+.ctm02 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.buyerCard {
+    display: flex;
+    height: 50%;
+}
+
+
+.card {
+    width: 100%;
+    text-align: center;
+    padding-top: 15%;
+    border: solid 0.5px;
+    background-color: #E1E1E1;
+    position: relative;
+}
+
+#cardIcon {
+    width: initial;
+    height: initial;
+}
+
+.frontCard {
+    height: 100%;
+}
+
+#backCard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0%;
+    transition: opacity 1s;
+}
+
+.dot {    
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    z-index: 3;
+    width: 1.08vw;
+    height: 1.08vw;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #D0FF0B;
+    animation: 1s flash infinite step-end;
+}
+
+#backCard:hover {
+    opacity: 100%;
+}
+
+#cardName {
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    font-size: 40px;
+    color: #0D3BFC;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 70%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes flash {
+    50% {
+        background-color: #E1E1E1;
+    }
+    100% {
+        background-color: #D0FF0B;
+    }
+}

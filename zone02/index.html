@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/zone02/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/zone02/zone02.js"></script>
+    <title>ZONE 02</title>
+</head>
+<body onload="windowLoad()">
+    <!--Main page of zone01!-->
+    <div class="page">
+        <!--row that contain all header and side menu!-->
+        <div class="container">
+            <!--column that contain side menu!-->
+            <div class="col01">
+                <!--Left container for task!-->
+                <div class="box"></div>
+            </div>
+
+            <!--column that contain header and body content!-->
+            <div class="col02">
+                <!--Head bar for timestamp!-->
+                <div class="headTimestamp">
+                    <!--!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: center;">
+                        <p>TIME CARD : <span id="timeIn"></span></p>
+                    </div>
+
+                    <!--User display name!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: center;">
+                        <p>EMPLOYEE ID :</p>
+                    </div>
+
+                    <!--Current time!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: end;">
+                        <p>CLOCK : <span id="liveTime"></span></p>
+                    </div>
+                </div>
+
+                <!--body content!-->
+                <div class="content">
+                    <!--Logo and target ip!-->
+                    <div class="contentRow row02">
+                        <div class="zoneLogo">
+                            <img id="logoZone01" src="/zone02/asset/ele_zone2.png" alt="">
+                        </div>
+                        <div class="zoneUserIP">
+                            <img id="targetIP" src="/zone01/Asssets/ele7.png" alt="">
+                        </div>
+                    </div>
+
+                    <!--TASK STATUS-->
+                    <div class="contentRow row03">
+                        <div class="statusBox">
+                            <div>
+                                <p class="textStatus font-gtFlexa" style="padding: 10px;">TASK STATUS :</p>
+                            </div>
+                            <div class="checkList">
+                                <div class="checkItem">
+                                    <div class="checkBrick"></div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_world.png" alt="">
+                                </div>
+                                <div class="checkItem">
+                                    <div class="checkBrick"></div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_wide.png" alt="">
+                                </div>
+                                <div class="checkItem">
+                                    <div class="checkBrick"></div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_weave.png" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                        <img id="skeleton" src="/zone01/Asssets/gif_hm1.gif" alt="">
+                    </div>
+                    <div class="contentRow">
+                        <div class="guideBox">
+                            <a class="buttonNext" href="/zone02/game/agent.html">
+                                <img id="buttonImg" src="/zone01/Asssets/button.png" alt="">
+                            </a>
+                            <button onclick="showCtmInfo()">
+                                <img id="ctmBt" src="/zone02/asset/button_ลูกค้า.png" alt="">
+                            </button>
+                            <img id="missionGuide" src="/zone02/asset/box5-mission.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer">
+                    <div class="ctm01">
+                        <p class="font-dbHelvethaica">ใครกันคือผู้ที่ต้องการข้อมูลเหล่านี้ ?
+                            <br>
+                            <br>
+                            แท้จริงแล้วข้อมูลบุคคลมีค่าต่อหลาย<br>
+                            กลุ่มอาชีพมากๆ ยกตัวอย่างเช่น</p>
+                        <button onclick="hideCtmInfo()">
+                            <img src="/zone02/asset/button_arrow.png" alt="">
+                        </button>
+                    </div>
+                    <div class="ctm02">
+                        <div class="buyerCard">
+                            <div class="card" id="card01">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/insurance.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">บริษัทประกัน</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า2ประกัน.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card" id="card02">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/bank.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">ธนาคาร</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า3ธนาคาร.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card" id="card03">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/marketing.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">บริษัทการตลาด</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า4การตลาด.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buyerCard">
+                            <div class="card" id="card04">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/gov.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">รัฐบาล</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า5รัฐบาล.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card" id="card05">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/peoplesearch.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">เว็บไซต์ค้นหาบุคคล</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า6เว็บหาคน.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card" id="card06">
+                                <div class="frontCard">
+                                    <img id="cardIcon" src="/zone02/asset/databroker.png" alt="">
+                                    <div class="dot"></div>
+                                    <p class="font-dbHelvethaica" id="cardName">นายหน้าข้อมูล</p>
+                                    <img id="backCard" src="/zone02/asset/box6_ลูกค้า7นายหน้าข้อมูล.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        setInterval(liveTime, 1000);
+    
+        function liveTime() {
+          const today = new Date();
+          document.getElementById("liveTime").innerHTML = today.toLocaleTimeString();
+        }
+    </script>
+
+</body>
+</html>
