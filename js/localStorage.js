@@ -38,31 +38,16 @@ function loadLocalStorageValue() {
     localSliderValue2 = parseInt(localSliderValue2)
 
     localDeletedData = localStorage.getItem('deleted-data')
-
-    localDeletedData = localStorage.getItem('deleted-data')
-}
-
-function parseIntValue(localValue) {
-    localValue = parseInt(localValue)
-    console.log('Parse Int: ', localValue)
-    console.log('Parse Int: ', localSliderValue1)
-}
-
-function parseBoolean(localValue) {
-    if(localValue == 'true') {
-        localValue = true
-    }
-    else if(localValue == 'false') {
-        localValue = false
-    }
-}
-
-function parseArrayValue(localValue) {
-    localValue = localValue.split(',')
-    console.log('After Split: ', localValue)
 }
 
 function clearAllLocalData() {
+    // Login
+    localUsername = localStorage.setItem('username', '')
+    localProfilePicture = localStorage.setItem('profile-picture', '')
+
+    // Select Personalities Picture
+    localPersonalitiesSelectedPicture = localStorage.setItem('personalities-selected-picture', '')
+
     // Notice Selected Text
     localNoticeSelected = localStorage.setItem('notice-selected', '')
 

@@ -8,13 +8,15 @@ let rightContentPre
 let rightContentConclusion
 let scrollButton
 
-let noticeTextBox
-let noticeSelectBox
-let noticeNextButton
+let nameText
 
 let notice
 let selectedText
 let noticeTopic
+
+let noticeTextBox
+let noticeSelectBox
+let noticeNextButton
 
 let deleteDataPage
 let deleteDataIcon
@@ -37,6 +39,8 @@ let deleteGaugeSlider2
 let completedDelete
 let periodDeletedText
 
+let profilePic
+
 function windowLoad() {
     taskBarVariablesLoad()
     loadLocalStorageValue()
@@ -51,6 +55,9 @@ function windowLoad() {
     // Append Data Text
     categoriesInfoText = document.getElementById('categories-info-text')
     categoriesBoxText = document.getElementsByClassName('category-box-text')
+
+    nameText = document.getElementById('name-text')
+    nameText.innerText = localUsername
 
     leftText = document.getElementById('left-text')
     rightContentPre = document.getElementById('right-content-pre')
@@ -86,6 +93,8 @@ function windowLoad() {
 
     completedDelete = document.getElementById(`completed-delete`)
     periodDeletedText = document.getElementById(`period-span-text`)
+
+    profilePic = document.getElementById('profile-pic')
 
     deleteGaugeSlider1.value = localSliderValue1
     deleteGaugeSlider2.value = localSliderValue2
@@ -241,6 +250,16 @@ function openActionClick() {
         hideElement(deleteDataIcon)
 
         hideElement(scrollButton)
+
+        if(localProfilePicture == 'male') {
+            profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 3.png"
+        }
+        else if(localProfilePicture == 'female') {
+            profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 4.png"
+        }
+        else if(localProfilePicture == 'not specified') {
+            profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 5.png"
+        }
     }
     // STATE CHECK = 2
     else if(stateCheck('open') == 2) {
