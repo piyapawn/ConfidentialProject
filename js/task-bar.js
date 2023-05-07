@@ -5,10 +5,15 @@ let usernameText
 let aboutInfo
 
 function taskBarVariablesLoad() {
+    //Load Local Storage Variables
+    loadLocalStorageValue()
+
     taskButton = document.getElementById("task-button")
     taskBar = document.getElementById("task-bar")
     usernameText = document.getElementById("username-text")
     aboutInfo = document.getElementsByClassName("task-hidden-about")
+
+    setUsername()
 }
 
 // Task Bar Open or Close
@@ -25,9 +30,13 @@ function taskBarOpenOrClose() {
     stateNumCheck++
 }
 
+function setUsername() {
+    usernameText.innerText = localUsername
+}
+
 // Task Button Flashing On/Off
 function taskButtonFlashing(state) {
-    taskButton.style.animation = 'taskButtonFlashing 0.8s alternate infinite'
+    taskButton.style.animation = '0.75s taskButtonFlashing alternate infinite'
     if(state === 'r') {
         taskButton.style.animationPlayState = 'running'
     }

@@ -18,6 +18,9 @@ function windowLoad() {
     // Load Task Bar Variables
     taskBarVariablesLoad()
 
+    //Load Local Storage Variables
+    loadLocalStorageValue()
+
     userpicBox = document.getElementById("user-pic-box")
     usernameBox = document.getElementById("username-box")
 
@@ -98,7 +101,9 @@ function editUsername() {
         usernameBox.style.backgroundColor = 'white'
         circleDot[1].style.animationPlayState = 'paused'
         circleDot[1].style.backgroundColor = 'var(--yellow)'
-        usernameText.innerHTML = input.value
+
+        localStorage.setItem('username', input.value)
+
         nameFillCheck = true
         if(picSelectCheck) {
             taskButtonFlashing('r')
@@ -128,16 +133,24 @@ function selectPic(picNum) {
         picNumber[0].style.border = '5px solid blue'
         picNumber[1].style.border = 'none'
         picNumber[2].style.border = 'none'
+
+        localStorage.setItem('profile-picture', 'male')
+
     }
     else if(picNum === 2) {
         picNumber[0].style.border = 'none'
         picNumber[1].style.border = '5px solid blue'
         picNumber[2].style.border = 'none'
+
+        localStorage.setItem('profile-picture', 'female')
+
     }
     else if(picNum === 3) {
         picNumber[0].style.border = 'none'
         picNumber[1].style.border = 'none'
         picNumber[2].style.border = '5px solid blue'
+
+        localStorage.setItem('profile-picture', 'not specified')
     }
 }
 

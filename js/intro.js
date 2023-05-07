@@ -44,13 +44,17 @@ function loadPage(prevPageId, nextPageId) {
         }, 6000);
     }
     else {
-        nextPage.style.zIndex = 1
-        nextPage.style.opacity = 1
         nextPage.style.display = "inline-block"
+        nextPage.style.zIndex = 1
+        setTimeout(() => {
+            nextPage.style.opacity = 1
+        }, 500)
         
-        prevPage.style.zIndex = -999
         prevPage.style.opacity = 0
-        prevPage.style.display = "none"
+        setTimeout(() => {
+            prevPage.style.display = "none"
+            prevPage.style.zIndex = -999
+        }, 500)
     }
 }
 
@@ -93,52 +97,110 @@ function intro2Scroll() {
     let sec2OffsetTop = section[0].offsetTop
     let sec3OffsetTop = section[1].offsetTop
 
-    // console.log('Scroll Offset: '+page2.scrollTop)
+    console.log('Scroll Offset: '+page2.scrollTop)
 
     // Scroll Section 2
-    // if(page2.scrollTop == section[0].offsetTop) {
-    //     for(let i = 0; i <= 38; i++) {
-    //         // sec2AllPic[i].style.display = 'inline-block'
-    //         // sec2AllPic[i].style.animation = `reveal 0.1s`
-    //         // sec2AllPic[i].style.animationDelay = `${0.5*i}s`
-    //         sec2AllPic[i].style.opacity = 1
-    //         sec2AllPic[i].style.transition = "0.05s"
-    //         sec2AllPic[i].style.transitionDelay = `${0.01*i}s`
-    //     }
-    //     console.log('Scroll Sec2')
-    // }
+    let sec2AllTextBoxes = document.getElementsByClassName('sec2-all-text-boxes')
+    scrollReveal(2, sec2AllTextBoxes, 'text', 0, ['ทุกสิ่งที่คุณคลิก', 'เป็นแผนของเรา'])
 
-    // Scroll Section 2
     let sec2AllPic = document.getElementsByClassName('sec2-allpic')
-    for(let i = 0; i < 39; i++) {
-        if(page2.scrollTop >= sec2AllPic[i].offsetTop+(0.1*sec2OffsetTop)) {
-            sec2AllPic[i].style.opacity = 1
-            sec2AllPic[i].style.transition = "0.05s"
-        }
-    }
+    scrollReveal(2, sec2AllPic, 'pic', 0)
 
     // Scroll Section 3
+    let sec3AllTextBoxes = document.getElementsByClassName('sec3-all-text-boxes')
+    scrollReveal(3, sec3AllTextBoxes, 'text', sec2OffsetTop, ['ทุกสิ่งที่คุณเห็น', 'เป็นแผนของเรา'])
+
     let sec3AllPic = document.getElementsByClassName('sec3-allpic')
-    for(let i = 0; i < 39; i++) {
-        if(page2.scrollTop >= sec3AllPic[i].offsetTop+(sec2OffsetTop+(0.1*sec2OffsetTop))) {
-            sec3AllPic[i].style.opacity = 1
-            sec3AllPic[i].style.transition = "0.05s"
-        }
-    }
+    scrollReveal(3, sec3AllPic, 'pic', sec2OffsetTop)
 
     // Scroll Section 4
+    let sec4AllTextBoxes = document.getElementsByClassName('sec4-all-text-boxes')
+    scrollReveal(4, sec4AllTextBoxes, 'text', sec3OffsetTop, ['ทุกสิ่งที่คุณกระทำ เป็นแผนของเรา'])
+
     let sec4AllPic = document.getElementsByClassName('sec4-allpic')
-    for(let i = 0; i < 35; i++) {
-        if(page2.scrollTop >= sec4AllPic[i].offsetTop+(sec3OffsetTop+(0.1*sec2OffsetTop))) {
-            sec4AllPic[i].style.opacity = 1
-            sec4AllPic[i].style.transition = "0.05s"
-        }
-    }
+    scrollReveal(4, sec4AllPic, 'pic', sec3OffsetTop)
 
     // Scroll to Next Page
     let page3 = document.getElementById('intro3')
     if(page2.scrollTop > section[2].offsetTop) {
-        page2.style.opacity = 0
-        page2.style.zIndex = 1
+        // page2.style.opacity = 0
+        // page2.style.zIndex = 1
+        loadPage('intro2', 'intro3')
     }
+}
+
+let typingCall1 = true
+let typingCall2 = true
+let typingCall3 = true
+let typingCall4 = true
+let typingCall5 = true
+
+function scrollReveal(section, secClass, textOrPic, secOffsetTop, text) {
+    let page2 = document.getElementById('intro2')
+    let sec2OffsetTop = document.getElementsByClassName('intro2-section')[0].offsetTop
+
+    if(textOrPic === 'text') {
+        for(let i = 0; i < secClass.length; i++) {
+            if(page2.scrollTop >= secClass[i].offsetTop+(secOffsetTop+(0.3*sec2OffsetTop))) {
+                secClass[i].style.opacity = 1
+                secClass[i].style.transform = 'scaleX(1)'
+                secClass[i].style.transition = "1s"
+                typingTextCheck(i, text[i], section)
+            }
+        }
+    }
+    else if(textOrPic === 'pic') {
+        for(let i = 0; i < secClass.length; i++) {
+            if(page2.scrollTop >= secClass[i].offsetTop+(secOffsetTop+(0.1*sec2OffsetTop))) {
+                secClass[i].style.opacity = 1
+                secClass[i].style.transition = "0.05s"
+            }
+        }
+    }
+}
+
+function typingTextCheck(index, text, section) {
+    if(section === 2 && index == 0) {
+        if(typingCall1) {
+            typingTextAnimtion(index, text, section)
+            typingCall1 = false
+        }
+    }
+    else if(section === 2 && index == 1) {
+        if(typingCall2) {
+            typingTextAnimtion(index, text, section)
+            typingCall2 = false
+        }
+    }
+    else if(section === 3 && index == 0) {
+        if(typingCall3) {
+            typingTextAnimtion(index, text, section)
+            typingCall3 = false
+            console.log('Text 3')
+        }
+    }
+    else if(section === 3 && index == 1) {
+        if(typingCall4) {
+            typingTextAnimtion(index, text, section)
+            typingCall4 = false
+            console.log('Text 4')
+        }
+    }
+    else if(section === 4 && index == 0) {
+        if(typingCall5) {
+            typingTextAnimtion(index, text, section)
+            typingCall5 = false
+        }
+    }
+}
+
+function typingTextAnimtion(index, text, section) {
+    let textSec = document.getElementsByClassName(`sec${section}-all-text`)
+    setTimeout(() => {
+        for(let i = 0; i < text.length; i++) {
+            setTimeout(() => {
+                textSec[index].innerHTML += text[i]
+            }, 100*i);
+        }
+    }, 800)
 }
