@@ -7,6 +7,9 @@ function showToolInfo(infoId, buttonId) {
 }
 
 function playVid(toolId, progressId, infoId) {
+    if(toolId == 'account-01'){
+        document.getElementById('metaIs').style.opacity = '100%';
+    }
     document.getElementById(toolId).play();
     document.getElementById(progressId).play();
     document.getElementById(infoId).style.display = "none";
@@ -18,6 +21,9 @@ function disabledCurrentVid(tool, progress) {
 }
 
 function activeNextBt(nextBt, currentTool, currentProgress) {
+    if(currentTool == 'account-02') {
+        document.getElementById('metaIs').style.opacity = '0%';
+    }
     document.getElementById(nextBt).style.animation = "blink 0.7s infinite";
     document.getElementById(nextBt).disabled = false;
     document.getElementById(nextBt).style.cursor = 'pointer';

@@ -325,6 +325,15 @@ button {
     top: 10%;
 }
 
+#metaIs {
+    width: initial;
+    height: initial;
+    position: absolute;
+    bottom: 45%;
+    left: 15%;
+    opacity: 0%;
+}
+
 /* Animation for button */
 @keyframes blink {
     50% {
