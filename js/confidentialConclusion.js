@@ -8,8 +8,6 @@ let rightContentPre
 let rightContentConclusion
 let scrollButton
 
-let nameText
-
 let notice
 let selectedText
 let noticeTopic
@@ -44,6 +42,17 @@ let profilePic
 function windowLoad() {
     taskBarVariablesLoad()
     loadLocalStorageValue()
+
+    let nameText = document.getElementById('name-text')
+    nameText.innerText = localUsername
+
+    let timStampZone1 = document.getElementById('time-stamp-text-zone-1')
+    let timStampZone2 = document.getElementById('time-stamp-text-zone-2')
+    let timStampZone3 = document.getElementById('time-stamp-text-zone-3')
+    timStampZone1.innerText = 'IN : ' + localZone1TimeStamp
+    timStampZone2.innerText = 'IN : ' + localZone2TimeStamp
+    timStampZone3.innerText = 'IN : ' + localZone3TimeStamp
+
     setInterval(currentTimeRunning, 1000, 'time-text')
 
     setInterval(function() {
@@ -55,9 +64,6 @@ function windowLoad() {
     // Append Data Text
     categoriesInfoText = document.getElementById('categories-info-text')
     categoriesBoxText = document.getElementsByClassName('category-box-text')
-
-    nameText = document.getElementById('name-text')
-    nameText.innerText = localUsername
 
     leftText = document.getElementById('left-text')
     rightContentPre = document.getElementById('right-content-pre')
@@ -103,8 +109,10 @@ function windowLoad() {
     sliderChange(localSliderValue1, 1)
     sliderChange(localSliderValue2, 2)
 
-    noticeNext()
-    noticeSelected(localNoticeSelected)
+    if(localNoticeSelected != '') {
+        noticeNext()
+        noticeSelected(localNoticeSelected)
+    }
 }
 
 function fetchJsonFile() {
@@ -122,7 +130,7 @@ function fetchJsonFile() {
 }
 
 function appendData(data) {
-    console.log('Personality Type: ', findPersonalities())
+    // console.log('Personality Type: ', findPersonalities())
     // console.log('Personality: ', data[0].personalities)
     
     Object.keys(data).forEach((item) => {
@@ -436,7 +444,7 @@ function continueDeleteClick() {
 
         localStorage.setItem('slider-value1', value1)
         localStorage.setItem('slider-value2', value2)
-        localStorage.setItem('deleted-data', true)
+        localStorage.setItem('is-deleted-data', true)
 
         deleteGaugeSlider1.disabled = true
         deleteGaugeSlider2.disabled = true

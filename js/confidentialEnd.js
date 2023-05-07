@@ -4,8 +4,6 @@ let endShare
 let endEBook
 let endProfile
 
-let nameText
-
 // Append Data
 let categoriesInfoText
 let categoriesBoxText
@@ -13,12 +11,19 @@ let categoriesBoxText
 function windowLoad() {
     loadLocalStorageValue()
 
+    let nameText = document.getElementById('name-text')
+    nameText.innerText = localUsername
+
+    let timStampZone1 = document.getElementById('time-stamp-text-zone-1')
+    let timStampZone2 = document.getElementById('time-stamp-text-zone-2')
+    let timStampZone3 = document.getElementById('time-stamp-text-zone-3')
+    timStampZone1.innerText = 'IN : ' + localZone1TimeStamp
+    timStampZone2.innerText = 'IN : ' + localZone2TimeStamp
+    timStampZone3.innerText = 'IN : ' + localZone3TimeStamp
+
     // Append Data Text
     categoriesInfoText = document.getElementById('categories-info-text')
     categoriesBoxText = document.getElementsByClassName('category-box-text')
-
-    // Fetch Json File
-    fetchJsonFile()
 
     selectedText = document.getElementById('selected-text')
     selectedText.innerText = localNoticeSelected
@@ -26,9 +31,6 @@ function windowLoad() {
     endShare = document.getElementById('confidential-end-share')
     endEBook = document.getElementById('confidential-end-e-book')
     endProfile = document.getElementById('confidential-end-profile-info')
-
-    nameText = document.getElementById('name-text')
-    nameText.innerText = localUsername
 }
 
 function fetchJsonFile() {
@@ -120,6 +122,7 @@ function openConfidentialEndElement(element) {
     if(!elementOpenBool) {
         if(element == 'share') {
             revealElement(endShare, 'flex')
+            fetchJsonFile()
         }
         else if(element == 'e-book') {
             revealElement(endEBook, 'flex')
@@ -147,16 +150,6 @@ function closeConfidentialEndElement(element) {
         elementOpenBool = false
     }
 }
-
-// function elementArrayBoolCheck() {
-//     let numOfTrue = 0
-//     for(let i = 0; i < elementArrayBool.length; i++) {
-//         if(elementArrayBool[i]) {
-//             numOfTrue++
-//         }
-//     }
-//     return numOfTrue
-// }
 
 function revealElement(element, display) {
     element.style.display = display
@@ -194,5 +187,5 @@ async function downloadImage(imageSrc) {
 
 // COPY LINK
 function copyLink() {
-    navigator.clipboard.writeText('Copied');
+    navigator.clipboard.writeText("https://worldwideweave.netlify.app/");
 }
