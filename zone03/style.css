@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
+    background-size: contain;
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+.col01 {
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    width: 8.8%;
+    height: 100%;
+}
+
+.col02 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.contentRow {
+    display: flex;
+    flex: 1;
+}
+
+/* Create a custom checkbox */
+.checkBrick {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 15px;
+    /* margin-bottom: 8px; */
+    height: 35px;
+    width: 35px;
+}
+
+/* styling checkbox zone state */
+.checkBrick input {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.checkItem {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 4px;
+    padding-right: 8px;
+    width: 100%;
+}
+
+.box {
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+}
+
+.headTimestamp {
+    align-items: end;
+    background-color: #EAEAEA;
+    border-style: solid;
+    border-width: 0.5px;
+    border-left-width: 0px;
+    border-color: black;
+    display: flex;
+    height: 16%;
+    text-align: center;
+    width: 100%;
+}
+
+.guideBox {
+    position: absolute;
+    left: 13%;
+    bottom: 9%;
+}
+
+#missionGuide {
+    width: initial;
+    height: initial;
+}
+
+.buttonNext {
+    position: absolute;
+    left: 90%;
+    background: none;
+    bottom: 15%;
+    border: none;
+    cursor: pointer;
+    animation: blink 1.3s infinite;
+}
+
+.buttonNext:hover {
+    opacity: 100%;
+}
+
+#buttonImg {
+    width: 30px;
+    height: 30px;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+#iconStatus {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+}
+
+.statusBox {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    left: 58%;
+    position: absolute;
+    top: 41%;
+    width: 252px;
+    height: 195px;
+}
+
+.textStatus {
+    font-size: 20px
+}
+
+.timeItem {
+    color: #0D3BFC;
+    flex-grow: 1;
+    font-size: 20px;
+    padding-bottom: 1%;
+    padding-right: 6%;
+}
+
+.userIP {
+    background-color: #D0FF0B;
+}
+
+.zoneLogo {
+    align-items: center;
+    flex: 1;
+}
+
+#logoZone01 {
+    width: initial;
+    height: initial;
+    margin-left: 10.5%;
+    margin-top: 5%;
+}
+
+#targetIP {
+    margin-left: 8.5%;
+    margin-top: 16.5%;
+    width: initial;
+    height: initial;
+}
+
+#skeleton {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    height: initial;
+    width: initial;
+}
+
+.zoneUserIP {
+    flex: 1;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 70%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

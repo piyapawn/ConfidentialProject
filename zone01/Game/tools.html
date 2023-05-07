@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/zone01/Game/toolStyling.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <script src="/zone01/Game/tools.js"></script>
+    <title>ZONE 01 : Tools</title>
+</head>
+<body>
+    <!--Zone01 game tools!-->
+    <!-- A guide to play this zone -->
+    <div class="page" id="guidePic">
+        <div id="bgGuide"></div>
+        <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
+        <div id="guideEle">
+            <img src="/zone01/Game/gameGuide/box7.png" alt="">
+        </div>
+    </div>
+    <div class="page" id="guide">
+        <div id="bgGuide"></div>
+        <div id="guide01">
+            <img src="/zone01/Game/gameGuide/box1.png" alt="">
+            <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
+                <img src="/zone01/Game/gameGuide/button1.png" alt="">
+            </button>
+        </div>
+        <div id="guide02">
+            <img src="/zone01/Game/gameGuide/box2.png" alt="">
+            <button id="guide02Bt" onclick="activeGuide('guide02', 'guide03')">
+                <img src="/zone01/Game/gameGuide/button1.png" alt="">
+            </button>
+        </div>
+        <div id="guide03">
+            <img src="/zone01/Game/gameGuide/box3.png" alt="">
+            <button id="guide03Bt" onclick="activeGuide('guide03', 'guide')">
+                <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
+            </button>
+        </div>
+    </div>
+    <div class="page" id="mainContent">
+        <!--row that contain all header and side menu!-->
+        <div class="container">
+            <!--column that contain side menu!-->
+            <div class="col01">
+                <!--Left container for task!-->
+                <div class="box background-white1"></div>
+            </div>
+            <!-- column to show ending result -->
+            <div class="background-white1" id="endingResult">
+                <img src="/zone01/Asssets/result.png" alt="">
+                <button id="endZoneButton" onclick="endIt()">
+                    <img src="/zone01/Asssets/button.png" alt="">
+                </button>
+            </div>
+
+            <!-- column to show ending zone image -->
+            <div class="background-white1" id="endingZone">
+                <img src="/zone01/Asssets/ele_finish.png" alt="">
+                <a id="arrow" href="/zone02/index.html">
+                    <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
+                </a>
+            </div>
+
+            <!--column that contain head title and tools!-->
+            <div class="col02 background-white1">
+                <div class="top">
+                    <!-- Information pic will show when toolIcon is clicked and when use button's clicked the video will play -->
+                    <div class="toolInfo" id="cookieInfo">
+                        <img src="/zone01/Game/info/tool_cookies.png" alt="">
+                        <button class="toolBt" id="cookieBt" onclick="playVid('cookie-01', 'progress-cookie', 'cookieInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div class="toolInfo" id="fingerInfo">
+                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
+                        <button class="toolBt" id="fingerBt" onclick="playVid('finger-01', 'progress-finger', 'fingerInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div class="toolInfo" id="webInfo">
+                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
+                        <button class="toolBt" id="webBt" onclick="playVid('web-01', 'progress-web', 'webInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div class="toolInfo" id="socialInfo">
+                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
+                        <button class="toolBt" id="socialBt" onclick="playVid('social-01', 'progress-social', 'socialInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div class="toolInfo" id="trackingInfo">
+                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
+                        <button class="toolBt" id="trackingBt" onclick="playVid('tracking-01', 'progress-tracking', 'trackingInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div id="metaIs">
+                        <img src="/zone01/Asssets/box_metadata.png" alt="">
+                    </div>
+                    <div class="toolInfo" id="accountInfo" style="padding-left: 2%; top: 8%;">
+                        <img src="/zone01/Game/info/tool_createac.png" alt="">
+                        <button class="toolBt" id="accBt" onclick="playVid('account-01', 'progress-account01', 'accountInfo')">
+                            USE
+                        </button>
+                    </div>
+                    <div class="toolInfo" id="track2Info" style="padding-left: 2%; top: 8%;">
+                        <img src="/zone01/Game/info/tool_pixel(social).png" alt="">
+                        <button class="toolBt" id="track2Bt" onclick="playVid('tracking-02', 'progress-tracking02', 'track2Info')">
+                            USE
+                        </button>
+                    </div>
+                    <!-- zone logo will disappear when toolIcon's clicked -->
+                    <div class="zonelogo">
+                        <img src="/zone01/Asssets/logo_zone1.png" style="padding-left: 10%; width: 50%;" id="zoneTitle" alt="">
+                        <p class="font-dbHelvethaica indent" style="font-size: 25px; color: #494949;">
+                            your target: &nbsp &nbsp 38.106.2201.83
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <p class="font-dbHelvethaica indent" style="font-size: 30px; margin-bottom: 15px;">
+                        TOOLS 
+                        <span id="forNametag" style="background-color: #D0FF0B; border: 1px solid; padding: 2px; margin: 2px;">
+                            for websites
+                        </span>
+                    </p>
+                    <!-- these tool icon disable when clicked -->
+                    <div id="iconSet1" class="toolIcons indent">
+                        <div class="toolIcons">
+                            <div class="iconBlock">
+                                <div class="icon">
+                                    <button id="cookieTool" onclick="showToolInfo('cookieInfo', 'cookieTool')">
+                                        <img src="/zone01/Asssets/icon-cookie.png" style="padding: 25px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ cookies ]</h5>
+                            </div>
+            
+                            <div class="iconBlock">
+                                <div class="icon">
+                                    <button id="fingerTool" onclick="showToolInfo('fingerInfo', 'fingerTool')" disabled style="cursor: default;">
+                                        <img src="/zone01/Asssets/icon-fingerprint.png" style="padding: 25px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ browser<br>fingerprinting ]</h5>
+                            </div>
+                            <div class="iconBlock">
+                                <div class="icon">
+                                    <button id="webTool" onclick="showToolInfo('webInfo', 'webTool')" disabled style="cursor: default;">
+                                        <img src="/zone01/Asssets/icon-social.png" style="padding: 18px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ web<br> beacon ]</h5>
+                            </div>
+                            <div class="iconBlock">
+                                <div class="icon">
+                                    <button id="socialTool" onclick="showToolInfo('socialInfo', 'socialTool')" disabled style="cursor: default;">
+                                        <img src="/zone01/Asssets/icon-login.png" style="padding: 25px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ social login ]</h5>
+                            </div>
+                            <div class="iconBlock">
+                                <div class="icon">
+                                    <button id="trackingTool" onclick="showToolInfo('trackingInfo', 'trackingTool')" disabled style="cursor: default;">
+                                        <img src="/zone01/Asssets/icon-pixel.png" style="padding: 25px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="iconSet2" class="toolIcons indent" style="display: none;">
+                        <div class="toolIcons">
+                            <div class="iconBlock" style="margin-left: 30px;">
+                                <div class="icon">
+                                    <button id="accountTool" onclick="showToolInfo('accountInfo', 'accountTool')">
+                                        <img src="/zone01/Asssets/icon-social.png" style="padding: 23px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ creating/<br>having account ]</h5>
+                            </div>
+            
+                            <div class="iconBlock" style="margin-left: 30px;">
+                                <div class="icon">
+                                    <button id="track2Tool" onclick="showToolInfo('track2Info', 'track2Tool')" disabled style="cursor: default;">
+                                        <img src="/zone01/Asssets/icon-pixel.png" style="padding: 30px;" alt="">
+                                    </button>
+                                </div>
+                                <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--column that contain result!-->
+            <div class="col03">
+                <div class="row01">
+                    <img src="/zone01/Asssets/ele_circle.png" alt="" style="padding: 40px;">
+                    <p class="font-dbHelvethaica" style="font-size: 30px;" >38.106.2201.83's browser</p>
+                </div>
+                <div class="row02">
+                    <div class="user-tabs">
+                        <div class="tab-name">
+                            <div class="font-dbHelvethaica" id="tab-normal">
+                                <h4 style="margin:15px ">www.เว็บไซต์ทั่วไป.com</h4>
+                            </div>
+                            <button class="font-dbHelvethaica" id="tab-social" style="padding-bottom: 59px;" onclick="activeSocialZone()">
+                                <h4 style="margin:15px;">www.socialmedia.com</h4>
+                            </button>
+                        </div>
+                        <div class="using-tool">
+                            <video id="cookie-01" onended="activeNextBt('fingerTool', 'cookie-01', 'progress-cookie')" src="/zone01/Game/videos/zone1-1.mp4"></video>
+                            <video id="finger-01" onended="activeNextBt('webTool', 'finger-01', 'progress-finger')" src="/zone01/Game/videos/zone1-2.mp4"></video>
+                            <video id="web-01" onended="activeNextBt('socialTool', 'web-01', 'progress-web')" src="/zone01/Game/videos/zone1-3.mp4"></video>
+                            <video id="social-01" onended="activeNextBt('trackingTool', 'social-01', 'progress-social')" src="/zone01/Game/videos/zone1-4.mp4"></video>
+                            <video id="tracking-01" onended="activeNextBt('tab-social', 'tracking-01', 'progress-tracking')" src="/zone01/Game/videos/zone1-5.mp4"></video>
+                            <video id="account-01" onended="playContVid('account-01', 'progress-account01', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-6.mp4"></video>
+                            <video id="account-02" onended="activeNextBt('track2Tool', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-7.mp4"></video>
+                            <video id="tracking-02" onended="toResult()" src="/zone01/Game/videos/zone1-8.mp4"></video>
+                        </div>
+                    </div>
+                    <div class="progress-vid">
+                        <video id="progress-cookie" src="/zone01/Game/videos/progress1-1.mp4"></video>
+                        <video id="progress-finger" src="/zone01/Game/videos/progress1-2.mp4"></video>
+                        <video id="progress-web" src="/zone01/Game/videos/progress1-3.mp4"></video>
+                        <video id="progress-social" src="/zone01/Game/videos/progress1-4.mp4"></video>
+                        <video id="progress-tracking" src="/zone01/Game/videos/progress1-5.mp4"></video>
+                        <!-- progress video for social tab -->
+                        <video id="progress-account01" src="/zone01/Game/videos/progress1-6.mp4"></video>
+                        <video id="progress-account02" src="/zone01/Game/videos/progress1-7.mp4"></video>
+                        <video id="progress-tracking02" src="/zone01/Game/videos/progress1-8.mp4"></video>
+                        <button id="resultButton" href="" onclick="showResult()">
+                            <img src="/zone01/Asssets/button.png" alt="">
+                        </button>
+                        <!-- link to zone02 -->
+                        <button id="nextZoneButton" onclick="endIt()">
+                            <img src="/zone01/Asssets/button.png" alt="">
+                        </button>
+                        <button id="hintButton" onclick="showhideGuide('hintButton')">
+                            ?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

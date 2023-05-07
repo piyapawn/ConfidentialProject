@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/zone03/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/zone03/zone03.js"></script>
+    <title>ZONE 03</title>
+</head>
+<body onload="windowLoad()">
+    <!--Main page of zone03!-->
+    <div class="page">
+        <!--row that contain all header and side menu!-->
+        <div class="container">
+            <!--column that contain side menu!-->
+            <div class="col01">
+                <!--Left container for task!-->
+                <div class="box"></div>
+            </div>
+
+            <!--column that contain header and body content!-->
+            <div class="col02">
+                <!--Head bar for timestamp!-->
+                <div class="headTimestamp">
+                    <!--!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: center;">
+                        <p>TIME CARD : <span id="timeIn"></span></p>
+                    </div>
+
+                    <!--User display name!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: center;">
+                        <p>EMPLOYEE ID :</p>
+                    </div>
+
+                    <!--Current time!-->
+                    <div class="timeItem font-gtFlexa" style="text-align: end;">
+                        <p>CLOCK : <span id="liveTime"></span></p>
+                    </div>
+                </div>
+
+                <!--body content!-->
+                <div class="content">
+                    <!--Logo and target ip!-->
+                    <div class="contentRow row02">
+                        <div class="zoneLogo">
+                            <img id="logoZone01" src="/zone03/asset/ele_zone03.png" alt="">
+                        </div>
+                        <div class="zoneUserIP">
+                            <img id="targetIP" src="/zone01/Asssets/ele7.png" alt="">
+                        </div>
+                    </div>
+
+                    <!--TASK STATUS-->
+                    <div class="contentRow row03">
+                        <div class="statusBox">
+                            <div>
+                                <p class="textStatus font-gtFlexa" style="padding: 10px;">TASK STATUS :</p>
+                            </div>
+                            <div class="checkList">
+                                <div class="checkItem">
+                                    <div class="checkBrick">
+                                        <input type="checkbox" style="border: none; width: 100%;" checked disabled>
+                                    </div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_world.png" alt="">
+                                </div>
+                                <div class="checkItem">
+                                    <div class="checkBrick">
+                                        <input type="checkbox" style="border: none; width: 100%;" checked disabled>
+                                    </div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_wide.png" alt="">
+                                </div>
+                                <div class="checkItem">
+                                    <div class="checkBrick"></div>
+                                    <img id="iconStatus" src="/zone01/Asssets/icon_weave.png" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                        <img id="skeleton" src="/zone01/Asssets/gif_hm1.gif" alt="">
+                    </div>
+                    <div class="contentRow">
+                        <div class="guideBox">
+                            <a class="buttonNext" href="/zone03/game/contentSelect.html">
+                                <img id="buttonImg" src="/zone01/Asssets/button.png" alt="">
+                            </a>
+                            <img id="missionGuide" src="/zone03/asset/box_1ภารกิจ.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        setInterval(liveTime, 1000);
+    
+        function liveTime() {
+          const today = new Date();
+          document.getElementById("liveTime").innerHTML = today.toLocaleTimeString();
+        }
+    </script>
+
+</body>
+</html>

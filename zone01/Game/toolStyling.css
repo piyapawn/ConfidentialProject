@@ -1,0 +1,381 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
+    background-size: contain;
+    width: 1920px;
+    height: 1080px;
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+#guide {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    z-index: 3;
+}
+
+#guidePic {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    z-index: -4;
+}
+
+#bgGuide {
+    width: 100%;
+    height: 100%;
+    background-color: #999999;
+    opacity: 40%;
+    animation: fadeAppear 1s 1;
+}
+
+/* How to play */
+#guide01 {
+    position: absolute;
+    top: 40%;
+    left: 11%;
+    animation: fadeClear 0.7s 1;
+}
+
+#guide02 {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 47%;
+}
+
+#guide03 {
+    display: none;
+    position: absolute;
+    bottom: 20%;
+    right: 1%;
+}
+
+#guide01 button, #guide02 button, #guide03 button {
+    border: none;
+    background: none;
+}
+
+#guide01Bt, #guide02Bt {
+    position: absolute;
+    right: 8%;
+    bottom: 6%;
+}
+
+#guide03Bt {
+    position: absolute;
+    top: 48%;
+    left: 80%;
+    color: #D0FF0B;
+} 
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.col01 {
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    width: 11%;
+}
+
+#endingResult {
+    width: 93%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -4;
+}
+
+#endingZone {
+    width: 93%;
+    position: absolute;
+    top: 100%;
+    left: 7%;
+    z-index: 4;
+}
+
+#arrow {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+    width: 13%;
+    height: 13%;
+    border: solid 1px black;
+    border-radius: 3px;
+    text-align: center;
+    animation: blink 0.8s infinite;
+}
+
+.col02, .col03 {
+    border: 1px solid;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.col02 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
+
+.indent {
+    padding-left: 10%;
+}
+
+.col03 {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    background-color: #e1e1e1;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+}
+
+.bottom {
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.row01 {
+    align-items: center;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    height: 7%;
+}
+
+.row02, .tab-name {
+    display: flex;
+}
+
+#zoneTitle {
+    width: 70%;
+    padding-top: 20%;
+}
+
+.toolInfo {
+    position: absolute;
+    padding-left: 3%;
+    top: 10%;
+    opacity: 100%;
+    z-index: -1;
+}
+
+.toolInfo img {
+    width: 90%;
+}
+
+.toolBt {
+    background-color: #D0FF0B;
+    width: 30%;
+    height: 7%;
+    border-radius: 0;
+    position: absolute;
+    top: 87%;
+    left: 35%;
+    font-size: 20px;
+    color: #0D3BFC;
+}
+
+.toolBt:hover {
+    box-shadow: 0 0 10px darkblue;
+}
+
+.toolIcons {
+    display: flex;
+    overflow: auto;
+}
+
+#iconSet2 .toolIcons {
+    margin-left: 35px;
+}
+
+.iconBlock {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.toolsName {
+    color: #0D3BFC;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 0.2;
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin: 5px;
+}
+
+/* tools button styling */
+#cookieTool, #accountTool {
+    animation: blink 0.7s infinite;
+}
+
+/* styling scroll bar */
+.toolIcons::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid;
+    border-radius: 2px;
+}
+
+.toolIcons::-webkit-scrollbar-thumb {
+    background-color: #D0FF0B;
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+/* Column 03 styling */
+.user-tabs {
+    width: 756px;
+    flex-direction: column;
+}
+
+#tab-normal {
+    background-color: white;
+}
+
+#tab-normal, #tab-social {
+    width: 100%;
+    height: 60px;
+    border: 1px solid;
+    border-radius: 0;
+    border-left: 0px;
+    border-top: 0px;
+    font-size: 25px;
+    text-align: center;
+}
+
+#tab-social {
+    background-color: #999999;
+    cursor: default;
+}
+
+/* using tool video styling */
+.using-tool video {
+    height: initial;
+}
+
+.progress-vid video{
+    height: initial;
+    width: initial;
+}
+
+/* end this zone button */
+#resultButton, #hintButton, #nextZoneButton, #endZoneButton {
+    position: absolute;
+    z-index: -2;
+    bottom: 5%;
+    right: 3%;
+    border: none;
+    background: none;
+}
+
+#hintButton {
+    font-size: 30px;
+    width: 42px;
+    height: 42px;
+    color: #0D3BFC;
+    background-color: #D0FF0B;
+}
+
+#guideEle {
+    position: absolute;
+    top: 43%;
+    right: 4%;
+}
+
+#hideButton {
+    font-size: 40px;
+    width: 42px;
+    height: 42px;
+    color: #0D3BFC;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
+
+#metaIs {
+    width: initial;
+    height: initial;
+    position: absolute;
+    bottom: 45%;
+    left: 15%;
+    opacity: 0%;
+}
+
+/* Animation for button */
+@keyframes blink {
+    50% {
+        background-color: #D0FF0B;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+/* guide tool */
+@keyframes fadeClear {
+    25% {
+        opacity: 60%;
+    }
+    50% {
+        opacity: 80%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+/* guide tool */
+@keyframes fadeAppear {
+    25% {
+        opacity: 20%;
+    }
+    50% {
+        opacity: 30%;
+    }
+    100% {
+        opacity: 40%;
+    }
+}
+
+/* slide in */
+@keyframes slideIn {
+    50% {
+        top: 3%;
+    }
+    100% {
+        top: 0;
+    }
+}
