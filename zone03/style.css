@@ -52,6 +52,13 @@ body {
     width: 35px;
 }
 
+/* styling checkbox zone state */
+.checkBrick input {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
 .checkItem {
     display: flex;
     align-items: center;

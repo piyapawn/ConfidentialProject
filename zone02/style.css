@@ -203,6 +203,13 @@ body {
     left: 5%;
 }
 
+/* styling checkbox zone state */
+.checkBrick input {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
 .guideBox button {
     border: none;
     background: none;
