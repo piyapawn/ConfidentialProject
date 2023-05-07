@@ -18,7 +18,7 @@ let localNoticeSelected
 // Slider & Delete Data
 let localSliderValue1
 let localSliderValue2
-let localDeletedData
+let localIsDeletedData
 
 function loadLocalStorageValue() {
     // Login
@@ -46,14 +46,14 @@ function loadLocalStorageValue() {
     localSliderValue2 = localStorage.getItem('slider-value2')
     localSliderValue2 = parseInt(localSliderValue2)
 
-    localDeletedData = localStorage.getItem('is-deleted-data')
-    if(localDeletedData == 'true') {
-        localDeletedData = true
+    localIsDeletedData = localStorage.getItem('is-deleted-data')
+    if(localIsDeletedData == 'true') {
+        localIsDeletedData = true
     }
-    else if(localDeletedData == 'false') {
-        localDeletedData = false
+    else if(localIsDeletedData == 'false') {
+        localIsDeletedData = false
     }
-    console.log('Deleted Data: ', localDeletedData)
+    console.log('Deleted Data: ', localIsDeletedData)
 }
 
 function clearAllLocalData() {
@@ -75,5 +75,5 @@ function clearAllLocalData() {
     // Slider & Delete Data
     localSliderValue1 = localStorage.setItem('slider-value1', 0)
     localSliderValue2 = localStorage.setItem('slider-value2', 0)
-    localDeletedData = localStorage.setItem('is-deleted-data', false)
+    localIsDeletedData = localStorage.setItem('is-deleted-data', false)
 }

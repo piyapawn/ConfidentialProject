@@ -56,7 +56,7 @@ function windowLoad() {
     setInterval(currentTimeRunning, 1000, 'time-text')
 
     setInterval(function() {
-        if(localDeletedData) {
+        if(localIsDeletedData) {
             
         }
     }, 1000);
@@ -286,8 +286,11 @@ function openActionClick() {
         revealElement(deleteGaugePage, 'block')
         hideElement(ddCapsule)
 
-        if(localDeletedData) {
+        if(localIsDeletedData) {
             ddPageWrapHuman.style.transform = 'translateX(100%)'
+
+            deleteGaugeSlider1.disabled = true
+            deleteGaugeSlider2.disabled = true
         }
     }
 
@@ -322,8 +325,11 @@ function backActionClick() {
         revealElement(ddCapsule, 'flex')
         hideElement(deleteGaugePage)
 
-        if(localDeletedData) {
+        if(localIsDeletedData) {
             ddPageWrapHuman.style.transform = 'translateX(0%)'
+
+            deleteGaugeSlider1.disabled = true
+            deleteGaugeSlider2.disabled = true
         }
     }
     // STATE CHECK = 0
@@ -347,7 +353,7 @@ function backActionClick() {
         revealElement(deleteDataIcon, 'block')
         hideElement(ddPageContent)
 
-        if(localDeletedData) {
+        if(localIsDeletedData) {
             revealElement(scrollButton, 'block')
         }
     }
@@ -474,7 +480,7 @@ function hideElement(element) {
 }
 
 function continueButtonState(bool) {
-    if(localDeletedData === true) {
+    if(localIsDeletedData === true) {
         return
     }
     if(bool) {

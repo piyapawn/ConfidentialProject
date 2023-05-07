@@ -103,6 +103,7 @@ function editUsername() {
         circleDot[1].style.backgroundColor = 'var(--yellow)'
 
         localStorage.setItem('username', input.value)
+        taskBarVariablesLoad()
 
         nameFillCheck = true
         if(picSelectCheck) {
