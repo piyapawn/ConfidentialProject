@@ -48,7 +48,6 @@ let nameFillCheck = false
 // Open Pic Nav
 let check = 0
 function openAndCloseNav() {
-    console.log("UserPic: "+userpicBox)
     if(check%2 == 0) {
         userpicBox.style.transform = "translateY(-64.75vh)"
         userpicBox.style.borderBottom = "0"
@@ -76,7 +75,7 @@ function openAndCloseNav() {
             userpicBox.style.backgroundColor = 'var(--white2)'
             circleDot[0].style.animationPlayState = 'running'
             taskButtonFlashing('p')
-            taskButtonTransform('y', -5)
+            taskButtonTransform('x', -5)
             picSelectCheck = false
         }
     }
