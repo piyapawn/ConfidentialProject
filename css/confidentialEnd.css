@@ -129,6 +129,7 @@ body {
     height: calc(var(--grid) * 5);
 }
 .employee-id {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,7 +226,12 @@ body {
 }
 #name-text {
     margin-left: 2.5vw;
-    font-size: 4vw;
+    font-size: 3.5vw;
+}
+.employee-profile-pic {
+    position: absolute;
+    right: 0;
+    height: 100%;
 }
 
 #selected-text {

@@ -38,6 +38,7 @@ let completedDelete
 let periodDeletedText
 
 let profilePic
+let employeeProfilePic
 
 function windowLoad() {
     taskBarVariablesLoad()
@@ -101,6 +102,7 @@ function windowLoad() {
     periodDeletedText = document.getElementById(`period-span-text`)
 
     profilePic = document.getElementById('profile-pic')
+    employeeProfilePic = document.getElementById('employee-id-profile-pic')
 
     deleteGaugeSlider1.value = localSliderValue1
     deleteGaugeSlider2.value = localSliderValue2
@@ -238,6 +240,8 @@ function noticeSelected(text) {
 let state = 0
 
 function openActionClick() {
+    loadLocalStorageValue()
+
     deleteDataPage.removeAttribute("onclick")
 
     // STATE CHECK = 1
@@ -261,12 +265,15 @@ function openActionClick() {
 
         if(localProfilePicture == 'male') {
             profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 3.png"
+            employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 3.png"
         }
         else if(localProfilePicture == 'female') {
             profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 4.png"
+            employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 4.png"
         }
         else if(localProfilePicture == 'not specified') {
             profilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 5.png"
+            employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 5.png"
         }
     }
     // STATE CHECK = 2
@@ -298,6 +305,8 @@ function openActionClick() {
 }
 
 function backActionClick() {
+    loadLocalStorageValue()
+
     // STATE CHECK = 1
     if(stateCheck('back') == 1) {
         deleteDataPageChange(

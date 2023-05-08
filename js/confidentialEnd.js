@@ -4,6 +4,8 @@ let endShare
 let endEBook
 let endProfile
 
+let employeeProfilePic
+
 // Append Data
 let categoriesInfoText
 let categoriesBoxText
@@ -31,6 +33,18 @@ function windowLoad() {
     endShare = document.getElementById('confidential-end-share')
     endEBook = document.getElementById('confidential-end-e-book')
     endProfile = document.getElementById('confidential-end-profile-info')
+
+    employeeProfilePic = document.getElementById('employee-id-profile-pic')
+
+    if(localProfilePicture == 'male') {
+        employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 3.png"
+    }
+    else if(localProfilePicture == 'female') {
+        employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 4.png"
+    }
+    else if(localProfilePicture == 'not specified') {
+        employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 5.png"
+    }
 }
 
 function fetchJsonFile() {
