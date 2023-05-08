@@ -1,4 +1,6 @@
 function windowLoadSection() {
+    clearAllLocalData()
+
     let section = document.getElementsByClassName('intro2-section')
 
     // Load Section 2 Pic
