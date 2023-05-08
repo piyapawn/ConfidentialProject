@@ -1,3 +1,8 @@
+function windowLoad() {
+    taskBarVariablesLoad()
+    loadLocalStorageValue()
+}
+
 const value = 71;
 
 function selectContent(vidId, clearVidId, crContentId, nContentId) {

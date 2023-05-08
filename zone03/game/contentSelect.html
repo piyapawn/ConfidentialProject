@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="/zone03/game/contentStyling.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/task-bar.css">
     <script src="/zone03/game/contentSelect.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/localStorage.js"></script>
     <title>ZONE 03 : Tools</title>
 </head>
-<body>
+<body onload="windowLoad()">
     <!--Zone03 game tools!-->
     <!-- A guide to play this zone -->
     <div class="page" id="guidePic">
@@ -201,5 +204,103 @@
         </div>
         
     </div>
+
+
+
+
+
+    <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+    <!-- Task Button -->
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+    <!-- TASK BAR -->
+    <div class="task-bar background-white1" id="task-bar">
+        <!-- TASK ROW 1 -->
+        <div class="task-row1">
+            <div class="task-col1">
+                <div id="employee-element">
+                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                </div>  
+            </div>
+            <div class="task-col2">
+                <div id="username-show-element">
+                    <p class="font-dbHelvethaica" id="username-text"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- TASK ROW 2 -->
+        <div class="task-row2 background-white1">
+            <!-- Database Tour -->
+            <div class="task-topics" id="database-tour">
+                <div class="square-check background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                </div>
+            </div>
+            <!-- Tasks -->
+            <div class="task-topics" id="tasks">
+                <p class="font-ocrb" id="tasks-text">TASKS</p>
+            </div>
+            <!-- Zone 1 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="task-topics zone">
+                <div class="square-check background-blue"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
+                </div>
+            </div>
+            <!-- Confidential Zone -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 2 -->
+
+        <!-- TASK ROW 3 -->
+        <div class="task-row3">
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- ABOUT -->
+        <div class="task-hidden-about background-white1">
+            <div class="about-info-row1">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                </button>
+            </div>
+            <div class="about-info-row2">
+                <p class="font-baiJamjuree about-info-text">
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                </p>
+            </div>
+            <div class="about-info-row3">
+                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            </div>
+        </div>
+        <!--/ ABOUT -->
+    </div>
+    <!--/ TASK BAR -->
+
+    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
 </body>
 </html>

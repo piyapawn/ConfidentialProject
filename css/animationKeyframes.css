@@ -12,12 +12,21 @@
 
 
 /* TEXT RUNNING */
-@keyframes textRunning {
+@keyframes textRunning1 {
     0% {
-        transform: translateX(100vw);  
+        transform: translateX(100%);  
     }
     100% {
-        transform: translateX(-108vw);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes textRunning2 {
+    0% {
+        transform: translateX(0%);  
+    }
+    100% {
+        transform: translateX(-200%);
     }
 }
 /* TEXT RUNNING */

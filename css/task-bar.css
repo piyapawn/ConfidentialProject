@@ -209,3 +209,23 @@
 }
 /* ~~ TASK HIDDEN ABOUT ~~ */
 /* ~~~~~ TASK BAR AREA ~~~~~ */
+
+/* COMPLETED ZONE */
+.completed-zone {
+    position: relative;
+}
+.completed-zone:before, .completed-zone:after {
+    position: absolute;
+    top: calc(var(--grid) * -0.08);
+    left: calc(var(--grid) * 0.15);
+    content: ' ';
+    width: 2px;
+    height: calc(var(--grid) * 0.45);
+    background-color: var(--blue);
+}
+.completed-zone:before {
+    transform: rotate(45deg);
+}
+.completed-zone:after {
+    transform: rotate(45deg);
+}

@@ -14,34 +14,38 @@ body {
 }
 
 .head {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100vw;
     height: 4.5vh;
     overflow-wrap: normal;
+    overflow-x: hidden;
     border-color:black;
     border-bottom: 1px;
     border-bottom-style: solid;
+
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 0;
 }
 
-#text-head1, #text-head2, #text-head3 {
-    overflow: visible;
-    position: absolute;
-    margin: 8px 0 5px 0;
+#text-head1, #text-head2 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    margin-left: 0.5vw;
     top: 0;
     left: 0;
-    font-size: 18px;
-    word-break: normal;
-    transform: translateX(100vw);
-    animation: textRunning 20s linear infinite;
+    font-size: 1.7vw;
+    transform: translateX(0%);
 }
-
+#text-head1 {
+    animation: textRunning1 20s linear infinite;
+}
 #text-head2 {
-    animation-delay: 6.65s;
-}
-
-#text-head3 {
-    animation-delay: 13.3s;
+    animation: textRunning2 20s linear infinite;
+    animation-delay: 9.95s;
 }
 
 .row2 {

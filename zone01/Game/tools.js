@@ -1,3 +1,8 @@
+function windowLoad() {
+    taskBarVariablesLoad()
+    loadLocalStorageValue()
+}
+
 function showToolInfo(infoId, buttonId) {
     document.getElementById(infoId).style.zIndex = 2;
     document.getElementById(buttonId).style.animation = "none";

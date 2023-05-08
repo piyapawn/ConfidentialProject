@@ -31,7 +31,7 @@ body {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
     height: 100vh;
 }
 
@@ -540,10 +540,151 @@ section {
     bottom: 36.5vh;
     left: 15.7vw;
 }
-/* -- Section 3 Texts & Images Position -- */
+/* -- Section 4 Texts & Images Position -- */
 #sec4-textBox1 {
     bottom: 41vh;
     left: 41vw;
+}
+#sec4-pic3 {
+    top: 10vh;
+    left: 19vw;
+}
+#sec4-pic24 {
+    top: 20vh;
+    left: 27vw;
+}
+#sec4-pic6 {
+    top: 28vh;
+    left: 8vw;
+}
+#sec4-pic26 {
+    top: 37vh;
+    left: 5.5vw;
+}
+#sec4-pic2 {
+    top: 41.55vh;
+    left: 10.8vw;
+}
+#sec4-pic12 {
+    top: 37vh;
+    left: 18.5vw;
+    z-index: 2;
+}
+#sec4-pic28 {
+    top: 41.55vh;
+    left: 18.5vw;
+}
+#sec4-pic17 {
+    top: 41.55vh;
+    left: 35vw;
+}
+#sec4-pic7 {
+    top: 33vh;
+    left: 32.5vw;
+}
+#sec4-pic5 {
+    top: 15vh;
+    left: 37.5vw;
+}
+#sec4-pic32 {
+    top: 24.1vh;
+    left: 45.5vw;
+}
+#sec4-pic16 {
+    top: 24.1vh;
+    left: 50.75vw;
+}
+#sec4-pic29 {
+    top: 37.5vh;
+    left: 56.1vw;
+}
+#sec4-pic19 {
+    top: 18vh;
+    right: 22.5vw;
+}
+#sec4-pic10 {
+    top: 27vh;
+    right: 17.3vw;
+}
+#sec4-pic35 {
+    top: 36.5vh;
+    right: 6.7vw;
+}
+#sec4-pic31 {
+    top: 41vh;
+    right: 6.7vw;
+}
+#sec4-pic27 {
+    bottom: 0vh;
+    right: 2.5vw;
+}
+#sec4-pic9 {
+    bottom: 0vh;
+    right: 13vw;
+}
+#sec4-pic23 {
+    bottom: 8.6vh;
+    right: 5vw;
+}
+#sec4-pic25 {
+    bottom: 22vh;
+    right: 15.5vw;
+}
+#sec4-pic15 {
+    bottom: 26.5vh;
+    right: 15.5vw;
+}
+#sec4-pic8 {
+    bottom: 36vh;
+    right: 23.3vw;
+}
+#sec4-pic13 {
+    bottom: 8.6vh;
+    right: 29vw;
+}
+#sec4-pic11 {
+    bottom: 4vh;
+    right: 34.3vw;
+}
+#sec4-pic18 {
+    bottom: 22.2vh;
+    right: 31.5vw;
+}
+#sec4-pic21 {
+    bottom: 0vh;
+    left: 34vw;
+}
+#sec4-pic1 {
+    bottom: 0vh;
+    left: 28.8vw;
+}
+#sec4-pic33 {
+    bottom: 13vh;
+    left: 44.5vw;
+}
+#sec4-pic30 {
+    bottom: 18vh;
+    left: 39.25vw;
+}
+#sec4-pic20 {
+    bottom: 8.6vh;
+    left: 20.8vw;
+}
+#sec4-pic4 {
+    bottom: 22.3vh;
+    left: 26.5vw;
+}
+#sec4-pic34 {
+    bottom: 13vh;
+    left: 15.7vw;
+}
+#sec4-pic22 {
+    bottom: 13vh;
+    left: 5vw;
+}
+#sec4-pic14 {
+    bottom: 26.5vh;
+    left: 10.5vw;
 }
 
 

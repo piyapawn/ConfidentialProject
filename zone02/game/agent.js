@@ -1,3 +1,9 @@
+function windowLoad() {
+    taskBarVariablesLoad()
+    loadLocalStorageValue()
+}
+
+
 var choosenUser = [];
 var isQuiz01Done = false;
 var isQuiz02Done = false;

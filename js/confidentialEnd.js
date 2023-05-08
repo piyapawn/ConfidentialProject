@@ -122,13 +122,13 @@ function openConfidentialEndElement(element) {
     if(!elementOpenBool) {
         if(element == 'share') {
             revealElement(endShare, 'flex')
-            fetchJsonFile()
         }
         else if(element == 'e-book') {
             revealElement(endEBook, 'flex')
         }
         else if(element == 'profile') {
             revealElement(endProfile, 'flex')
+            fetchJsonFile()
         }
         elementOpenBool = true
     }

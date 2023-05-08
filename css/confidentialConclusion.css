@@ -142,21 +142,6 @@ body {
     width: 50%;
     height: calc(100% - var(--grid) * 1);
 }
-.bottom-text-run {
-    position: absolute;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: calc(var(--grid) * 1);
-}
-.text-run {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2vw;
-}
 
 /* RIGHT CONCLUSION Left Content */
 .subject-data, .employee-id, .notice, .time-card {
@@ -1057,4 +1042,39 @@ sup {
 .completed-delete-button:hover {
     background-color: var(--blue);
     color: white;
+}
+
+/* TEXT RUN */
+.bottom-text-run {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: calc(var(--grid) * 1);
+    overflow-wrap: normal;
+    overflow-x: hidden;
+    white-space: nowrap;
+    border-color:black;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    z-index: 0;
+}
+
+#text-head1, #text-head2 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    margin-left: 0.5vw;
+    top: 0;
+    left: 0;
+    font-size: 1.035vw;
+    transform: translateX(0%);
+}
+#text-head1 {
+    animation: textRunning1 20s linear infinite;
+}
+#text-head2 {
+    animation: textRunning2 20s linear infinite;
+    animation-delay: 9.93s;
 }

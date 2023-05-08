@@ -3,6 +3,9 @@ const today = new Date();
 var time = today.toLocaleTimeString();
 
 function windowLoad() {
+    taskBarVariablesLoad()
+    loadLocalStorageValue()
+
     currentTimeRunning('time-in')
     let timeIn = document.getElementById('timeIn')
     localStorage.setItem('zone3-time-stamp', timeIn.innerText)
