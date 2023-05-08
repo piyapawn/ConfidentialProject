@@ -113,8 +113,8 @@ function subnetButtonClick() {
 function scrollRevealText() {
     let bodyScroll = document.documentElement.scrollTop
 
-    let scrollText = document.getElementById('scrollTop-text')
-    scrollText.innerHTML = 'Scroll: '+ Math.floor(bodyScroll)
+    // let scrollText = document.getElementById('scrollTop-text')
+    // scrollText.innerHTML = 'Scroll: '+ Math.floor(bodyScroll)
 
     let bgImage = document.getElementById('bg-image')
 

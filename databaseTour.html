@@ -26,7 +26,7 @@
 </head>
 <body class="body" onload="windowLoad()" onscroll="scrollRevealText()">
     <div class="bg background-transparent" id="bg" onscroll="scrollRevealText()">
-        <p id="scrollTop-text" class="font-baiJamjuree font-red">Scroll</p>
+        <!-- <p id="scrollTop-text" class="font-baiJamjuree font-red">Scroll</p> -->
 
         <!-- Background Image -->
         <img id="bg-image" src="/Assets/PictureAndVdo/bg_ไม่แยก-3 พาร์ทรวมกัน (เติมแล้ว).jpg" alt="" width="100%">
@@ -496,7 +496,8 @@
         const scene1 = new ScrollMagic.Scene({
             triggerElement: '.sticky-1',
             duration: 1500,
-            triggerHook: 0
+            triggerHook: 0,
+            pushfollowers: true
         })
         .addIndicators()
         .setPin('.sticky-1')
@@ -505,7 +506,8 @@
         const scene2 = new ScrollMagic.Scene({
             triggerElement: '.sticky-2',
             duration: 2500,
-            triggerHook: 0
+            triggerHook: 0,
+            pushfollowers: true
         })
         .addIndicators()
         .setPin('.sticky-2')
