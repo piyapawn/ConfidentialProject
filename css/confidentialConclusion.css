@@ -95,6 +95,7 @@ body {
     border: none;
     transition: 0.25s;
     opacity: 0;
+    cursor: pointer;
 }
 
 /* RIGHT PRE */
@@ -666,6 +667,7 @@ button.notice-select-text::before {
     height: calc(var(--grid) * 3);
     border: 1px solid black;
     animation: 1s dotFlashing infinite step-end;
+    cursor: pointer;
 }
 #e-book-text {
     margin: 0;
