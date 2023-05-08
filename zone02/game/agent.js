@@ -68,7 +68,6 @@ function checkAns(sendBtId, quantId, unitId) {
 
     // if finish every quiz , end this zone
     if( isQuiz01Done && isQuiz02Done && isQuiz03Done) {
-        alert('its end yay!');
         endIt();
     }
 }

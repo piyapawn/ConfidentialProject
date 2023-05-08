@@ -52,7 +52,6 @@ function hideVid(contentId, score) {
     setProgress(score);
 
     if(contentId == 'content05') {
-        alert('Wow ene!')
         return;
     }
     // change hover pic & hide vid
