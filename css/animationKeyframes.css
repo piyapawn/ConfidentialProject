@@ -1,47 +1,32 @@
 /* BLACK SCREEN TO TRANSPARENT */
-@keyframes blackToTransparent {
+@keyframes whiteToTransparent {
     0% {
-        background: black;
+        background: white;
     }
     100% {
         background: transparent;
     }
 }
+/* BLACK SCREEN TO TRANSPARENT */
 
-/* SCREEN FADE BLACK */
-@keyframes fadeBlack {
+
+
+/* TEXT RUNNING */
+@keyframes textRunning1 {
     0% {
-        width:0%;
-        left:0%;
-        right:100%;
-        background: black;
-
-    }
-    45% {
-        width:100%;
-        left:0%;
-        right:100%;
-    }
-    55% {
-        width:100%;
-        left:0%;
-        right:100%;
+        transform: translateX(100%);  
     }
     100% {
-        width:0%;
-        left:100%;
-        right:0%;
-        background: black;
+        transform: translateX(-100%);
     }
 }
 
-/* TEXT RUNNING */
-@keyframes textRunning {
+@keyframes textRunning2 {
     0% {
-        transform: translateX(146%);  
+        transform: translateX(0%);  
     }
     100% {
-        transform: translateX(-146%);
+        transform: translateX(-200%);
     }
 }
 /* TEXT RUNNING */
@@ -53,7 +38,7 @@
     0% {
         background-color: var(--yellow);  
     }
-    100% {
+    50% {
         background-color: white; 
     }
 }
@@ -73,3 +58,27 @@
     }
 }
 /* TASK BUTTON FLASHING */
+
+
+
+/* FADE IN OPACITRY 0 TO 1 */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* FADE IN OPACITRY 0 TO 1 */
+
+/* FADE OUT OPACITRY 1 TO 0 */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* FADE OUT OPACITRY 1 TO 0 */

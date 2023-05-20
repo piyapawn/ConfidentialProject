@@ -1,3 +1,8 @@
+function windowLoad() {
+    taskBarVariablesLoad()
+    loadLocalStorageValue()
+}
+
 const value = 71;
 
 function selectContent(vidId, clearVidId, crContentId, nContentId) {
@@ -47,7 +52,6 @@ function hideVid(contentId, score) {
     setProgress(score);
 
     if(contentId == 'content05') {
-        alert('Wow ene!')
         return;
     }
     // change hover pic & hide vid

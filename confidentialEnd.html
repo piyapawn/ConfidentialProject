@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/animationKeyframes.css">
+    <link rel="stylesheet" href="/css/task-bar.css">
+    <link rel="stylesheet" href="/css/confidentialEnd.css">
+    <script src="/js/confidentialEnd.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/currentTime.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>Confidential End</title>
+</head>
+<body  onload="windowLoad()">
+    <div class="confidential-end-background">
+        <img src="/Assets/PictureAndVdo/confidential3/gif_eye.gif" alt="" width="100%">
+    </div>
+    <div class="confidential-end-content">
+        <div class="content-text background-white" id="left-top-content">
+            <p class="confidential-content-text font-dbHelvethaica font-blue">และเรา</p>
+        </div>
+        <div class="content-text background-white" id="middle-bottom-content">
+            <p class="confidential-content-text font-dbHelvethaica font-blue" id="middle-text">ผู้ ที่ รู้ จั ก คุ ณ ดี ที่ สุ ด</p>
+        </div>
+        <div class="content-text background-white" id="right-top-content">
+            <p class="confidential-content-text font-dbHelvethaica font-blue">กลายเป็น</p>
+        </div>
+        <button class="background-yellow font-ocrb font-blue" id="restart-button" onclick="loadHTML('index.html', 500)">RESTART</button>
+
+        <!-- Confidential End Share -->
+        <div class="confidential-end-share background-white2" id="confidential-end-share">
+            <!-- Close Content -->
+            <div class="element-close">
+                <button class="element-close-button background-transparent" onclick="closeConfidentialEndElement('share')"></button>
+            </div>
+
+            <div class="share-content">
+                <div class="share-content-left">
+                    <img src="/Assets/PictureAndVdo/confidential3/preview_share.png" alt="">
+                </div>
+                <div class="share-content-right">
+                    <p class="font-dbHelvethaica" id="share-text">
+                        ร่วมเชิญชวน
+                    <br>หาผู้มา <span class="font-superSpace font-blue">ร่วมมือ</span>
+                    <br>กับองค์กรของเรา
+                    </p>
+                    <div class="share-area">
+                        <button class="share-button background-yellow" onclick="downloadImage('/Assets/PictureAndVdo/confidential3/share.jpg')">
+                            <img src="/Assets/PictureAndVdo/confidential3/icon_dl.png" alt="">
+                        </button>
+                        <button class="share-button background-yellow" onclick="copyLink()">
+                            <img src="/Assets/PictureAndVdo/confidential3/icon_link.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confidential End E-Book -->
+        <div class="confidential-end-e-book background-white2" id="confidential-end-e-book">
+            <!-- Close Content -->
+            <div class="element-close">
+                <button class="element-close-button background-transparent" onclick="closeConfidentialEndElement('e-book')"></button>
+            </div>
+
+            <div class="e-book-content">
+                <p class="e-book-text font-dbHelvethaica">
+                    คุณยังสามารถเลือกได้
+                <br>ว่าจะทำอย่างไรกับข้อมูลในส่วนนับต่อจากนี้
+                </p>
+                <button class="background-yellow" id="e-book-button" onclick="openEbookLink()">
+                    <img src="/Assets/PictureAndVdo/confidential3/icon_confidentiall.png" alt="">
+                </button>
+                <p class="e-book-text font-dbHelvethaica">
+                    หากอยากเปลี่ยนแปลง
+                <br><span class="font-superSpace font-blue">เอกสารลับฉบับสุดท้าย</span>
+                <br>มีคำตอบให้คุณ
+                </p>
+            </div>
+        </div>
+
+        <!-- Confidential End Profile -->
+        <div class="confidential-end-profile-info background-white2" id="confidential-end-profile-info">
+            <!-- Close Content -->
+            <div class="element-close">
+                <button class="element-close-button background-transparent" onclick="closeConfidentialEndElement('profile')"></button>
+            </div>
+            <!-- Left Content -->
+            <div class="conclusion-content" id="conclusion-content-left">
+                <!-- Subject Data -->
+                <div class="subject-data">
+                    <p class="font-dbHelvethaica" id="subject-data-text">SUBJECT-DATA</p>
+                </div>
+                <!-- Employee ID -->
+                <div class="employee-id">
+                    <div class="employee-id-box" id="employee-id-box-1">
+                        <p class="employee-id-text font-dbHelvethaica" id="employee-id-text">employee id:</p>
+                    </div>
+                    <div class="employee-id-box" id="employee-id-box-2">
+                        <p class="employee-id-text font-ocrb" id="name-text">FA222</p>
+                    </div>
+                    <div class="employee-profile-pic">
+                        <img id="employee-id-profile-pic" src="/Assets/PictureAndVdo/ASCII-art (63) 3.png" alt="" height="100%">
+                    </div>
+                </div>
+                <!-- Notice -->
+                <div class="notice background-white2" id="notice">
+                    <p class="font-dbHelvethaica font-blue" id="selected-text"></p>
+                </div>
+                <!-- Time Card -->
+                <div class="time-card">
+                    <div class="time-card-topic">
+                        <p class="font-dbHelvethaica" id="time-card-topic-text">timecard :</p>
+                    </div>
+                    <div class="time-card-all-zone">
+                        <div class="time-card-box">
+                            <div class="time-card-task-zone" id="time-card-zone-1">
+                                <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-1">TASK / ZONE 1</p>
+                            </div>
+                            <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-1">IN : 00.01 AM</p>
+                            </div>
+                        </div>
+                        <div class="time-card-box">
+                            <div class="time-card-task-zone" id="time-card-zone-1">
+                                <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-2">TASK / ZONE 2</p>
+                            </div>
+                            <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-2">IN : 00.01 AM</p>
+                            </div>
+                        </div>
+                        <div class="time-card-box">
+                            <div class="time-card-task-zone" id="time-card-zone-1">
+                                <p class="time-card-task-zone-text font-dbHelvethaica" id="time-card-text-zone-3">TASK / ZONE 3</p>
+                            </div>
+                            <div class="time-stamp-zone" id="time-stamp-zone-1">
+                                <p class="time-stamp-zone-text font-dbHelvethaica" id="time-stamp-text-zone-3">IN : 00.01 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="conclusion-content" id="conclusion-content-right">
+                <!-- Categories -->
+                <div class="categories-and-human-gif">
+                    <div class="categories">
+                        <div class="category-topic">
+                            <p class="category-topic-text font-dbHelvethaica">categories : </p>
+                        </div>
+                        <div class="category-box">
+                            <p class="category-box-text font-dbHelvethaica font-blue">สนใจการพัฒนาตัวเอง</p>
+                        </div>
+                        <div class="category-box">
+                            <p class="category-box-text font-dbHelvethaica font-blue">การสร้างสรรค์สิ่งใหม่ๆ</p>
+                        </div>
+                    </div>
+                    <div class="human-gif">
+                        <img id="human-gif" src="/Assets/PictureAndVdo/confidential3/gif_ascii-profile.gif" alt="">
+                    </div>
+                </div>
+                <div class="categories-info">
+                    <div class="categories-info-text-wrap">
+                        <p class="categories-info-text font-baiJamjuree font-blue" id="categories-info-text">
+                            เป็นคนที่มักใช้สัญชาตญาณ มีความคิด
+                        <br>สร้างสรรค์ รักอิสระ มีความคิดที่อยาก
+                        <br>เปลี่ยนสังคม เป็นคนที่ช่างดูแลเอาใจใส่
+                        <br>มีความรับผิดชอบ และชอบให้กำลังใจผู้อื่น
+                        </p>
+                        <div class="text-line" id="line-1"></div>
+                        <div class="text-line" id="line-2"></div>
+                        <div class="text-line" id="line-3"></div>
+                        <div class="text-line" id="line-4"></div>
+                    </div>
+                </div>
+            </div>                
+        </div>
+
+    </div>
+
+    <div class="confidential-end-footer">
+        <div class="bottom-content background-white" id="bottom-content">
+            <button class="bottom-content-button background-white" id="bottom-content-left" onclick="openConfidentialEndElement('share')">
+                <div class="circle-dot background-yellow"></div>
+                <p class="bottom-content-text font-dbHelvethaica font-blue">บอกต่อสิ่งนี้</p>
+            </button>
+            <button class="bottom-content-button background-white" id="bottom-content-middle" onclick="openConfidentialEndElement('e-book')">
+                <div class="circle-dot background-yellow"></div>
+                <p class="bottom-content-text font-dbHelvethaica font-blue">หากคุณอยากเปลี่ยนแปลง :</p>
+            </button>
+            <button class="bottom-content-button background-white" id="bottom-content-right" onclick="openConfidentialEndElement('profile')">
+                <div class="circle-dot background-yellow"></div>
+                <p class="bottom-content-text font-dbHelvethaica font-blue">ข้อมูลของคุณ</p>
+            </button>
+        </div>
+        <!-- TEXT RUNNING -->
+        <div class="bottom-text-run background-black" id="bottom-text-run">
+            <div class="font-ocrb font-yellow" id="text-head1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+            <div class="font-ocrb font-yellow" id="text-head2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+        </div>
+    </div>
+</body>
+</html>

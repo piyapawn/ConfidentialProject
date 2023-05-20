@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/animationKeyframes.css">
+    <link rel="stylesheet" href="/css/task-bar.css">
+    <link rel="stylesheet" href="/css/confidential.css">
+    <script src="/js/confidential.js"></script>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/currentTime.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>Confidential</title>
+</head>
+<body class="background-dark-grey" onload="windowLoad()">
+    <!-- Left Nav -->
+    <div class="task-space background-dark-grey"></div>
+    <div class="all-content-area">
+        <!-- Top Nav -->
+        <div class="top-nav background-dark-grey">
+            <div class="top-nav-all-text" id="top-nav-left">
+                <p class="top-nav-text font-dbHelvethaica font-yellow">: ACCESS_CONFIDENTIAL</p>
+            </div>
+            <div class="top-nav-all-text" id="top-nav-middle">
+                <p class="top-nav-text font-dbHelvethaica font-white">EMPLOYEE ID. fa554635</p>
+            </div>
+            <div class="top-nav-all-text" id="top-nav-right">
+                <p class="top-nav-text time-text font-dbHelvethaica font-white" id="time-text"></p>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="left-content background-dark-grey">
+                <div class="left-top-content">
+                    <div class="confidential-text-area">
+                        <p class="confidential-text font-ocrb font-yellow">CONFIDENTIAL</p>
+                    </div>
+                    <div class="confidential-change-page">
+                        <div class="confidential-page-number-area">
+                            <div class="confidential-page-number-box background-white2">
+                                <p class="font-ocrb font-blue" id="page-number-text">01</p>
+                            </div>
+                        </div>
+                        <div class="change-page-arrow-area">
+                             <button class="confidential-page-arrow-button background-yellow" id="arrow-left-button" onclick="changePage('left')" disabled>
+                                <img class="arrow-image" id="arrow-left-blue" src="/Assets/PictureAndVdo/confidential1/button_leftblue.png" alt="">
+                                <img class="arrow-image" id="arrow-left-grey" src="/Assets/PictureAndVdo/confidential1/button_leftgrey.png" alt="">
+                            </button>
+                             <button class="confidential-page-arrow-button background-yellow" id="arrow-right-button" onclick="changePage('right')" >
+                                <img class="arrow-image" id="arrow-right-blue" src="/Assets/PictureAndVdo/confidential1/button_rightblue.png" alt="">
+                                <img class="arrow-image" id="arrow-right-grey" src="/Assets/PictureAndVdo/confidential1/button_rightgrey.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-bottom-content">
+                    <div class="subject-text-area">
+                        <p class="font-dbHelvethaica font-white2" id="subject-text">subject :</p>
+                    </div>
+                    <div class="postit">
+
+                        <!-- POST IT CONFIDENTIAL 1 -->
+                        <div class="postit-area confidential-1" id="postit-area-con-1">
+                            <div class="postit-note" id="postit-note-con-1" onmouseover="postItHover()" onmouseout="postItOut()">
+                                <div class="postit-paper-corner"></div>
+                                <div class="postit-paper background-yellow">
+                                    <div class="postit-paper-text-wrap">
+                                        <p class="postit-paper-text font-dbHelvethaica font-blue">case ที่ได้รับ</p>
+                                        <p class="postit-paper-text font-dbHelvethaica font-blue">ผลกระทบทางลบ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="postit-info">
+                                <p class="postit-info-text font-dbHelvethaica font-white">แม้ว่าการทำงานของพวกเรา</p>
+                                <p class="postit-info-text font-dbHelvethaica font-white">จะมีความแม่นยำมาก</p>
+                                <p class="postit-info-text font-dbHelvethaica font-white">แต่ก็ยังคงมีกรณีที่เกิดความผิดพลาด</p>
+                                <p class="postit-info-text font-dbHelvethaica font-white">เราจึงต้องเก็บสิ่งเหล่านี้เป็นความลับ</p>
+                                <p class="postit-info-text font-dbHelvethaica font-white">เพื่อไม่ให้ผู้คนสงสัยการมีอยู่ของพวกเรา</p>
+                            </div>
+                        </div>
+
+                        <!-- POST IT CONFIDENTIAL 2 -->
+                        <div class="postit-area confidential-2" id="postit-area-con-2">
+                            <div class="postit-note" id="postit-note-con-2">
+                                <div class="postit-paper-corner"></div>
+                                <div class="postit-paper background-yellow">
+                                    <div class="postit-paper-text-wrap">
+                                        <p class="postit-paper-text font-dbHelvethaica font-blue">Q & A เรื่องที่คุณ</p>
+                                        <p class="postit-paper-text font-dbHelvethaica font-blue">อยากรู้</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="postit-info">
+                                <!-- ANSWER 1 -->
+                                <div class="postit-answer" id="answer-1">
+                                    <button class="close-button background-transparent" id="close-button-1" onclick="closeAnswer(1)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            ในส่วนของการเก็บรวบรวมและ
+                                        <br>ขายข้อมูลส่วนบุคคลจะไม่มี
+                                        <br>ความผิด หากมีการขอความ -
+                                        <br>ยินยอมจากเจ้าของข้อมูลและ
+                                        <br>สามารถเก็บเพียงเท่าที่จําเป็น
+                                        <br>เหมาะสม และเกี่ยวข้องกับ
+                                        <br>วัตถุประสงค์ที่เก็บเท่านั้น
+                                        <br>ตามกฎหมาย PDPA
+                                        <br>
+                                        <br>แต่ในส่วนของการ Weave
+                                        <br>หรือควบคุมสิ่งที่ผู้คนบริโภคนั้น
+                                        <br>ยังคงเป็นพื้นที่สีเทา
+                                        <br>ไม่มีกฎหมายรองรับ จำกัด
+                                        <br>หรือบังคับให้มีความโปร่งใส
+                                        <br>ทั้งๆที่ส่วนนี้สามารถส่งผล
+                                        <br>กระทบต่อสังคมวงกว้างได้
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- ANSWER 2 -->
+                                <div class="postit-answer" id="answer-2">
+                                    <button class="close-button background-transparent" id="close-button-2" onclick="closeAnswer(2)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            สิ่งที่ทำหน้าที่ weave เนื้อหา
+                                        <br>ให้ปรากฎบนหน้า timeline
+                                        <br>ของ social media เรียกว่า
+                                        <br>“algorithms” หรือชุดคำสั่ง
+                                        <br>ที่แสดงวิธีการทำงาน
+                                        <br>มักจะเป็นรูปแบบทาง
+                                        <br>คณิตศาสตร์และถูกแปล
+                                        <br>ออกมาเป็น code คอมพิวเตอร์
+                                        <br>
+                                        <br>เป็นผู้อยู่เบื้องหลังการ weave
+                                        <br>ทุกอย่างในโลกออนไลน์
+                                        <br>เช่นการจัดลำดับการค้นหาจาก
+                                        <br>google, จัดประเภทเราให้
+                                        <br>เหมาะกับโฆษณา, หาความ
+                                        <br>-เชื่อมโยงระหว่างเรากับ
+                                        <br>สินค้าต่างๆหรือแม้แต่คู่เดทเพื่อ
+                                        <br>แนะนำให้กับเรา แม้กระทั่ง
+                                        <br>การเลือกเส้นทางที่ใกล้ทีสด 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- ANSWER 3 -->
+                                <div class="postit-answer" id="answer-3">
+                                    <button class="close-button background-transparent" id="close-button-3" onclick="closeAnswer(3)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            จากงานวิจัยปี 2022 ของ
+                                        <br>mobile marketing company
+                                        <br>URL Genius พบว่า youtube
+                                        <br>และ tiktok เก็บข้อมูลส่วนตัว
+                                        <br>ของผู้ใช้มากกว่า platform อื่นๆ
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- ANSWER 4 -->
+                                <div class="postit-answer" id="answer-4">
+                                    <button class="close-button background-transparent" id="close-button-4" onclick="closeAnswer(4)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            social media ส่วนใหญ่ไม่ได้
+                                        <br>ขายข้อมูลให้กับนักการตลาด
+                                        <br>แต่พวกเขาขายการเข้าถึง
+                                        <br>ตัวคุณ เพื่อใช่สำหรับ targeted
+                                        <br>advertising (การส่งโฆษณา 
+                                        <br>แบบ เจาะจงบุคคล)
+                                        <br>ยกเว้น twitter ที่นโยบาย
+                                        <br>ความเป็นส่วนตัวได้ระบุว่า
+                                        <br>“อาจแบ่งปัน ขายหรือ
+                                        <br>เคลื่อนย้ายข้อมูลเกี่ยวกับคุณ
+                                        <br>เนื่องจากการควบรวมกิจการ
+                                        <br>การเข้าซื้อกิจการ การขาย
+                                        <br>ทรัพย์สิน หรือการล้มละลาย”
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- ANSWER 5 -->
+                                <div class="postit-answer" id="answer-5">
+                                    <button class="close-button background-transparent" id="close-button-5" onclick="closeAnswer(5)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            google เป็นบริษัทที่รวบรวม
+                                        <br>ข้อมูลไวมากที่สุดในโลก
+                                        <br>หากคุณเข้าสู่โลกออนไลน์
+                                        <br>มีโอกาสที่คุณกำลังใช้ผลิตภัณฑ์
+                                        <br>ของ google (ไม่ว่าจะรู้ตัวหรือ
+                                        <br>ไม่ก็ตาม) ด้วยผลิตภัณฑ์และ
+                                        <br>บริการมากกว่า 79 อย่าง
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- ANSWER 6 -->
+                                <div class="postit-answer" id="answer-6">
+                                    <button class="close-button background-transparent" id="close-button-6" onclick="closeAnswer(6)"></button>
+                                    <div class="blue-circle background-blue"></div>
+                                    <div class="postit-answer-text-area">
+                                        <p class="postit-answer-text font-baiJamjuree font-white">
+                                            facebook ออกมาเปิดเผยว่า
+                                        <br>พวกเขาไม่ได้เปิดใช้งาน
+                                        <br>ไมโครโฟนบนโทรศัพท์ของเรา
+                                        <br>แต่ข้อมูลที่มากมายทำให้
+                                        <br>โฆษณาเจาะจงจนเหมือนว่า
+                                        <br>พวกเขาดักฟัง และกลายเป็น
+                                        <br>ทฤษฎีสมคบคิดที่ผู้คนเชื่อกัน
+                                        <br>มากมาย
+                                        <br>
+                                        <br>และเพื่อเป็นการยืนยันสิ่งนี้
+                                        <br>ในปี 2019 ผู้เชี่ยวชาญด้าน cyber
+                                        <br>security จาก wandera
+                                        <br>ได้ทำการทดลองวางโทรศัพท์
+                                        <br>2 เครื่องไว้ในห้องที่ไร้เสียง
+                                        <br>และทำการเปิดเสียงโฆษณา
+                                        <br>อาหารสัตว์เลี้ยงวนเป็นเวลา 
+                                        <br>30 นาที และได้ทำการเปิดใช้
+                                        <br>แอปพลิเคชันต่างๆรวมถึง
+                                        <br>อนุญาตทุกรายการ
+                                        <br>และทำการทดลองซ้ำเป็นเวลา
+                                        <br>3 วัน ข้อสรุปคือพวกเขา 
+                                        <br>ไม่พบ โฆษณาอาหารสัตว์เลี้ยง
+                                        <br>ในแอปพลิเคชันใดเลย
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="right-content background-dark-grey">
+                <!-- TEXT RUNNING -->
+                <div class="head background-white" id="right-top-text-run">
+                    <div class="font-ocrb font-blue" id="text-head1">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
+                    <div class="font-ocrb font-blue" id="text-head2">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
+                </div>
+                <div class="right-bottom-content" id="right-bottom-content">
+                    <!-- RIGHT CONTENT CONFIDENTIAL 1 -->
+                    <div class="right-content-area confidential-1">
+                        <div class="right-content-background background-grid-grey2"></div>
+                        <div class="blue-text-box" id="blue-text-box-con1">
+                            <img src="/Assets/PictureAndVdo/confidential1/box_คลิกเพื่อดูรายละเอียด.png" alt="" width="100%">
+                        </div>
+
+                        <!-- CASE BOX 1 -->
+                        <button class="back-button background-transparent" id="back-button-1" onclick="clickBackButton(1)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-1" onmouseover="caseboxHover(1)" onmouseout="caseboxOut(1)" onclick="clickCasebox(1)">
+                            <div class="case-box-header" id="case-box-header-1">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-1">CASE 01</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-1">
+                                    <p class="case-topic-text text-1 font-dbHelvethaica">จำนวนการระบาดโรคหัดที่สูงขึ้น</p>
+                                    <p class="case-topic-text text-1 font-dbHelvethaica">เพราะการเผยแพร่ข้อมูลปลอมในปี 2014</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-1">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-1" src="/Assets/PictureAndVdo/confidential1/ele_topic1.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        เหตุการณ์นี้เกิดขึ้นในเมือง California ปี 2014
+                                    <br>หนึ่งในสาเหตุการแพร่ระบาดคือความกังวล
+                                    <br>ที่สูงมากในหมู่ผู้ปกครองเกี่ยวกับ
+                                    <br>ประสิทธิภาพและผลข้างเคียงของการฉีดวัคซีน
+                                    <br><b>องค์กรที่ไม่สนับสนุนการฉีดวัคซีนและบุคคล
+                                    <br>ที่มีชื่อเสียงได้เผยแพร่ข้อมูลที่ผิดและ
+                                    <br>ความหวาดกลัว</b> ทำให้ผู้คนที่รับแต่ข้อมูลฝั่งนี้
+                                    <br>ไม่รับการฉีดวัคซีน ส่งผลให้อัตราการฉีดวัคซีนต่ำ
+                                    <br>นำไปสู่จำนวนคนที่ติดเชื้อหัด
+                                    <br>(ที่สามารถป้องกันได้ง่าย) สูงมากขึ้น
+                                    <br>
+                                    <br>ปรากฎการณ์นี้เรียกว่า<b> Filter Bubble หรือ
+                                    <br>"ฟองสบู่ตัวกรอง"</b> คือการที่ผู้ใช้ social media
+                                    <br>ติดอยู่แต่ในโลกของตัวเอง
+                                    <br>ติดอยู่ในฟองสบู่ที่มีแต่เรื่องที่เราสนใจและ
+                                    <br>เห็นดีเห็นงามด้วย
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CASE BOX 2 -->
+                        <button class="back-button background-transparent" id="back-button-2" onclick="clickBackButton(2)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-2" onmouseover="caseboxHover(2)" onmouseout="caseboxOut(2)" onclick="clickCasebox(2)">
+                            <div class="case-box-header" id="case-box-header-2">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-2">CASE 02</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-2">
+                                    <p class="case-topic-text text-2 font-dbHelvethaica">Facebook ร่วมมือกับนักวิจัยในการ</p>
+                                    <p class="case-topic-text text-2 font-dbHelvethaica">manipulate timeline ของผู้ใช้</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-2">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-2" src="/Assets/PictureAndVdo/confidential1/ele_topic2.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        Facebook ร่วมมือกับนักวิจัยในการ <b>manipulate
+                                    <br>timeline ของผู้ใช้ราว 700,000 บัญชีโดยสุ่ม</b>
+                                    <br>เพื่อการศึกษาทางจิตวิทยาว่าจำนวนของคำ
+                                    <br>ในแง่ลบและบวกในข้อความที่ผู้ใช้อ่านจะสามารถ
+                                    <br>ชี้แนวโน้มที่พวกเขาจะแชร์เนื้อหาในแง่ลบหรือบวก
+                                    <br>หรือไม่ใน status ของพวกเขา
+                                    <br>
+                                    <br>นำไปสู่ความไม่พอใจและบังคับให้บริษัท
+                                    <br>โซเชียลยักษ์ใหญ่นี้ต้องออกมาป้องกันตัวเอง
+                                    <br>พวกเขาออกมากกล่าวในคำแถลงว่าข้อมูลที่นำมาใช้
+                                    <br>ไม่ได้เกี่ยวข้องกับบัญชีผู้ใช้ของคนใดคนหนึ่ง
+                                    <br>โดยเฉพาะเจาะจง พวกเขาทำการวิจัยเพื่อพัฒนา
+                                    <br>บริการและสร้างเนื้อหาที่ผู้คนเห็นบน facebook
+                                    <br>ให้มีความเกี่ยวข้อง และรู้สึกมีส่วนร่วม
+                                    <br>เท่าที่จะเป็นไปได้
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CASE BOX 3 -->
+                        <button class="back-button background-transparent" id="back-button-3" onclick="clickBackButton(3)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-3" onmouseover="caseboxHover(3)" onmouseout="caseboxOut(3)" onclick="clickCasebox(3)">
+                            <div class="case-box-header" id="case-box-header-3">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-3">CASE 03</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-3">
+                                    <p class="case-topic-text text-3 font-dbHelvethaica">การทดลองว่า search engine มีผลต่อ</p>
+                                    <p class="case-topic-text text-3 font-dbHelvethaica">การเปลี่ยนมุมมองของเราต่อโลกหรือไม่</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-3">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-3" src="/Assets/PictureAndVdo/confidential1/ele_topic3.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        ในปี 2015 นักวิทยาศาสตร์ได้เริ่มต้นทดสอบว่า
+                                    <br>search engine เช่น google มีอำนาจในการ
+                                    <br>เปลี่ยนมุมมองของเราต่อโลกอย่างไร นำโดย
+                                    <br>Robert Epstein ได้จัดหาคน 2150 คนที่ยังไม่ได้
+                                    <br>ตัดสินใใจว่าจะเลือกใคร และให้พวกเขาใช้
+                                    <br>search engine ที่ทำขึ้นมาพิเศษที่เรียกว่า
+                                    <br>Kadoodle เพื่อให้ข้อมูลเกี่ยวกับผู้ลงสมัคร
+                                    <br>ก่อนตัดสินใจ <b>โดยทำให้ Kadoodle มีความ
+                                    <br>ไม่เป็นกลาง และผู้เข้าทำการทดลองไม่ทราบ</b>
+                                    <br>
+                                    <br>ผู้เข้าร่วมใช้เวลาส่วนใหญ่ของพวกเขาอ่านเว็บไซต์
+                                    <br>ที่อยู่บนสุดของหน้าแรก แทบจะไม่มีใคร
+                                    <br>ให้ความสนใจกับ link ที่อยู่ในรายการล่างๆ
+                                    <br><b>หลังจากนี้พวกเขาได้ใช้ search engine นี้
+                                    <br>ในเวลาเพียง 3-4 นาที ผู้เข้าร่วม 12%
+                                    <br>ตอบว่าพวกเขามีแนวโน้มที่จะเลือกผู้ลงสมัครที่
+                                    <br>kadoodle ลำเอียง</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CASE BOX 4 -->
+                        <button class="back-button background-transparent" id="back-button-4" onclick="clickBackButton(4)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-4" onmouseover="caseboxHover(4)" onmouseout="caseboxOut(4)" onclick="clickCasebox(4)">
+                            <div class="case-box-header" id="case-box-header-4">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-4">CASE 04</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-4">
+                                    <p class="case-topic-text text-4 font-dbHelvethaica">การใช้ algorithm เพื่อวิเคราะห์ว่า</p>
+                                    <p class="case-topic-text text-4 font-dbHelvethaica">ลูกค้าคนไหนกำลังตั้งครรภ์ของ target</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-4">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-4" src="/Assets/PictureAndVdo/confidential1/ele_topic4.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        การใช้ algorithm เพื่อวิเคราะห์ว่าลูกค้าคนไหน
+                                    <br>กำลังตั้งครรภ์ของ target ในปี 2002
+                                    <br>target จะ<b>ใช้ algorithm ให้คะแนนว่าลูกค้าผู้หญิง
+                                    <br>คนไหนที่มีแนวโน้มจะตั้งครรภ์ผ่านเว็บไซต์ของ
+                                    <br>พวกเขา</b> หากคะแนนความเป็นไปได้ผ่านเกณฑ์
+                                    <br>ร้านค้าจะส่งคูปองโดยอัตโนมัติไปให้ผู้หญิงคนนั้น
+                                    <br>ซึ่งเป็นคูปองสินค้าที่เกี่ยวข้องกับการตั้งครรภ์
+                                    <br>
+                                    <br>ผลปรากฎว่ามีกรณีที่ target ทราบว่าลูกสาวของ
+                                    <br>ครอบครัวหนึ่งกำลังตั้งครรภ์ก่อนพ่อแม่ของเธอ
+                                    <br>เสียอีก ซึ่งในทีแรกพ่อของเด็กหญิงคนนั้นได้มา
+                                    <br>ร้องเรียนว่าทำไม target ถึงส่งคูปองสิ่งของ
+                                    <br>เกี่ยวกับการตั้งครรภ์ให้ลูกของเขา ด้วยความกังวล
+                                    <br>ว่าเป็นการสนับสนุนการท้องก่อนวัยอันควร
+                                    <br>หรือเปล่า และเขาก็ได้กลับมาขอโทษบริษัท
+                                    <br>เมื่อพบว่า<b>ลูกของเขาตั้งครรภ์จริงๆ</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CASE BOX 5 -->
+                        <button class="back-button background-transparent" id="back-button-5" onclick="clickBackButton(5)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-5" onmouseover="caseboxHover(5)" onmouseout="caseboxOut(5)" onclick="clickCasebox(5)">
+                            <div class="case-box-header" id="case-box-header-5">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-5">CASE 05</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-5">
+                                    <p class="case-topic-text text-5 font-dbHelvethaica">งานวิจัยพบว่า google ส่งโฆษณางาน</p>
+                                    <p class="case-topic-text text-5 font-dbHelvethaica">รายได้สูงให้แก่ผู้หญิงน้อยกว่าผู้ชาย</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-5">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-5" src="/Assets/PictureAndVdo/confidential1/ele_topic5.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        <b>ทีมวิจัยจาก Carnegie Mellon ได้สร้างการ
+                                    <br>ทดสอบซอฟต์แวร์ที่เรียกว่า Adfisher</b>
+                                    <br>ที่ทำหน้าที่เสมือนเป็นผู้หางานเพศชายและหญิง
+                                    <br>โปรไฟล์ทั้ง 17,370 ของพวกเขาทำการเข้าชม
+                                    <br>เฉพาะเว็บไซต์หางานเท่านั้น และพบเจอโฆษณา
+                                    <br>ทั้งหมด 600,000 โฆษณาที่ทีมได้ทำการ
+                                    <br>บันทึกและวิเคราะห์
+                                    <br>
+                                    <br>จากการทดลองหนึ่งแสดงให้เห็นว่า google
+                                    <br>ได้แสดงโฆษณาอาชีพ career coaching service
+                                    <br>รายได้ "200k $" ถึง <b>1852 ครั้งให้แก้ผู้ชาย
+                                    <br>และแสดงเพียง 318 ครั้งให้กับกลุ่มผู้หญิง</b>
+                                    <br>จึงทำให้เห็นว่าการเจาะจงเป้าหมายของ
+                                    <br>โฆษณางานเหล่านี้มีการเลือกปฏิบัติ
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CASE BOX 6 -->
+                        <button class="back-button background-transparent" id="back-button-6" onclick="clickBackButton(6)">
+                            <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
+                        </button>
+                        <div class="case-box background-white2" id="case-box-6" onmouseover="caseboxHover(6)" onmouseout="caseboxOut(6)" onclick="clickCasebox(6)">
+                            <div class="case-box-header" id="case-box-header-6">
+                                <div class="case-num">
+                                    <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-6">CASE 06</p>
+                                </div>
+                                <div class="case-topic" id="case-topic-6">
+                                    <p class="case-topic-text text-6 font-dbHelvethaica">มูลนิธิให้การช่วยเหลือผู้ติดการพนันถูก block</p>
+                                    <p class="case-topic-text text-6 font-dbHelvethaica">ในขณะที่โฆษณาการเล่นพนันได้รับการอนุมัติ</p>
+                                </div>
+                            </div>
+                            <div class="case-box-inner" id="case-box-inner-6">
+                                <div class="case-box-pic">
+                                    <img class="case-box-image" id="case-box-image-6" src="/Assets/PictureAndVdo/confidential1/ele_topic6.png" alt="">
+                                </div>
+                                <div class="case-box-info">
+                                    <p class="case-box-info-text font-baiJamjuree">
+                                        มูลนิธิ Victorian Responsible Gambling
+                                    <br>กล่าวว่า <b>บริการของพวกเขาถูกระงับบน google
+                                    <br>ท่ามกลางการเพิ่มขึ้นของโฆษณาการพนันและ
+                                    <br>การร่วมมือกันระหว่าง Sportsbet และ Tiktok</b>
+                                    <br>
+                                    <br>มูลนิธิดังกล่าวได้โฆษณาบริการบําบัดของพวกเขา
+                                    <br>ด้วยแคมเปญ 'Gambler's help' ซึ่งโดนบล็อก
+                                    <br>โดยอัตโนมัติจาก google พวกเขาได้ออกมาปะทะ
+                                    <br>ว่าโปรแกรมที่ช่วยลดอันตรายของพวกเขา
+                                    <br>ไม่ถูกแยกออกจากข้อเสนอและโปรโมชั่นจาก
+                                    <br>อุตสาหกรรมการพนัน
+                                    <br>ความกังวลของมูลนิธิคือการที่โฆษณาเชิญชวน
+                                    <br>การเล่นพนันถูกแสดงให้ผู้ที่มีความเสี่ยงเสพติด
+                                    <br>การพนันพบเห็นในขณะที่โฆษณาเพื่อช่วยเหลือ
+                                    <br>คนเหล่านี้กลับถูกบล็อก ปัญหานี้ได้ยืดเยื้อ
+                                    <br>เป็นเวลาหลายปี ทําให้ทางมูลนิธิตัดสินใจที่จะ
+                                    <br>ไม่ซื้อบริการโฆษณาจาก google อีกต่อไป
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="font-dbHelvethaica font-blue" id="many-more-text">and many more ...</p>
+                    </div>
+
+                    <!-- RIGHT CONTENT CONFIDENTIAL 2 -->
+                    <div class="right-content-area confidential-2">
+                        <div class="right-content-background background-grid-grey2"></div>
+                        <div class="down-arrow">
+                            <img src="/Assets/PictureAndVdo/confidential2/ele_whitearrow.png" alt="" width="100%">
+                        </div>
+                        <div class="quiz-zone-wrap">
+                            <div class="blue-text-box" id="blue-text-box-con2-1">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_คุณรู้คำตอบ.png" alt="" width="100%">
+                            </div>
+                            <div class="blue-text-box" id="blue-text-box-con2-2">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_คลิกที่คำถาม.png" alt="" width="100%">
+                            </div>
+
+                            <button class="quiz-box background-transparent" id="quiz-1" onclick="openQuiz(1)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q1.png" alt="" width="100%">
+                            </button>
+                            <button class="quiz-box background-transparent" id="quiz-2" onclick="openQuiz(2)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q2.png" alt="" width="100%">
+                            </button>
+                            <button class="quiz-box background-transparent" id="quiz-3" onclick="openQuiz(3)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q3.png" alt="" width="100%">
+                            </button>
+                            <button class="quiz-box background-transparent" id="quiz-4" onclick="openQuiz(4)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q4.png" alt="" width="100%">
+                            </button>
+                            <button class="quiz-box background-transparent" id="quiz-5" onclick="openQuiz(5)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q5.png" alt="" width="100%">
+                            </button>
+                            <button class="quiz-box background-transparent" id="quiz-6" onclick="openQuiz(6)">
+                                <img src="/Assets/PictureAndVdo/confidential2/box_q6.png" alt="" width="100%">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT CONTENT CONFIDENTIAL 3 PRE -->
+                    <div class="right-content-area confidential-3">
+                        <div class="right-content-background background-grid-grey2"></div>
+                        <label class="toggle">
+                            <input class="toggle-button" type="checkbox" onclick="loadHTML('confidentialConclusion.html', 500)">
+                            <span class="slider-circle"></span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+    <!-- Task Button -->
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+    <!-- TASK BAR -->
+    <div class="task-bar background-white1" id="task-bar">
+        <!-- TASK ROW 1 -->
+        <div class="task-row1">
+            <div class="task-col1">
+                <div id="employee-element">
+                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                </div>   
+            </div>
+            <div class="task-col2">
+                <div id="username-show-element">
+                    <p class="font-dbHelvethaica" id="username-text"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- TASK ROW 2 -->
+        <div class="task-row2 background-white1">
+            <!-- Database Tour -->
+            <div class="task-topics" id="database-tour">
+                <div class="square-check background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                </div>
+            </div>
+            <!-- Tasks -->
+            <div class="task-topics" id="tasks">
+                <p class="font-ocrb" id="tasks-text">TASKS</p>
+            </div>
+            <!-- Zone 1 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 01 : WORLD</p>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 02 : WIDE</p>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">ZONE 03 : WEAVE</p>
+                </div>
+            </div>
+            <!-- Confidential Zone -->
+            <div class="task-topics zone">
+                <div class="square-check background-blue"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-grey2">CONFIDENTIAL ZONE</p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 2 -->
+
+        <!-- TASK ROW 3 -->
+        <div class="task-row3">
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- ABOUT -->
+        <div class="task-hidden-about background-white1">
+            <div class="about-info-row1">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" al width="100%"t="">
+                </button>
+            </div>
+            <div class="about-info-row2">
+                <p class="font-baiJamjuree about-info-text">
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                </p>
+            </div>
+            <div class="about-info-row3">
+                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            </div>
+        </div>
+        <!--/ ABOUT -->
+    </div>
+    <!--/ TASK BAR -->
+
+    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+</body>
+</html>

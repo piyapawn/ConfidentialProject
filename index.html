@@ -6,52 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/colors.css">
     <link rel="stylesheet" href="/css/animationKeyframes.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/loadPage.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/intro.css">
+    <script src="/js/intro.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>Intro</title>
 </head>
-<body>
+<body class="background-black" onload="windowLoadSection()">
     <!-- START Intro Pages -->
-    <div class="page page1" id="intro1">
-        <a href="#intro2" id="firstText" onclick='loadPage("intro2", "intro1")'>( find the access )</a>
-    </div>
 
-    <div class="page page2" id="intro2">
+    <!-- Intro 1 -->
+    <div class="page page1 background-white" id="intro1">
+        <p class="font-ocrb font-blue" id="firstText">( find the access )</p>
         <div id="imgBg">
-            <img id="intro2Bg" src="/Assets/Picture and Vdo/bg_intro.png" alt="">
+            <img class="intro1-bg" id="intro1-pic" src="/Assets/PictureAndVdo/bg_intro.png" alt="">
+            <img class="intro1-bg" id="intro1-gif" src="/Assets/PictureAndVdo/gif_intro.gif" alt="">
             <div id="accessText">
-                <button id="accessButton" onclick='loadPage("intro3", "intro2"), activeFade()'>access("www")</button>
+                <button class="background-white font-ocrb font-blue" id="accessButton" onclick='loadPage("intro1", "intro2"), activeFade()'>
+                    access("www")
+                </button>
             </div>
         </div>
-        <div class="light"></div>
+        <div class="light" id="light"></div>
     </div>
+    <!--/ Intro 1 -->
 
-    <div class="fade" id="fadingEffect"></div>
-
-    <div class="page page3" id="intro3">
-        <section id="sec1">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+    <!-- Intro 2 -->
+    <div class="page page2" id="intro2" onscroll="intro2Scroll()">
+        <section class="background-black" id="intro2-sec1">
+            <h3 class="text1Intro2 font-dbHelvethaica font-yellow" id="text1Intro2">ในโลกอินเตอร์เน็ต</h3>
         </section>
-        <section id="sec2">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="intro2-section background-black" id="intro2-sec2">
+            <div class="sec2-all-text-boxes background-blue" id="sec2-textBox1">
+                <p class="sec2-all-text font-dbHelvethaica font-white" id="sec2-text1"></p>
+            </div>
+            <div class="sec2-all-text-boxes background-blue" id="sec2-textBox2">
+                <p class="sec2-all-text font-dbHelvethaica font-white" id="sec2-text2"></p>
+            </div>
         </section>
-        <section id="sec3">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="intro2-section background-black" id="intro2-sec3">
+            <div class="sec3-all-text-boxes background-blue" id="sec3-textBox1">
+                <p class="sec3-all-text font-dbHelvethaica font-white" id="sec3-text1"></p>
+            </div>
+            <div class="sec3-all-text-boxes background-blue" id="sec3-textBox2">
+                <p class="sec3-all-text font-dbHelvethaica font-white" id="sec3-text2"></p>
+            </div>
         </section>
-        <section id="sec4">
-            <h3 id="text1Intro3">ในโลกอินเตอร์เน็ต</h3>
+        <section class="intro2-section background-black" id="intro2-sec4">
+            <div class="sec4-all-text-boxes background-blue" id="sec4-textBox1">
+                <p class="sec4-all-text font-dbHelvethaica font-white" id="sec4-text1"></p>
+            </div>
         </section>
-        <img id="scroll-white" src="/Assets/Picture and Vdo/scroll_white.png" alt="">
+        <section class="intro2-section background-black" id="intro2-sec5"></section>
+        <img id="scroll-white" src="/Assets/PictureAndVdo/scroll_white.png" alt="">
     </div>
+    <!--/ Intro 2 -->
+
+    <!-- Intro 3 -->
+    <div class="page page3" id="intro3" style="display: inline-block; opacity: 1;">
+        <section class="background-white" id="intro3-sec1">
+            <img class="intro1-bg" src="/Assets/PictureAndVdo/bg_intro.jpg" alt="">
+        </section>
+        <section class="background-white" id="intro3-sec2">
+            <div class="intro3-row1">
+                <div class="col1">
+                    <div class="w-header">
+                        <p class="w-text font-dbHelvethaica" id="w-1">W</p>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="w-header">
+                        <p class="w-text font-dbHelvethaica" id="w-2">W</p>
+                        <p class="w-text font-dbHelvethaica" id="w-3">W</p>
+                    </div>
+                    <div class="intro3-space"></div>
+                    <div class="intro3-content">
+                        <div class="intro3-sub-content" id="sub-content1">
+                            <p class="font-dbHelvethaica content-text">คุณยินยอมที่จะ</p>
+                        </div>
+                        <div class="intro3-sub-content" id="sub-content2">
+                            <p class="font-dbHelvethaica font-grey2 content-text">
+                                ให้เราสามารถติดตามและเก็บรวมรวบข้อมูล</br>จากบราวเซอร์ของคุณและส่งกลับไปยังองค์กรของเรา
+                            </p>
+                            <img id="accept-gif" src="/Assets/PictureAndVdo/accept.gif" alt="" width="364.63" height="62.4px">
+                        </div>
+                        <div class="intro3-sub-content" id="sub-content3">
+                            <p class="font-dbHelvethaica content-text">ร่วมมือกับองค์กรของเราหรือไม่</p>
+                            <button class="background-transparent" id="button-reveal" onclick="revealButtonClick()">
+                                <img id="pic-reveal" src="/Assets/PictureAndVdo/button_reveal.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro3-row2">
+                <div class="col1"></div>
+                <div class="col2">
+                    <div class="intro3-sub-content" id="space2"></div>
+                    <div class="intro3-sub-content" id="accept-button-area">
+                        <button class="background-yellow font-ocrb font-blue" id="accept-button" onclick="acceptButtonClick()">ACCEPT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--/ Intro 3 -->
+
+    <div id="login-page"></div>
      <!-- END Intro Pages -->
 
     <script>
-        var pos = document.documentElement
-        pos.addEventListener('mousemove', e => {
-            pos.style.setProperty('--x', e.clientX + 'px')
-            pos.style.setProperty('--y', e.clientY + 'px')
-        })
+        function update(e){
+            var x = e.clientX || e.touches[0].clientX
+            var y = e.clientY || e.touches[0].clientY
+
+            document.documentElement.style.setProperty('--cursorX', x + 'px')
+            document.documentElement.style.setProperty('--cursorY', y + 'px')
+        }
+
+        document.addEventListener('mousemove',update)
+        document.addEventListener('touchmove',update)
     </script>
 </body>
 </html>

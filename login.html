@@ -11,17 +11,18 @@
     <link rel="stylesheet" href="/css/task-bar.css">
     <link rel="stylesheet" href="/css/login.css">
     <script src="/js/login.js"></script>
-    <title>Login Page</title>
+    <script src="/js/task-bar.js"></script>
+    <script src="/js/loadHTML.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <title>World Wide Weave</title>
 </head>
 <body onload="windowLoad()">
-    <div id="test"></div>
     <div class="login-page background-white1">
         <!-- ~~~~~ HEADER ~~~~~ -->
         <div class="head background-white">
             <!-- TEXT RUNNING -->
             <div class="font-ocrb font-blue" id="text-head1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
             <div class="font-ocrb font-blue" id="text-head2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
-            <!-- TEXT RUNNING -->
         </div>
         <!--/ ~~~~~ HEADER ~~~~~ -->
 
@@ -36,29 +37,38 @@
             <!-- ~ ROW 2 COL 2 ~ -->
             <div class="col2 background-white1">
                 <!-- User Picture Box -->
+                <div class="space-text-area" id="space-text-area">
+                    <p class="font-dbHelvethaica" id="space-text">กรุณาเพิ่มรายละเอียดเหล่านี้</br>เพื่อสมัครเป็นพนักงานของเรา</p>
+                </div>
                 <div class="background-white2 user-pic-box" id="user-pic-box">
-                    <div class="circleClass background-yellow" id="circle"></div>
-                    <div class="avatar-text"><p class="font-dbHelvethaica">ภาพประจำตัว</p></div>
-                    <button class="arrow-button background-yellow" id="next-arrow" onclick="openAndCloseNav()">
-                        <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up"></i>
-                    </button>
+                    <div class="circle-area">
+                        <div class="circleClass background-yellow" id="circle"></div>
+                    </div>
+                    <div class="avatar-text-area">
+                        <div class="avatar-text"><p class="font-dbHelvethaica">ภาพประจำตัว</p></div>
+                    </div>
+                    <div class="arrow-button-area">
+                        <button class="arrow-button background-yellow" id="up-arrow" onclick="openAndCloseNav()">
+                            <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up"></i>
+                        </button>
+                    </div>
                 </div>
                 <!-- User Picture Select -->
                 <div class="background-white2" id="picture-pick">
                     <div class="picture-wrap">
                         <div class="picture background-white2">
                             <button class="img-select-button background-transparent" onclick="selectPic(1)">
-                                <img src="/Assets/Picture and Vdo/ASCII-art (63) 3.png" alt="">
+                                <img src="/Assets/PictureAndVdo/ASCII-art (63) 3.png" alt="">
                             </button>
                         </div>
                         <div class="picture background-white2">
                             <button class="img-select-button background-transparent" onclick="selectPic(2)">
-                                <img src="/Assets/Picture and Vdo/ASCII-art (63) 4.png" alt="">
+                                <img src="/Assets/PictureAndVdo/ASCII-art (63) 4.png" alt="">
                             </button>
                         </div>
                         <div class="picture background-white2">
                             <button class="img-select-button background-transparent" onclick="selectPic(3)">
-                                <img src="/Assets/Picture and Vdo/ASCII-art (63) 5.png" alt="">
+                                <img src="/Assets/PictureAndVdo/ASCII-art (63) 5.png" alt="">
                             </button>
                         </div>
                     </div>
@@ -69,7 +79,7 @@
             <!-- ~ ROW 2 COL 3 ~ -->
             <div class="col3 background-white1">
                 <div class="gif-wrap">
-                    <img id="www-logo" src="/Assets/Picture and Vdo/logo-crop.gif" alt="">
+                    <img id="www-logo" src="/Assets/PictureAndVdo/logo-crop.gif" alt="">
                 </div>
                 <div class="data-text-wrap">
                     <p class="font-ocrb data-tracking-text">( : DATA TRACKING SERVICE )</p>
@@ -88,19 +98,25 @@
              <!-- ~ ROW 3 COL 2 ~ -->
             <div class="col2 background-white1">
                 <div class="background-white2" id="username-box">
-                    <div class="circleClass background-yellow" id="circle"></div>
-                    <input class="inputClass background-transparent font-dbHelvethaica" id="input" type="text" placeholder="ชื่อ / USERNAME" value="">
-                    <button class="arrow-button background-yellow" id="next-arrow" onclick="editUsername()">
-                        <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up fa-rotate-90"></i>
-                        <i class="edit-button-icon fa-sharp fa-regular fa-pen-to-square"></i>
-                    </button>
+                    <div class="circle-area">
+                        <div class="circleClass background-yellow" id="circle"></div>
+                    </div>
+                    <div class="input-text-area">
+                        <input class="inputClass background-transparent font-dbHelvethaica" id="input" type="text" placeholder="ชื่อ / USERNAME" value="">
+                    </div>
+                    <div class="arrow-button-area">
+                        <button class="arrow-button background-yellow" id="next-arrow" onclick="editUsername()">
+                            <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up fa-rotate-90"></i>
+                            <img src="/Assets/PictureAndVdo/icon_rename.png" id="edit-button-icon" alt="">
+                        </button>
+                    </div>
                 </div>
             </div>
             <!--/ ROW ~ 3 COL 2 ~ -->
 
              <!-- ~ ROW 3 COL 2 ~ -->
             <div class="col3 background-white1">
-                <img class="welcome-pic" src="/Assets/Picture and Vdo/ele_ยินดีต้อนรับ.png" alt="">
+                <img class="welcome-pic" src="/Assets/PictureAndVdo/ele_ยินดีต้อนรับ.png" alt="">
             </div>
             <!--/ ROW ~ 3 COL 3 ~ -->
         </div>
@@ -114,7 +130,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
         <!-- Task Button -->
-        <button class="background-black" id="task-button" onclick="taskbarClick()">TASK</button>
+        <button class="background-black font-white" id="task-button" onclick="taskbarCheck()">TASK</button>
 
         <!-- TASK BAR -->
         <div class="task-bar background-white1" id="task-bar">
@@ -124,9 +140,6 @@
                     <div id="employee-element">
                         <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
                     </div>
-                    <div id="id-element">
-                        <input class="font-dbHelvethaica" id="id-text" type="text" value="IP: 55.56.135.51" disabled>
-                    </div>    
                 </div>
                 <div class="task-col2">
                     <div id="username-show-element">
@@ -142,7 +155,7 @@
                 <div class="task-topics" id="database-tour">
                     <div class="square-check background-white"></div>
                     <div class="topic-text-box">
-                        <a href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</a>
+                        <a href="#" class="font-ocrb font-blue" id="database-tour-text" onclick="loadHTML('databaseTour.html', 500)">DATABASE TOUR</a>
                     </div>
                 </div>
                 <!-- Tasks -->
@@ -153,28 +166,28 @@
                 <div class="task-topics zone">
                     <div class="square-check background-grey2"></div>
                     <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-grey">ZONE 01 : WORLD</p>
+                        <p class="font-dbHelvethaica font-grey2">ZONE 01 : WORLD</p>
                     </div>
                 </div>
                 <!-- Zone 2 -->
                 <div class="task-topics zone">
                     <div class="square-check background-grey2"></div>
                     <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-grey">ZONE 02 : WIDE</p>
+                        <p class="font-dbHelvethaica font-grey2">ZONE 02 : WIDE</p>
                     </div>
                 </div>
                 <!-- Zone 3 -->
                 <div class="task-topics zone">
                     <div class="square-check background-grey2"></div>
                     <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-grey">ZONE 03 : WEAVE</p>
+                        <p class="font-dbHelvethaica font-grey2">ZONE 03 : WEAVE</p>
                     </div>
                 </div>
                 <!-- Confidential Zone -->
                 <div class="task-topics zone">
                     <div class="square-check background-grey2"></div>
                     <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-grey">CONFIDENTIAL ZONE</p>
+                        <p class="font-dbHelvethaica font-grey2">CONFIDENTIAL ZONE</p>
                     </div>
                 </div>
             </div>
@@ -182,15 +195,15 @@
 
             <!-- TASK ROW 3 -->
             <div class="task-row3">
-                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick(0)">ABOUT</a>
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
             </div>
             <!--/ TASK ROW 1 -->
 
             <!-- ABOUT -->
             <div class="task-hidden-about background-white1">
                 <div class="about-info-row1">
-                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick(1)">
-                        <img id="back-arrow-pic" src="/Assets/Picture and Vdo/button_arrow.png" alt="">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                        <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
                     </button>
                 </div>
                 <div class="about-info-row2">
@@ -199,7 +212,7 @@
                     </p>
                 </div>
                 <div class="about-info-row3">
-                    <img id="about-info-pic" src="/Assets/Picture and Vdo/LOGO-png.png" alt="">
+                    <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
                 </div>
             </div>
             <!--/ ABOUT -->
