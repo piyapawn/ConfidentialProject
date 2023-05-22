@@ -67,6 +67,11 @@ function showResult() {
     document.getElementById('nextZoneButton').style.zIndex = 3;
 }
 
+// toggle tool info
+function toggle(eleId) {
+    document.getElementById(eleId).classList.toggle('showRequire');
+}
+
 // guide animation
 function activeGuide(current, next) {
     document.getElementById(current).style.display = 'none'
