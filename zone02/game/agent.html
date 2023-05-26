@@ -48,6 +48,7 @@
                     <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
                 </a>
             </div>
+            <div class="col01"></div>
             <div class="col02">
                 <!-- Showing logo and else -->
                 <div class="quizBlock">
@@ -59,7 +60,10 @@
                         <p style="padding-right: 12%;">number of client : </p>
                     </div>
                     <!-- Client 01 -->
-                    <button class="question font-ocrb" id="question01" onclick="showRequirement('quest01', 'question02', 'question03', 'forClient01')">SOCIAL MEDIA</button>
+                    <button class="question font-ocrb" id="question01" onclick="showRequirement('quest01', 'question02', 'question03', 'forClient01')">
+                        SOCIAL MEDIA
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
                     <div class="quest" id="quest01">
                         <!-- Target information -->
                         <button class="moreInfo" onclick="showhideInfo('info01', true, 'hideBt1')"></button>
@@ -78,7 +82,10 @@
                         <button class="sendBt font-ocrb" id="send01" disabled onclick="checkAns('send01', 'quantity1', 'unit1')">SEND</button>
                     </div>
                     <!-- Client 02 -->
-                    <button class="question font-ocrb" id="question02" onclick="showRequirement('quest02', 'question03', 'question01', 'forClient02')">ADVERTISE SERVICE</button>
+                    <button class="question font-ocrb" id="question02" onclick="showRequirement('quest02', 'question03', 'question01', 'forClient02')">
+                        ADVERTISE SERVICE
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
                     <div class="quest" id="quest02">
                         <!-- Target information -->
                         <button class="moreInfo" onclick="showhideInfo('info02', true, 'hideBt2')"></button>
@@ -96,7 +103,10 @@
                         <button class="sendBt font-ocrb" id="send02" disabled onclick="checkAns('send02', 'quantity2', 'unit2')">SEND</button>
                     </div>
                     <!-- Client 03 -->
-                    <button class="question font-ocrb" id="question03" onclick="showRequirement('quest03', 'question01', 'question02', 'forClient03')">DATA BROKER</button>
+                    <button class="question font-ocrb" id="question03" onclick="showRequirement('quest03', 'question01', 'question02', 'forClient03')">
+                        DATA BROKER
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
                     <div class="quest" id="quest03">
                         <!-- Target information -->
                         <button class="moreInfoRe" onclick="showhideInfo('info03', true, 'hideBt3')"></button>
@@ -136,7 +146,7 @@
                             <img src="/zone02/game/user/quiz1/01kwanjira/1-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/01kwanjira/1-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '1', 'send01')"></button>
+                        <button class="chooseBt" id="choose11" onclick="addQuant('quantity1', '1', 'send01', 'choose11', 'user11')"></button>
                     </div>
 
                     <!-- User 02 -->
@@ -158,7 +168,7 @@
                             <img src="/zone02/game/user/quiz1/02kochaporn/2-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/02kochaporn/2-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '1', 'send01')"></button>
+                        <button class="chooseBt" id="choose12" onclick="addQuant('quantity1', '1', 'send01', 'choose12', 'user12')"></button>
                     </div>
 
                     <!-- User 03 -->
@@ -180,7 +190,7 @@
                             <img src="/zone02/game/user/quiz1/03phuriwat/3-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/03phuriwat/3-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '1', 'send01')"></button>
+                        <button class="chooseBt" id="choose13" onclick="addQuant('quantity1', '1', 'send01', 'choose13', 'user13')"></button>
                     </div>
 
                     <!-- User 04 -->
@@ -202,7 +212,7 @@
                             <img src="/zone02/game/user/quiz1/04panupon/4-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/04panupon/4-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '1', 'send01')"></button>
+                        <button class="chooseBt" id="choose14" onclick="addQuant('quantity1', '1', 'send01', 'choose14', 'user14')"></button>
                     </div>
 
                     <!-- User 05 -->
@@ -224,7 +234,7 @@
                             <img src="/zone02/game/user/quiz1/05atitan/5-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/05atitan/5-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '1', 'send01')"></button>
+                        <button class="chooseBt" id="choose15" onclick="addQuant('quantity1', '1', 'send01', 'choose15', 'user15')"></button>
                     </div>
 
                     <!-- User 06 -->
@@ -245,7 +255,7 @@
                             <img src="/zone02/game/user/quiz1/06pimpa/6-7.png" alt="">
                             <img src="/zone02/game/user/quiz1/06pimpa/6-8.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '0', 'send01')"></button>
+                        <button class="chooseBt" id="choose16" onclick="addQuant('quantity1', '0', 'send01', 'choose16', 'user16')"></button>
                     </div>
 
                     <!-- User 07 -->
@@ -267,7 +277,7 @@
                             <img src="/zone02/game/user/quiz1/07dolawa/7-8.png" alt="">
                             <img src="/zone02/game/user/quiz1/07dolawa/7-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity1', '0', 'send01')"></button>
+                        <button class="chooseBt" id="choose17" onclick="addQuant('quantity1', '0', 'send01', 'choose17', 'user17')"></button>
                     </div>
                 </div>
 
@@ -292,7 +302,7 @@
                             <img src="/zone02/game/user/quiz2/01sunisa/1-8.png" alt="">
                             <img src="/zone02/game/user/quiz2/01sunisa/1-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity2', '1', 'send02')"></button>
+                        <button class="chooseBt" id="choose21" onclick="addQuant('quantity2', '1', 'send02', 'choose21', 'user21')"></button>
                     </div>
 
                     <!-- User 02 -->
@@ -314,7 +324,7 @@
                             <img src="/zone02/game/user/quiz2/02pongsapak/2-8.png" alt="">
                             <img src="/zone02/game/user/quiz2/02pongsapak/2-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity2', '0', 'send02')"></button>
+                        <button class="chooseBt" id="choose22" onclick="addQuant('quantity2', '0', 'send02', 'choose22', 'user22')"></button>
                     </div>
 
                     <!-- User 03 -->
@@ -335,7 +345,7 @@
                             <img src="/zone02/game/user/quiz2/03merisa/3-7.png" alt="">
                             <img src="/zone02/game/user/quiz2/03merisa/3-8.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity2', '1', 'send02')"></button>
+                        <button class="chooseBt" id="choose23" onclick="addQuant('quantity2', '1', 'send02', 'choose23', 'user23')"></button>
                     </div>
 
                     <!-- User 04 -->
@@ -357,7 +367,7 @@
                             <img src="/zone02/game/user/quiz2/04pat/4-8.png" alt="">
                             <img src="/zone02/game/user/quiz2/04pat/4-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity2', '0', 'send02')"></button>
+                        <button class="chooseBt" id="choose24" onclick="addQuant('quantity2', '0', 'send02', 'choose24', 'user24')"></button>
                     </div>
 
                     <!-- User 05 -->
@@ -380,7 +390,7 @@
                             <img src="/zone02/game/user/quiz2/05chomanad/5-9.png" alt="">
                             <img src="/zone02/game/user/quiz2/05chomanad/5-10.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity2', '1', 'send02')"></button>
+                        <button class="chooseBt" id="choose25" onclick="addQuant('quantity2', '1', 'send02', 'choose25', 'user25')"></button>
                     </div>
                 </div>
 
@@ -405,7 +415,7 @@
                             <img src="/zone02/game/user/quiz3/01chaninee/1-8.png" alt="">
                             <img src="/zone02/game/user/quiz3/01chaninee/1-9.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity3', '1', 'send03')"></button>
+                        <button class="chooseBt" id="choose31" onclick="addQuant('quantity3', '1', 'send03', 'choose31', 'user31')"></button>
                     </div>
 
                     <!-- User 02 -->
@@ -428,7 +438,7 @@
                             <img src="/zone02/game/user/quiz3/03narit/3-9.png" alt="">
                             <img src="/zone02/game/user/quiz3/03narit/3-10.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity3', '1', 'send03')"></button>
+                        <button class="chooseBt" id="choose32" onclick="addQuant('quantity3', '1', 'send03', 'choose32', 'user32')"></button>
                     </div>
 
                     <!-- User 03 -->
@@ -449,7 +459,7 @@
                             <img src="/zone02/game/user/quiz3/02preeyada/2-7.png" alt="">
                             <img src="/zone02/game/user/quiz3/02preeyada/2-8.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity3', '0', 'send03')"></button>
+                        <button class="chooseBt" id="choose33" onclick="addQuant('quantity3', '0', 'send03', 'choose33', 'user33')"></button>
                     </div>
 
                     <!-- User 04 -->
@@ -472,7 +482,7 @@
                             <img src="/zone02/game/user/quiz3/04veerapol/4-9.png" alt="">
                             <img src="/zone02/game/user/quiz3/04veerapol/4-10.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity3', '1', 'send03')"></button>
+                        <button class="chooseBt" id="choose34" onclick="addQuant('quantity3', '1', 'send03', 'choose34', 'user34')"></button>
                     </div>
 
                     <!-- User 05 -->
@@ -493,13 +503,14 @@
                             <img src="/zone02/game/user/quiz3/05sunisa/5-7.png" alt="">
                             <img src="/zone02/game/user/quiz3/05sunisa/5-8.png" alt="">
                         </div>
-                        <button class="chooseBt" onclick="addQuant('quantity3', '0', 'send03')"></button>
+                        <button class="chooseBt" id="choose35" onclick="addQuant('quantity3', '0', 'send03', 'choose35', 'user35')"></button>
                     </div>
                 </div>
             </div>
             <button id="hintButton" onclick="showhideGuide('hintButton')">
                 ?
             </button>
+            <p id="areaText" class="font-dbHelvethaica"></p>
         </div>
         
     </div>

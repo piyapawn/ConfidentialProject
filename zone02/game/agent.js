@@ -10,9 +10,16 @@ var isQuiz02Done = false;
 var isQuiz03Done = false;
 
 // Add quantity of user that selected
-function addQuant(quantityId, answer, sendBtId) {
+function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
     const quantityEle = document.getElementById(quantityId);
     let quantity = parseInt(quantityEle.innerHTML);
+    let userButton = document.getElementById(userBtId);
+    
+    // disable choose button of this user, prevent repeat submit
+    disableBt(buttonId)
+    // If user is choosen, styling navy border
+    userButton.style.border = "solid 2px #0D3BFC";
+
 
     storing(answer);
     if(quantityId === 'quantity1' && quantity<5) {
@@ -72,7 +79,7 @@ function checkAns(sendBtId, quantId, unitId) {
     }
 }
 
-// toggle button
+//   button
 function disableBt(buttonId) {
     let isActive = document.getElementById(buttonId).disabled
     document.getElementById(buttonId).disabled = !isActive;
@@ -89,10 +96,17 @@ function toggle(eleId) {
 }
 
 function showRequirement(questId, otherBt1, otherBt2, userId) {
+    let areaProv = document.getElementById('areaText')
     toggle(questId);
     toggle(userId);
     disableBt(otherBt1);
     disableBt(otherBt2);
+    if(questId == "quest01" || questId == "quest02") {
+        areaProv.innerHTML = "area : Bangkok";
+    }else if(questId == "quest03") {
+        areaProv.innerHTML = "area : Chiang mai";
+    }
+    console.log('here is id : ', questId, '  ', areaProv)
 }
 
 function showhideInfo(infoId, showorhide, bt) { 
