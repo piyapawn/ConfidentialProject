@@ -276,6 +276,7 @@ button {
     display: none;
     width: 51%;
     height: 100%;
+    opacity: 0;
     padding-left: 9%;
     position: relative;
 }
@@ -285,7 +286,7 @@ button {
     width: 204px;
     height: 50px;
     position: absolute;
-    
+    /* opacity: 0; */
 }
 
 /* each user styling button to open user's pic : Client 01 */
@@ -399,6 +400,7 @@ button {
     width: auto;
     height: auto;
     position: absolute;
+    /* opacity: 0; */
 }
 
 /* user profile pic styling for client01 */
