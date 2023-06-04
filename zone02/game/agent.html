@@ -38,6 +38,11 @@
         </div>
     </div>
     <div class="page" id="mainContent">
+        <div id="alertBG"></div>
+        <div id="alert">
+            <img src="/zone02/game/zone2_wrongnoti.png" alt="">
+            <a href="/zone02/game/agent.html" class="font-dbHelvethaica">[ ตกลง ]</a>
+        </div>
         <!--row that contain requirement and choices!-->
         <div class="container">
             <!--column that contain client requirement and choices!-->
@@ -290,7 +295,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz2/01sunisa/ascii2-q2.png" alt="">
                     </div>
                     <div class="forDecision" id="interest21">
-                        <button class="closeBt" onclick="toggle('interest21')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(2, 'interest21', 'dataBt21')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz2/01sunisa/1-1.png" alt="">
                             <img src="/zone02/game/user/quiz2/01sunisa/1-2.png" alt="">
@@ -312,7 +317,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz2/02pongsapak/ascii5-q2.png" alt="">
                     </div>
                     <div class="forDecision" id="interest22">
-                        <button class="closeBt" onclick="toggle('interest22')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(2, 'interest22', 'dataBt22')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz2/02pongsapak/2-1.png" alt="">
                             <img src="/zone02/game/user/quiz2/02pongsapak/2-2.png" alt="">
@@ -334,7 +339,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz2/03merisa/ascii3-q2.png" alt="">
                     </div>
                     <div class="forDecision" id="interest23">
-                        <button class="closeBt" onclick="toggle('interest23')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(2, 'interest23', 'dataBt23')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz2/03merisa/3-1.png" alt="">
                             <img src="/zone02/game/user/quiz2/03merisa/3-2.png" alt="">
@@ -355,7 +360,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz2/04pat/ascii1-q2.png" alt="">
                     </div>
                     <div class="forDecision" id="interest24">
-                        <button class="closeBt" onclick="toggle('interest24')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(2, 'interest24', 'dataBt24')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz2/04pat/4-1.png" alt="">
                             <img src="/zone02/game/user/quiz2/04pat/4-2.png" alt="">
@@ -377,7 +382,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz2/05chomanad/ascii4-q2.png" alt="">
                     </div>
                     <div class="forDecision" id="interest25">
-                        <button class="closeBt" onclick="toggle('interest25')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(2, 'interest25', 'dataBt25')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz2/05chomanad/5-1.png" alt="">
                             <img src="/zone02/game/user/quiz2/05chomanad/5-2.png" alt="">
@@ -403,7 +408,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz3/01chaninee/ascii3-q3.png" alt="">
                     </div>
                     <div class="forDecision" id="interest31">
-                        <button class="closeBt" onclick="toggle('interest31')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(3, 'interest31', 'dataBt31')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz3/01chaninee/1-1.png" alt="">
                             <img src="/zone02/game/user/quiz3/01chaninee/1-2.png" alt="">
@@ -425,7 +430,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz3/03narit/ascii1-q3.png" alt="">
                     </div>
                     <div class="forDecision" id="interest32">
-                        <button class="closeBt" onclick="toggle('interest32')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(3, 'interest32', 'dataBt32')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz3/03narit/3-1.png" alt="">
                             <img src="/zone02/game/user/quiz3/03narit/3-2.png" alt="">
@@ -448,7 +453,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz3/02preeyada/ascii4-q3.png" alt="">
                     </div>
                     <div class="forDecision" id="interest33">
-                        <button class="closeBt" onclick="toggle('interest33')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(3, 'interest33', 'dataBt33')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz3/02preeyada/2-1.png" alt="">
                             <img src="/zone02/game/user/quiz3/02preeyada/2-2.png" alt="">
@@ -469,7 +474,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz3/04veerapol/ascii2-q3.png" alt="">
                     </div>
                     <div class="forDecision" id="interest34">
-                        <button class="closeBt" onclick="toggle('interest34')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(3, 'interest34', 'dataBt34')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz3/04veerapol/4-1.png" alt="">
                             <img src="/zone02/game/user/quiz3/04veerapol/4-2.png" alt="">
@@ -492,7 +497,7 @@
                         <img class="userimg" src="/zone02/game/user/quiz3/05sunisa/ascii5-q3.png" alt="">
                     </div>
                     <div class="forDecision" id="interest35">
-                        <button class="closeBt" onclick="toggle('interest35')">X</button>
+                        <button class="closeBt" onclick="showUserDetail(3, 'interest35', 'dataBt35')">X</button>
                         <div class="interested">
                             <img src="/zone02/game/user/quiz3/05sunisa/5-1.png" alt="">
                             <img src="/zone02/game/user/quiz3/05sunisa/5-2.png" alt="">

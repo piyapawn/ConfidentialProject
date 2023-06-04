@@ -8,6 +8,7 @@ const value = 71;
 function selectContent(vidId, clearVidId, crContentId, nContentId) {
     let currentContent = document.getElementById(crContentId);
     let nextContent = document.getElementById(nContentId);
+    let vid = document.getElementById(vidId);
 
     clearFeed(clearVidId);
     playVid(vidId);
@@ -33,14 +34,43 @@ function setProgress(score) {
         }
         progress.style.width = currentW - value +'px';
     }
+    togglePostSelection('enable')
 }
 
 function playVid(vidId) {
     let vid = document.getElementById(vidId);
     const imgStatic = document.getElementById('staticimg');
-
+    
     imgStatic.style.zIndex = '-2'
     vid.play();
+    togglePostSelection('disable');
+}
+
+function togglePostSelection(action) {
+    
+    switch(action) {
+        case 'enable':
+            const postSelectionE = document.querySelectorAll('.postOver');
+            for (let i = 0; i < postSelectionE.length; i++) {
+                postSelectionE[i].disabled = false;
+                postSelectionE[i].style.cursor = "pointer";
+                postSelectionE[i].classList.add('post');
+                postSelectionE[i].classList.remove('postOver');
+                postSelectionE[i].style.opacity = "1";
+            }
+            break;
+            case 'disable':
+            const postSelection = document.querySelectorAll('.post');
+            for (let i = 0; i < postSelection.length; i++) {
+                postSelection[i].disabled = true;
+                postSelection[i].style.cursor = "default";
+                postSelection[i].classList.add('postOver');
+                postSelection[i].classList.remove('post');
+                postSelection[i].style.opacity = "0.5";
+            }
+            break;
+    }
+
 }
 
 function clearFeed(clearVidId) {
@@ -54,19 +84,12 @@ function gameOver() {
 
     // set the opacity and disable the contents and interest
     const collectContents = document.querySelectorAll(".contents");
-    const collectPosts = document.querySelectorAll(".post");
-    const collectInterest = document.querySelectorAll(".userInterest");
+
     for (let i = 0; i < collectContents.length; i++) {
         collectContents[i].style.opacity = "0.5";
 
     }
-    for (let i = 0; i < collectPosts.length; i++) {
-        collectPosts[i].disabled = true;
-        collectPosts[i].style.cursor = "default";
-    }
-    for (let i = 0; i < collectInterest.length; i++) {
-        collectInterest[i].style.opacity = "0.5";
-    }
+    togglePostSelection('disable')
 }
 
 function hideVid(contentId, score) {
@@ -90,6 +113,7 @@ function hideVid(contentId, score) {
     if(contentId == 'content05') {
         return;
     }
+
     // change hover pic & hide vid
     if(contentId == 'content01') {
         hovPic.style.background = 'url(/zone03/game/contents/hover/hover2.png)';
@@ -108,6 +132,7 @@ function hideVid(contentId, score) {
         document.getElementById('vid07').style.display = 'none';
         document.getElementById('vid08').style.display = 'none';
     }
+
 }
 
 function toggle(eleId) {

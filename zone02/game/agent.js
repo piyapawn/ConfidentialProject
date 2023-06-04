@@ -51,18 +51,19 @@ function storing(answer) {
 
 // check the answer if it all is correct or not
 function checkAns(sendBtId, quantId, unitId) {
+    let quantityEle = document.getElementById(quantId);
     if(choosenUser.includes('0')) {
         choosenUser = [];
-        document.getElementById(quantId).innerHTML = '0';
-        disableBt(sendBtId)
-        document.getElementById(sendBtId).style.background = '#D0FF0B';
-        alert('Some user is not matching requirement.\nPlease select again.');
+        quantityEle.innerHTML = '0';
+        document.getElementById('alertBG').style.display = "block";
+        document.getElementById('alert').style.display = "block";
+
     }
     else if(!choosenUser.includes('0')){
-        document.getElementById(quantId).innerHTML = 'COMPLETE';
-        document.getElementById(quantId).style.border = 'solid 1px';
-        document.getElementById(quantId).style.padding = '5px';
-        document.getElementById(quantId).style.textDecoration = 'none';
+        quantityEle.innerHTML = 'COMPLETE';
+        quantityEle.style.border = 'solid 1px';
+        quantityEle.style.padding = '5px';
+        quantityEle.style.textDecoration = 'none';
         document.getElementById(unitId).style.display = 'none';
         document.getElementById(sendBtId).style.display = 'none';
         if(sendBtId == 'send01') {

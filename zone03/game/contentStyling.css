@@ -257,6 +257,15 @@ button {
     background-repeat: no-repeat;
 }
 
+.postOver {
+    width: 557px;
+    height: 202px;
+    border: none;
+    background: #EAEAEA;
+    background-repeat: no-repeat;
+    margin-bottom: 25px;
+}
+
 /* Each post styling */
 #post01 {
     background-image: url(/zone03/game/contents/display/post1-1.png);
