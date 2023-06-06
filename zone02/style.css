@@ -91,15 +91,14 @@ body {
 }
 
 .guideBox {
-    position: relative;
-    left: 4.5%;
-    top: -173%;
+    position: absolute;
+    left: 12.5%;
+    top: 73%;
 }
 
 #missionGuide {
     width: initial;
     height: initial;
-    position: relative;
 }
 
 .buttonNext {
