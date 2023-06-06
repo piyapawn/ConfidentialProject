@@ -4,12 +4,14 @@ function windowLoad() {
 }
 
 const value = 71;
+const clickSource = "/zone01/audio/clickedS.mp3"
+const clickSound = new Audio(clickSource);
 
 function selectContent(vidId, clearVidId, crContentId, nContentId) {
     let currentContent = document.getElementById(crContentId);
     let nextContent = document.getElementById(nContentId);
-    let vid = document.getElementById(vidId);
-
+    
+    clickSound.play();
     clearFeed(clearVidId);
     playVid(vidId);
     // hide current content
@@ -28,6 +30,11 @@ function setClickRediant() {
 function setProgress(score) {
     let progress = document.getElementById('progress');
     let currentW = progress.offsetWidth;
+    const audioSourceC = "/zone01/audio/correctS.mp3"
+    const audioSourceF = "/zone01/audio/falseS.mp3"
+    const soundC = new Audio(audioSourceC)
+    const soundF = new Audio(audioSourceF)
+
     console.log('Its width: '+currentW);
     if(score == '1' && currentW < 500) {
         setClickRediant()
@@ -35,13 +42,16 @@ function setProgress(score) {
             progress.style.width = '500' +'px';
         }
         progress.style.width = currentW + value +'px';
+        soundC.play();
     }else if (score == '0') {
         if(currentW-value < 71) {
             progress.style.width = '0' +'px';
             return
         }
         progress.style.width = currentW - value +'px';
+        soundF.play();
     }
+
     togglePostSelection('enable')
 }
 
@@ -149,6 +159,7 @@ function toggle(eleId) {
 
 // guide animation
 function activeGuide(current, next) {
+    clickSound.play();
     document.getElementById(current).style.display = 'none'
     document.getElementById(next).style.display = 'block'
     document.getElementById(next).style.zIndex = 3
@@ -160,6 +171,7 @@ function activeGuide(current, next) {
 }
 
 function showhideGuide(button) {
+    clickSound.play();
     if(button == 'hintButton') {
         document.getElementById('guidePic').style.zIndex = 3
     }
@@ -170,6 +182,7 @@ function showhideGuide(button) {
 
 // hide box
 function toggleNotice(action) {
+    clickSound.play();
     if(action == 'show') {
         document.getElementById('noticeBox').style.display = 'block';
         document.getElementById('closeBt').style.display = 'block';
@@ -187,4 +200,9 @@ function endIt(score) {
     document.getElementById('endingZone').style.zIndex = 4
     document.getElementById('endingZone').style.animation = 'slideIn 1s 1'
     document.getElementById('endingZone').style.animationFillMode = 'forwards'
+    const bgAudio = document.getElementById('bgAudio');
+    const endSoundSource = "/zone01/audio/gameEnd.mp3";
+    const endSound = new Audio(endSoundSource);
+    bgAudio.pause();
+    endSound.play()
 }

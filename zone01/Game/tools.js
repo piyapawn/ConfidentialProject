@@ -3,7 +3,12 @@ function windowLoad() {
     loadLocalStorageValue()
 }
 
+const clickSource = "/zone01/audio/clickedS.mp3"
+const clickSound = new Audio(clickSource);
+
 function showToolInfo(infoId, buttonId) {
+    clickSound.play();
+
     document.getElementById(infoId).style.zIndex = 2;
     document.getElementById(buttonId).style.animation = "none";
     document.getElementById(buttonId).disabled = true;
@@ -12,6 +17,8 @@ function showToolInfo(infoId, buttonId) {
 }
 
 function playVid(toolId, progressId, infoId) {
+    clickSound.play();
+
     if(toolId == 'account-01'){
         document.getElementById('metaIs').style.opacity = '100%';
     }
@@ -62,21 +69,22 @@ function toResult() {
 }
 
 function showResult() {
+    clickSound.play();
     document.getElementById('resultButton').style.zIndex = -4;
     document.getElementById('endingResult').style.zIndex = 3;
     document.getElementById('nextZoneButton').style.zIndex = 3;
-
-                            
-    let soundSource = "/zone01/audio/gameEnd.mp3"
 }
 
 // toggle tool info
 function toggle(eleId) {
+    clickSound.play();
+
     document.getElementById(eleId).classList.toggle('showRequire');
 }
 
 // guide animation
 function activeGuide(current, next) {
+    clickSound.play();
     document.getElementById(current).style.display = 'none'
     document.getElementById(next).style.display = 'block'
     document.getElementById(next).style.zIndex = 3
@@ -88,6 +96,7 @@ function activeGuide(current, next) {
 }
 
 function showhideGuide(button) {
+    clickSound.play();
     if(button == 'hintButton') {
         document.getElementById('guidePic').style.zIndex = 3
     }
@@ -97,6 +106,13 @@ function showhideGuide(button) {
 }
 
 function endIt() {
+    const bgAudio = document.getElementById('bgAudio');
+    const endSource = "/zone01/audio/gameEnd.mp3";
+    const endSound = new Audio(endSource);
+    bgAudio.pause();
+    endSound.play()
+
+    clickSound.play();
     document.getElementById('endingZone').style.zIndex = 4
     document.getElementById('endingZone').style.animation = 'slideIn 1s 1'
     document.getElementById('endingZone').style.animationFillMode = 'forwards'

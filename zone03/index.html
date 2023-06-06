@@ -14,6 +14,9 @@
     <title>ZONE 03</title>
 </head>
 <body onload="windowLoad()">
+    <audio id="clickSound" hidden>
+        <source src="/zone01/audio/clickedS.mp3" type="audio/mpeg">
+    </audio>
     <div class="supercontainer">
         <!--Main page of zone03!-->
         <div class="page">
@@ -87,7 +90,7 @@
                         </div>
                         <div class="contentRow">
                             <div class="guideBox">
-                                <a class="buttonNext" href="/zone03/game/contentSelect.html">
+                                <a class="buttonNext" href="/zone03/game/contentSelect.html" onclick="playSoundAndRedirect(event)">
                                     <img id="buttonImg" src="/zone01/Asssets/button.png" alt="">
                                 </a>
                                 <img id="missionGuide" src="/zone03/asset/box_1ภารกิจ.png" alt="">
@@ -96,7 +99,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
 
 

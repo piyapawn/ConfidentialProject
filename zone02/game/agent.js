@@ -8,9 +8,12 @@ var choosenUser = [];
 var isQuiz01Done = false;
 var isQuiz02Done = false;
 var isQuiz03Done = false;
+const clickSource = "/zone01/audio/clickedS.mp3"
+const clickSound = new Audio(clickSource);
 
 // Add quantity of user that selected
 function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
+    clickSound.play();
     const quantityEle = document.getElementById(quantityId);
     let quantity = parseInt(quantityEle.innerHTML);
     let userButton = document.getElementById(userBtId);
@@ -38,10 +41,16 @@ function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
 
 // end this zone, when task completed
 function endIt() {
+    const bgAudio = document.getElementById('bgAudio');
+    const endSource = "/zone01/audio/gameEnd.mp3";
+    const endSound = new Audio(endSource);
+
     let endEle = document.getElementById('endingZone')
     endEle.style.zIndex = 4
     endEle.style.animation = 'slideIn 1s 1'
     endEle.style.animationFillMode = 'forwards'
+    bgAudio.pause();
+    endSound.play();
 }
 
 // sending the answer of selected user
@@ -51,6 +60,7 @@ function storing(answer) {
 
 // check the answer if it all is correct or not
 function checkAns(sendBtId, quantId, unitId) {
+    clickSound.play();
     let quantityEle = document.getElementById(quantId);
     if(choosenUser.includes('0')) {
         choosenUser = [];
@@ -60,6 +70,8 @@ function checkAns(sendBtId, quantId, unitId) {
 
     }
     else if(!choosenUser.includes('0')){
+        const correctSource = "/zone01/audio/zone02-money.mp3";
+        const soundC = new Audio(correctSource);
         quantityEle.innerHTML = 'COMPLETE';
         quantityEle.style.border = 'solid 1px';
         quantityEle.style.padding = '5px';
@@ -73,6 +85,7 @@ function checkAns(sendBtId, quantId, unitId) {
         } else if(sendBtId == 'send03') {
             isQuiz03Done = true;
         }
+        soundC.play()
     }
 
     // if finish every quiz , end this zone
@@ -98,6 +111,7 @@ function toggle(eleId) {
 }
 
 function showUserData(userId) {
+    clickSound.play();
     let userEle = document.getElementById(userId)
     toggle(userId);
     userEle.style.animation = "fadeClear 1s 1"
@@ -109,7 +123,7 @@ function showUserDetail(clientId, interestId, currentBtId) {
     const showDataBtSet1 = ['dataBt11', 'dataBt12', 'dataBt13', 'dataBt14', 'dataBt15', 'dataBt16', 'dataBt17'];
     const showDataBtSet2 = ['dataBt21', 'dataBt22', 'dataBt23', 'dataBt24', 'dataBt25'];
     const showDataBtSet3 = ['dataBt31', 'dataBt32', 'dataBt33', 'dataBt34', 'dataBt35'];
-
+    clickSound.play();
     toggle(interestId)
 
     let usingShowDataSet
@@ -134,6 +148,7 @@ function showUserDetail(clientId, interestId, currentBtId) {
 }
 
 function showRequirement(questId, otherBt1, otherBt2, userId) {
+    clickSound.play();
     let areaProv = document.getElementById('areaText')
     let usersEle = document.getElementById(userId)
     toggle(questId);
@@ -158,6 +173,7 @@ function showRequirement(questId, otherBt1, otherBt2, userId) {
 }
 
 function showhideInfo(infoId, showorhide, bt) {
+    clickSound.play();
     let informationElement = document.getElementById(infoId)
     if(showorhide) {
         informationElement.style.height = '100%'
@@ -175,6 +191,7 @@ function showhideInfo(infoId, showorhide, bt) {
 
 // guide animation
 function activeGuide(current, next) {
+    clickSound.play();
     document.getElementById(current).style.display = 'none'
     document.getElementById(next).style.display = 'block'
     document.getElementById(next).style.zIndex = 3
@@ -186,6 +203,7 @@ function activeGuide(current, next) {
 }
 
 function showhideGuide(button) {
+    clickSound.play();
     if(button == 'hintButton') {
         document.getElementById('guidePic').style.zIndex = 3
     }
