@@ -1,4 +1,12 @@
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -6,6 +14,7 @@ body {
     background-size: contain;
     max-width: 1920px;
     max-height: 1080px;
+    position: relative;
 }
 
 .col01 {
@@ -83,8 +92,8 @@ body {
 
 .guideBox {
     position: absolute;
-    left: 13%;
-    bottom: 9%;
+    left: 12.5%;
+    top: 73%;
 }
 
 #missionGuide {
@@ -128,9 +137,9 @@ body {
     border-width: 1px;
     display: flex;
     flex-direction: column;
-    left: 58%;
-    position: absolute;
-    top: 41%;
+    left: 54%;
+    top: 0%;
+    position: relative;
     width: 252px;
     height: 195px;
 }
@@ -165,15 +174,15 @@ body {
 
 #targetIP {
     margin-left: 8.5%;
-    margin-top: 16.5%;
+    margin-top: 18%;
     width: initial;
     height: initial;
 }
 
 #skeleton {
-    position: absolute;
-    top: 30%;
-    left: 75%;
+    position: relative;
+    top: -26%;
+    left: 57%;
     height: initial;
     width: initial;
 }

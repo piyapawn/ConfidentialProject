@@ -14,186 +14,187 @@
     <title>ZONE 03</title>
 </head>
 <body onload="windowLoad()">
-    <!--Main page of zone03!-->
-    <div class="page">
-        <!--row that contain all header and side menu!-->
-        <div class="container">
-            <!--column that contain side menu!-->
-            <div class="col01">
-                <!--Left container for task!-->
-                <div class="box"></div>
-            </div>
-
-            <!--column that contain header and body content!-->
-            <div class="col02">
-                <!--Head bar for timestamp!-->
-                <div class="headTimestamp">
-                    <!--!-->
-                    <div class="timeItem font-gtFlexa" style="text-align: center;">
-                        <p>TIME CARD : <span class="time-in" id="timeIn"></span></p>
-                    </div>
-
-                    <!--User display name!-->
-                    <div class="timeItem font-gtFlexa" style="text-align: center;">
-                        <p>EMPLOYEE ID : <span id="name-text"></span></p>
-                    </div>
-
-                    <!--Current time!-->
-                    <div class="timeItem font-gtFlexa" style="text-align: end;">
-                        <p>CLOCK : <span class="live-time" id="liveTime"></span></p>
-                    </div>
+    <div class="supercontainer">
+        <!--Main page of zone03!-->
+        <div class="page">
+            <!--row that contain all header and side menu!-->
+            <div class="container">
+                <!--column that contain side menu!-->
+                <div class="col01">
+                    <!--Left container for task!-->
+                    <div class="box"></div>
                 </div>
 
-                <!--body content!-->
-                <div class="content">
-                    <!--Logo and target ip!-->
-                    <div class="contentRow row02">
-                        <div class="zoneLogo">
-                            <img id="logoZone01" src="/zone03/asset/ele_zone03.png" alt="">
+                <!--column that contain header and body content!-->
+                <div class="col02">
+                    <!--Head bar for timestamp!-->
+                    <div class="headTimestamp">
+                        <!--!-->
+                        <div class="timeItem font-gtFlexa" style="text-align: center;">
+                            <p>TIME CARD : <span class="time-in" id="timeIn"></span></p>
                         </div>
-                        <div class="zoneUserIP">
-                            <img id="targetIP" src="/zone01/Asssets/ele7.png" alt="">
+
+                        <!--User display name!-->
+                        <div class="timeItem font-gtFlexa" style="text-align: center;">
+                            <p>EMPLOYEE ID : <span id="name-text"></span></p>
+                        </div>
+
+                        <!--Current time!-->
+                        <div class="timeItem font-gtFlexa" style="text-align: end;">
+                            <p>CLOCK : <span class="live-time" id="liveTime"></span></p>
                         </div>
                     </div>
 
-                    <!--TASK STATUS-->
-                    <div class="contentRow row03">
-                        <div class="statusBox">
-                            <div>
-                                <p class="textStatus font-gtFlexa" style="padding: 10px; margin: 0;">TASK STATUS :</p>
+                    <!--body content!-->
+                    <div class="content">
+                        <!--Logo and target ip!-->
+                        <div class="contentRow row02">
+                            <div class="zoneLogo">
+                                <img id="logoZone01" src="/zone03/asset/ele_zone03.png" alt="">
                             </div>
-                            <div class="checkList">
-                                <div class="checkItem">
-                                    <div class="checkBrick">
-                                        <input type="checkbox" style="border: none; width: 100%; margin: 0;" checked disabled>
-                                    </div>
-                                    <img id="iconStatus" src="/zone01/Asssets/icon_world.png" alt="">
-                                </div>
-                                <div class="checkItem">
-                                    <div class="checkBrick">
-                                        <input type="checkbox" style="border: none; width: 100%; margin: 0;" checked disabled>
-                                    </div>
-                                    <img id="iconStatus" src="/zone01/Asssets/icon_wide.png" alt="">
-                                </div>
-                                <div class="checkItem">
-                                    <div class="checkBrick"></div>
-                                    <img id="iconStatus" src="/zone01/Asssets/icon_weave.png" alt="">
-                                </div>
-
+                            <div class="zoneUserIP">
+                                <img id="targetIP" src="/zone01/Asssets/ele7.png" alt="">
                             </div>
                         </div>
-                        <img id="skeleton" src="/zone01/Asssets/gif_hm1.gif" alt="">
-                    </div>
-                    <div class="contentRow">
-                        <div class="guideBox">
-                            <a class="buttonNext" href="/zone03/game/contentSelect.html">
-                                <img id="buttonImg" src="/zone01/Asssets/button.png" alt="">
-                            </a>
-                            <img id="missionGuide" src="/zone03/asset/box_1ภารกิจ.png" alt="">
+
+                        <!--TASK STATUS-->
+                        <div class="contentRow row03">
+                            <div class="statusBox">
+                                <div>
+                                    <p class="textStatus font-gtFlexa" style="padding: 10px; margin: 0;">TASK STATUS :</p>
+                                </div>
+                                <div class="checkList">
+                                    <div class="checkItem">
+                                        <div class="checkBrick">
+                                            <input type="checkbox" style="border: none; width: 100%; margin: 0;" checked disabled>
+                                        </div>
+                                        <img id="iconStatus" src="/zone01/Asssets/icon_world.png" alt="">
+                                    </div>
+                                    <div class="checkItem">
+                                        <div class="checkBrick">
+                                            <input type="checkbox" style="border: none; width: 100%; margin: 0;" checked disabled>
+                                        </div>
+                                        <img id="iconStatus" src="/zone01/Asssets/icon_wide.png" alt="">
+                                    </div>
+                                    <div class="checkItem">
+                                        <div class="checkBrick"></div>
+                                        <img id="iconStatus" src="/zone01/Asssets/icon_weave.png" alt="">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <img id="skeleton" src="/zone01/Asssets/gif_hm1.gif" alt="">
+                        </div>
+                        <div class="contentRow">
+                            <div class="guideBox">
+                                <a class="buttonNext" href="/zone03/game/contentSelect.html">
+                                    <img id="buttonImg" src="/zone01/Asssets/button.png" alt="">
+                                </a>
+                                <img id="missionGuide" src="/zone03/asset/box_1ภารกิจ.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
-        
+
+
+
+
+        <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+        <!-- Task Button -->
+        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+        <!-- TASK BAR -->
+        <div class="task-bar background-white1" id="task-bar">
+            <!-- TASK ROW 1 -->
+            <div class="task-row1">
+                <div class="task-col1">
+                    <div id="employee-element">
+                        <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                    </div>  
+                </div>
+                <div class="task-col2">
+                    <div id="username-show-element">
+                        <p class="font-dbHelvethaica" id="username-text"></p>
+                    </div>
+                </div>
+            </div>
+            <!--/ TASK ROW 1 -->
+
+            <!-- TASK ROW 2 -->
+            <div class="task-row2 background-white1">
+                <!-- Database Tour -->
+                <div class="task-topics" id="database-tour">
+                    <div class="square-check background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                    </div>
+                </div>
+                <!-- Tasks -->
+                <div class="task-topics" id="tasks">
+                    <p class="font-ocrb" id="tasks-text">TASKS</p>
+                </div>
+                <!-- Zone 1 -->
+                <div class="task-topics zone">
+                    <div class="square-check completed-zone background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
+                    </div>
+                </div>
+                <!-- Zone 2 -->
+                <div class="task-topics zone">
+                    <div class="square-check completed-zone background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
+                    </div>
+                </div>
+                <!-- Zone 3 -->
+                <div class="task-topics zone">
+                    <div class="square-check background-blue"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
+                    </div>
+                </div>
+                <!-- Confidential Zone -->
+                <div class="task-topics zone">
+                    <div class="square-check background-grey2"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
+                    </div>
+                </div>
+            </div>
+            <!--/ TASK ROW 2 -->
+
+            <!-- TASK ROW 3 -->
+            <div class="task-row3">
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            </div>
+            <!--/ TASK ROW 1 -->
+
+            <!-- ABOUT -->
+            <div class="task-hidden-about background-white1">
+                <div class="about-info-row1">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                        <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                    </button>
+                </div>
+                <div class="about-info-row2">
+                    <p class="font-baiJamjuree about-info-text">
+                        เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                    </p>
+                </div>
+                <div class="about-info-row3">
+                    <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+                </div>
+            </div>
+            <!--/ ABOUT -->
+        </div>
+        <!--/ TASK BAR -->
+
+        <!--/ ~~~~~ NAVIGATION ~~~~~ -->
     </div>
-
-
-
-
-    <!-- ~~~~~ NAVIGATION ~~~~~ -->
-
-    <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
-
-    <!-- TASK BAR -->
-    <div class="task-bar background-white1" id="task-bar">
-        <!-- TASK ROW 1 -->
-        <div class="task-row1">
-            <div class="task-col1">
-                <div id="employee-element">
-                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
-                </div>  
-            </div>
-            <div class="task-col2">
-                <div id="username-show-element">
-                    <p class="font-dbHelvethaica" id="username-text"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ TASK ROW 1 -->
-
-        <!-- TASK ROW 2 -->
-        <div class="task-row2 background-white1">
-            <!-- Database Tour -->
-            <div class="task-topics" id="database-tour">
-                <div class="square-check background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
-                </div>
-            </div>
-            <!-- Tasks -->
-            <div class="task-topics" id="tasks">
-                <p class="font-ocrb" id="tasks-text">TASKS</p>
-            </div>
-            <!-- Zone 1 -->
-            <div class="task-topics zone">
-                <div class="square-check completed-zone background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
-                </div>
-            </div>
-            <!-- Zone 2 -->
-            <div class="task-topics zone">
-                <div class="square-check completed-zone background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
-                </div>
-            </div>
-            <!-- Zone 3 -->
-            <div class="task-topics zone">
-                <div class="square-check background-blue"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
-                </div>
-            </div>
-            <!-- Confidential Zone -->
-            <div class="task-topics zone">
-                <div class="square-check background-grey2"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
-                </div>
-            </div>
-        </div>
-        <!--/ TASK ROW 2 -->
-
-        <!-- TASK ROW 3 -->
-        <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
-        </div>
-        <!--/ TASK ROW 1 -->
-
-        <!-- ABOUT -->
-        <div class="task-hidden-about background-white1">
-            <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
-                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
-                </button>
-            </div>
-            <div class="about-info-row2">
-                <p class="font-baiJamjuree about-info-text">
-                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-                </p>
-            </div>
-            <div class="about-info-row3">
-                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
-            </div>
-        </div>
-        <!--/ ABOUT -->
-    </div>
-    <!--/ TASK BAR -->
-
-    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
-
 </body>
 </html>
