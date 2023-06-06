@@ -395,10 +395,16 @@ button {
     z-index: 2;
 }
 
-#clock {
+#clock, #radiant {
     position: absolute;
     top: 2%;
     right: 30%;
+}
+
+#radiant {
+    border-radius: 20px;
+    width: 54px;
+    height: 52px;
 }
 
 #bar {

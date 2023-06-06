@@ -18,11 +18,19 @@ function selectContent(vidId, clearVidId, crContentId, nContentId) {
     nextContent.style.display = 'block'
 }
 
+var angle = 0;
+function setClickRediant() {
+      angle += (angle === 270) ? 45 : 90;
+      var gradient = "conic-gradient(#D0FF0B " + angle + "deg, transparent 0deg)";
+      document.getElementById("radiant").style.background = gradient;
+}
+
 function setProgress(score) {
     let progress = document.getElementById('progress');
     let currentW = progress.offsetWidth;
     console.log('Its width: '+currentW);
     if(score == '1' && currentW < 500) {
+        setClickRediant()
         if(currentW+value >= 500) {
             progress.style.width = '500' +'px';
         }

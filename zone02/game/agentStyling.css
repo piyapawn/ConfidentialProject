@@ -30,6 +30,15 @@ button {
     z-index: 3;
 }
 
+#greyArea {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    opacity: 50%;
+    z-index: 1;
+    background-color: #D9D9D9;
+}
+
 #guidePic {
     width: 1920px;
     height: 1080px;
@@ -95,6 +104,7 @@ button {
 /* How to play */
 #guide01 {
     position: absolute;
+    z-index: 1;
     top: 40%;
     left: 11%;
     animation: fadeClear 0.7s 1;
@@ -103,6 +113,7 @@ button {
 #guide02 {
     display: none;
     position: absolute;
+    z-index: 1;
     bottom: 41%;
     right: 18.5%;
 }

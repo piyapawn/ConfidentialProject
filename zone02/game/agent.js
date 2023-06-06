@@ -143,10 +143,17 @@ function showRequirement(questId, otherBt1, otherBt2, userId) {
     usersEle.style.animationFillMode = 'forwards'
     disableBt(otherBt1);
     disableBt(otherBt2);
-    if(questId == "quest01" || questId == "quest02") {
-        areaProv.innerHTML = "area : Bangkok";
-    }else if(questId == "quest03") {
-        areaProv.innerHTML = "area : Chiang mai";
+
+    switch(questId) {
+        case 'quest01':
+            areaProv.innerHTML = "area : Bangkok";
+            break;
+        case 'quest02':
+            areaProv.innerHTML = "area : Chiang mai";
+            break;
+        case 'quest03':
+            areaProv.innerHTML = "area : Thailand";
+            break;
     }
 }
 

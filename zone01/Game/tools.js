@@ -65,6 +65,9 @@ function showResult() {
     document.getElementById('resultButton').style.zIndex = -4;
     document.getElementById('endingResult').style.zIndex = 3;
     document.getElementById('nextZoneButton').style.zIndex = 3;
+
+                            
+    let soundSource = "/zone01/audio/gameEnd.mp3"
 }
 
 // toggle tool info

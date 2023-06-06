@@ -12,7 +12,7 @@ body {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 8.8%;
+    width: 5.2%;
     height: 100%;
 }
 
@@ -101,6 +101,8 @@ body {
     cursor: pointer;
     animation: blink 1.3s infinite;
 }
+
+
 
 .buttonNext:hover {
     opacity: 100%;
