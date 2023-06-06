@@ -37,6 +37,9 @@ function setProgress(score) {
 
 function playVid(vidId) {
     let vid = document.getElementById(vidId);
+    const imgStatic = document.getElementById('staticimg');
+
+    imgStatic.style.zIndex = '-2'
     vid.play();
 }
 
@@ -44,12 +47,45 @@ function clearFeed(clearVidId) {
     document.getElementById(clearVidId).style.display = 'none';
 }
 
+function gameOver() {
+    // show the game over info img
+    const restartGuide = document.getElementById("restart");
+    restartGuide.style.display = "block";
+
+    // set the opacity and disable the contents and interest
+    const collectContents = document.querySelectorAll(".contents");
+    const collectPosts = document.querySelectorAll(".post");
+    const collectInterest = document.querySelectorAll(".userInterest");
+    for (let i = 0; i < collectContents.length; i++) {
+        collectContents[i].style.opacity = "0.5";
+
+    }
+    for (let i = 0; i < collectPosts.length; i++) {
+        collectPosts[i].disabled = true;
+        collectPosts[i].style.cursor = "default";
+    }
+    for (let i = 0; i < collectInterest.length; i++) {
+        collectInterest[i].style.opacity = "0.5";
+    }
+}
+
 function hideVid(contentId, score) {
     let vid = document.getElementById(contentId);
     let hovPic = document.getElementById('hoverPic');
+    const imgStatic = document.getElementById('staticimg');
+
+    imgStatic.style.zIndex = '1'
     vid.style.display = 'none';
 
     setProgress(score);
+
+    let progress = document.getElementById('progress');
+    let currentW = progress.offsetWidth;
+
+    if(currentW <= 0) {
+        gameOver();
+        return;
+    }
 
     if(contentId == 'content05') {
         return;

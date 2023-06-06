@@ -43,7 +43,8 @@
             </button>
         </div>
         <div id="guide04">
-            <img src="/zone03/asset/guide/box_tu4.png" alt="">
+            <img class="hoverBG4" src="/zone03/asset/guide/box_tu4.png" alt="">
+            <img  src="/zone03/game/contents/hover/hover1.png" alt="" style="filter: brightness(60%);">
             <button id="guide04Bt" onclick="activeGuide('guide04', 'guide05')">
                 <img src="/zone01/Game/gameGuide/button1.png" alt="">
             </button>
@@ -162,10 +163,18 @@
                             </div>
                         </div>
                         <div class="feed-vids">
+                            <!-- game over image -->
+                            <div id="restart">
+                                <img  src="/zone03/game/contents/zone3_restart.png" alt="">
+                                <a href="/zone03/index.html" class="font-dbHelvethaica">เริ่มทำภารกิจใหม่</a>
+                            </div>
                             <!-- hover image will appear -->
                             <div id="hoverPic"></div>
 
-                            <!-- quiz 01 -->
+                            <!-- static image : telling user to select content -->
+                            <img id="staticimg" src="/zone03/game/contents/choices/staticimg.jpg" alt="">
+
+                            <!-- video to show on feeds -->
                             <video id="vid01" onended="hideVid('content01', '1')" src="/zone03/game/contents/choices/q1-1.mp4"></video>
                             <video id="vid02" onended="hideVid('content01', '0')" src="/zone03/game/contents/choices/q1-2.mp4"></video>
                             <video id="vid03" onended="hideVid('content02', '1')" src="/zone03/game/contents/choices/q2-1.mp4"></video>

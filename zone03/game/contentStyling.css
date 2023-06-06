@@ -105,8 +105,15 @@ button {
 #guide04 {
     display: none;
     position: absolute;
+    top: 13.6%;
+    right: 22%;
+}
+
+.hoverBG4 {
+    position: absolute;
     bottom: 21%;
-    right: 8%;
+    left: 70%;
+    z-index: 1;
 }
 
 #guide05 {
@@ -145,9 +152,10 @@ button {
 
 #guide04Bt {
     position: absolute;
-    top: 82%;
-    right: 7%;
+    top: 73%;
+    left: 129%;
     color: #D0FF0B;
+    z-index: 1;
 }
 
 #guide05Bt {
@@ -452,12 +460,50 @@ button {
 #hoverPic {
     position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
+    left: 4%;
+    width: 709px;
+    height: 933px;
     background: url(/zone03/game/contents/hover/hover1.png);
     z-index: 2;
     opacity: 0%;
     transition: opacity 1s;
+}
+
+#staticimg {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: initial;
+    height: initial;
+    z-index: 1;
+}
+
+#restart {
+    display: none;
+    position: relative;
+    top: 0;
+    width: auto;
+    height: auto;
+    z-index: 4;
+}
+
+#restart img {
+    width: 706px;
+    height: initial;
+}
+
+#restart a {
+    background: none;
+    bottom: 37%;
+    border: solid black 1px;
+    color: #0D3BFC;
+    cursor: pointer;
+    padding-top: 15px;
+    position: absolute;
+    left: 38%;
+    font-size: 30px;
+    width: 180px;
+    height: 50px;
 }
 
 #hoverPic:hover {
