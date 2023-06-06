@@ -13,303 +13,305 @@
     <title>ZONE 03 : Tools</title>
 </head>
 <body onload="windowLoad()">
-    <!--Zone03 game tools!-->
-    <!-- A guide to play this zone -->
-    <div class="page" id="guidePic">
-        <div id="bgGuide"></div>
-        <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
-        <div id="guideEle">
-            <img src="/zone03/asset/guide/box_tu6.png" alt="">
-        </div>
-    </div>
-    <div class="page" id="guide">
-        <div id="bgGuide"></div>
-        <div id="guide01">
-            <img src="/zone03/asset/guide/box_tu1.png" alt="">
-            <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide02">
-            <img src="/zone03/asset/guide/box_tu2.png" alt="">
-            <button id="guide02Bt" onclick="activeGuide('guide02', 'guide03')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide03">
-            <img src="/zone03/asset/guide/box_tu3.png" alt="">
-            <button id="guide03Bt" onclick="activeGuide('guide03', 'guide04')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide04">
-            <img class="hoverBG4" src="/zone03/asset/guide/box_tu4.png" alt="">
-            <img  src="/zone03/game/contents/hover/hover1.png" alt="" style="filter: brightness(60%);">
-            <button id="guide04Bt" onclick="activeGuide('guide04', 'guide05')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide05">
-            <img src="/zone03/asset/guide/box_tu5.png" alt="">
-            <button id="guide05Bt" onclick="activeGuide('guide05', 'guide05')">
-                <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
-            </button>
-        </div>
-    </div>
-
-    <div class="page" id="mainContent">
-        <!--row that contain requirement and choices!-->
-        <div class="container">
-            <!--column that contain client requirement and choices!-->
-            <!-- column to show ending zone image -->
-            <div class="background-white1" id="endingZone">
-                <img src="/zone01/Asssets/ele_finish.png" alt="">
-                <!-- Link to confidential zone here -->
-                <a id="arrow" href="/confidential.html">
-                    <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
-                </a>
-            </div>
-            <div class="col01">
-                <!--Left container for task!-->
-                <div class="box background-white1"></div>
-            </div>
-            <div class="col02">
-                <!-- Showing logo and content to select -->
-                <div class="contentBlock">
-                    <!-- logo -->
-                    <div class="zoneLogo">
-                        <img src="/zone03/asset/logo_zone03.png" alt="">
-                    </div>
-                    <div class="colName font-dbHelvethaica">
-                        <p>your target:<br></p>
-                        <p style="padding-right: 12%;">ip : 38.169.83.225 </p>
-                    </div>
-                    <p class="font-dbHelvethaica" style="font-size: 30px; margin: 0;">
-                        CONTENTS : 
-                    </p>
-                    <!-- Block : Content 01 -->
-                    <div class="contents" id="content01">
-                        <!-- Select content -->
-                        <button class="post" id="post01" onclick="selectContent('vid01', 'vid02', 'content01', 'content02')"></button>
-                        <button class="post" id="post02" onclick="selectContent('vid02', 'vid01', 'content01', 'content02')"></button>
-                    </div>
-
-                    <!-- Block : Content 02 -->
-                    <div class="contents" id="content02">
-                        <!-- Select content -->
-                        <button class="post" id="post03" onclick="selectContent('vid03', 'vid04', 'content02', 'content03')"></button>
-                        <button class="post" id="post04" onclick="selectContent('vid04', 'vid03', 'content02', 'content03')"></button>
-                    </div>
-
-                    <!-- Block : Content 03 -->
-                    <div class="contents" id="content03">
-                        <!-- Select content -->
-                        <button class="post" id="post05" onclick="selectContent('vid05', 'vid06', 'content03', 'content04')"></button>
-                        <button class="post" id="post06" onclick="selectContent('vid06', 'vid05', 'content03', 'content04')"></button>
-                    </div>
-
-                    <!-- Block : Content 04 -->
-                    <div class="contents" id="content04">
-                        <!-- Select content -->
-                        <button class="post" id="post07" onclick="selectContent('vid07', 'vid08', 'content04', 'content05')"></button>
-                        <button class="post" id="post08" onclick="selectContent('vid08', 'vid07', 'content04', 'content05')"></button>
-                    </div>
-
-                    <!-- Block : Content 05 -->
-                    <div class="contents" id="content05">
-                        <!-- Select content -->
-                        <button class="post" id="post09" onclick="selectContent('vid09', 'vid10', 'content05', 'content05')"></button>
-                        <button class="post" id="post10" onclick="selectContent('vid10', 'vid09', 'content05', 'content05')"></button>
-                    </div>
-                   
-                    <!-- notice box -->
-                    <button id="showNotice" onclick="toggleNotice('show')">
-                        <img src="/zone03/game/contents/icon_notice.png" alt="">
-                    </button>
-                    <button id="closeBt" onclick="toggleNotice('close')">X</button>
-                    <img id="noticeBox" src="/zone03/game/contents/box_notice.png" alt="">
-                </div>
-            </div>
-
-            <!-- content on feeds and user interests -->
-            <div class="col03">
-                <!-- control panel bar and user happiness bar -->
-                <div class="panelBar">
-                    <div class="pan01">
-                        <div class="dot" style="margin-left: 30px;"></div>
-                        <p class="font-dbHelvethaica" style="font-size: 30px; margin-left: 20px;">CONTROL PANEL - 38.169.83.225</p>
-                    </div>
-
-                    <img id="clock" src="/zone03/game/contents/icon_เวลา.png" alt="">
-                    <img id="happ" src="/zone03/game/contents/icon_ความพอใจ.png" alt="">
-                    <p class="font-dbHelvethaica" id="barName">ความพึงพอใจของผู้ใช้</p>
-                    <div class="pan02">
-                        <div id="bar" style="margin-right: 30px;">
-                            <div id="progress"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- column that contain, feeds row and user info row -->
-                <div class="active">
-                    <!-- user feed, active when user select content -->
-                    <div class="feeds">
-                        <div class="tab-bar">
-                            <div class="social1 font-dbHelvethaica">
-                                www.socialmedia01.com
-                            </div>
-                            <div class="social2 font-dbHelvethaica">
-                                www.socialmedia02.com
-                            </div>
-                        </div>
-                        <div class="feed-vids">
-                            <!-- game over image -->
-                            <div id="restart">
-                                <img  src="/zone03/game/contents/zone3_restart.png" alt="">
-                                <a href="/zone03/index.html" class="font-dbHelvethaica">เริ่มทำภารกิจใหม่</a>
-                            </div>
-                            <!-- hover image will appear -->
-                            <div id="hoverPic"></div>
-
-                            <!-- static image : telling user to select content -->
-                            <img id="staticimg" src="/zone03/game/contents/choices/staticimg.jpg" alt="">
-
-                            <!-- video to show on feeds -->
-                            <video id="vid01" onended="hideVid('content01', '1')" src="/zone03/game/contents/choices/q1-1.mp4"></video>
-                            <video id="vid02" onended="hideVid('content01', '0')" src="/zone03/game/contents/choices/q1-2.mp4"></video>
-                            <video id="vid03" onended="hideVid('content02', '1')" src="/zone03/game/contents/choices/q2-1.mp4"></video>
-                            <video id="vid04" onended="hideVid('content02', '0')" src="/zone03/game/contents/choices/q2-2.mp4"></video>
-                            <video id="vid05" onended="hideVid('content03', '1')" src="/zone03/game/contents/choices/q3-1.mp4"></video>
-                            <video id="vid06" onended="hideVid('content03', '0')" src="/zone03/game/contents/choices/q3-2.mp4"></video>
-                            <video id="vid07" onended="hideVid('content04', '0')" src="/zone03/game/contents/choices/q4-1.mp4"></video>
-                            <video id="vid08" onended="hideVid('content04', '1')" src="/zone03/game/contents/choices/q4-2.mp4"></video>
-                            <video id="vid09" onended="endIt('1')" src="/zone03/game/contents/choices/q5-1.mp4"></video>
-                            <video id="vid10" onended="endIt('0')" src="/zone03/game/contents/choices/q5-2.mp4"></video>
-                        </div>
-                    </div>
-                    <!-- user interest column -->
-                    <div class="userInterest">
-                        <p class="dataHead font-dbHelvethaica">DATA&emsp;&emsp;&emsp;&emsp;\\\\\\\\</p>
-                        <p class="font-dbHelvethaica" style="color: #0D3BFC; font-size: 25px; margin: 0;">
-                            38.169.83.225
-                        </p>
-                        <div class="interestIn">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-1.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-2.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-3.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-4.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-5.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-6.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-7.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-8.png" alt="">
-                            <img src="/zone02/game/user/quiz1/01kwanjira/1-9.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button id="hintButton" onclick="showhideGuide('hintButton')">
-                ?
-            </button>
-        </div>
-        
-    </div>
-
-
-
-
-
-    <!-- ~~~~~ NAVIGATION ~~~~~ -->
-
-    <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
-
-    <!-- TASK BAR -->
-    <div class="task-bar background-white1" id="task-bar">
-        <!-- TASK ROW 1 -->
-        <div class="task-row1">
-            <div class="task-col1">
-                <div id="employee-element">
-                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
-                </div>  
-            </div>
-            <div class="task-col2">
-                <div id="username-show-element">
-                    <p class="font-dbHelvethaica" id="username-text"></p>
-                </div>
+    <div class="supercontainer">
+        <!--Zone03 game tools!-->
+        <!-- A guide to play this zone -->
+        <div class="page" id="guidePic">
+            <div id="bgGuide"></div>
+            <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
+            <div id="guideEle">
+                <img src="/zone03/asset/guide/box_tu6.png" alt="">
             </div>
         </div>
-        <!--/ TASK ROW 1 -->
-
-        <!-- TASK ROW 2 -->
-        <div class="task-row2 background-white1">
-            <!-- Database Tour -->
-            <div class="task-topics" id="database-tour">
-                <div class="square-check background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
-                </div>
-            </div>
-            <!-- Tasks -->
-            <div class="task-topics" id="tasks">
-                <p class="font-ocrb" id="tasks-text">TASKS</p>
-            </div>
-            <!-- Zone 1 -->
-            <div class="task-topics zone">
-                <div class="square-check completed-zone background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
-                </div>
-            </div>
-            <!-- Zone 2 -->
-            <div class="task-topics zone">
-                <div class="square-check completed-zone background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
-                </div>
-            </div>
-            <!-- Zone 3 -->
-            <div class="task-topics zone">
-                <div class="square-check background-blue"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
-                </div>
-            </div>
-            <!-- Confidential Zone -->
-            <div class="task-topics zone">
-                <div class="square-check background-grey2"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
-                </div>
-            </div>
-        </div>
-        <!--/ TASK ROW 2 -->
-
-        <!-- TASK ROW 3 -->
-        <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
-        </div>
-        <!--/ TASK ROW 1 -->
-
-        <!-- ABOUT -->
-        <div class="task-hidden-about background-white1">
-            <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
-                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+        <div class="page" id="guide">
+            <div id="bgGuide"></div>
+            <div id="guide01">
+                <img src="/zone03/asset/guide/box_tu1.png" alt="">
+                <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
                 </button>
             </div>
-            <div class="about-info-row2">
-                <p class="font-baiJamjuree about-info-text">
-                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-                </p>
+            <div id="guide02">
+                <img src="/zone03/asset/guide/box_tu2.png" alt="">
+                <button id="guide02Bt" onclick="activeGuide('guide02', 'guide03')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
+                </button>
             </div>
-            <div class="about-info-row3">
-                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            <div id="guide03">
+                <img src="/zone03/asset/guide/box_tu3.png" alt="">
+                <button id="guide03Bt" onclick="activeGuide('guide03', 'guide04')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
+                </button>
+            </div>
+            <div id="guide04">
+                <img class="hoverBG4" src="/zone03/asset/guide/box_tu4.png" alt="">
+                <img  src="/zone03/game/contents/hover/hover1.png" alt="" style="filter: brightness(60%);">
+                <button id="guide04Bt" onclick="activeGuide('guide04', 'guide05')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
+                </button>
+            </div>
+            <div id="guide05">
+                <img src="/zone03/asset/guide/box_tu5.png" alt="">
+                <button id="guide05Bt" onclick="activeGuide('guide05', 'guide05')">
+                    <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
+                </button>
             </div>
         </div>
-        <!--/ ABOUT -->
-    </div>
-    <!--/ TASK BAR -->
 
-    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+        <div class="page" id="mainContent">
+            <!--row that contain requirement and choices!-->
+            <div class="container">
+                <!--column that contain client requirement and choices!-->
+                <!-- column to show ending zone image -->
+                <div class="background-white1" id="endingZone">
+                    <img src="/zone01/Asssets/ele_finish.png" alt="">
+                    <!-- Link to confidential zone here -->
+                    <a id="arrow" href="/confidential.html">
+                        <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
+                    </a>
+                </div>
+                <div class="col01">
+                    <!--Left container for task!-->
+                    <div class="box background-white1"></div>
+                </div>
+                <div class="col02">
+                    <!-- Showing logo and content to select -->
+                    <div class="contentBlock">
+                        <!-- logo -->
+                        <div class="zoneLogo">
+                            <img src="/zone03/asset/logo_zone03.png" alt="">
+                        </div>
+                        <div class="colName font-dbHelvethaica">
+                            <p>your target:<br></p>
+                            <p style="padding-right: 12%;">ip : 38.169.83.225 </p>
+                        </div>
+                        <p class="font-dbHelvethaica" style="font-size: 30px; margin: 0;">
+                            CONTENTS : 
+                        </p>
+                        <!-- Block : Content 01 -->
+                        <div class="contents" id="content01">
+                            <!-- Select content -->
+                            <button class="post" id="post01" onclick="selectContent('vid01', 'vid02', 'content01', 'content02')"></button>
+                            <button class="post" id="post02" onclick="selectContent('vid02', 'vid01', 'content01', 'content02')"></button>
+                        </div>
+
+                        <!-- Block : Content 02 -->
+                        <div class="contents" id="content02">
+                            <!-- Select content -->
+                            <button class="post" id="post03" onclick="selectContent('vid03', 'vid04', 'content02', 'content03')"></button>
+                            <button class="post" id="post04" onclick="selectContent('vid04', 'vid03', 'content02', 'content03')"></button>
+                        </div>
+
+                        <!-- Block : Content 03 -->
+                        <div class="contents" id="content03">
+                            <!-- Select content -->
+                            <button class="post" id="post05" onclick="selectContent('vid05', 'vid06', 'content03', 'content04')"></button>
+                            <button class="post" id="post06" onclick="selectContent('vid06', 'vid05', 'content03', 'content04')"></button>
+                        </div>
+
+                        <!-- Block : Content 04 -->
+                        <div class="contents" id="content04">
+                            <!-- Select content -->
+                            <button class="post" id="post07" onclick="selectContent('vid07', 'vid08', 'content04', 'content05')"></button>
+                            <button class="post" id="post08" onclick="selectContent('vid08', 'vid07', 'content04', 'content05')"></button>
+                        </div>
+
+                        <!-- Block : Content 05 -->
+                        <div class="contents" id="content05">
+                            <!-- Select content -->
+                            <button class="post" id="post09" onclick="selectContent('vid09', 'vid10', 'content05', 'content05')"></button>
+                            <button class="post" id="post10" onclick="selectContent('vid10', 'vid09', 'content05', 'content05')"></button>
+                        </div>
+                    
+                        <!-- notice box -->
+                        <button id="showNotice" onclick="toggleNotice('show')">
+                            <img src="/zone03/game/contents/icon_notice.png" alt="">
+                        </button>
+                        <button id="closeBt" onclick="toggleNotice('close')">X</button>
+                        <img id="noticeBox" src="/zone03/game/contents/box_notice.png" alt="">
+                    </div>
+                </div>
+
+                <!-- content on feeds and user interests -->
+                <div class="col03">
+                    <!-- control panel bar and user happiness bar -->
+                    <div class="panelBar">
+                        <div class="pan01">
+                            <div class="dot" style="margin-left: 30px;"></div>
+                            <p class="font-dbHelvethaica" style="font-size: 30px; margin-left: 20px;">CONTROL PANEL - 38.169.83.225</p>
+                        </div>
+
+                        <img id="clock" src="/zone03/game/contents/icon_เวลา.png" alt="">
+                        <img id="happ" src="/zone03/game/contents/icon_ความพอใจ.png" alt="">
+                        <p class="font-dbHelvethaica" id="barName">ความพึงพอใจของผู้ใช้</p>
+                        <div class="pan02">
+                            <div id="bar" style="margin-right: 30px;">
+                                <div id="progress"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- column that contain, feeds row and user info row -->
+                    <div class="active">
+                        <!-- user feed, active when user select content -->
+                        <div class="feeds">
+                            <div class="tab-bar">
+                                <div class="social1 font-dbHelvethaica">
+                                    www.socialmedia01.com
+                                </div>
+                                <div class="social2 font-dbHelvethaica">
+                                    www.socialmedia02.com
+                                </div>
+                            </div>
+                            <div class="feed-vids">
+                                <!-- game over image -->
+                                <div id="restart">
+                                    <img  src="/zone03/game/contents/zone3_restart.png" alt="">
+                                    <a href="/zone03/index.html" class="font-dbHelvethaica">เริ่มทำภารกิจใหม่</a>
+                                </div>
+                                <!-- hover image will appear -->
+                                <div id="hoverPic"></div>
+
+                                <!-- static image : telling user to select content -->
+                                <img id="staticimg" src="/zone03/game/contents/choices/staticimg.jpg" alt="">
+
+                                <!-- video to show on feeds -->
+                                <video id="vid01" onended="hideVid('content01', '1')" src="/zone03/game/contents/choices/q1-1.mp4"></video>
+                                <video id="vid02" onended="hideVid('content01', '0')" src="/zone03/game/contents/choices/q1-2.mp4"></video>
+                                <video id="vid03" onended="hideVid('content02', '1')" src="/zone03/game/contents/choices/q2-1.mp4"></video>
+                                <video id="vid04" onended="hideVid('content02', '0')" src="/zone03/game/contents/choices/q2-2.mp4"></video>
+                                <video id="vid05" onended="hideVid('content03', '1')" src="/zone03/game/contents/choices/q3-1.mp4"></video>
+                                <video id="vid06" onended="hideVid('content03', '0')" src="/zone03/game/contents/choices/q3-2.mp4"></video>
+                                <video id="vid07" onended="hideVid('content04', '0')" src="/zone03/game/contents/choices/q4-1.mp4"></video>
+                                <video id="vid08" onended="hideVid('content04', '1')" src="/zone03/game/contents/choices/q4-2.mp4"></video>
+                                <video id="vid09" onended="endIt('1')" src="/zone03/game/contents/choices/q5-1.mp4"></video>
+                                <video id="vid10" onended="endIt('0')" src="/zone03/game/contents/choices/q5-2.mp4"></video>
+                            </div>
+                        </div>
+                        <!-- user interest column -->
+                        <div class="userInterest">
+                            <p class="dataHead font-dbHelvethaica">DATA&emsp;&emsp;&emsp;&emsp;\\\\\\\\</p>
+                            <p class="font-dbHelvethaica" style="color: #0D3BFC; font-size: 25px; margin: 0;">
+                                38.169.83.225
+                            </p>
+                            <div class="interestIn">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-1.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-2.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-3.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-4.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-5.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-6.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-7.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-8.png" alt="">
+                                <img src="/zone02/game/user/quiz1/01kwanjira/1-9.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="hintButton" onclick="showhideGuide('hintButton')">
+                    ?
+                </button>
+            </div>
+            
+        </div>
+
+
+
+
+
+        <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+        <!-- Task Button -->
+        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+        <!-- TASK BAR -->
+        <div class="task-bar background-white1" id="task-bar">
+            <!-- TASK ROW 1 -->
+            <div class="task-row1">
+                <div class="task-col1">
+                    <div id="employee-element">
+                        <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                    </div>  
+                </div>
+                <div class="task-col2">
+                    <div id="username-show-element">
+                        <p class="font-dbHelvethaica" id="username-text"></p>
+                    </div>
+                </div>
+            </div>
+            <!--/ TASK ROW 1 -->
+
+            <!-- TASK ROW 2 -->
+            <div class="task-row2 background-white1">
+                <!-- Database Tour -->
+                <div class="task-topics" id="database-tour">
+                    <div class="square-check background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                    </div>
+                </div>
+                <!-- Tasks -->
+                <div class="task-topics" id="tasks">
+                    <p class="font-ocrb" id="tasks-text">TASKS</p>
+                </div>
+                <!-- Zone 1 -->
+                <div class="task-topics zone">
+                    <div class="square-check completed-zone background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
+                    </div>
+                </div>
+                <!-- Zone 2 -->
+                <div class="task-topics zone">
+                    <div class="square-check completed-zone background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
+                    </div>
+                </div>
+                <!-- Zone 3 -->
+                <div class="task-topics zone">
+                    <div class="square-check background-blue"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
+                    </div>
+                </div>
+                <!-- Confidential Zone -->
+                <div class="task-topics zone">
+                    <div class="square-check background-grey2"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
+                    </div>
+                </div>
+            </div>
+            <!--/ TASK ROW 2 -->
+
+            <!-- TASK ROW 3 -->
+            <div class="task-row3">
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            </div>
+            <!--/ TASK ROW 1 -->
+
+            <!-- ABOUT -->
+            <div class="task-hidden-about background-white1">
+                <div class="about-info-row1">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                        <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                    </button>
+                </div>
+                <div class="about-info-row2">
+                    <p class="font-baiJamjuree about-info-text">
+                        เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                    </p>
+                </div>
+                <div class="about-info-row3">
+                    <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+                </div>
+            </div>
+            <!--/ ABOUT -->
+        </div>
+        <!--/ TASK BAR -->
+
+        <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+    </div>
 </body>
 </html>
