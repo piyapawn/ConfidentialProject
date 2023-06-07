@@ -8,6 +8,10 @@ const value = 71;
 function selectContent(vidId, clearVidId, crContentId, nContentId) {
     let currentContent = document.getElementById(crContentId);
     let nextContent = document.getElementById(nContentId);
+<<<<<<< HEAD
+=======
+    let vid = document.getElementById(vidId);
+>>>>>>> parent of 9ffd216 (add sound)
 
     clearFeed(clearVidId);
     playVid(vidId);
@@ -33,6 +37,10 @@ function setProgress(score) {
         }
         progress.style.width = currentW - value +'px';
     }
+<<<<<<< HEAD
+=======
+    togglePostSelection('enable')
+>>>>>>> parent of 9ffd216 (add sound)
 }
 
 function playVid(vidId) {

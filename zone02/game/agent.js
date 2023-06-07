@@ -51,6 +51,10 @@ function storing(answer) {
 
 // check the answer if it all is correct or not
 function checkAns(sendBtId, quantId, unitId) {
+<<<<<<< HEAD
+=======
+    let quantityEle = document.getElementById(quantId);
+>>>>>>> parent of 9ffd216 (add sound)
     if(choosenUser.includes('0')) {
         choosenUser = [];
         document.getElementById(quantId).innerHTML = '0';
@@ -59,10 +63,17 @@ function checkAns(sendBtId, quantId, unitId) {
         alert('Some user is not matching requirement.\nPlease select again.');
     }
     else if(!choosenUser.includes('0')){
+<<<<<<< HEAD
         document.getElementById(quantId).innerHTML = 'COMPLETE';
         document.getElementById(quantId).style.border = 'solid 1px';
         document.getElementById(quantId).style.padding = '5px';
         document.getElementById(quantId).style.textDecoration = 'none';
+=======
+        quantityEle.innerHTML = 'COMPLETE';
+        quantityEle.style.border = 'solid 1px';
+        quantityEle.style.padding = '5px';
+        quantityEle.style.textDecoration = 'none';
+>>>>>>> parent of 9ffd216 (add sound)
         document.getElementById(unitId).style.display = 'none';
         document.getElementById(sendBtId).style.display = 'none';
         if(sendBtId == 'send01') {
