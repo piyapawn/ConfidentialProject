@@ -94,7 +94,7 @@ button {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 5.3%;
+    width: 5.2%;
 }
 
 #endingResult {
@@ -307,6 +307,10 @@ button {
     background: none;
 }
 
+#resultButton img{
+    animation: brighten 1.3s infinite;
+}
+
 #hintButton {
     background-color: #D0FF0B;
     border: solid black 1px;
@@ -399,6 +403,16 @@ button {
     }
     100% {
         opacity: 100%;
+    }
+}
+
+/* animation blink for result button */
+@keyframes brighten {
+    50% {
+        filter: brightness(75%);
+    }
+    100% {
+        filter: brightness(100%);
     }
 }
 

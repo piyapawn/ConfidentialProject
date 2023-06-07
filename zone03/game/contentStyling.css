@@ -268,6 +268,15 @@ button {
     background-repeat: no-repeat;
 }
 
+.postOver {
+    width: 557px;
+    height: 202px;
+    border: none;
+    background: #EAEAEA;
+    background-repeat: no-repeat;
+    margin-bottom: 25px;
+}
+
 /* Each post styling */
 #post01 {
     background-image: url(/zone03/game/contents/display/post1-1.png);
@@ -397,10 +406,16 @@ button {
     z-index: 2;
 }
 
-#clock {
+#clock, #radiant {
     position: absolute;
     top: 2%;
     right: 30%;
+}
+
+#radiant {
+    border-radius: 20px;
+    width: 54px;
+    height: 52px;
 }
 
 #bar {

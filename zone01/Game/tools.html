@@ -14,6 +14,7 @@
 </head>
 <body onload="windowLoad()">
     <!--Zone01 game tools!-->
+    <audio id="bgAudio" autoplay loop src="/zone01/audio/bg_inzone.mp3"></audio>
     <!-- A guide to play this zone -->
     <div class="page" id="guidePic">
         <div id="bgGuide"></div>
@@ -22,7 +23,7 @@
             <img src="/zone01/Game/gameGuide/box7.png" alt="">
         </div>
     </div>
-    <!-- <div class="page" id="guide">
+    <div class="page" id="guide">
         <div id="bgGuide"></div>
         <div id="guide01">
             <img src="/zone01/Game/gameGuide/box1.png" alt="">
@@ -42,7 +43,7 @@
                 <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
             </button>
         </div>
-    </div> -->
+    </div>
     <div class="page" id="mainContent">
         <!--row that contain all header and side menu!-->
         <div class="container">
@@ -481,10 +482,7 @@
         
     </div>
 
-
-
-
-        <!-- ~~~~~ NAVIGATION ~~~~~ -->
+    <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
     <!-- Task Button -->
     <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
