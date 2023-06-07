@@ -13,606 +13,605 @@
     <title>ZONE 02 : Tools</title>
 </head>
 <body onload="windowLoad()">
-    <div class="supercontainer">
-        <!--Zone02 game tools!-->
-        <!-- A guide to play this zone -->
-        <div class="page" id="guidePic">
-            <div id="bgGuide"></div>
-            <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
-            <div id="guideEle">
-                <img src="/zone02/game/gameGuide/box5-tu.png" alt="">
-            </div>
+    <!--Zone02 game tools!-->
+    <!-- A guide to play this zone -->
+    <div class="page" id="guidePic">
+        <div id="bgGuide"></div>
+        <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
+        <div id="guideEle">
+            <img src="/zone02/game/gameGuide/box5-tu.png" alt="">
         </div>
-        <div class="page" id="guide">
-            <div id="bgGuide"></div>
-            <div id="guide01">
-                <img src="/zone02/game/gameGuide/box1-z2.png" alt="">
-                <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
-                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
-                </button>
-            </div>
-            <div id="guide02">
-                <img src="/zone02/game/gameGuide/box2-z2.png" alt="">
-                <button id="guide02Bt" onclick="activeGuide('guide02', 'guide02')">
-                    <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
-                </button>
-            </div>
-        </div>
-        <div class="page" id="mainContent">
-            <!--row that contain requirement and choices!-->
-            <div class="container">
-                <!--column that contain client requirement and choices!-->
-                <!-- column to show ending zone image -->
-                <div class="background-white1" id="endingZone">
-                    <img src="/zone01/Asssets/ele_finish.png" alt="">
-                    <a id="arrow" href="/zone03/index.html">
-                        <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
-                    </a>
-                </div>
-                <div class="col01"></div>
-                <div class="col02">
-                    <!-- Showing logo and else -->
-                    <div class="quizBlock">
-                        <div class="zoneLogo indent">
-                            <img src="/zone02/game/bg/logo_zone2.png" alt="">
-                        </div>
-                        <div class="colName indent font-dbHelvethaica">
-                            <p>mode:<br></p>
-                            <p style="padding-right: 12%;">number of client : </p>
-                        </div>
-                        <!-- Client 01 -->
-                        <button class="question font-ocrb" id="question01" onclick="showRequirement('quest01', 'question02', 'question03', 'forClient01')">
-                            SOCIAL MEDIA
-                            <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
-                        </button>
-                        <div class="quest" id="quest01">
-                            <!-- Target information -->
-                            <button class="moreInfo" onclick="showhideInfo('info01', true, 'hideBt1')"></button>
-                            <img class="font-ocrb" id="info01" src="/zone02/game/gameGuide/box_targeting.png" alt="">
-                            <button id="hideBt1" onclick="showhideInfo('info01', false, 'hideBt1')">OK</button>
-
-                            <!-- client detail -->
-                            <p class="font-dbHelvethaica">client : &ensp;บริษัทอาหารเพื่อสุขภาพ</p>
-                            <p class="font-dbHelvethaica">need : &ensp;ต้องการข้อมูลของกลุ่มเป้าหมายที่รักสุขภาพ<br>
-                                &emsp;&emsp;&ensp;/ พื้นที่กรุงเทพมหานคร</p>
-                            <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
-                            <p id="quantity1" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
-                                0
-                            </p>
-                            <p id="unit1" style="display: inline-block;">&ensp;/&ensp;5</p>
-                            <button class="sendBt font-ocrb" id="send01" disabled onclick="checkAns('send01', 'quantity1', 'unit1')">SEND</button>
-                        </div>
-                        <!-- Client 02 -->
-                        <button class="question font-ocrb" id="question02" onclick="showRequirement('quest02', 'question03', 'question01', 'forClient02')">
-                            ADVERTISE SERVICE
-                            <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
-                        </button>
-                        <div class="quest" id="quest02">
-                            <!-- Target information -->
-                            <button class="moreInfo" onclick="showhideInfo('info02', true, 'hideBt2')"></button>
-                            <img class="font-ocrb" id="info02" src="/zone02/game/gameGuide/box_targeting.png" alt="">
-                            <button id="hideBt2" onclick="showhideInfo('info02', false, 'hideBt2')">OK</button>
-
-                            <p class="font-dbHelvethaica">client : &ensp;บริษัทดำเนินการและขายตั๋วความบันเทิง</p>
-                            <p class="font-dbHelvethaica">need : &ensp;ข้อมูลของกลุ่มเป้าหมายที่มีแนวโน้มจะสนใจ<br>
-                                &emsp;&emsp;&ensp;คอนเสิร์ตวง arctic zebra / พื้นที่เชียงใหม่</p>
-                            <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
-                            <p id="quantity2" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
-                                0
-                            </p>
-                            <p id="unit2" style="display: inline-block;">&ensp;/&ensp;3</p>
-                            <button class="sendBt font-ocrb" id="send02" disabled onclick="checkAns('send02', 'quantity2', 'unit2')">SEND</button>
-                        </div>
-                        <!-- Client 03 -->
-                        <button class="question font-ocrb" id="question03" onclick="showRequirement('quest03', 'question01', 'question02', 'forClient03')">
-                            DATA BROKER
-                            <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
-                        </button>
-                        <div class="quest" id="quest03">
-                            <!-- Target information -->
-                            <button class="moreInfoRe" onclick="showhideInfo('info03', true, 'hideBt3')"></button>
-                            <img class="font-ocrb" id="info03" src="/zone02/game/gameGuide/box_retarget.png" alt="">
-                            <button id="hideBt3" onclick="showhideInfo('info03', false, 'hideBt3')">OK</button>
-
-                            <p class="font-dbHelvethaica">client : &ensp;ร้านเสื้อผ้ามือสอง</p>
-                            <p class="font-dbHelvethaica">need : &ensp;ข้อมูลของกลุ่มเป้าหมายที่เคยเข้าชมบัญชี<br>
-                                &emsp;&emsp;&ensp;instagram ของร้าน / พื้นที่ประเทศไทย</p>
-                            <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
-                            <p id="quantity3" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
-                                0
-                            </p>
-                            <p id="unit3" style="display: inline-block;">&ensp;/&ensp;3</p>
-                            <button class="sendBt font-ocrb" id="send03" disabled onclick="checkAns('send03', 'quantity3', 'unit3')">SEND</button>
-                        </div>
-                    </div>
-
-                    <!-- User list for 1st client -->
-                    <div class="clients" id="forClient01">
-                        <!-- User 01 -->
-                        <button class="userData" id="user11" onclick="showUserData('user01')"></button>
-                        <div class="user" id="user01">
-                            <button class="showDataBt font-ocrb" id="dataBt11" onclick="showUserDetail(1, 'interest11', 'dataBt11')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/01kwanjira/ascii7-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest11">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest11', 'dataBt11')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/01kwanjira/1-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose11" onclick="addQuant('quantity1', '1', 'send01', 'choose11', 'user11')"></button>
-                        </div>
-
-                        <!-- User 02 -->
-                        <button class="userData" id="user12" onclick="showUserData('user02')"></button>
-                        <div class="user" id="user02">
-                            <button class="showDataBt font-ocrb" id="dataBt12" onclick="showUserDetail(1, 'interest12', 'dataBt12')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/02kochaporn/ascii6-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest12">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest12', 'dataBt12')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/02kochaporn/2-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose12" onclick="addQuant('quantity1', '1', 'send01', 'choose12', 'user12')"></button>
-                        </div>
-
-                        <!-- User 03 -->
-                        <button class="userData" id="user13" onclick="showUserData('user03')"></button>
-                        <div class="user" id="user03">
-                            <button class="showDataBt font-ocrb" id="dataBt13" onclick="showUserDetail(1, 'interest13', 'dataBt13')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/03phuriwat/ascii2-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest13">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest13', 'dataBt13')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/03phuriwat/3-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose13" onclick="addQuant('quantity1', '1', 'send01', 'choose13', 'user13')"></button>
-                        </div>
-
-                        <!-- User 04 -->
-                        <button class="userData" id="user14" onclick="showUserData('user04')"></button>
-                        <div class="user" id="user04">
-                            <button class="showDataBt font-ocrb" id="dataBt14" onclick="showUserDetail(1, 'interest14', 'dataBt14')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/04panupon/ascii3-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest14">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest14', 'dataBt14')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/04panupon/4-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose14" onclick="addQuant('quantity1', '1', 'send01', 'choose14', 'user14')"></button>
-                        </div>
-
-                        <!-- User 05 -->
-                        <button class="userData" id="user15" onclick="showUserData('user05')"></button>
-                        <div class="user" id="user05">
-                            <button class="showDataBt font-ocrb" id="dataBt15" onclick="showUserDetail(1, 'interest15', 'dataBt15')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/05atitan/ascii5-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest15">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest15', 'dataBt15')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/05atitan/5-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose15" onclick="addQuant('quantity1', '1', 'send01', 'choose15', 'user15')"></button>
-                        </div>
-
-                        <!-- User 06 -->
-                        <button class="userData" id="user16" onclick="showUserData('user06')"></button>
-                        <div class="user" id="user06">
-                            <button class="showDataBt font-ocrb" id="dataBt16" onclick="showUserDetail(1, 'interest16', 'dataBt16')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/06pimpa/ascii1-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest16">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest16', 'dataBt16')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/06pimpa/6-8.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose16" onclick="addQuant('quantity1', '0', 'send01', 'choose16', 'user16')"></button>
-                        </div>
-
-                        <!-- User 07 -->
-                        <button class="userData" id="user17" onclick="showUserData('user07')"></button>
-                        <div class="user" id="user07">
-                            <button class="showDataBt font-ocrb" id="dataBt17" onclick="showUserDetail(1, 'interest17', 'dataBt17')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz1/07dolawa/ascii4-q1.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest17">
-                            <button class="closeBt" onclick="showUserDetail(1, 'interest17', 'dataBt17')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-1.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-2.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-3.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-4.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-5.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-6.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-7.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-8.png" alt="">
-                                <img src="/zone02/game/user/quiz1/07dolawa/7-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose17" onclick="addQuant('quantity1', '0', 'send01', 'choose17', 'user17')"></button>
-                        </div>
-                    </div>
-
-                    <!-- User list for 2nd client -->
-                    <div class="clients" id="forClient02">
-                        <!-- User 01 -->
-                        <button class="userData" id="user21" onclick="showUserData('user012')"></button>
-                        <div class="user" id="user012">
-                            <button class="showDataBt font-ocrb" id="dataBt21" onclick="showUserDetail(2, 'interest21', 'dataBt21')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz2/01sunisa/ascii2-q2.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest21">
-                            <button class="closeBt" onclick="toggle('interest21')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-1.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-2.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-3.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-4.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-5.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-6.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-7.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-8.png" alt="">
-                                <img src="/zone02/game/user/quiz2/01sunisa/1-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose21" onclick="addQuant('quantity2', '1', 'send02', 'choose21', 'user21')"></button>
-                        </div>
-
-                        <!-- User 02 -->
-                        <button class="userData" id="user22" onclick="showUserData('user022')"></button>
-                        <div class="user" id="user022">
-                            <button class="showDataBt font-ocrb" id="dataBt22" onclick="showUserDetail(2, 'interest22', 'dataBt22')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz2/02pongsapak/ascii5-q2.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest22">
-                            <button class="closeBt" onclick="toggle('interest22')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-1.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-2.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-3.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-4.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-5.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-6.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-7.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-8.png" alt="">
-                                <img src="/zone02/game/user/quiz2/02pongsapak/2-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose22" onclick="addQuant('quantity2', '0', 'send02', 'choose22', 'user22')"></button>
-                        </div>
-
-                        <!-- User 03 -->
-                        <button class="userData" id="user23" onclick="showUserData('user032')"></button>
-                        <div class="user" id="user032">
-                            <button class="showDataBt font-ocrb" id="dataBt23" onclick="showUserDetail(2, 'interest23', 'dataBt23')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz2/03merisa/ascii3-q2.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest23">
-                            <button class="closeBt" onclick="toggle('interest23')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-1.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-2.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-3.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-4.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-5.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-6.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-7.png" alt="">
-                                <img src="/zone02/game/user/quiz2/03merisa/3-8.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose23" onclick="addQuant('quantity2', '1', 'send02', 'choose23', 'user23')"></button>
-                        </div>
-
-                        <!-- User 04 -->
-                        <button class="userData" id="user24" onclick="showUserData('user042')"></button>
-                        <div class="user" id="user042">
-                            <button class="showDataBt font-ocrb" id="dataBt24" onclick="showUserDetail(2, 'interest24', 'dataBt24')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz2/04pat/ascii1-q2.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest24">
-                            <button class="closeBt" onclick="toggle('interest24')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz2/04pat/4-1.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-2.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-3.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-4.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-5.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-6.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-7.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-8.png" alt="">
-                                <img src="/zone02/game/user/quiz2/04pat/4-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose24" onclick="addQuant('quantity2', '0', 'send02', 'choose24', 'user24')"></button>
-                        </div>
-
-                        <!-- User 05 -->
-                        <button class="userData" id="user25" onclick="showUserData('user052')"></button>
-                        <div class="user" id="user052">
-                            <button class="showDataBt font-ocrb" id="dataBt25" onclick="showUserDetail(2, 'interest25', 'dataBt25')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz2/05chomanad/ascii4-q2.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest25">
-                            <button class="closeBt" onclick="toggle('interest25')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-1.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-2.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-3.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-4.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-5.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-6.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-7.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-8.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-9.png" alt="">
-                                <img src="/zone02/game/user/quiz2/05chomanad/5-10.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose25" onclick="addQuant('quantity2', '1', 'send02', 'choose25', 'user25')"></button>
-                        </div>
-                    </div>
-
-                    <!-- User list for 3rd client -->
-                    <div class="clients" id="forClient03">
-                        <!-- User 01 -->
-                        <button class="userData" id="user31" onclick="showUserData('user013')"></button>
-                        <div class="user" id="user013">
-                            <button class="showDataBt font-ocrb" id="dataBt31" onclick="showUserDetail(3, 'interest31', 'dataBt31')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz3/01chaninee/ascii3-q3.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest31">
-                            <button class="closeBt" onclick="toggle('interest31')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-1.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-2.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-3.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-4.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-5.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-6.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-7.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-8.png" alt="">
-                                <img src="/zone02/game/user/quiz3/01chaninee/1-9.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose31" onclick="addQuant('quantity3', '1', 'send03', 'choose31', 'user31')"></button>
-                        </div>
-
-                        <!-- User 02 -->
-                        <button class="userData" id="user32" onclick="showUserData('user023')"></button>
-                        <div class="user" id="user023">
-                            <button class="showDataBt font-ocrb" id="dataBt32" onclick="showUserDetail(3, 'interest32', 'dataBt32')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz3/03narit/ascii1-q3.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest32">
-                            <button class="closeBt" onclick="toggle('interest32')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz3/03narit/3-1.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-2.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-3.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-4.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-5.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-6.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-7.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-8.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-9.png" alt="">
-                                <img src="/zone02/game/user/quiz3/03narit/3-10.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose32" onclick="addQuant('quantity3', '1', 'send03', 'choose32', 'user32')"></button>
-                        </div>
-
-                        <!-- User 03 -->
-                        <button class="userData" id="user33" onclick="showUserData('user033')"></button>
-                        <div class="user" id="user033">
-                            <button class="showDataBt font-ocrb" id="dataBt33" onclick="showUserDetail(3, 'interest33', 'dataBt33')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz3/02preeyada/ascii4-q3.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest33">
-                            <button class="closeBt" onclick="toggle('interest33')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-1.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-2.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-3.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-4.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-5.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-6.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-7.png" alt="">
-                                <img src="/zone02/game/user/quiz3/02preeyada/2-8.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose33" onclick="addQuant('quantity3', '0', 'send03', 'choose33', 'user33')"></button>
-                        </div>
-
-                        <!-- User 04 -->
-                        <button class="userData" id="user34" onclick="showUserData('user043')"></button>
-                        <div class="user" id="user043">
-                            <button class="showDataBt font-ocrb" id="dataBt34" onclick="showUserDetail(3, 'interest34', 'dataBt34')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz3/04veerapol/ascii2-q3.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest34">
-                            <button class="closeBt" onclick="toggle('interest34')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-1.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-2.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-3.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-4.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-5.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-6.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-7.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-8.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-9.png" alt="">
-                                <img src="/zone02/game/user/quiz3/04veerapol/4-10.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose34" onclick="addQuant('quantity3', '1', 'send03', 'choose34', 'user34')"></button>
-                        </div>
-
-                        <!-- User 05 -->
-                        <button class="userData" id="user35" onclick="showUserData('user053')"></button>
-                        <div class="user" id="user053">
-                            <button class="showDataBt font-ocrb" id="dataBt35" onclick="showUserDetail(3, 'interest35', 'dataBt35')">DATA</button>
-                            <img class="userimg" src="/zone02/game/user/quiz3/05sunisa/ascii5-q3.png" alt="">
-                        </div>
-                        <div class="forDecision" id="interest35">
-                            <button class="closeBt" onclick="toggle('interest35')">X</button>
-                            <div class="interested">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-1.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-2.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-3.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-4.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-5.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-6.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-7.png" alt="">
-                                <img src="/zone02/game/user/quiz3/05sunisa/5-8.png" alt="">
-                            </div>
-                            <button class="chooseBt" id="choose35" onclick="addQuant('quantity3', '0', 'send03', 'choose35', 'user35')"></button>
-                        </div>
-                    </div>
-                </div>
-                <button id="hintButton" onclick="showhideGuide('hintButton')">
-                    ?
-                </button>
-                <p id="areaText" class="font-dbHelvethaica"></p>
-            </div>
-            
-        </div>
-
-
-        
-
-
-        <!-- ~~~~~ NAVIGATION ~~~~~ -->
-
-        <!-- Task Button -->
-        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
-
-        <!-- TASK BAR -->
-        <div class="task-bar background-white1" id="task-bar">
-            <!-- TASK ROW 1 -->
-            <div class="task-row1">
-                <div class="task-col1">
-                    <div id="employee-element">
-                        <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
-                    </div>  
-                </div>
-                <div class="task-col2">
-                    <div id="username-show-element">
-                        <p class="font-dbHelvethaica" id="username-text"></p>
-                    </div>
-                </div>
-            </div>
-            <!--/ TASK ROW 1 -->
-
-            <!-- TASK ROW 2 -->
-            <div class="task-row2 background-white1">
-                <!-- Database Tour -->
-                <div class="task-topics" id="database-tour">
-                    <div class="square-check background-white"></div>
-                    <div class="topic-text-box">
-                        <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
-                    </div>
-                </div>
-                <!-- Tasks -->
-                <div class="task-topics" id="tasks">
-                    <p class="font-ocrb" id="tasks-text">TASKS</p>
-                </div>
-                <!-- Zone 1 -->
-                <div class="task-topics zone">
-                    <div class="square-check completed-zone background-white"></div>
-                    <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
-                    </div>
-                </div>
-                <!-- Zone 2 -->
-                <div class="task-topics zone">
-                    <div class="square-check background-blue"></div>
-                    <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
-                    </div>
-                </div>
-                <!-- Zone 3 -->
-                <div class="task-topics zone">
-                    <div class="square-check background-grey2"></div>
-                    <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
-                    </div>
-                </div>
-                <!-- Confidential Zone -->
-                <div class="task-topics zone">
-                    <div class="square-check background-grey2"></div>
-                    <div class="topic-text-box">
-                        <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
-                    </div>
-                </div>
-            </div>
-            <!--/ TASK ROW 2 -->
-
-            <!-- TASK ROW 3 -->
-            <div class="task-row3">
-                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
-            </div>
-            <!--/ TASK ROW 1 -->
-
-            <!-- ABOUT -->
-            <div class="task-hidden-about background-white1">
-                <div class="about-info-row1">
-                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
-                        <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
-                    </button>
-                </div>
-                <div class="about-info-row2">
-                    <p class="font-baiJamjuree about-info-text">
-                        เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-                    </p>
-                </div>
-                <div class="about-info-row3">
-                    <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
-                </div>
-            </div>
-            <!--/ ABOUT -->
-        </div>
-        <!--/ TASK BAR -->
-
-        <!--/ ~~~~~ NAVIGATION ~~~~~ -->
     </div>
+    <div class="page" id="guide">
+        <div id="bgGuide"></div>
+        <div id="guide01">
+            <img src="/zone02/game/gameGuide/box1-z2.png" alt="">
+            <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
+                <img src="/zone01/Game/gameGuide/button1.png" alt="">
+            </button>
+        </div>
+        <div id="guide02">
+            <img src="/zone02/game/gameGuide/box2-z2.png" alt="">
+            <button id="guide02Bt" onclick="activeGuide('guide02', 'guide02')">
+                <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
+            </button>
+        </div>
+    </div>
+    <div class="page" id="mainContent">
+        <!--row that contain requirement and choices!-->
+        <div class="container">
+            <!--column that contain client requirement and choices!-->
+            <!-- column to show ending zone image -->
+            <div class="background-white1" id="endingZone">
+                <img src="/zone01/Asssets/ele_finish.png" alt="">
+                <a id="arrow" href="/zone03/index.html">
+                    <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
+                </a>
+            </div>
+            <div class="col01"></div>
+            <div class="col02">
+                <!-- Showing logo and else -->
+                <div class="quizBlock">
+                    <div class="zoneLogo indent">
+                        <img src="/zone02/game/bg/logo_zone2.png" alt="">
+                    </div>
+                    <div class="colName indent font-dbHelvethaica">
+                        <p>mode:<br></p>
+                        <p style="padding-right: 12%;">number of client : </p>
+                    </div>
+                    <!-- Client 01 -->
+                    <button class="question font-ocrb" id="question01" onclick="showRequirement('quest01', 'question02', 'question03', 'forClient01')">
+                        SOCIAL MEDIA
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
+                    <div class="quest" id="quest01">
+                        <!-- Target information -->
+                        <button class="moreInfo" onclick="showhideInfo('info01', true, 'hideBt1')"></button>
+                        <img class="font-ocrb" id="info01" src="/zone02/game/gameGuide/box_targeting.png" alt="">
+                        <button id="hideBt1" onclick="showhideInfo('info01', false, 'hideBt1')">OK</button>
+
+                        <!-- client detail -->
+                        <p class="font-dbHelvethaica">client : &ensp;บริษัทอาหารเพื่อสุขภาพ</p>
+                        <p class="font-dbHelvethaica">need : &ensp;ต้องการข้อมูลของกลุ่มเป้าหมายที่รักสุขภาพ<br>
+                            &emsp;&emsp;&ensp;/ พื้นที่กรุงเทพมหานคร</p>
+                        <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
+                        <p id="quantity1" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
+                            0
+                        </p>
+                        <p id="unit1" style="display: inline-block;">&ensp;/&ensp;5</p>
+                        <button class="sendBt font-ocrb" id="send01" disabled onclick="checkAns('send01', 'quantity1', 'unit1')">SEND</button>
+                    </div>
+                    <!-- Client 02 -->
+                    <button class="question font-ocrb" id="question02" onclick="showRequirement('quest02', 'question03', 'question01', 'forClient02')">
+                        ADVERTISE SERVICE
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
+                    <div class="quest" id="quest02">
+                        <!-- Target information -->
+                        <button class="moreInfo" onclick="showhideInfo('info02', true, 'hideBt2')"></button>
+                        <img class="font-ocrb" id="info02" src="/zone02/game/gameGuide/box_targeting.png" alt="">
+                        <button id="hideBt2" onclick="showhideInfo('info02', false, 'hideBt2')">OK</button>
+
+                        <p class="font-dbHelvethaica">client : &ensp;บริษัทดำเนินการและขายตั๋วความบันเทิง</p>
+                        <p class="font-dbHelvethaica">need : &ensp;ข้อมูลของกลุ่มเป้าหมายที่มีแนวโน้มจะสนใจ<br>
+                            &emsp;&emsp;&ensp;คอนเสิร์ตวง arctic zebra / พื้นที่เชียงใหม่</p>
+                        <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
+                        <p id="quantity2" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
+                            0
+                        </p>
+                        <p id="unit2" style="display: inline-block;">&ensp;/&ensp;3</p>
+                        <button class="sendBt font-ocrb" id="send02" disabled onclick="checkAns('send02', 'quantity2', 'unit2')">SEND</button>
+                    </div>
+                    <!-- Client 03 -->
+                    <button class="question font-ocrb" id="question03" onclick="showRequirement('quest03', 'question01', 'question02', 'forClient03')">
+                        DATA BROKER
+                        <img src="/zone02/game/bg/ele_noti.png" alt="" class="noti">
+                    </button>
+                    <div class="quest" id="quest03">
+                        <!-- Target information -->
+                        <button class="moreInfoRe" onclick="showhideInfo('info03', true, 'hideBt3')"></button>
+                        <img class="font-ocrb" id="info03" src="/zone02/game/gameGuide/box_retarget.png" alt="">
+                        <button id="hideBt3" onclick="showhideInfo('info03', false, 'hideBt3')">OK</button>
+
+                        <p class="font-dbHelvethaica">client : &ensp;ร้านเสื้อผ้ามือสอง</p>
+                        <p class="font-dbHelvethaica">need : &ensp;ข้อมูลของกลุ่มเป้าหมายที่เคยเข้าชมบัญชี<br>
+                            &emsp;&emsp;&ensp;instagram ของร้าน / พื้นที่ประเทศไทย</p>
+                        <p class="font-dbHelvethaica" style="display: inline-block;">status : &ensp;</p>
+                        <p id="quantity3" style="display: inline-block; color: #0D3BFC; text-decoration: underline 0.5px;">
+                            0
+                        </p>
+                        <p id="unit3" style="display: inline-block;">&ensp;/&ensp;3</p>
+                        <button class="sendBt font-ocrb" id="send03" disabled onclick="checkAns('send03', 'quantity3', 'unit3')">SEND</button>
+                    </div>
+                </div>
+
+                <!-- User list for 1st client -->
+                <div class="clients" id="forClient01">
+                    <!-- User 01 -->
+                    <button class="userData" id="user11" onclick="showUserData('user01')"></button>
+                    <div class="user" id="user01">
+                        <button class="showDataBt font-ocrb" id="dataBt11" onclick="showUserDetail(1, 'interest11', 'dataBt11')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/01kwanjira/ascii7-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest11">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest11', 'dataBt11')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/01kwanjira/1-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose11" onclick="addQuant('quantity1', '1', 'send01', 'choose11', 'user11')"></button>
+                    </div>
+
+                    <!-- User 02 -->
+                    <button class="userData" id="user12" onclick="showUserData('user02')"></button>
+                    <div class="user" id="user02">
+                        <button class="showDataBt font-ocrb" id="dataBt12" onclick="showUserDetail(1, 'interest12', 'dataBt12')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/02kochaporn/ascii6-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest12">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest12', 'dataBt12')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/02kochaporn/2-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose12" onclick="addQuant('quantity1', '1', 'send01', 'choose12', 'user12')"></button>
+                    </div>
+
+                    <!-- User 03 -->
+                    <button class="userData" id="user13" onclick="showUserData('user03')"></button>
+                    <div class="user" id="user03">
+                        <button class="showDataBt font-ocrb" id="dataBt13" onclick="showUserDetail(1, 'interest13', 'dataBt13')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/03phuriwat/ascii2-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest13">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest13', 'dataBt13')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/03phuriwat/3-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose13" onclick="addQuant('quantity1', '1', 'send01', 'choose13', 'user13')"></button>
+                    </div>
+
+                    <!-- User 04 -->
+                    <button class="userData" id="user14" onclick="showUserData('user04')"></button>
+                    <div class="user" id="user04">
+                        <button class="showDataBt font-ocrb" id="dataBt14" onclick="showUserDetail(1, 'interest14', 'dataBt14')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/04panupon/ascii3-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest14">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest14', 'dataBt14')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/04panupon/4-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose14" onclick="addQuant('quantity1', '1', 'send01', 'choose14', 'user14')"></button>
+                    </div>
+
+                    <!-- User 05 -->
+                    <button class="userData" id="user15" onclick="showUserData('user05')"></button>
+                    <div class="user" id="user05">
+                        <button class="showDataBt font-ocrb" id="dataBt15" onclick="showUserDetail(1, 'interest15', 'dataBt15')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/05atitan/ascii5-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest15">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest15', 'dataBt15')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/05atitan/5-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose15" onclick="addQuant('quantity1', '1', 'send01', 'choose15', 'user15')"></button>
+                    </div>
+
+                    <!-- User 06 -->
+                    <button class="userData" id="user16" onclick="showUserData('user06')"></button>
+                    <div class="user" id="user06">
+                        <button class="showDataBt font-ocrb" id="dataBt16" onclick="showUserDetail(1, 'interest16', 'dataBt16')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/06pimpa/ascii1-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest16">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest16', 'dataBt16')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/06pimpa/6-8.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose16" onclick="addQuant('quantity1', '0', 'send01', 'choose16', 'user16')"></button>
+                    </div>
+
+                    <!-- User 07 -->
+                    <button class="userData" id="user17" onclick="showUserData('user07')"></button>
+                    <div class="user" id="user07">
+                        <button class="showDataBt font-ocrb" id="dataBt17" onclick="showUserDetail(1, 'interest17', 'dataBt17')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz1/07dolawa/ascii4-q1.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest17">
+                        <button class="closeBt" onclick="showUserDetail(1, 'interest17', 'dataBt17')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-1.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-2.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-3.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-4.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-5.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-6.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-7.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-8.png" alt="">
+                            <img src="/zone02/game/user/quiz1/07dolawa/7-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose17" onclick="addQuant('quantity1', '0', 'send01', 'choose17', 'user17')"></button>
+                    </div>
+                </div>
+
+                <!-- User list for 2nd client -->
+                <div class="clients" id="forClient02">
+                    <!-- User 01 -->
+                    <button class="userData" id="user21" onclick="showUserData('user012')"></button>
+                    <div class="user" id="user012">
+                        <button class="showDataBt font-ocrb" id="dataBt21" onclick="showUserDetail(2, 'interest21', 'dataBt21')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz2/01sunisa/ascii2-q2.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest21">
+                        <button class="closeBt" onclick="toggle('interest21')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-1.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-2.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-3.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-4.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-5.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-6.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-7.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-8.png" alt="">
+                            <img src="/zone02/game/user/quiz2/01sunisa/1-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose21" onclick="addQuant('quantity2', '1', 'send02', 'choose21', 'user21')"></button>
+                    </div>
+
+                    <!-- User 02 -->
+                    <button class="userData" id="user22" onclick="showUserData('user022')"></button>
+                    <div class="user" id="user022">
+                        <button class="showDataBt font-ocrb" id="dataBt22" onclick="showUserDetail(2, 'interest22', 'dataBt22')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz2/02pongsapak/ascii5-q2.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest22">
+                        <button class="closeBt" onclick="toggle('interest22')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-1.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-2.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-3.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-4.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-5.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-6.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-7.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-8.png" alt="">
+                            <img src="/zone02/game/user/quiz2/02pongsapak/2-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose22" onclick="addQuant('quantity2', '0', 'send02', 'choose22', 'user22')"></button>
+                    </div>
+
+                    <!-- User 03 -->
+                    <button class="userData" id="user23" onclick="showUserData('user032')"></button>
+                    <div class="user" id="user032">
+                        <button class="showDataBt font-ocrb" id="dataBt23" onclick="showUserDetail(2, 'interest23', 'dataBt23')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz2/03merisa/ascii3-q2.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest23">
+                        <button class="closeBt" onclick="toggle('interest23')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-1.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-2.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-3.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-4.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-5.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-6.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-7.png" alt="">
+                            <img src="/zone02/game/user/quiz2/03merisa/3-8.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose23" onclick="addQuant('quantity2', '1', 'send02', 'choose23', 'user23')"></button>
+                    </div>
+
+                    <!-- User 04 -->
+                    <button class="userData" id="user24" onclick="showUserData('user042')"></button>
+                    <div class="user" id="user042">
+                        <button class="showDataBt font-ocrb" id="dataBt24" onclick="showUserDetail(2, 'interest24', 'dataBt24')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz2/04pat/ascii1-q2.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest24">
+                        <button class="closeBt" onclick="toggle('interest24')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz2/04pat/4-1.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-2.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-3.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-4.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-5.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-6.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-7.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-8.png" alt="">
+                            <img src="/zone02/game/user/quiz2/04pat/4-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose24" onclick="addQuant('quantity2', '0', 'send02', 'choose24', 'user24')"></button>
+                    </div>
+
+                    <!-- User 05 -->
+                    <button class="userData" id="user25" onclick="showUserData('user052')"></button>
+                    <div class="user" id="user052">
+                        <button class="showDataBt font-ocrb" id="dataBt25" onclick="showUserDetail(2, 'interest25', 'dataBt25')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz2/05chomanad/ascii4-q2.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest25">
+                        <button class="closeBt" onclick="toggle('interest25')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-1.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-2.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-3.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-4.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-5.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-6.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-7.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-8.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-9.png" alt="">
+                            <img src="/zone02/game/user/quiz2/05chomanad/5-10.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose25" onclick="addQuant('quantity2', '1', 'send02', 'choose25', 'user25')"></button>
+                    </div>
+                </div>
+
+                <!-- User list for 3rd client -->
+                <div class="clients" id="forClient03">
+                    <!-- User 01 -->
+                    <button class="userData" id="user31" onclick="showUserData('user013')"></button>
+                    <div class="user" id="user013">
+                        <button class="showDataBt font-ocrb" id="dataBt31" onclick="showUserDetail(3, 'interest31', 'dataBt31')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz3/01chaninee/ascii3-q3.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest31">
+                        <button class="closeBt" onclick="toggle('interest31')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-1.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-2.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-3.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-4.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-5.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-6.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-7.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-8.png" alt="">
+                            <img src="/zone02/game/user/quiz3/01chaninee/1-9.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose31" onclick="addQuant('quantity3', '1', 'send03', 'choose31', 'user31')"></button>
+                    </div>
+
+                    <!-- User 02 -->
+                    <button class="userData" id="user32" onclick="showUserData('user023')"></button>
+                    <div class="user" id="user023">
+                        <button class="showDataBt font-ocrb" id="dataBt32" onclick="showUserDetail(3, 'interest32', 'dataBt32')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz3/03narit/ascii1-q3.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest32">
+                        <button class="closeBt" onclick="toggle('interest32')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz3/03narit/3-1.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-2.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-3.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-4.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-5.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-6.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-7.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-8.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-9.png" alt="">
+                            <img src="/zone02/game/user/quiz3/03narit/3-10.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose32" onclick="addQuant('quantity3', '1', 'send03', 'choose32', 'user32')"></button>
+                    </div>
+
+                    <!-- User 03 -->
+                    <button class="userData" id="user33" onclick="showUserData('user033')"></button>
+                    <div class="user" id="user033">
+                        <button class="showDataBt font-ocrb" id="dataBt33" onclick="showUserDetail(3, 'interest33', 'dataBt33')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz3/02preeyada/ascii4-q3.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest33">
+                        <button class="closeBt" onclick="toggle('interest33')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-1.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-2.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-3.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-4.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-5.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-6.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-7.png" alt="">
+                            <img src="/zone02/game/user/quiz3/02preeyada/2-8.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose33" onclick="addQuant('quantity3', '0', 'send03', 'choose33', 'user33')"></button>
+                    </div>
+
+                    <!-- User 04 -->
+                    <button class="userData" id="user34" onclick="showUserData('user043')"></button>
+                    <div class="user" id="user043">
+                        <button class="showDataBt font-ocrb" id="dataBt34" onclick="showUserDetail(3, 'interest34', 'dataBt34')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz3/04veerapol/ascii2-q3.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest34">
+                        <button class="closeBt" onclick="toggle('interest34')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-1.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-2.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-3.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-4.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-5.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-6.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-7.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-8.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-9.png" alt="">
+                            <img src="/zone02/game/user/quiz3/04veerapol/4-10.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose34" onclick="addQuant('quantity3', '1', 'send03', 'choose34', 'user34')"></button>
+                    </div>
+
+                    <!-- User 05 -->
+                    <button class="userData" id="user35" onclick="showUserData('user053')"></button>
+                    <div class="user" id="user053">
+                        <button class="showDataBt font-ocrb" id="dataBt35" onclick="showUserDetail(3, 'interest35', 'dataBt35')">DATA</button>
+                        <img class="userimg" src="/zone02/game/user/quiz3/05sunisa/ascii5-q3.png" alt="">
+                    </div>
+                    <div class="forDecision" id="interest35">
+                        <button class="closeBt" onclick="toggle('interest35')">X</button>
+                        <div class="interested">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-1.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-2.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-3.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-4.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-5.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-6.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-7.png" alt="">
+                            <img src="/zone02/game/user/quiz3/05sunisa/5-8.png" alt="">
+                        </div>
+                        <button class="chooseBt" id="choose35" onclick="addQuant('quantity3', '0', 'send03', 'choose35', 'user35')"></button>
+                    </div>
+                </div>
+            </div>
+            <button id="hintButton" onclick="showhideGuide('hintButton')">
+                ?
+            </button>
+            <p id="areaText" class="font-dbHelvethaica"></p>
+        </div>
+        
+    </div>
+
+
+    
+
+
+    <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+    <!-- Task Button -->
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+
+    <!-- TASK BAR -->
+    <div class="task-bar background-white1" id="task-bar">
+        <!-- TASK ROW 1 -->
+        <div class="task-row1">
+            <div class="task-col1">
+                <div id="employee-element">
+                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                </div>  
+            </div>
+            <div class="task-col2">
+                <div id="username-show-element">
+                    <p class="font-dbHelvethaica" id="username-text"></p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- TASK ROW 2 -->
+        <div class="task-row2 background-white1">
+            <!-- Database Tour -->
+            <div class="task-topics" id="database-tour">
+                <div class="square-check background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                </div>
+            </div>
+            <!-- Tasks -->
+            <div class="task-topics" id="tasks">
+                <p class="font-ocrb" id="tasks-text">TASKS</p>
+            </div>
+            <!-- Zone 1 -->
+            <div class="task-topics zone">
+                <div class="square-check completed-zone background-white"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="task-topics zone">
+                <div class="square-check background-blue"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
+                </div>
+            </div>
+            <!-- Confidential Zone -->
+            <div class="task-topics zone">
+                <div class="square-check background-grey2"></div>
+                <div class="topic-text-box">
+                    <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
+                </div>
+            </div>
+        </div>
+        <!--/ TASK ROW 2 -->
+
+        <!-- TASK ROW 3 -->
+        <div class="task-row3">
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+        </div>
+        <!--/ TASK ROW 1 -->
+
+        <!-- ABOUT -->
+        <div class="task-hidden-about background-white1">
+            <div class="about-info-row1">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                </button>
+            </div>
+            <div class="about-info-row2">
+                <p class="font-baiJamjuree about-info-text">
+                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                </p>
+            </div>
+            <div class="about-info-row3">
+                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+            </div>
+        </div>
+        <!--/ ABOUT -->
+    </div>
+    <!--/ TASK BAR -->
+
+    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
+
 </body>
 </html>
