@@ -8,12 +8,9 @@ var choosenUser = [];
 var isQuiz01Done = false;
 var isQuiz02Done = false;
 var isQuiz03Done = false;
-const clickSource = "/zone01/audio/clickedS.mp3"
-const clickSound = new Audio(clickSource);
 
 // Add quantity of user that selected
 function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
-    clickSound.play();
     const quantityEle = document.getElementById(quantityId);
     let quantity = parseInt(quantityEle.innerHTML);
     let userButton = document.getElementById(userBtId);
@@ -41,16 +38,10 @@ function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
 
 // end this zone, when task completed
 function endIt() {
-    const bgAudio = document.getElementById('bgAudio');
-    const endSource = "/zone01/audio/gameEnd.mp3";
-    const endSound = new Audio(endSource);
-
     let endEle = document.getElementById('endingZone')
     endEle.style.zIndex = 4
     endEle.style.animation = 'slideIn 1s 1'
     endEle.style.animationFillMode = 'forwards'
-    bgAudio.pause();
-    endSound.play();
 }
 
 // sending the answer of selected user
@@ -60,22 +51,18 @@ function storing(answer) {
 
 // check the answer if it all is correct or not
 function checkAns(sendBtId, quantId, unitId) {
-    clickSound.play();
-    let quantityEle = document.getElementById(quantId);
     if(choosenUser.includes('0')) {
         choosenUser = [];
-        quantityEle.innerHTML = '0';
-        document.getElementById('alertBG').style.display = "block";
-        document.getElementById('alert').style.display = "block";
-
+        document.getElementById(quantId).innerHTML = '0';
+        disableBt(sendBtId)
+        document.getElementById(sendBtId).style.background = '#D0FF0B';
+        alert('Some user is not matching requirement.\nPlease select again.');
     }
     else if(!choosenUser.includes('0')){
-        const correctSource = "/zone01/audio/zone02-money.mp3";
-        const soundC = new Audio(correctSource);
-        quantityEle.innerHTML = 'COMPLETE';
-        quantityEle.style.border = 'solid 1px';
-        quantityEle.style.padding = '5px';
-        quantityEle.style.textDecoration = 'none';
+        document.getElementById(quantId).innerHTML = 'COMPLETE';
+        document.getElementById(quantId).style.border = 'solid 1px';
+        document.getElementById(quantId).style.padding = '5px';
+        document.getElementById(quantId).style.textDecoration = 'none';
         document.getElementById(unitId).style.display = 'none';
         document.getElementById(sendBtId).style.display = 'none';
         if(sendBtId == 'send01') {
@@ -85,7 +72,6 @@ function checkAns(sendBtId, quantId, unitId) {
         } else if(sendBtId == 'send03') {
             isQuiz03Done = true;
         }
-        soundC.play()
     }
 
     // if finish every quiz , end this zone
@@ -111,7 +97,6 @@ function toggle(eleId) {
 }
 
 function showUserData(userId) {
-    clickSound.play();
     let userEle = document.getElementById(userId)
     toggle(userId);
     userEle.style.animation = "fadeClear 1s 1"
@@ -123,7 +108,7 @@ function showUserDetail(clientId, interestId, currentBtId) {
     const showDataBtSet1 = ['dataBt11', 'dataBt12', 'dataBt13', 'dataBt14', 'dataBt15', 'dataBt16', 'dataBt17'];
     const showDataBtSet2 = ['dataBt21', 'dataBt22', 'dataBt23', 'dataBt24', 'dataBt25'];
     const showDataBtSet3 = ['dataBt31', 'dataBt32', 'dataBt33', 'dataBt34', 'dataBt35'];
-    clickSound.play();
+
     toggle(interestId)
 
     let usingShowDataSet
@@ -148,7 +133,6 @@ function showUserDetail(clientId, interestId, currentBtId) {
 }
 
 function showRequirement(questId, otherBt1, otherBt2, userId) {
-    clickSound.play();
     let areaProv = document.getElementById('areaText')
     let usersEle = document.getElementById(userId)
     toggle(questId);
@@ -158,22 +142,14 @@ function showRequirement(questId, otherBt1, otherBt2, userId) {
     usersEle.style.animationFillMode = 'forwards'
     disableBt(otherBt1);
     disableBt(otherBt2);
-
-    switch(questId) {
-        case 'quest01':
-            areaProv.innerHTML = "area : Bangkok";
-            break;
-        case 'quest02':
-            areaProv.innerHTML = "area : Chiang mai";
-            break;
-        case 'quest03':
-            areaProv.innerHTML = "area : Thailand";
-            break;
+    if(questId == "quest01" || questId == "quest02") {
+        areaProv.innerHTML = "area : Bangkok";
+    }else if(questId == "quest03") {
+        areaProv.innerHTML = "area : Chiang mai";
     }
 }
 
 function showhideInfo(infoId, showorhide, bt) {
-    clickSound.play();
     let informationElement = document.getElementById(infoId)
     if(showorhide) {
         informationElement.style.height = '100%'
@@ -191,7 +167,6 @@ function showhideInfo(infoId, showorhide, bt) {
 
 // guide animation
 function activeGuide(current, next) {
-    clickSound.play();
     document.getElementById(current).style.display = 'none'
     document.getElementById(next).style.display = 'block'
     document.getElementById(next).style.zIndex = 3
@@ -203,7 +178,6 @@ function activeGuide(current, next) {
 }
 
 function showhideGuide(button) {
-    clickSound.play();
     if(button == 'hintButton') {
         document.getElementById('guidePic').style.zIndex = 3
     }
