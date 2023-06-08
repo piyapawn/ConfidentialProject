@@ -60,6 +60,7 @@ button {
     position: absolute;
     top: 45%;
     right: 13.3%;
+    z-index: 2;
 }
 
 #hideButton {
@@ -72,6 +73,7 @@ button {
     position: absolute;
     right: 5%;
     top: 10%;
+    z-index: 2;
 }
 
 #hintButton {
