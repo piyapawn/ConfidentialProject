@@ -1,4 +1,12 @@
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.supercontainer {
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -6,13 +14,18 @@ body {
     background-size: contain;
     max-width: 1920px;
     max-height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
 .col01 {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 8.8%;
+    width: 5.5%;
     height: 100%;
 }
 
@@ -83,8 +96,8 @@ body {
 
 .guideBox {
     position: absolute;
-    left: 13%;
-    bottom: 9%;
+    left: 12.5%;
+    top: 73%;
 }
 
 #missionGuide {
@@ -128,9 +141,9 @@ body {
     border-width: 1px;
     display: flex;
     flex-direction: column;
-    left: 58%;
-    position: absolute;
-    top: 41%;
+    left: 55.5%;
+    top: -8%;
+    position: relative;
     width: 252px;
     height: 195px;
 }
@@ -143,6 +156,7 @@ body {
     color: #0D3BFC;
     flex-grow: 1;
     font-size: 20px;
+    padding-top: 15px;
     padding-bottom: 1%;
     padding-right: 6%;
 }
@@ -164,16 +178,16 @@ body {
 }
 
 #targetIP {
-    margin-left: 8.5%;
-    margin-top: 16.5%;
+    margin-left: 11%;
+    margin-top: 21.6%;
     width: initial;
     height: initial;
 }
 
 #skeleton {
-    position: absolute;
-    top: 30%;
-    left: 75%;
+    position: relative;
+    top: -26%;
+    left: 57%;
     height: initial;
     width: initial;
 }

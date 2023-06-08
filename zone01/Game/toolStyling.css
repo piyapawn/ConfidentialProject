@@ -1,11 +1,24 @@
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.supercontainer {
     margin: 0;
     overflow: hidden;
     padding: 0;
     background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
     background-size: contain;
-    width: 1920px;
-    height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
     max-width: 1920px;
     max-height: 1080px;
 }
@@ -29,8 +42,10 @@ button {
 }
 
 #guidePic {
-    width: 1920px;
-    height: 1080px;
+    /* width: 1920px; */
+    /* height: 1080px; */
+    width: 100%;
+    height: 100%;
     position: absolute;
     z-index: -4;
 }
@@ -38,16 +53,16 @@ button {
 #bgGuide {
     width: 100%;
     height: 100%;
-    background-color: #999999;
-    opacity: 40%;
-    animation: fadeAppear 1s 1;
+    background-image: url(/zone01/Asssets/guideBg.png);
+    background-size:cover;
+    filter: brightness(85%);
 }
 
 /* How to play */
 #guide01 {
     position: absolute;
     top: 40%;
-    left: 11%;
+    left: 9%;
     animation: fadeClear 0.7s 1;
 }
 
@@ -55,14 +70,14 @@ button {
     display: none;
     position: absolute;
     top: 40%;
-    left: 47%;
+    left: 45%;
 }
 
 #guide03 {
     display: none;
     position: absolute;
     bottom: 20%;
-    right: 1%;
+    right: 2%;
 }
 
 #guide01 button, #guide02 button, #guide03 button {
@@ -94,15 +109,17 @@ button {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 11%;
+    width: 5.7%;
 }
 
 #endingResult {
     width: 93%;
     position: absolute;
-    right: 0;
+    left: 5.1%;
     top: 0;
     z-index: -4;
+    transition: left 1s;
+    visibility: hidden;
 }
 
 #endingZone {
@@ -111,6 +128,7 @@ button {
     top: 100%;
     left: 7%;
     z-index: 4;
+    visibility: hidden;
 }
 
 #arrow {
@@ -247,7 +265,13 @@ button {
     border-radius: 2px;
 }
 
-.toolIcons::-webkit-scrollbar-thumb {
+.infoBox::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid #0D3BFC;
+    border-radius: 2px;
+}
+
+.toolIcons::-webkit-scrollbar-thumb, .infoBox::-webkit-scrollbar-thumb {
     background-color: #D0FF0B;
     border: 1px solid;
     border-radius: 3px;
@@ -276,17 +300,25 @@ button {
 
 #tab-social {
     background-color: #999999;
+    color: black;
     cursor: default;
 }
 
 /* using tool video styling */
 .using-tool video {
     height: initial;
+    visibility: hidden;
+}
+
+.progress-vid {
+    border-left: solid 1px black;
 }
 
 .progress-vid video{
     height: initial;
     width: initial;
+    padding-left: 4%;
+    visibility: hidden;
 }
 
 /* end this zone button */
@@ -299,12 +331,21 @@ button {
     background: none;
 }
 
+#resultButton, #nextZoneButton, #endZoneButton  {
+    visibility: hidden;
+}
+
+#resultButton img{
+    animation: brighten 1.3s infinite;
+}
+
 #hintButton {
+    background-color: #D0FF0B;
+    border: solid black 1px;
+    color: #0D3BFC;
     font-size: 30px;
     width: 42px;
     height: 42px;
-    color: #0D3BFC;
-    background-color: #D0FF0B;
 }
 
 #guideEle {
@@ -330,8 +371,44 @@ button {
     height: initial;
     position: absolute;
     bottom: 45%;
-    left: 15%;
+    left: 10%;
     opacity: 0%;
+}
+
+.toolBG {
+    position: relative;
+}
+
+.infoBox {
+    display: flex;
+    position: absolute;
+    top: 43%;
+    left: 18.2%;
+    width: 70%;
+    height: 200px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.infoClick {
+    color: #D0FF0B;
+    background: none;
+    border: none;
+    font-size: 32px;
+    padding: 2%;
+    text-align: start;
+}
+
+.whatbox {
+    color: white;
+    display: none;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+.showRequire {
+    display: block;
 }
 
 /* Animation for button */
@@ -354,6 +431,16 @@ button {
     }
     100% {
         opacity: 100%;
+    }
+}
+
+/* animation blink for result button */
+@keyframes brighten {
+    50% {
+        filter: brightness(75%);
+    }
+    100% {
+        filter: brightness(100%);
     }
 }
 

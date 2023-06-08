@@ -1,0 +1,238 @@
+:root {
+    --leftEdge: calc(var(--grid)*2);
+}
+
+.task-space {
+    width: var(--leftEdge);
+    height: 100vh;
+    border: none;
+}
+
+/* ~~~~~ TASK BUTTON ~~~~~ */
+#task-button {
+    position: absolute;
+    font-weight: var(--dbHelvethaicaX);
+    /* font-size: 1.5vw; */
+    /* width: 10.25vw;
+    height: 5vw;
+    bottom: 25.5vh;
+    left: -2.6vw; */
+    font-size: 130%;
+    width: 10.15%;
+    height: 10.2%;
+    bottom: 25%;
+    left: -2.6%;
+    border: 1px solid black;
+    transition: 0.5s;
+    transform: rotate(-90deg) translateY(0vw);
+    cursor: pointer;
+    z-index: 100;
+}
+/* Optional */
+.task-button-hover:hover {
+    background-color: var(--yellow);
+    color: var(--blue);
+}
+/* ~~~~~ TASK BUTTON ~~~~~ */
+
+
+
+/* ~~~~~ TASK BAR AREA ~~~~~ */
+#task-bar {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    /* width: 25vw;
+    height: 95.3vh; */
+    width: 25%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+    transform: translateX(-25.1vw);
+    transition: 0.5s;
+    z-index: 100;
+}
+
+/* ~~~ TASK ALL ROW ~~~ */
+.task-row1 {
+    height: 19vh;
+    display: flex;
+    justify-content: space-between;
+}
+.task-row2 {
+    height: 56vh;
+}
+.task-row3 {
+    height: 20.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.task-hidden-about {
+    height: 75vh;
+    transform: translateY(-95.5vh) translateX(-25vw);
+    transition: 0.5s;
+}
+/* ~~~ TASK ROW ~~~ */
+
+
+/* ~~ TASK ROW1 ~~ */
+.task-col1 {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    justify-content: center;
+    align-items: end;
+    width: 12.5vw;
+}
+/* ~ COL ELEMENT ~ */
+#employee-element, #id-element, #username-show-element {
+    width: 12.5vw;
+    height: 9.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+#employee-element {
+    justify-content: start;
+    align-items: end;
+}
+#username-show-element {
+    justify-content: center;
+    align-items: end;
+}
+/* ~~ COL TEXT ~~ */
+#employee-text, #id-text, #username-text {
+    padding: 0;
+    margin: 0 0 0 2vw;
+    font-size: 1.5vw;
+}
+/* ~~ TASK ROW1 ~~ */
+
+
+/* ~~ TASK ROW2 ~~ */
+.task-topics {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.4vw;
+    margin: 0;
+    padding: 0;
+    height: 9.3vh;
+}
+.topic-text-box {
+    width: 15vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#tasks {
+    justify-content: start;
+}
+.zone {
+    border-bottom: 1px solid black;
+}
+.square-check {
+    width: 15px;
+    height: 15px;
+    margin-left: 3vw;
+    border: 1px solid black;
+}
+.zone .square-check {
+    border: 1px solid var(--grey2);
+}
+.topic-text-box {
+    width: 15vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+/* TEXT */
+#database-tour-text {
+    text-decoration: none;
+}
+#tasks-text {
+    margin-left: 2vw;
+}
+/* ~~ TASK ROW2 ~~ */
+
+
+/* ~~ TASK ROW3 ~~ */
+.task-row3 {
+    height: 20.5vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+#about-text {
+    margin: 40px;
+    font-size: 1.5vw;
+}
+/* ~~ TASK ROW3 ~~ */
+
+
+/* ~~ TASK HIDDEN ABOUT ~~ */
+.task-hidden-about {
+    height: 75vh;
+    transform: translateY(-95.5vh) translateX(-25vw);
+    transition: 0.5s;
+}
+.about-info-row1, .about-info-row2, .about-info-row3 {
+    display: flex;
+}
+.about-info-row1 {
+    height: 20vh;
+    justify-content: start;
+    align-items: center;
+}
+.about-info-row2 {
+    height: 47vh;
+    justify-content: center;
+    align-items: end;
+}
+.about-info-row3 {
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+}
+/* TEXT & PIC */
+#back-arrow-pic {
+    width: 3vw;
+    
+}
+.about-info-text {
+    margin: 3vw;
+}
+#about-info-pic {
+    width: 10vw;
+}
+#about-info-backbutton {
+    padding: 0;
+    width: 3vw;
+    margin-left: 2vw;
+    border: 0;
+    cursor: pointer;
+}
+/* ~~ TASK HIDDEN ABOUT ~~ */
+/* ~~~~~ TASK BAR AREA ~~~~~ */
+
+/* COMPLETED ZONE */
+.completed-zone {
+    position: relative;
+}
+.completed-zone:before, .completed-zone:after {
+    position: absolute;
+    top: calc(var(--grid) * -0.08);
+    left: calc(var(--grid) * 0.15);
+    content: ' ';
+    width: 2px;
+    height: calc(var(--grid) * 0.45);
+    background-color: var(--blue);
+}
+.completed-zone:before {
+    transform: rotate(45deg);
+}
+.completed-zone:after {
+    transform: rotate(45deg);
+}

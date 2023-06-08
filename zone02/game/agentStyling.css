@@ -1,11 +1,22 @@
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supercontainer {
     margin: 0;
     overflow: hidden;
     padding: 0;
-    background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
     background-size: contain;
-    width: 1920px;
-    height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
     max-width: 1920px;
     max-height: 1080px;
 }
@@ -31,6 +42,15 @@ button {
     z-index: 3;
 }
 
+#greyArea {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    opacity: 50%;
+    z-index: 1;
+    background-color: #D9D9D9;
+}
+
 #guidePic {
     width: 1920px;
     height: 1080px;
@@ -39,17 +59,20 @@ button {
 }
 
 #bgGuide {
-    width: 100%;
-    height: 100%;
-    background-color: #999999;
-    opacity: 60%;
-    animation: fadeAppear 1s 1;
+    width: 1166px;
+    height: 1050px;
+    position: absolute;
+    left: 759px;
+    top: 3.5px;
+    background: url(/zone02/asset/bg_zoneGuide.png);
+    transition: opacity 2s;
 }
 
 #guideEle {
     position: absolute;
     top: 45%;
     right: 13.3%;
+    z-index: 2;
 }
 
 #hideButton {
@@ -62,6 +85,7 @@ button {
     position: absolute;
     right: 5%;
     top: 10%;
+    z-index: 2;
 }
 
 #hintButton {
@@ -74,13 +98,27 @@ button {
     position: absolute;
     width: 45px;
     height: 47px;
-    right: 3%;
+    right: 2.8%;
     z-index: -2;
+}
+
+#areaText {
+    border: solid 1px;
+    font-size: 20px;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    width: 120px;
+    height: 25px;
+    bottom: 3.7%;
+    left: 835px;
 }
 
 /* How to play */
 #guide01 {
     position: absolute;
+    z-index: 1;
     top: 40%;
     left: 11%;
     animation: fadeClear 0.7s 1;
@@ -89,6 +127,7 @@ button {
 #guide02 {
     display: none;
     position: absolute;
+    z-index: 1;
     bottom: 41%;
     right: 18.5%;
 }
@@ -119,10 +158,8 @@ button {
 }
 
 .col01 {
-    border-style: solid;
-    border-width: 1px;
-    border-bottom-width: 0px;
-    width: 11%;
+    width: 5.5%;
+    background: #D9D9D9;
     position: relative;
 }
 
@@ -157,8 +194,7 @@ button {
 
 /* Question for quiz zone */
 .quizBlock {
-    padding-left: 5.2%;
-    width: 34.2%;
+    width: 657px;
     display: flex;
     flex-direction: column;
 }
@@ -180,6 +216,13 @@ button {
     padding: 2%;
     padding-left: 7%;
     text-align: start;
+    position: relative;
+}
+
+.noti {
+    position: absolute;
+    right: 50px;
+    top: 18px;
 }
 
 .sendBt {
@@ -257,224 +300,224 @@ button {
     display: none;
     width: 51%;
     height: 100%;
-    padding-left: 10%;
+    opacity: 0;
+    padding-left: 9%;
     position: relative;
 }
 
 .userData {
     border: solid 1px;
-    width: 17.5%;
-    height: 4%;
+    width: 204px;
+    height: 50px;
     position: absolute;
-    
+    /* opacity: 0; */
 }
 
 /* each user styling button to open user's pic : Client 01 */
 #user11 {
     top: 18.2%;
-    left: 9%;
+    left: 100px;
     background-image: url(/zone02/game/user/quiz1/01kwanjira/boxdata_1-1.png);
 }
 
 #user12 {
     top: 18.2%;
-    left: 31%;
+    left: 352px;
     background-image: url(/zone02/game/user/quiz1/02kochaporn/boxdata_1-2.png);
 }
 
 #user13 {
     top: 13.6%;
-    left: 56.5%;
+    left: 654px;
     background-image: url(/zone02/game/user/quiz1/03phuriwat/boxdata_1-3.png);
 }
 
 #user14 {
     top: 18.2%;
-    left: 78.2%;
+    left: 857px;
     background-image: url(/zone02/game/user/quiz1/04panupon/boxdata_1-4.png);
 }
 
 #user15 {
     top: 50%;
-    left: 9%;
+    left: 100px;
     background-image: url(/zone02/game/user/quiz1/05atitan/boxdata_1-5.png);
 }
 
 #user16 {
     top: 45.5%;
-    left: 56.5%;
+    left: 654px;
     background-image: url(/zone02/game/user/quiz1/06pimpa/boxdata_1-6.png);
 }
 
 #user17 {
     top: 50%;
-    left: 78.2%;
+    left: 857px;
     background-image: url(/zone02/game/user/quiz1/07dolawa/boxdata_1-7.png);
 }
 
 /* each user styling button to open user's pic : Client 02 */
 #user21 {
-    top: 18.2%;
-    left: 9%;
+    top: 27.2%;
+    left: 199px;
     background-image: url(/zone02/game/user/quiz2/01sunisa/boxdata_2-1.png);
 }
 
 #user22 {
     top: 18.2%;
-    left: 31%;
+    left: 402px;
     background-image: url(/zone02/game/user/quiz2/02pongsapak/boxdata_2-2.png);
 }
 
 #user23 {
-    top: 13.6%;
-    left: 56.5%;
+    top: 50%;
+    left: 655px;
     background-image: url(/zone02/game/user/quiz2/03merisa/boxdata_2-3.png);
 }
 
 #user24 {
-    top: 18.2%;
-    left: 78.2%;
+    top: 40.8%;
+    left: 910px;
     background-image: url(/zone02/game/user/quiz2/04pat/boxdata_2-4.png);
 }
 
 #user25 {
-    top: 50%;
-    left: 9%;
+    top: 59%;
+    left: 200px;
     background-image: url(/zone02/game/user/quiz2/05chomanad/boxdata_2-5.png);
 }
 
 /* each user styling button to open user's pic : Client 03 */
 #user31 {
     top: 18.2%;
-    left: 9%;
+    left: 100px;
     background-image: url(/zone02/game/user/quiz3/01chaninee/boxdata_3-1.png);
 }
 
 #user32 {
     top: 18.2%;
-    left: 31%;
+    left: 352px;
     background-image: url(/zone02/game/user/quiz3/02preeyada/boxdata_3-2.png);
 }
 
 #user33 {
     top: 13.6%;
-    left: 56.5%;
+    left: 654px;
     background-image: url(/zone02/game/user/quiz3/03narit/boxdata_3-3.png);
 }
 
 #user34 {
-    top: 18.2%;
-    left: 78.2%;
+    top: 18.1%;
+    left: 857px;
     background-image: url(/zone02/game/user/quiz3/04veerapol/boxdata_3-4.png);
 }
 
 #user35 {
     top: 50%;
-    left: 9%;
+    left: 100px;
     background-image: url(/zone02/game/user/quiz3/05sunisa/boxdata_3-5.png);
 }
 
 /* user profile pic styling */
 .user {
     display: none;
-    border: solid 1px;
-    width: 202px;
-    height: 294px;
+    width: auto;
+    height: auto;
     position: absolute;
+    /* opacity: 0; */
 }
 
 /* user profile pic styling for client01 */
 
 #user01 {
-    top: 22.2%;
-    left: 9%;
+    top: 22.7%;
+    left: 100px;
 }
 
 #user02 {
-    top: 22.2%;
-    left: 31.05%;
+    top: 22.8%;
+    left: 352px;
 }
 
 #user03 {
-    top: 17.6%;
-    left: 56.5%;
+    top: 18.2%;
+    left: 654px;
 }
 
 #user04 {
-    top: 22.2%;
-    left: 78.2%;
+    top: 22.6%;
+    left: 857px;
 }
 
 #user05 {
-    top: 54%;
-    left: 9%;
+    top: 54.5%;
+    left: 100px;
 }
 
 #user06 {
-    top: 49.5%;
-    left: 56.5%;
+    top: 50%;
+    left: 654px;
 }
 
 #user07 {
-    top: 54%;
-    left: 78.2%;
+    top: 54.4%;
+    left: 857px;
 }
 
 .userimg {
-    width: 100%;
-    height: 100%;
+    width: initial;
 }
 
 /* user profile pic styling for client : 02 */
 #user012 {
-    top: 22.2%;
-    left: 9%;
+    top: 31.6%;
+    left: 199px;
 }
 
 #user022 {
-    top: 22.2%;
-    left: 31.05%;
+    top: 22.6%;
+    left: 402px;
 }
 
 #user032 {
-    top: 17.6%;
-    left: 56.5%;
+    top: 54.5%;
+    left: 655px;
 }
 
 #user042 {
-    top: 22.2%;
-    left: 78.2%;
+    top: 45.4%;
+    left: 910px;
 }
 
 #user052 {
-    top: 54%;
-    left: 9%;
+    top: 63.5%;
+    left: 200px;
 }
 
 /* user profile pic styling for client : 03 */
 #user013 {
-    top: 22.2%;
-    left: 9%;
+    top: 22.7%;
+    left: 100px;
 }
 
 #user023 {
-    top: 22.2%;
-    left: 31.05%;
+    top: 22.8%;
+    left: 352px;
 }
 
 #user033 {
-    top: 17.6%;
-    left: 56.5%;
+    top: 18.1%;
+    left: 654px;
 }
 
 #user043 {
-    top: 22.2%;
-    left: 78.2%;
+    top: 22.6%;
+    left: 857px;
 }
 
 #user053 {
-    top: 54%;
-    left: 9%;
+    top: 54.5%;
+    left: 100px;
 }
 
 
@@ -567,6 +610,43 @@ button {
     display: block;
 }
 
+#alertBG {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 60%;
+    background: #D9D9D9;
+    transition: opacity 2s;
+    z-index: 5;
+}
+
+#alert{
+    display: none;
+    position: absolute;
+    left: 39%;
+    top: 36.6%;
+    z-index: 6;
+    /* opacity: 60%; */
+    transition: opacity 2s;
+}
+
+#alert button {
+    border: solid 0.5px black;
+    background: none;
+    color: #0D3BFC;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    /* padding-left: 10px; */
+    font-size: 40px;
+    position: absolute;
+    left: 35%;
+    top: 70%;
+    z-index: 6;
+}
+
 /* Animation for button */
 @keyframes blink {
     50% {
@@ -587,19 +667,6 @@ button {
     }
     100% {
         opacity: 100%;
-    }
-}
-
-/* guide tool */
-@keyframes fadeAppear {
-    25% {
-        opacity: 20%;
-    }
-    50% {
-        opacity: 30%;
-    }
-    100% {
-        opacity: 40%;
     }
 }
 

@@ -3,7 +3,12 @@ function windowLoad() {
     loadLocalStorageValue()
 }
 
+const clickSource = "/zone01/audio/clickedS.mp3"
+const clickSound = new Audio(clickSource);
+
 function showToolInfo(infoId, buttonId) {
+    clickSound.play();
+
     document.getElementById(infoId).style.zIndex = 2;
     document.getElementById(buttonId).style.animation = "none";
     document.getElementById(buttonId).disabled = true;
@@ -12,11 +17,18 @@ function showToolInfo(infoId, buttonId) {
 }
 
 function playVid(toolId, progressId, infoId) {
+    let toolVideo = document.getElementById(toolId);
+    let progressVideo = document.getElementById(progressId);
+
+    clickSound.play();
+
     if(toolId == 'account-01'){
         document.getElementById('metaIs').style.opacity = '100%';
     }
-    document.getElementById(toolId).play();
-    document.getElementById(progressId).play();
+    toolVideo.style.visibility = 'visible';
+    progressVideo.style.visibility = 'visible';
+    toolVideo.play();
+    progressVideo.play();
     document.getElementById(infoId).style.display = "none";
 }
 
@@ -51,24 +63,50 @@ function activeSocialZone() {
 
 function playContVid(tool, progress, nextTool, nextProgress) {
     disabledCurrentVid(tool, progress)
-    document.getElementById(nextTool).play();
-    document.getElementById(nextProgress).play();
+    const nextVid = document.getElementById(nextTool);
+    const nextProg = document.getElementById(nextProgress);
+
+    nextVid.style.visibility = 'visible';
+    nextProg.style.visibility = 'visible';
+    nextVid.play();
+    nextProg.play();
 }
 
 // show button to result , end zone01
 function toResult() {
-    document.getElementById('resultButton').style.zIndex = 2;
-    document.getElementById('hintButton').style.zIndex = -4;
+    const resultBt = document.getElementById('resultButton');
+    const hintBtn = document.getElementById('hintButton');
+    resultBt.style.zIndex = 2;
+    resultBt.style.visibility = "visible";
+
+    hintBtn.style.zIndex = -4;
+    hintBtn.style.visibility = "hidden";
 }
 
 function showResult() {
-    document.getElementById('resultButton').style.zIndex = -4;
-    document.getElementById('endingResult').style.zIndex = 3;
-    document.getElementById('nextZoneButton').style.zIndex = 3;
+    clickSound.play();
+    const resultBt = document.getElementById('resultButton');
+    const endBg = document.getElementById('endingResult');
+    const nextZBt = document.getElementById('nextZoneButton');
+
+    resultBt.style.zIndex = -4;
+    resultBt.style.visibility = 'hidden';
+    endBg.style.zIndex = 3;
+    endBg.style.visibility = 'visible'
+    nextZBt.style.zIndex = 3;
+    nextZBt.style.visibility = 'visible'
+}
+
+// toggle tool info
+function toggle(eleId) {
+    clickSound.play();
+
+    document.getElementById(eleId).classList.toggle('showRequire');
 }
 
 // guide animation
 function activeGuide(current, next) {
+    clickSound.play();
     document.getElementById(current).style.display = 'none'
     document.getElementById(next).style.display = 'block'
     document.getElementById(next).style.zIndex = 3
@@ -80,6 +118,7 @@ function activeGuide(current, next) {
 }
 
 function showhideGuide(button) {
+    clickSound.play();
     if(button == 'hintButton') {
         document.getElementById('guidePic').style.zIndex = 3
     }
@@ -89,7 +128,16 @@ function showhideGuide(button) {
 }
 
 function endIt() {
-    document.getElementById('endingZone').style.zIndex = 4
-    document.getElementById('endingZone').style.animation = 'slideIn 1s 1'
-    document.getElementById('endingZone').style.animationFillMode = 'forwards'
+    const bgAudio = document.getElementById('bgAudio');
+    const endSource = "/zone01/audio/gameEnd.mp3";
+    const endSound = new Audio(endSource);
+    bgAudio.pause();
+    endSound.play()
+
+    clickSound.play();
+    const endZBt = document.getElementById('endingZone')
+    endZBt.style.zIndex = 4
+    endZBt.style.visibility = 'visible'
+    endZBt.style.animation = 'slideIn 1s 1'
+    endZBt.style.animationFillMode = 'forwards'
 }

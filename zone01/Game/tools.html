@@ -6,241 +6,467 @@
     <link rel="stylesheet" href="/zone01/Game/toolStyling.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/colors.css">
-    <link rel="stylesheet" href="/css/task-bar.css">
+    <link rel="stylesheet" href="/zone01/task-barStyle.css">
     <script src="/zone01/Game/tools.js"></script>
     <script src="/js/task-bar.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>ZONE 01 : Tools</title>
 </head>
 <body onload="windowLoad()">
-    <!--Zone01 game tools!-->
-    <!-- A guide to play this zone -->
-    <div class="page" id="guidePic">
-        <div id="bgGuide"></div>
-        <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
-        <div id="guideEle">
-            <img src="/zone01/Game/gameGuide/box7.png" alt="">
-        </div>
-    </div>
-    <div class="page" id="guide">
-        <div id="bgGuide"></div>
-        <div id="guide01">
-            <img src="/zone01/Game/gameGuide/box1.png" alt="">
-            <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide02">
-            <img src="/zone01/Game/gameGuide/box2.png" alt="">
-            <button id="guide02Bt" onclick="activeGuide('guide02', 'guide03')">
-                <img src="/zone01/Game/gameGuide/button1.png" alt="">
-            </button>
-        </div>
-        <div id="guide03">
-            <img src="/zone01/Game/gameGuide/box3.png" alt="">
-            <button id="guide03Bt" onclick="activeGuide('guide03', 'guide')">
-                <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
-            </button>
-        </div>
-    </div>
-    <div class="page" id="mainContent">
-        <!--row that contain all header and side menu!-->
-        <div class="container">
-            <!--column that contain side menu!-->
-            <div class="col01">
-                <!--Left container for task!-->
-                <div class="box background-white1"></div>
+    <div class="supercontainer">
+        <!--Zone01 game tools!-->
+        <audio id="bgAudio" autoplay loop src="/zone01/audio/bg_inzone.mp3"></audio>
+        <!-- A guide to play this zone -->
+        <div class="page" id="guidePic">
+            <div id="bgGuide"></div>
+            <button id="hideButton" onclick="showhideGuide('hideButton')">X</button>
+            <div id="guideEle">
+                <img src="/zone01/Game/gameGuide/box7.png" alt="">
             </div>
-            <!-- column to show ending result -->
-            <div class="background-white1" id="endingResult">
-                <img src="/zone01/Asssets/result.png" alt="">
-                <button id="endZoneButton" onclick="endIt()">
-                    <img src="/zone01/Asssets/button.png" alt="">
+        </div>
+        <div class="page" id="guide">
+            <div id="bgGuide"></div>
+            <div id="guide01">
+                <img src="/zone01/Game/gameGuide/box1.png" alt="">
+                <button id="guide01Bt" onclick="activeGuide('guide01', 'guide02')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
                 </button>
             </div>
-
-            <!-- column to show ending zone image -->
-            <div class="background-white1" id="endingZone">
-                <img src="/zone01/Asssets/ele_finish.png" alt="">
-                <a id="arrow" href="/zone02/index.html">
-                    <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
-                </a>
+            <div id="guide02">
+                <img src="/zone01/Game/gameGuide/box2.png" alt="">
+                <button id="guide02Bt" onclick="activeGuide('guide02', 'guide03')">
+                    <img src="/zone01/Game/gameGuide/button1.png" alt="">
+                </button>
             </div>
-
-            <!--column that contain head title and tools!-->
-            <div class="col02 background-white1">
-                <div class="top">
-                    <!-- Information pic will show when toolIcon is clicked and when use button's clicked the video will play -->
-                    <div class="toolInfo" id="cookieInfo">
-                        <img src="/zone01/Game/info/tool_cookies.png" alt="">
-                        <button class="toolBt" id="cookieBt" onclick="playVid('cookie-01', 'progress-cookie', 'cookieInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div class="toolInfo" id="fingerInfo">
-                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
-                        <button class="toolBt" id="fingerBt" onclick="playVid('finger-01', 'progress-finger', 'fingerInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div class="toolInfo" id="webInfo">
-                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
-                        <button class="toolBt" id="webBt" onclick="playVid('web-01', 'progress-web', 'webInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div class="toolInfo" id="socialInfo">
-                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
-                        <button class="toolBt" id="socialBt" onclick="playVid('social-01', 'progress-social', 'socialInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div class="toolInfo" id="trackingInfo">
-                        <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
-                        <button class="toolBt" id="trackingBt" onclick="playVid('tracking-01', 'progress-tracking', 'trackingInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div id="metaIs">
-                        <img src="/zone01/Asssets/box_metadata.png" alt="">
-                    </div>
-                    <div class="toolInfo" id="accountInfo" style="padding-left: 2%; top: 8%;">
-                        <img src="/zone01/Game/info/tool_createac.png" alt="">
-                        <button class="toolBt" id="accBt" onclick="playVid('account-01', 'progress-account01', 'accountInfo')">
-                            USE
-                        </button>
-                    </div>
-                    <div class="toolInfo" id="track2Info" style="padding-left: 2%; top: 8%;">
-                        <img src="/zone01/Game/info/tool_pixel(social).png" alt="">
-                        <button class="toolBt" id="track2Bt" onclick="playVid('tracking-02', 'progress-tracking02', 'track2Info')">
-                            USE
-                        </button>
-                    </div>
-                    <!-- zone logo will disappear when toolIcon's clicked -->
-                    <div class="zonelogo">
-                        <img src="/zone01/Asssets/logo_zone1.png" style="padding-left: 10%; width: 50%;" id="zoneTitle" alt="">
-                        <p class="font-dbHelvethaica indent" style="font-size: 25px; color: #494949;">
-                            your target: &nbsp &nbsp 38.106.2201.83
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bottom">
-                    <p class="font-dbHelvethaica indent" style="font-size: 30px; margin-bottom: 15px;">
-                        TOOLS 
-                        <span id="forNametag" style="background-color: #D0FF0B; border: 1px solid; padding: 2px; margin: 2px;">
-                            for websites
-                        </span>
-                    </p>
-                    <!-- these tool icon disable when clicked -->
-                    <div id="iconSet1" class="toolIcons indent">
-                        <div class="toolIcons">
-                            <div class="iconBlock">
-                                <div class="icon">
-                                    <button id="cookieTool" onclick="showToolInfo('cookieInfo', 'cookieTool')">
-                                        <img src="/zone01/Asssets/icon-cookie.png" style="padding: 25px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ cookies ]</h5>
-                            </div>
-            
-                            <div class="iconBlock">
-                                <div class="icon">
-                                    <button id="fingerTool" onclick="showToolInfo('fingerInfo', 'fingerTool')" disabled style="cursor: default;">
-                                        <img src="/zone01/Asssets/icon-fingerprint.png" style="padding: 25px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ browser<br>fingerprinting ]</h5>
-                            </div>
-                            <div class="iconBlock">
-                                <div class="icon">
-                                    <button id="webTool" onclick="showToolInfo('webInfo', 'webTool')" disabled style="cursor: default;">
-                                        <img src="/zone01/Asssets/icon-social.png" style="padding: 18px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ web<br> beacon ]</h5>
-                            </div>
-                            <div class="iconBlock">
-                                <div class="icon">
-                                    <button id="socialTool" onclick="showToolInfo('socialInfo', 'socialTool')" disabled style="cursor: default;">
-                                        <img src="/zone01/Asssets/icon-login.png" style="padding: 25px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ social login ]</h5>
-                            </div>
-                            <div class="iconBlock">
-                                <div class="icon">
-                                    <button id="trackingTool" onclick="showToolInfo('trackingInfo', 'trackingTool')" disabled style="cursor: default;">
-                                        <img src="/zone01/Asssets/icon-pixel.png" style="padding: 25px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="iconSet2" class="toolIcons indent" style="display: none;">
-                        <div class="toolIcons">
-                            <div class="iconBlock" style="margin-left: 30px;">
-                                <div class="icon">
-                                    <button id="accountTool" onclick="showToolInfo('accountInfo', 'accountTool')">
-                                        <img src="/zone01/Asssets/icon-social.png" style="padding: 23px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ creating/<br>having account ]</h5>
-                            </div>
-            
-                            <div class="iconBlock" style="margin-left: 30px;">
-                                <div class="icon">
-                                    <button id="track2Tool" onclick="showToolInfo('track2Info', 'track2Tool')" disabled style="cursor: default;">
-                                        <img src="/zone01/Asssets/icon-pixel.png" style="padding: 30px;" alt="">
-                                    </button>
-                                </div>
-                                <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div id="guide03">
+                <img src="/zone01/Game/gameGuide/box3.png" alt="">
+                <button id="guide03Bt" onclick="activeGuide('guide03', 'guide')">
+                    <p class="font-dbHelvethaica" style="text-decoration: underline 3px; font-size: 50px;">OK</p>
+                </button>
             </div>
-
-            <!--column that contain result!-->
-            <div class="col03">
-                <div class="row01">
-                    <img src="/zone01/Asssets/ele_circle.png" alt="" style="padding: 40px;">
-                    <p class="font-dbHelvethaica" style="font-size: 30px;" >38.106.2201.83's browser</p>
+        </div>
+        <div class="page" id="mainContent">
+            <!--row that contain all header and side menu!-->
+            <div class="container">
+                <!--column that contain side menu!-->
+                <div class="col01">
+                    <!--Left container for task!-->
+                    <div class="box background-white1"></div>
                 </div>
-                <div class="row02">
-                    <div class="user-tabs">
-                        <div class="tab-name">
-                            <div class="font-dbHelvethaica" id="tab-normal">
-                                <h4 style="margin:15px ">www.เว็บไซต์ทั่วไป.com</h4>
+                <!-- column to show ending result -->
+                <div class="background-white1" id="endingResult">
+                    <img src="/zone01/Asssets/result.png" alt="">
+                    <button id="endZoneButton" onclick="endIt()">
+                        <img src="/zone01/Asssets/button.png" alt="">
+                    </button>
+                </div>
+
+                <!-- column to show ending zone image -->
+                <div class="background-white1" id="endingZone">
+                    <img src="/zone01/Asssets/ele_finish.png" alt="">
+                    <a id="arrow" href="/zone02/index.html">
+                        <img src="/zone01/Asssets/button_arrow.png" alt="" style="margin-top: 30px;">
+                    </a>
+                </div>
+
+                <!--column that contain head title and tools!-->
+                <div class="col02 background-white1">
+                    <div class="top">
+                        <!-- Information pic will show when toolIcon is clicked and when use button's clicked the video will play -->
+                        <div class="toolInfo" id="cookieInfo">
+                            <img class="toolBG" src="/zone01/Game/info/tool_cookies.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs1')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs1" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">คือไฟล์ข้อความ (Text File) ขนาดเล็ก<br>
+                                        ที่ถูกเก็บบันทึกเอาไว้ใน browser ของเรา<br>
+                                        เมื่อเราเข้าใช้เว็บไซต์ต่างๆ เป็นสิ่งที่ทำให้<br>
+                                        เว็บไซต์รู้ว่าเราเคยเข้าเว็บไซต์นั้นแล้ว
+                                    </p>
+                                </div>
+
+                                <!-- type of this tool information -->
+                                <button onclick="toggle('whatIs2')" class="infoClick font-dbHelvethaica">
+                                    <li>ประเภทของ cookies</li> 
+                                </button>
+                                <div id="whatIs2" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        cookies แบ่งออกเป็น 2 ประเภทใหญ่คือ
+                                        first party cookies และ 3rd party cookies
+                                        <br>
+                                        <br>
+                                        <img src="/zone01/Game/info/cookie.png" style="width: 20px; margin: 0;" alt="">&nbsp first party cookies <br>
+                                        &nbsp&nbsp&nbsp&nbsp เป็นไฟล์ที่สร้างโดยเว็บที่กำลังเข้าใช้งาน
+                                        จะช่วยจดจำการตั้งค่าและข้อมูลการ 
+                                        log in เข้าเว็บไซต์นั้นของเรา เพื่อให้การเข้ามาอีกครั้งสะดวกขึ้นและใช้จัดการบริการเว็บไซต์ ให้มีลักษณะตรงกับลักษณะการ
+                                        ใช้งานของคุณ
+                                        <br>
+                                        <br>
+                                        <img src="/zone01/Game/info/cookie.png" style="width: 20px; margin: 0;" alt="">&nbsp third party cookies <br>
+                                        &nbsp&nbsp&nbsp&nbsp เป็นไฟล์ที่สร้างโดยเว็บไซต์ภายนอก
+                                        ที่ไม่เกี่ยวข้อง มักทำหน้าที่ติดตาม พฤติกรรมการใช้งานของคุณ และมักเน้นจุดประสงคเพอการตลาด และการโฆษณาเป็นหลัก
+                                    </p>
+                                </div>
+
+                                <!-- type of this tool information -->
+                                <button onclick="toggle('whatIs3')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs3" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        &nbsp&nbsp&nbsp&nbsp first party cookies<br>
+                                        จดจำการตั้งค่า
+                                        ข้อมูลการ log in
+                                        ลักษณะการใช้งาน  ( เช่น content ที่มักดู / สินค้าในตระกร้า)
+                                        <br>
+                                        <br>
+                                        &nbsp&nbsp&nbsp&nbsp third party cookies<br>
+                                        สามารถติดตามข้ามเว็บไซต์ได้
+                                        รวบรวมข้อมูลเพื่อสร้างโปรไฟล์ พฤติกรรมออนไลน์ของแต่ละบุคคล
+                                        เพื่อจัดหาโฆษณาที่เจาะจงสำหรับ ผู้ใช้แต่ละคน
+                                    </p>
+                                </div>
                             </div>
-                            <button class="font-dbHelvethaica" id="tab-social" style="padding-bottom: 59px;" onclick="activeSocialZone()">
-                                <h4 style="margin:15px;">www.socialmedia.com</h4>
+                            <button class="toolBt" id="cookieBt" onclick="playVid('cookie-01', 'progress-cookie', 'cookieInfo')">
+                                USE
                             </button>
                         </div>
-                        <div class="using-tool">
-                            <video id="cookie-01" onended="activeNextBt('fingerTool', 'cookie-01', 'progress-cookie')" src="/zone01/Game/videos/zone1-1.mp4"></video>
-                            <video id="finger-01" onended="activeNextBt('webTool', 'finger-01', 'progress-finger')" src="/zone01/Game/videos/zone1-2.mp4"></video>
-                            <video id="web-01" onended="activeNextBt('socialTool', 'web-01', 'progress-web')" src="/zone01/Game/videos/zone1-3.mp4"></video>
-                            <video id="social-01" onended="activeNextBt('trackingTool', 'social-01', 'progress-social')" src="/zone01/Game/videos/zone1-4.mp4"></video>
-                            <video id="tracking-01" onended="activeNextBt('tab-social', 'tracking-01', 'progress-tracking')" src="/zone01/Game/videos/zone1-5.mp4"></video>
-                            <video id="account-01" onended="playContVid('account-01', 'progress-account01', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-6.mp4"></video>
-                            <video id="account-02" onended="activeNextBt('track2Tool', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-7.mp4"></video>
-                            <video id="tracking-02" onended="toResult()" src="/zone01/Game/videos/zone1-8.mp4"></video>
+
+                        <div class="toolInfo" id="fingerInfo">
+                            <img src="/zone01/Game/info/tool_fingerprint.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs4')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs4" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">code ในเว็บไซต์ที่ใช้ระบุตัวตนผู้เข้าชม ด้วยการรวบรวมข้อมูลของweb browser 
+                                        และอุปกรณ์ของผู้ใช้จนกลายเป็นข้อมูล ที่มีความเฉพาะ เสมือนเป็นลายนิ้วมือ ดิจิตอลของผู้ใช้แต่ละคน
+                                        <br>browser fingerprint สามารถติดตามได้ แม้จะต่างเวลาเข้าชม หรือแม้จะใช้ mode ไม่ระบุตัวตน มีประโยชน์ต่อการระบุ
+                                        ตัวตนผู้เข้าชมที่มีพฤติกรรมการโกงที่มีลรูปแบบหรือผู้ที่พยายามจะแฮคเว็บไซต์
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs5')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs5" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        การตั้งค่าหน้าจอ ชื่อเบราเซอร์ หมายเลขเวอร์ชั่น ตัวเสริมที่ถูกติดตั้ง รูปแบบตัวอักษร และคุณสมบัติอื่นๆ
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="fingerBt" onclick="playVid('finger-01', 'progress-finger', 'fingerInfo')">
+                                USE
+                            </button>
+                        </div>
+
+                        <div class="toolInfo" id="webInfo">
+                            <img src="/zone01/Game/info/tool_beacon.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs6')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs6" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">รูปภาพเล็กๆที่ถูกฝังบนหน้าเว็บและ
+                                        จะรายงานเซอร์เวอร์เมื่อหน้าเว็บดังกล่าวถูกดาวน์โหลด 
+                                        มักใช้ beacons เหล่านี้รายงานว่าใครเปิดหน้าเว็บหรืออีเมลและเมื่อเวลาใด
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs7')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs7" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        Ip address ช่วงเวลาและ url ที่เข้าชม
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="webBt" onclick="playVid('web-01', 'progress-web', 'webInfo')">
+                                USE
+                            </button>
+                        </div>
+
+                        <div class="toolInfo" id="socialInfo">
+                            <img src="/zone01/Game/info/tool_sociallogin.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs8')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs8" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">การใช้บัญชีโซเชียลมีเดียในการลงทะเบียน เข้าสู่เว็บไซต์และแอปพลิเคชัน
+                                        ทำให้เกิดประสบการณ์ที่ดีต่อผู้ใช้โดยการ
+                                        ช่วยประหยัดเวลาและความยุ่งยาก และปลอดภัยมากกว่าหากเทียบกับการใช้
+                                        password ที่ไม่ซับซ้อน
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs9')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs9" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        เป็นการอนุญาตให้ทั้ง 2 เว็บไซต์สามารถแบ่งปันข้อมูลของผู้ใช้ ให้กันและกันได้ 
+                                        <br>แต่ละแพลทฟอร์มจะให้ระดับ การควบคุมข้อมูลที่จะแบ่งปันกับ เว็บไซต์ที่ลงทะเบียนต่างกัน
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="socialBt" onclick="playVid('social-01', 'progress-social', 'socialInfo')">
+                                USE
+                            </button>
+                        </div>
+
+                        <div class="toolInfo" id="trackingInfo">
+                            <img src="/zone01/Game/info/tool_pixel.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs10')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs10" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">ภาพขนาด 1*1 pixel ที่ถูกซ่อนหรือฝังไว้ กับพื้นหลังของเว็บไซต์ อีเมล หรือ แบนเนอร์โฆษณาออนไลน์ 
+                                        พวกมันมี ลิ้งที่เชื่อมโยงไปถึง server ของมัน เพื่อส่งข้อมูลกลับไปเมื่อมีการโหลดสิ่ง
+                                        ที่ถูกฝังมันไว้ จึงสามารถรู้ว่าใคร เป็นผู้ทำพฤติกรรมที่เกี่ยวข้องกับโฆษณาอันนั้นและรวบรวมข้อมูลทางสถิติของ
+                                        ผู้ใช้ได้ สามารถใช้กับโฆษณาออนไลน์ ในหลากหลายรูปแบบ
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs11')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs11" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        <li>จำนวนครั้งที่ผู้คนเห็นโฆษณา</li>
+                                        <li>จำนวนคนที่คลิกโฆษณา หรือทำการ จ่ายเงินผ่านโฆษณาอันใดอันหนึ่ง</li>
+                                        <li>บางประเภทสามารถนำไปใช้ใน  การส่งโฆษณาไปยังผู้ที่เคยเข้าชมเว็บไซต์หรือพบเห็นโฆษณามาก่อนได้</li>
+                                        <li>ข้อมูลอุปกรณ์ของผู้ใช้</li>
+                                        <li>Ip address</li>
+                                        <li>กิจกรรมที่ทำในเว็บไซต์</li>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="trackingBt" onclick="playVid('tracking-01', 'progress-tracking', 'trackingInfo')">
+                                USE
+                            </button>
+                        </div>
+
+                        <div id="metaIs">
+                            <img src="/zone01/Asssets/box_metadata.png" alt="">
+                        </div>
+
+                        <div class="toolInfo" id="accountInfo" style="padding-left: 2%; top: 8%;">
+                            <img src="/zone01/Game/info/tool_createac.png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs12')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs12" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">เป็นแหล่งรวมอุปกรณ์ติดตามข้อมูล
+                                        มากมาย ทั้ง cookies fingerprinting และอื่นๆ ซึ่งผู้ใช้ได้อนุญาตให้เราใช้
+                                        สิ่งเหล่านี้ตั้งแต่พวกเขาทำการยืนยัน
+                                        <br>ในการสร้างบัญชีผู้ใช้ โซเชียลมีเดียจึงเป็นพื้นที่ที่มีข้อมูล
+                                        จำนวนมหาศาลที่สุด
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs13')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs13" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        ข้อมูลเบื้องต้นเกี่ยวกับคุณและ อุปกรณ์ที่คุณใช้ 
+                                        ประกอบด้วยข้อมูลส่วนตัวที่กรอกลงในโปรไฟล์ และสามารถขยายไปถึงสิ่ง ระบุตัวตนอื่นๆเช่น ip address 
+                                        เลข id ของอุปกรณ์ที่ใช้ ประเภทของการเชื่อมต่อ ความเร็วของการเชื่อมต่อเครือข่ายของคุณ 
+                                        นอกจากนี้ลักษณะการใช้อุปกรณ์อาจถูกบันทึกไว้ได้เช่นกัน เช่น tab ที่เปิดกำลัง active หรือเปิดเป็น พื้นหลัง<br>
+                                        <li>ปฏิสัมพันธ์ใน social media    
+                                                สิ่งที่คุณ post เนื้อหาที่คุณบริโภค ผู้คนที่คุณมี  
+                                                ปฎิสัมพันธ์ด้วย บัญชีที่คุณติดตาม hashtag กลุ่มเฟสบุค  
+                                                ที่คุณเข้าร่วม เพจที่ติดตามและการปฎิสัมพันพ์ของคุณ 
+                                                กับสิ่งเหล่านี้ ความบ่อยและระยะเวลาของระยะเวลา 
+                                                ที่คุณมีปฏิสัมพันธ์กับสิ่งต่างๆ</li>
+                                        <li>ข้อมูลการติดต่อ ขึ้นอยู่กับแพลทฟอร์มและนโยบายการใช้งาน ข้อมูลเกี่ยวกับข้อความส่วนตัวที่คุณส่งผ่านแพลทฟอร์ม
+                                                อาจถูกเก็บรวบรวมไว้เช่นกัน เช่น twitter</li>
+                                        <li>ข้อมูลทางการเงิน ในบางกรณีบริษัทโซเชียลมีเดียจะเก็บข้อมูลเกี่ยวกับ ธุรกรรมทางการเงินของคุณที่ทำบนแพลทฟอร์ม เช่น instagram</li>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="accBt" onclick="playVid('account-01', 'progress-account01', 'accountInfo')">
+                                USE
+                            </button>
+                        </div>
+
+                        <div class="toolInfo" id="track2Info" style="padding-left: 2%; top: 8%;">
+                            <img src="/zone01/Game/info/tool_pixel(social).png" alt="">
+                            <!-- what this tool is information -->
+                            <div class="infoBox ">
+                                <button onclick="toggle('whatIs14')" class="infoClick font-dbHelvethaica">
+                                    <li>คืออะไร</li> 
+                                </button>
+                                <div id="whatIs14" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">facebook และ google ก็มีระบบ tracking pixel เป็นของตนเช่นกัน 
+                                        <br>โดยบริการในการเก็บข้อมูลผ่านโฆษณาบนแพลทฟอร์มของตนและเว็บไซต์ของ
+                                        คนที่นำไปใช้
+                                    </p>
+                                </div>
+                            
+                                <!-- tracking information -->
+                                <button onclick="toggle('whatIs15')" class="infoClick font-dbHelvethaica">
+                                    <li>ข้อมูลที่สามารถเก็บบันทึก/ติดตาม</li> 
+                                </button>
+                                <div id="whatIs15" class="font-baiJamjuree whatbox">
+                                    <p style="margin: 0;">
+                                        <li>จำนวนครั้งที่ผู้คนเห็นโฆษณา</li> 
+                                        <li>จำนวนคนที่คลิกโฆษณา หรือทำการ จ่ายเงินผ่านโฆษณาอันใดอันหนึ่ง</li> 
+                                        <li>บางประเภทสามารถนำไปใช้ในการส่งโฆษณาไปยังผู้ที่เคยเข้าชมเว็บไซต์หรือพบเห็นโฆษณามาก่อนได้</li> 
+                                        <li>ข้อมูลอุปกรณ์ของผู้ใช้</li>
+                                        <li>Ip address</li>
+                                        <li>กิจกรรมที่ทำในเว็บไซต์</li>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="toolBt" id="track2Bt" onclick="playVid('tracking-02', 'progress-tracking02', 'track2Info')">
+                                USE
+                            </button>
+                        </div>
+
+                        <!-- zone logo will disappear when toolIcon's clicked -->
+                        <div class="zonelogo">
+                            <img src="/zone01/Asssets/logo_zone1.png" style="padding-left: 10%; width: 50%;" id="zoneTitle" alt="">
+                            <p class="font-dbHelvethaica indent" style="font-size: 25px; color: #494949;">
+                                your target: &nbsp &nbsp 38.106.2201.83
+                            </p>
                         </div>
                     </div>
-                    <div class="progress-vid">
-                        <video id="progress-cookie" src="/zone01/Game/videos/progress1-1.mp4"></video>
-                        <video id="progress-finger" src="/zone01/Game/videos/progress1-2.mp4"></video>
-                        <video id="progress-web" src="/zone01/Game/videos/progress1-3.mp4"></video>
-                        <video id="progress-social" src="/zone01/Game/videos/progress1-4.mp4"></video>
-                        <video id="progress-tracking" src="/zone01/Game/videos/progress1-5.mp4"></video>
-                        <!-- progress video for social tab -->
-                        <video id="progress-account01" src="/zone01/Game/videos/progress1-6.mp4"></video>
-                        <video id="progress-account02" src="/zone01/Game/videos/progress1-7.mp4"></video>
-                        <video id="progress-tracking02" src="/zone01/Game/videos/progress1-8.mp4"></video>
+
+                    <div class="bottom">
+                        <p class="font-dbHelvethaica indent" style="font-size: 30px; margin-bottom: 15px;">
+                            TOOLS 
+                            <span id="forNametag" style="background-color: #D0FF0B; border: 1px solid; padding: 2px; margin: 2px;">
+                                for websites
+                            </span>
+                        </p>
+                        <!-- these tool icon disable when clicked -->
+                        <div id="iconSet1" class="toolIcons indent">
+                            <div class="toolIcons">
+                                <div class="iconBlock">
+                                    <div class="icon">
+                                        <button id="cookieTool" onclick="showToolInfo('cookieInfo', 'cookieTool')">
+                                            <img src="/zone01/Asssets/icon-cookie.png" style="padding: 25px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ cookies ]</h5>
+                                </div>
+                
+                                <div class="iconBlock">
+                                    <div class="icon">
+                                        <button id="fingerTool" onclick="showToolInfo('fingerInfo', 'fingerTool')" disabled style="cursor: default;">
+                                            <img src="/zone01/Asssets/icon-fingerprint.png" style="padding: 25px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ browser<br>fingerprinting ]</h5>
+                                </div>
+                                <div class="iconBlock">
+                                    <div class="icon">
+                                        <button id="webTool" onclick="showToolInfo('webInfo', 'webTool')" disabled style="cursor: default;">
+                                            <img src="/zone01/Asssets/icon-social.png" style="padding: 18px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ web<br> beacon ]</h5>
+                                </div>
+                                <div class="iconBlock">
+                                    <div class="icon">
+                                        <button id="socialTool" onclick="showToolInfo('socialInfo', 'socialTool')" disabled style="cursor: default;">
+                                            <img src="/zone01/Asssets/icon-login.png" style="padding: 25px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ social login ]</h5>
+                                </div>
+                                <div class="iconBlock">
+                                    <div class="icon">
+                                        <button id="trackingTool" onclick="showToolInfo('trackingInfo', 'trackingTool')" disabled style="cursor: default;">
+                                            <img src="/zone01/Asssets/icon-pixel.png" style="padding: 25px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="iconSet2" class="toolIcons indent" style="display: none;">
+                            <div class="toolIcons">
+                                <div class="iconBlock" style="margin-left: 30px;">
+                                    <div class="icon">
+                                        <button id="accountTool" onclick="showToolInfo('accountInfo', 'accountTool')">
+                                            <img src="/zone01/Asssets/icon-social.png" style="padding: 23px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ creating/<br>having account ]</h5>
+                                </div>
+                
+                                <div class="iconBlock" style="margin-left: 30px;">
+                                    <div class="icon">
+                                        <button id="track2Tool" onclick="showToolInfo('track2Info', 'track2Tool')" disabled style="cursor: default;">
+                                            <img src="/zone01/Asssets/icon-pixel.png" style="padding: 30px;" alt="">
+                                        </button>
+                                    </div>
+                                    <h5 class="toolsName font-dbHelvethaica">[ tracking<br>pixel ]</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--column that contain result!-->
+                <div class="col03">
+                    <div class="row01">
+                        <img src="/zone01/Asssets/ele_circle.png" alt="" style="padding: 40px;">
+                        <p class="font-dbHelvethaica" style="font-size: 30px;" >38.106.2201.83's browser</p>
+                    </div>
+                    <div class="row02">
+                        <div class="user-tabs">
+                            <div class="tab-name">
+                                <div class="font-dbHelvethaica" id="tab-normal">
+                                    <p style="margin:15px ">www.เว็บไซต์ทั่วไป.com</p>
+                                </div>
+                                <button class="font-dbHelvethaica" id="tab-social" style="padding-bottom: 59px;" disabled onclick="activeSocialZone()">
+                                    <p style="margin:15px;">www.socialmedia.com</p>
+                                </button>
+                            </div>
+                            <div class="using-tool">
+                                <video id="cookie-01" onended="activeNextBt('fingerTool', 'cookie-01', 'progress-cookie')" src="/zone01/Game/videos/zone1-1.mp4"></video>
+                                <video id="finger-01" onended="activeNextBt('webTool', 'finger-01', 'progress-finger')" src="/zone01/Game/videos/zone1-2.mp4"></video>
+                                <video id="web-01" onended="activeNextBt('socialTool', 'web-01', 'progress-web')" src="/zone01/Game/videos/zone1-3.mp4"></video>
+                                <video id="social-01" onended="activeNextBt('trackingTool', 'social-01', 'progress-social')" src="/zone01/Game/videos/zone1-4.mp4"></video>
+                                <video id="tracking-01" onended="activeNextBt('tab-social', 'tracking-01', 'progress-tracking')" src="/zone01/Game/videos/zone1-5.mp4"></video>
+                                <video id="account-01" onended="playContVid('account-01', 'progress-account01', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-6.mp4"></video>
+                                <video id="account-02" onended="activeNextBt('track2Tool', 'account-02', 'progress-account02')" src="/zone01/Game/videos/zone1-7.mp4"></video>
+                                <video id="tracking-02" onended="toResult()" src="/zone01/Game/videos/zone1-8.mp4"></video>
+                            </div>
+                        </div>
+                        <div class="progress-vid">
+                            <video id="progress-cookie" src="/zone01/Game/videos/progress1-1.mp4"></video>
+                            <video id="progress-finger" src="/zone01/Game/videos/progress1-2.mp4"></video>
+                            <video id="progress-web" src="/zone01/Game/videos/progress1-3.mp4"></video>
+                            <video id="progress-social" src="/zone01/Game/videos/progress1-4.mp4"></video>
+                            <video id="progress-tracking" src="/zone01/Game/videos/progress1-5.mp4"></video>
+                            <!-- progress video for social tab -->
+                            <video id="progress-account01" src="/zone01/Game/videos/progress1-6.mp4"></video>
+                            <video id="progress-account02" src="/zone01/Game/videos/progress1-7.mp4"></video>
+                            <video id="progress-tracking02" src="/zone01/Game/videos/progress1-8.mp4"></video>
+                        </div>
                         <button id="resultButton" href="" onclick="showResult()">
                             <img src="/zone01/Asssets/button.png" alt="">
                         </button>
@@ -254,105 +480,102 @@
                     </div>
                 </div>
             </div>
+            
         </div>
-        
-    </div>
-
-
-
 
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
-    <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+        <!-- Task Button -->
+        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
 
-    <!-- TASK BAR -->
-    <div class="task-bar background-white1" id="task-bar">
-        <!-- TASK ROW 1 -->
-        <div class="task-row1">
-            <div class="task-col1">
-                <div id="employee-element">
-                    <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
-                </div>  
-            </div>
-            <div class="task-col2">
-                <div id="username-show-element">
-                    <p class="font-dbHelvethaica" id="username-text"></p>
+        <!-- TASK BAR -->
+        <div class="task-bar background-white1" id="task-bar">
+            <!-- TASK ROW 1 -->
+            <div class="task-row1">
+                <div class="task-col1">
+                    <div id="employee-element">
+                        <p class="font-dbHelvethaica" id="employee-text">EMPLOYEE ID :</p>
+                    </div>  
+                </div>
+                <div class="task-col2">
+                    <div id="username-show-element">
+                        <p class="font-dbHelvethaica" id="username-text"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--/ TASK ROW 1 -->
+            <!--/ TASK ROW 1 -->
 
-        <!-- TASK ROW 2 -->
-        <div class="task-row2 background-white1">
-            <!-- Database Tour -->
-            <div class="task-topics" id="database-tour">
-                <div class="square-check background-white"></div>
-                <div class="topic-text-box">
-                    <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+            <!-- TASK ROW 2 -->
+            <div class="task-row2 background-white1">
+                <!-- Database Tour -->
+                <div class="task-topics" id="database-tour">
+                    <div class="square-check background-white"></div>
+                    <div class="topic-text-box">
+                        <p class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
+                    </div>
+                </div>
+                <!-- Tasks -->
+                <div class="task-topics" id="tasks">
+                    <p class="font-ocrb" id="tasks-text">TASKS</p>
+                </div>
+                <!-- Zone 1 -->
+                <div class="task-topics zone">
+                    <div class="square-check background-blue"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
+                    </div>
+                </div>
+                <!-- Zone 2 -->
+                <div class="task-topics zone">
+                    <div class="square-check background-grey2"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
+                    </div>
+                </div>
+                <!-- Zone 3 -->
+                <div class="task-topics zone">
+                    <div class="square-check background-grey2"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
+                    </div>
+                </div>
+                <!-- Confidential Zone -->
+                <div class="task-topics zone">
+                    <div class="square-check background-grey2"></div>
+                    <div class="topic-text-box">
+                        <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
+                    </div>
                 </div>
             </div>
-            <!-- Tasks -->
-            <div class="task-topics" id="tasks">
-                <p class="font-ocrb" id="tasks-text">TASKS</p>
-            </div>
-            <!-- Zone 1 -->
-            <div class="task-topics zone">
-                <div class="square-check background-blue"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 01 : WORLD</p>
-                </div>
-            </div>
-            <!-- Zone 2 -->
-            <div class="task-topics zone">
-                <div class="square-check background-grey2"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 02 : WIDE</p>
-                </div>
-            </div>
-            <!-- Zone 3 -->
-            <div class="task-topics zone">
-                <div class="square-check background-grey2"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">ZONE 03 : WEAVE</p>
-                </div>
-            </div>
-            <!-- Confidential Zone -->
-            <div class="task-topics zone">
-                <div class="square-check background-grey2"></div>
-                <div class="topic-text-box">
-                    <p class="font-dbHelvethaica font-gre">CONFIDENTIAL ZONE</p>
-                </div>
-            </div>
-        </div>
-        <!--/ TASK ROW 2 -->
+            <!--/ TASK ROW 2 -->
 
-        <!-- TASK ROW 3 -->
-        <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
-        </div>
-        <!--/ TASK ROW 1 -->
+            <!-- TASK ROW 3 -->
+            <div class="task-row3">
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            </div>
+            <!--/ TASK ROW 1 -->
 
-        <!-- ABOUT -->
-        <div class="task-hidden-about background-white1">
-            <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
-                    <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
-                </button>
+            <!-- ABOUT -->
+            <div class="task-hidden-about background-white1">
+                <div class="about-info-row1">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                        <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                    </button>
+                </div>
+                <div class="about-info-row2">
+                    <p class="font-baiJamjuree about-info-text">
+                        เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+                    </p>
+                </div>
+                <div class="about-info-row3">
+                    <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
+                </div>
             </div>
-            <div class="about-info-row2">
-                <p class="font-baiJamjuree about-info-text">
-                    เว็บไซต์นี้เป็นส่วนหนึ่งของศิลปนิพนธ์ตามหลักสูตของปริญญาศิลปศาสตรบัณฑิตสาขานิเทศศิลป์ ของสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
-                </p>
-            </div>
-            <div class="about-info-row3">
-                <img id="about-info-pic" src="/Assets/PictureAndVdo/LOGO-png.png" alt="">
-            </div>
+            <!--/ ABOUT -->
         </div>
-        <!--/ ABOUT -->
+        <!--/ TASK BAR -->
+
+        <!--/ ~~~~~ NAVIGATION ~~~~~ -->
     </div>
-    <!--/ TASK BAR -->
-
-    <!--/ ~~~~~ NAVIGATION ~~~~~ -->
 </body>
 </html>

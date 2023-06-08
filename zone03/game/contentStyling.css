@@ -1,13 +1,25 @@
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supercontainer {
     margin: 0;
     overflow: hidden;
     padding: 0;
     background-image: url('/zone01/Asssets/bg_timecard_grid.jpg');
     background-size: contain;
-    width: 1920px;
-    height: 1080px;
     max-width: 1920px;
     max-height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
 button {
@@ -42,9 +54,10 @@ button {
 #bgGuide {
     width: 100%;
     height: 100%;
-    background-color: #999999;
-    opacity: 60%;
-    animation: fadeAppear 1s 1;
+    background-image: url(/zone03/asset/guideBg.png);
+    filter: brightness(80%);
+    /* opacity: 60%; */
+    /* animation: fadeAppear 1s 1; */
 }
 
 #guideEle {
@@ -105,8 +118,15 @@ button {
 #guide04 {
     display: none;
     position: absolute;
+    top: 13.6%;
+    right: 22%;
+}
+
+.hoverBG4 {
+    position: absolute;
     bottom: 21%;
-    right: 8%;
+    left: 70%;
+    z-index: 1;
 }
 
 #guide05 {
@@ -145,9 +165,10 @@ button {
 
 #guide04Bt {
     position: absolute;
-    top: 82%;
-    right: 7%;
+    top: 73%;
+    left: 129%;
     color: #D0FF0B;
+    z-index: 1;
 }
 
 #guide05Bt {
@@ -168,7 +189,7 @@ button {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 11%;
+    width: 8.5%;
     position: relative;
 }
 
@@ -188,6 +209,7 @@ button {
 #endingZone {
     width: 93%;
     position: absolute;
+    visibility: hidden;
     top: 100%;
     left: 5.2%;
     z-index: 4;
@@ -247,6 +269,15 @@ button {
 .post:hover {
     background: #E1E1E1;
     background-repeat: no-repeat;
+}
+
+.postOver {
+    width: 557px;
+    height: 202px;
+    border: none;
+    background: #EAEAEA;
+    background-repeat: no-repeat;
+    margin-bottom: 25px;
 }
 
 /* Each post styling */
@@ -378,10 +409,16 @@ button {
     z-index: 2;
 }
 
-#clock {
+#clock, #radiant {
     position: absolute;
     top: 2%;
     right: 30%;
+}
+
+#radiant {
+    border-radius: 20px;
+    width: 54px;
+    height: 52px;
 }
 
 #bar {
@@ -415,7 +452,7 @@ button {
 }
 
 .feeds {
-    background-color: #EAEAEA;
+    /* background-color: #EAEAEA; */
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -425,6 +462,7 @@ button {
 .userInterest {
     border-left: solid 0.2px;
     width: 30%;
+    height: 985px;
     padding-left: 5.2%;
 }
 
@@ -449,15 +487,57 @@ button {
     position: relative;
 }
 
+.feed-vids video {
+    visibility: hidden;
+}
+
 #hoverPic {
     position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
+    left: 4%;
+    width: 709px;
+    height: 933px;
     background: url(/zone03/game/contents/hover/hover1.png);
     z-index: 2;
     opacity: 0%;
     transition: opacity 1s;
+}
+
+#staticimg {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: initial;
+    height: initial;
+    z-index: 1;
+}
+
+#restart {
+    display: none;
+    position: relative;
+    top: 0;
+    width: auto;
+    height: auto;
+    z-index: 4;
+}
+
+#restart img {
+    width: 706px;
+    height: initial;
+}
+
+#restart a {
+    background: none;
+    bottom: 37%;
+    border: solid black 1px;
+    color: #0D3BFC;
+    cursor: pointer;
+    padding-top: 15px;
+    position: absolute;
+    left: 38%;
+    font-size: 30px;
+    width: 180px;
+    height: 50px;
 }
 
 #hoverPic:hover {
