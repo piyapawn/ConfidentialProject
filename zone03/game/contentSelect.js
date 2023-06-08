@@ -18,6 +18,21 @@ function selectContent(vidId, clearVidId, crContentId, nContentId) {
     currentContent.style.display = 'none'
     // show next content
     nextContent.style.display = 'block'
+
+    const staticimg =  document.getElementById('staticimg')
+    // changing the static img to specific only for this content04
+    if(nContentId == 'content04') {
+        staticimg.src = "/zone03/game/contents/choices/static-q4.png"
+    }else if(crContentId == 'content04') {
+        switch(vidId) {
+            case 'vid07':
+                staticimg.src = "/zone03/game/contents/choices/static-q42.png";
+                break;
+            case 'vid08':
+                staticimg.src = "/zone03/game/contents/choices/static-q41.png";
+                break;
+        }
+    }
 }
 
 var angle = 0;

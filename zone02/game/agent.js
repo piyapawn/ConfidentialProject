@@ -5,6 +5,7 @@ function windowLoad() {
 
 
 var choosenUser = [];
+var clientUnit = '';
 var isQuiz01Done = false;
 var isQuiz02Done = false;
 var isQuiz03Done = false;
@@ -63,11 +64,11 @@ function checkAns(sendBtId, quantId, unitId) {
     clickSound.play();
     let quantityEle = document.getElementById(quantId);
     if(choosenUser.includes('0')) {
+        clientUnit = unitId;
         choosenUser = [];
         quantityEle.innerHTML = '0';
         document.getElementById('alertBG').style.display = "block";
         document.getElementById('alert').style.display = "block";
-
     }
     else if(!choosenUser.includes('0')){
         const correctSource = "/zone01/audio/zone02-money.mp3";
@@ -87,14 +88,53 @@ function checkAns(sendBtId, quantId, unitId) {
         }
         soundC.play()
     }
-
+    
     // if finish every quiz , end this zone
     if( isQuiz01Done && isQuiz02Done && isQuiz03Done) {
         endIt();
     }
 }
 
-//   button
+function acceptFalse() {
+    // user lists for each client
+    const userSet1 = ['user11', 'user12', 'user13', 'user14', 'user15', 'user16', 'user17'];
+    const userSet2 = ['user21', 'user22', 'user23', 'user24', 'user25'];
+    const userSet3 = ['user31', 'user32', 'user33', 'user34', 'user35'];
+    const btnSet1 = ['choose11', 'choose12', 'choose13', 'choose14', 'choose15', 'choose16', 'choose17'];
+    const btnSet2 = ['choose21', 'choose22', 'choose23', 'choose24', 'choose25'];
+    const btnSet3 = ['choose31', 'choose32', 'choose33', 'choose34', 'choose35'];
+
+    var useSet = [];
+    var useBtn = [];
+    // hide the alert message box
+    document.getElementById('alertBG').style.display = "none";
+    document.getElementById('alert').style.display = "none";
+    // clear the border styling of the users
+    switch(clientUnit) {
+        case 'unit1':
+            useSet = userSet1;
+            useBtn = btnSet1;
+            break;
+        case 'unit2':
+            useSet = userSet2;
+            useBtn = btnSet2;
+            break;
+        case 'unit3':
+            useSet = userSet3;
+            useBtn = btnSet3;
+            break;
+    }
+
+    for (eachUser in useSet) {
+        document.getElementById(useSet[eachUser]).style.border = "1px solid";
+    }
+    // enable the chooseBt of all user in that clients
+    for (eachBtn in useBtn) {
+        disableBt(useBtn[eachBtn]);
+    }
+}
+
+// button
 function disableBt(buttonId) {
     let isActive = document.getElementById(buttonId).disabled
     document.getElementById(buttonId).disabled = !isActive;
@@ -141,7 +181,6 @@ function showUserDetail(clientId, interestId, currentBtId) {
 
     for (eachButton in usingShowDataSet) {
         if (usingShowDataSet[eachButton] != currentBtId) {
-            console.log('thisButton', usingShowDataSet[eachButton])
             disableBt(usingShowDataSet[eachButton])
         }
     }

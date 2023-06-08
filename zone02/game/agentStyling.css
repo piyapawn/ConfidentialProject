@@ -617,13 +617,15 @@ button {
     transition: opacity 2s;
 }
 
-#alert a {
+#alert button {
     border: solid 0.5px black;
+    background: none;
     color: #0D3BFC;
     cursor: pointer;
-    width: 120px;
-    height: 45px;
-    padding-left: 30px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    /* padding-left: 10px; */
     font-size: 40px;
     position: absolute;
     left: 35%;
