@@ -42,9 +42,10 @@ button {
 #bgGuide {
     width: 100%;
     height: 100%;
-    background-color: #999999;
-    opacity: 60%;
-    animation: fadeAppear 1s 1;
+    background-image: url(/zone03/asset/guideBg.png);
+    filter: brightness(80%);
+    /* opacity: 60%; */
+    /* animation: fadeAppear 1s 1; */
 }
 
 #guideEle {
@@ -196,6 +197,7 @@ button {
 #endingZone {
     width: 93%;
     position: absolute;
+    visibility: hidden;
     top: 100%;
     left: 5.2%;
     z-index: 4;
@@ -438,7 +440,7 @@ button {
 }
 
 .feeds {
-    background-color: #EAEAEA;
+    /* background-color: #EAEAEA; */
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -448,6 +450,7 @@ button {
 .userInterest {
     border-left: solid 0.2px;
     width: 30%;
+    height: 985px;
     padding-left: 5.2%;
 }
 
@@ -470,6 +473,10 @@ button {
     height: initial;
     text-align: center;
     position: relative;
+}
+
+.feed-vids video {
+    visibility: hidden;
 }
 
 #hoverPic {

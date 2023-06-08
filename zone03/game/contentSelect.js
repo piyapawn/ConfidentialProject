@@ -13,6 +13,7 @@ function selectContent(vidId, clearVidId, crContentId, nContentId) {
     
     clickSound.play();
     clearFeed(clearVidId);
+
     playVid(vidId);
     // hide current content
     currentContent.style.display = 'none'
@@ -75,6 +76,7 @@ function playVid(vidId) {
     const imgStatic = document.getElementById('staticimg');
     
     imgStatic.style.zIndex = '-2'
+    vid.style.visibility = 'visible';
     vid.play();
     togglePostSelection('disable');
 }
@@ -211,10 +213,14 @@ function toggleNotice(action) {
 
 // end this zone, when task completed
 function endIt(score) {
+    const endingEle = document.getElementById('endingZone');
     setProgress(score);
-    document.getElementById('endingZone').style.zIndex = 4
-    document.getElementById('endingZone').style.animation = 'slideIn 1s 1'
-    document.getElementById('endingZone').style.animationFillMode = 'forwards'
+    endingEle.style.zIndex = 4
+    endingEle.style.visibility = 'visible'
+    endingEle.style.animation = 'slideIn 1s 1'
+    endingEle.style.animationFillMode = 'forwards'
+
+    // adding ending zone bg
     const bgAudio = document.getElementById('bgAudio');
     const endSoundSource = "/zone01/audio/gameEnd.mp3";
     const endSound = new Audio(endSoundSource);
