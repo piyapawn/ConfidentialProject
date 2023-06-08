@@ -26,7 +26,7 @@ body {
     border-style: solid;
     border-width: 1px;
     border-bottom-width: 0px;
-    width: 5.2%;
+    width: 5.5%;
     height: 100%;
 }
 
@@ -158,6 +158,7 @@ body {
     color: #0D3BFC;
     flex-grow: 1;
     font-size: 20px;
+    padding-top: 15px;
     padding-bottom: 1%;
     padding-right: 6%;
 }
@@ -179,8 +180,8 @@ body {
 }
 
 #targetIP {
-    margin-left: 8.5%;
-    margin-top: 16.5%;
+    margin-left: 11%;
+    margin-top: 21.6%;
     width: initial;
     height: initial;
 }
