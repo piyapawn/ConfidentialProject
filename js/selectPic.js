@@ -41,11 +41,6 @@ function selectPicture(nameOfSelectedPic) {
     let closeButton = document.getElementById(`close-button-${nameOfSelectedPic}`)
     let completedSelected = document.getElementById('completed-select')
 
-    // let picture = document.getElementById(`picture-${nameOfSelectedPic}`)
-
-    // selectedPicWrap.style.setProperty(`--picWrapHeight-${nameOfSelectedPic}`, '100%')
-    // console.log('Picture :', picture.height)
-
     if(limitSelectCheck()) {
         updateSelectCheck(true, nameOfSelectedPic)
     }
@@ -114,6 +109,26 @@ function limitSelectCheck() {
 function closeCompletedSelect() {
     let completedSelected = document.getElementById('completed-select')
     completedSelected.style.display = 'none'
+}
+
+function openFindTarget() {
+    let findTargetArea = document.getElementById('find-target')
+    let loadingTarget = document.getElementsByClassName('loading-target')
+    let findTarget = document.getElementById('find-target-wrap')
+    let foundTarget = document.getElementById('found-target-wrap')
+
+    findTargetArea.style.display = 'flex'
+
+    for(let i = 0; i <= 3; i++) {
+        setTimeout(() => {
+            loadingTarget[i].style.opacity = 1
+        }, 600*(i+1))
+    }
+
+    setTimeout(() => {
+        findTarget.style.display = 'none'
+        foundTarget.style.display = 'flex'
+    }, 3000)
 }
 
 // Set  Selected Picture to Local Storage

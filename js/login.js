@@ -42,6 +42,18 @@ function windowLoad() {
     taskButtonTransform('x', -5)
 }
 
+function textRunningAnimation(numCount) {
+    let runningText = document.getElementById(`running-text-${numCount}`)
+
+    runningText.style.animation = 'textRunning1 20s linear infinite'
+}
+
+function removeRunningText(numCount) {
+    let runningText = document.getElementById(`running-text-${numCount}`)
+
+    runningText.remove()
+}
+
 let picSelectCheck = false
 let nameFillCheck = false
 
@@ -80,6 +92,8 @@ function openAndCloseNav() {
         }
     }
     check++
+
+    clickSound.play();
 }
 
 // Edit or Set Username

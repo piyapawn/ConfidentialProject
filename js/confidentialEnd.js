@@ -6,6 +6,17 @@ let endProfile
 
 let employeeProfilePic
 
+let confidentialEnd
+
+let restartButton
+let footer
+let scrollImage
+
+// Text
+let leftTopContentText
+let middleContentText
+let rightTopContentText
+
 // Append Data
 let categoriesInfoText
 let categoriesBoxText
@@ -36,6 +47,16 @@ function windowLoad() {
 
     employeeProfilePic = document.getElementById('employee-id-profile-pic')
 
+    confidentialEnd = document.getElementById('confidential-end')
+
+    restartButton = document.getElementById('restart-button')
+    footer = document.getElementById('footer')
+    scrollImage = document.getElementById('scroll-image')
+
+    leftTopContentText = document.getElementById('left-top-content')
+    middleContentText = document.getElementById('middle-bottom-content')
+    rightTopContentText = document.getElementById('right-top-content')
+
     if(localProfilePicture == 'male') {
         employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 3.png"
     }
@@ -45,6 +66,13 @@ function windowLoad() {
     else if(localProfilePicture == 'not specified') {
         employeeProfilePic.src = "/Assets/PictureAndVdo/ASCII-art (63) 5.png"
     }
+
+    if(localIsScrollEnd) {
+        confidentialTrueEnd()
+    }
+
+    const audio = document.querySelector("audio");
+    audio.play();
 }
 
 function fetchJsonFile() {
@@ -127,6 +155,39 @@ function findPersonalities() {
     return personalitiesType
 }
 
+let scrollAction = false
+function confidentialTrueEnd() {
+    if(!scrollAction) {
+        hideElement(scrollImage)
+        revealElement(restartButton, 'flex')
+        footer.style.transform = 'translateY(0%)'
+    
+        confidentialEnd.style.overflow = 'hidden'
+        
+        moveText(leftTopContentText, 'top', 'left', 2, 3)
+        moveText(middleContentText, 'bottom', 'left', 1, 15.5)
+        moveText(rightTopContentText, 'top', 'right', 2, 3)
+
+        scrollAction = true
+
+        localStorage.setItem('scroll-end', true)
+    }
+}
+
+function moveText(elementText, position1, position2, numOfPos1, numOfPos2) {
+    if(position1 == 'top') {
+        elementText.style.top = `calc(var(--grid) * ${numOfPos1})`
+    }
+    else if(position1 == 'bottom') {
+        elementText.style.bottom = `calc(var(--grid) * ${numOfPos1})`
+    }
+    if(position2 == 'right') {
+        elementText.style.right = `calc(var(--grid) * ${numOfPos2})`
+    }
+    else if(position2 == 'left') {
+        elementText.style.left = `calc(var(--grid) * ${numOfPos2})`
+    }
+}
 
 let elementOpenBool = false;
 

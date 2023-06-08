@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/css/intro.css">
     <script src="/js/intro.js"></script>
     <script src="/js/loadHTML.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
+    
     <title>Intro</title>
 </head>
 <body class="background-black" onload="windowLoadSection()">
@@ -24,7 +26,7 @@
             <img class="intro1-bg" id="intro1-pic" src="/Assets/PictureAndVdo/bg_intro.png" alt="">
             <img class="intro1-bg" id="intro1-gif" src="/Assets/PictureAndVdo/gif_intro.gif" alt="">
             <div id="accessText">
-                <button class="background-white font-ocrb font-blue" id="accessButton" onclick='loadPage("intro1", "intro2"), activeFade()'>
+                <button class="background-white font-ocrb font-blue" id="accessButton" onclick='loadPage("intro1", "intro2"), activeFade(), clickSoundPlay()'>
                     access("www")
                 </button>
             </div>
@@ -94,7 +96,7 @@
                         </div>
                         <div class="intro3-sub-content" id="sub-content3">
                             <p class="font-dbHelvethaica content-text">ร่วมมือกับองค์กรของเราหรือไม่</p>
-                            <button class="background-transparent" id="button-reveal" onclick="revealButtonClick()">
+                            <button class="background-transparent" id="button-reveal" onclick="revealButtonClick(), clickSoundPlay()">
                                 <img id="pic-reveal" src="/Assets/PictureAndVdo/button_reveal.png" alt="">
                             </button>
                         </div>
@@ -106,7 +108,7 @@
                 <div class="col2">
                     <div class="intro3-sub-content" id="space2"></div>
                     <div class="intro3-sub-content" id="accept-button-area">
-                        <button class="background-yellow font-ocrb font-blue" id="accept-button" onclick="acceptButtonClick()">ACCEPT</button>
+                        <button class="background-yellow font-ocrb font-blue" id="accept-button" onclick="acceptButtonClick(), acceptSoundPlay()">ACCEPT</button>
                     </div>
                 </div>
             </div>
@@ -126,8 +128,8 @@
             document.documentElement.style.setProperty('--cursorY', y + 'px')
         }
 
-        document.addEventListener('mousemove',update)
-        document.addEventListener('touchmove',update)
+        document.addEventListener('mousemove', update)
+        document.addEventListener('touchmove', update)
     </script>
 </body>
 </html>

@@ -33,6 +33,9 @@ function windowLoad() {
 
     textRun = document.getElementById('right-top-text-run')
     rightBottomContent = document.getElementById('right-bottom-content')
+
+    const audio = document.querySelector("audio");
+    audio.play();
 }
 // -------------- Change Confidential Page --------------
 let pageArray = [1, 2, 3]
@@ -276,20 +279,26 @@ function clickBackButton(idNum) {
 }
 
 
+let openQuizBool = false
 // -------------- CONFIDENTIAL 2 --------------
 function openQuiz(numOfQuiz) {
     let answer = document.getElementById(`answer-${numOfQuiz}`)
 
-    answer.style.display = 'flex'
-    answer.style.opacity = 1
+    if(!openQuizBool) {
+        answer.style.display = 'flex'
+        answer.style.opacity = 1
+    
+        postItNoteCon2.style.opacity = 0
+        setTimeout(() => {
+            postItNoteCon2.style.display = 'none'
+        }, 250)
+    
+        disableArrow(arrowRightBlue, arrowRightGrey, arrowRightButton)
+        disableArrow(arrowLeftBlue, arrowLeftGrey, arrowLeftButton)
 
-    postItNoteCon2.style.opacity = 0
-    setTimeout(() => {
-        postItNoteCon2.style.display = 'none'
-    }, 250)
+        openQuizBool = true
+    }
 
-    disableArrow(arrowRightBlue, arrowRightGrey, arrowRightButton)
-    disableArrow(arrowLeftBlue, arrowLeftGrey, arrowLeftButton)
 }
 
 function closeAnswer(numOfQuiz) {
@@ -307,4 +316,6 @@ function closeAnswer(numOfQuiz) {
 
     ableArrow(arrowRightBlue, arrowRightGrey, arrowRightButton)
     ableArrow(arrowLeftBlue, arrowLeftGrey, arrowLeftButton)
+
+    openQuizBool = false
 }

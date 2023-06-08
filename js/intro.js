@@ -85,14 +85,18 @@ function revealButtonClick() {
 
 function acceptButtonClick() {
     let intro3 = document.getElementById("intro3");
-    intro3.style.transform = "translateY(-100%)";
-    intro3.style.transition = "0.5s";
+    setTimeout(() => {
+        intro3.style.transform = "translateY(-100%)";
+        intro3.style.transition = "0.5s";
+    
+        let body = document.getElementsByTagName("body")[0]
+        body.style.background = "white"
+    }, 1500)
 
-    let body = document.getElementsByTagName("body")[0]
-    body.style.background = "white"
-    loadHTML('login.html', 200)
+    loadHTML('login.html', 2000)
 }
 
+let introSoundPlayCheck = Array(3).fill(false)
 function intro2Scroll() {
     let page2 = document.getElementById('intro2')
     let section = document.getElementsByClassName('intro2-section')
@@ -121,6 +125,24 @@ function intro2Scroll() {
 
     let sec4AllPic = document.getElementsByClassName('sec4-allpic')
     scrollReveal(4, sec4AllPic, 'pic', sec3OffsetTop)
+
+    // console.log('Sec 2: ', sec2AllTextBoxes[0].offsetTop)
+
+    // // Intro Text Sound
+    if(page2.scrollTop >= sec2AllTextBoxes[0].offsetTop+(0+(0.3*sec2OffsetTop)) && !introSoundPlayCheck[0]) {
+        introTextSoundPlay()
+        introSoundPlayCheck[0] = true
+    }
+    // // Intro Text Sound
+    if(page2.scrollTop >= sec3AllTextBoxes[0].offsetTop+(sec2OffsetTop+(0.3*sec2OffsetTop)) && !introSoundPlayCheck[1]) {
+        introTextSoundPlay()
+        introSoundPlayCheck[1] = true
+    }
+    // // Intro Text Sound
+    if(page2.scrollTop >= sec4AllTextBoxes[0].offsetTop+(sec3OffsetTop+(0.3*sec2OffsetTop)) && !introSoundPlayCheck[2]) {
+        introTextSoundPlay()
+        introSoundPlayCheck[2] = true
+    }
 
     // Scroll to Next Page
     let page3 = document.getElementById('intro3')

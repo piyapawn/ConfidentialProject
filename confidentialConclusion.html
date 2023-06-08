@@ -13,13 +13,17 @@
     <script src="/js/task-bar.js"></script>
     <script src="/js/loadHTML.js"></script>
     <script src="/js/currentTime.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>Confidential 3</title>
 </head>
 <body onload="windowLoad()">
+    <!-- Background Sound -->
+    <audio src="/Assets/PictureAndVdo/เสียง_ในส่วนของดัง/สำเนาของ bg_con3-จบ.mp4"></audio>
+
     <!-- Left Nav -->
     <div class="task-space background-dark-grey"></div>
-    <div class="all-content-area">
+    <div class="all-content-area" id="all-content">
         <!-- Top Nav -->
         <div class="top-nav background-dark-grey">
             <div class="top-nav-all-text" id="top-nav-left">
@@ -33,13 +37,16 @@
             </div>
         </div>
 
-        <div class="content-area">
+        <div class="content-area background-dark-grey">
             <!-- LEFT CONCLUSION -->
-            <div class="left-content background-dark-grey">
+            <div class="left-content background-dark-grey" id="left-content">
                 <p class="left-text font-dbHelvethaica font-white" id="left-text">
-                    คุณเองก็ถูกจับตามอง<br>และเป็นไปตามแผนที่เราวางไว้<br><br><br>เช่นเดียวกับผู้คนทั่วโลก<br>ที่ใช้อินเทอร์เน็ต
+                    <span class="span-text"></span><br>
+                    <span class="span-text"></span><br><br><br>
+                    <span class="span-text"></span><br>
+                    <span class="span-text"></span>
                 </p>
-                <button class="background-transparent" id="scroll-button" onclick="loadHTML('confidentialEnd.html', 500)">
+                <button class="background-transparent" id="scroll-button">
                     <img src="/Assets/PictureAndVdo/scroll_white.png" alt="" width="100%">
                 </button>
             </div>
@@ -53,8 +60,8 @@
                 <div class="grey-text-box" id="grey-text-box-2">
                     <img src="/Assets/PictureAndVdo/confidential3/box_3you_llclickthis.png" alt="">
                 </div>
-                <button class="background-yellow" id="next-button" onclick="nextToConclusion()">
-                    <img src="/Assets/PictureAndVdo/confidential3/button_next.png" alt="" width="80%">
+                <button class="background-yellow" id="next-button" onclick="nextToConclusion(), clickSoundPlay()">
+                    <img src="/Assets/PictureAndVdo/confidential3/button_next.png" alt="" width="70%">
                 </button>
             </div>
 
@@ -62,8 +69,11 @@
             <div class="right-content background-white2" id="right-content-conclusion">
                 <!-- TEXT RUNNING -->
                 <div class="bottom-text-run background-black" id="bottom-text-run">
-                    <div class="font-ocrb font-yellow" id="text-head1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
-                    <div class="font-ocrb font-yellow" id="text-head2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+                    <div class="text-area-running">
+                        <!-- TEXT RUNNING -->
+                        <div class="running-text font-ocrb font-yellow" id="running-text-1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+                        <div class="running-text font-ocrb font-yellow" id="running-text-2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+                    </div>
                 </div>
 
                 <!-- Left Content -->
@@ -101,13 +111,13 @@
                             <div class="notice-select-info">
                                 <p class="notice-select-text font-dbHelvethaica">คุณคิดว่าข้อมูลนี้มีความถูกต้องมากแค่ไหน</p>
                                 <div class="notice-select-choices">
-                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องทั้งหมด')">ถูกต้องทั้งหมด</button>
-                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องบางส่วน')">ถูกต้องบางส่วน</button>
-                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ไม่ถูกต้องเลย')">ไม่ถูกต้องเลย</button>
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องทั้งหมด'), clickSoundPlay()">ถูกต้องทั้งหมด</button>
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ถูกต้องบางส่วน'), clickSoundPlay()">ถูกต้องบางส่วน</button>
+                                    <button class="notice-select-text background-transparent font-dbHelvethaica" onclick="noticeSelected('ไม่ถูกต้องเลย'), clickSoundPlay()">ไม่ถูกต้องเลย</button>
                                 </div>
                             </div>
                         </div>
-                        <button class="notice-next-button background-transparent" id="notice-next-button" onclick="noticeNext()">
+                        <button class="notice-next-button background-transparent" id="notice-next-button" onclick="noticeNext(), clickSoundPlay()">
                             <img src="/Assets/PictureAndVdo/confidential3/button_next.png" alt="" height="80%">
                         </button>
                         <p class="font-dbHelvethaica font-blue" id="selected-text"></p>
@@ -183,7 +193,7 @@
             </div>
 
             <!-- DELETE BUTTON PAGE -->
-            <div class="delete-data-button background-white" id="delete-data-page" onclick="openActionClick()">
+            <div class="delete-data-button background-white" id="delete-data-page" onclick="openActionClick(), clickSoundPlay()">
                 <img id="delete-data-icon" src="/Assets/PictureAndVdo/confidential3/icon_deletedata1.png" alt="">
                 <div class="dd-page-content" id="dd-page-content">
                     <div class="dd-page-head">
@@ -210,7 +220,7 @@
                                     <p class="half-left-text-service font-ocrb font-blue">service</p>
                                 </div>
                                 <div class="capsule-half-right">
-                                    <button class="capsule-delete-button background-transparent font-ocrb font-blue" id="capsule-delete-button" onclick="openActionClick()">DELETE</button>
+                                    <button class="capsule-delete-button background-transparent font-ocrb font-blue" id="capsule-delete-button" onclick="openActionClick(), clickSoundPlay()">DELETE</button>
                                 </div>
                             </div>
                             <!-- DELETE GAUGE -->
@@ -277,7 +287,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="continue-button background-yellow font-dbHelvethaica font-blue" id="continue-button" onclick="continueDeleteClick()">ดำเนินการต่อ</button>
+                                <button class="continue-button background-yellow font-dbHelvethaica font-blue" id="continue-button" onclick="continueDeleteClick(), clickSoundPlay()">ดำเนินการต่อ</button>
                             </div>
                         </div>
                         <div class="dd-page-wrap-right">
@@ -310,7 +320,7 @@
                                     </p>
                                 </div>
                                 <div class="hidden-e-book">
-                                    <button class="e-book-button background-yellow" onclick="openEbookLink()">
+                                    <button class="e-book-button background-yellow" onclick="openEbookLink(), clickSoundPlay()">
                                         <img src="/Assets/PictureAndVdo/confidential3/icon_confidentiall.png" alt="">
                                     </button>
                                     <p class="font-superSpace font-blue" id="e-book-text">เอกสารลับ<br>ฉบับสุดท้าย</p>
@@ -318,10 +328,17 @@
                             </div>
                         </div>
                     </div>
-                    <button class="dd-back-button background-transparent" id="dd-back-button" onclick="backActionClick()">
+                    <button class="dd-back-button background-transparent" id="dd-back-button" onclick="backActionClick(), clickSoundPlay()">
                         <img src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                     </button>
                 </div>
+            </div>
+
+            <div class="select-weave-pic" id="select-weave-pic">
+                <p class="font-dbHelvethaica font-white" id="select-weave-text">
+                    คิดว่าหลังจากนี้
+                <br>คุณจะคงใช้ปุ่มไหนอยู่บ้าง ?
+                </p>
             </div>
 
         </div>
@@ -337,7 +354,7 @@
                 <li class="completed-delete-text font-dbHelvethaica">ข้อมูลคงเหลือในระบบ : <span class="font-blue">100%</span></li>
             </div>
             <div class="completed-delete-button-area">
-                <button class="completed-delete-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedDelete()">ตกลง</button>
+                <button class="completed-delete-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedDelete(), clickSoundPlay()">ตกลง</button>
             </div>
         </div>
     </div>
@@ -349,7 +366,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
     <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose(), clickSoundPlay()">TASK</button>
 
     <!-- TASK BAR -->
     <div class="task-bar background-white1" id="task-bar">
@@ -414,14 +431,14 @@
 
         <!-- TASK ROW 3 -->
         <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open'), clickSoundPlay()">ABOUT</a>
         </div>
         <!--/ TASK ROW 1 -->
 
         <!-- ABOUT -->
         <div class="task-hidden-about background-white1">
             <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close'), clickSoundPlay()">
                     <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" al width="100%"t="">
                 </button>
             </div>

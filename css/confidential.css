@@ -620,10 +620,17 @@ body {
 .confidential-3 .right-content-background {
     height: 100%;
 }
+.con3-text-box {
+    position: absolute;
+    top: calc(var(--grid) * 8);
+    left: calc(var(--grid) * 9);
+    width: calc(var(--grid) * 7);
+    height: calc(var(--grid) * 3);
+}
 .toggle {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    top: calc(var(--grid) * 13);
+    top: calc(var(--grid) * 12);
     left: calc(var(--grid) * 11);
     width: calc(var(--grid) * 2);
     height: calc(var(--grid) * 1);
@@ -656,10 +663,8 @@ body {
     bottom: calc(var(--grid) * 0.2);
     background-color: var(--grey2);
     border-radius: 50%;
+    animation: 1s dotFlashing infinite step-end;
     transition: 0.25s;
-}
-.toggle-button:hover + .slider-circle:before {
-    background-color: var(--yellow);
 }
 .toggle-button:checked + .slider-circle:before {
     transform: translateX(calc(var(--grid) * 1));
@@ -682,7 +687,11 @@ body {
     z-index: 0;
 }
 
-#text-head1, #text-head2 {
+.text-area-running {
+    display: flex;
+    animation: textRunning1 10s infinite linear;
+}
+.running-text {
     position: relative;
     display: inline-block;
     margin: 0;
@@ -691,11 +700,4 @@ body {
     left: 0;
     font-size: 1.2vw;
     transform: translateX(0%);
-}
-#text-head1 {
-    animation: textRunning1 20s linear infinite;
-}
-#text-head2 {
-    animation: textRunning2 20s linear infinite;
-    animation-delay: 9.93s;
 }

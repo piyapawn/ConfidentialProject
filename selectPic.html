@@ -12,6 +12,7 @@
     <script src="/js/selectPic.js"></script>
     <script src="/js/task-bar.js"></script>
     <script src="/js/loadHTML.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>Select Picture</title>
 </head>
@@ -19,7 +20,7 @@
     <div class="task-space background-white1"></div>
     <div class="select-pic-area">
         <div class="guide" id="guide">
-            <button class="guide-close-button background-blue" onclick="closeGuide()"></button>
+            <button class="guide-close-button background-blue" onclick="closeGuide(), clickSoundPlay()"></button>
             <div class="guide-text-box background-blue">
                 <p class="guide-text font-dbHelvethaica font-white">วางเม้าส์บนรูปภาพ</p>
                 <p class="guide-text font-dbHelvethaica font-white">เพื่อดูรายละเอียด</p>
@@ -29,78 +30,78 @@
         <div class="select-pic-wrap background-grey1 background-grid-white1">
             <div class="col" id="col-1">
                 <div class="pic-box" id="pic-box-e3" onmouseover="hoverPicture('e3')" onmouseout="notHoverPicture('e3')">
-                    <button class="close-button background-transparent" id="close-button-e3" onclick="unselectPicture('e3')"></button>
-                    <div class="pic-wrap" id="pic-wrap-e3" onclick="selectPicture('e3')">
+                    <button class="close-button background-transparent" id="close-button-e3" onclick="unselectPicture('e3'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-e3" onclick="selectPicture('e3'), clickSoundPlay()">
                         <img class="picture" id="picture-e3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e3.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-o3" onmouseover="hoverPicture('o3')" onmouseout="notHoverPicture('o3')">
-                    <button class="close-button background-transparent" id="close-button-o3" onclick="unselectPicture('o3')"></button>
-                    <div class="pic-wrap" id="pic-wrap-o3" onclick="selectPicture('o3')">
+                    <button class="close-button background-transparent" id="close-button-o3" onclick="unselectPicture('o3'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-o3" onclick="selectPicture('o3'), clickSoundPlay()">
                         <img class="picture" id="picture-o3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o3.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-o2" onmouseover="hoverPicture('o2')" onmouseout="notHoverPicture('o2')">
-                    <button class="close-button background-transparent" id="close-button-o2" onclick="unselectPicture('o2')"></button>
-                    <div class="pic-wrap" id="pic-wrap-o2" onclick="selectPicture('o2')">
+                    <button class="close-button background-transparent" id="close-button-o2" onclick="unselectPicture('o2'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-o2" onclick="selectPicture('o2'), clickSoundPlay()">
                         <img class="picture" id="picture-o2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o2.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-e2" onmouseover="hoverPicture('e2')" onmouseout="notHoverPicture('e2')">
-                    <button class="close-button background-transparent" id="close-button-e2" onclick="unselectPicture('e2')"></button>
-                    <div class="pic-wrap" id="pic-wrap-e2" onclick="selectPicture('e2')">
+                    <button class="close-button background-transparent" id="close-button-e2" onclick="unselectPicture('e2'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-e2" onclick="selectPicture('e2'), clickSoundPlay()">
                         <img class="picture" id="picture-e2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e2.png" alt="" width="100%">
                     </div>
                 </div>
             </div>
             <div class="col" id="col-2">
                 <div class="pic-box" id="pic-box-o6"onmouseover="hoverPicture('o6')" onmouseout="notHoverPicture('o6')">
-                    <button class="close-button background-transparent" id="close-button-o6" onclick="unselectPicture('o6')"></button>
-                    <div class="pic-wrap" id="pic-wrap-o6" onclick="selectPicture('o6')">
+                    <button class="close-button background-transparent" id="close-button-o6" onclick="unselectPicture('o6'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-o6" onclick="selectPicture('o6'), clickSoundPlay()">
                         <img class="picture" id="picture-o6" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-o6.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-c1" onmouseover="hoverPicture('c1')" onmouseout="notHoverPicture('c1')">
-                    <button class="close-button background-transparent" id="close-button-c1" onclick="unselectPicture('c1')"></button>
-                    <div class="pic-wrap" id="pic-wrap-c1" onclick="selectPicture('c1')">
+                    <button class="close-button background-transparent" id="close-button-c1" onclick="unselectPicture('c1'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-c1" onclick="selectPicture('c1'), clickSoundPlay()">
                         <img class="picture" id="picture-c1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c1.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-e1" onmouseover="hoverPicture('e1')" onmouseout="notHoverPicture('e1')">
-                    <button class="close-button background-transparent" id="close-button-e1" onclick="unselectPicture('e1')"></button>
-                    <div class="pic-wrap" id="pic-wrap-e1" onclick="selectPicture('e1')">
+                    <button class="close-button background-transparent" id="close-button-e1" onclick="unselectPicture('e1'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-e1" onclick="selectPicture('e1'), clickSoundPlay()">
                         <img class="picture" id="picture-e1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-e1.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-c4" onmouseover="hoverPicture('c4')" onmouseout="notHoverPicture('c4')">
-                    <button class="close-button background-transparent" id="close-button-c4" onclick="unselectPicture('c4')"></button>
-                    <div class="pic-wrap" id="pic-wrap-c4" onclick="selectPicture('c4')">
+                    <button class="close-button background-transparent" id="close-button-c4" onclick="unselectPicture('c4'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-c4" onclick="selectPicture('c4'), clickSoundPlay()">
                         <img class="picture" id="picture-c4" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c4.png" alt="" width="100%">
                     </div>
                 </div>
             </div>
             <div class="col" id="col-3">
                 <div class="pic-box" id="pic-box-a1" onmouseover="hoverPicture('a1')" onmouseout="notHoverPicture('a1')">
-                    <button class="close-button background-transparent" id="close-button-a1" onclick="unselectPicture('a1')"></button>
-                    <div class="pic-wrap" id="pic-wrap-a1" onclick="selectPicture('a1')">
+                    <button class="close-button background-transparent" id="close-button-a1" onclick="unselectPicture('a1'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-a1" onclick="selectPicture('a1'), clickSoundPlay()">
                         <img class="picture" id="picture-a1" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a1.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-a3" onmouseover="hoverPicture('a3')" onmouseout="notHoverPicture('a3')">
-                    <button class="close-button background-transparent" id="close-button-a3" onclick="unselectPicture('a3')"></button>
-                    <div class="pic-wrap" id="pic-wrap-a3" onclick="selectPicture('a3')">
+                    <button class="close-button background-transparent" id="close-button-a3" onclick="unselectPicture('a3'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-a3" onclick="selectPicture('a3'), clickSoundPlay()">
                         <img class="picture" id="picture-a3" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a3.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-a2" onmouseover="hoverPicture('a2')" onmouseout="notHoverPicture('a2')">
-                    <button class="close-button background-transparent" id="close-button-a2" onclick="unselectPicture('a2')"></button>
-                    <div class="pic-wrap" id="pic-wrap-a2" onclick="selectPicture('a2')">
+                    <button class="close-button background-transparent" id="close-button-a2" onclick="unselectPicture('a2'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-a2" onclick="selectPicture('a2'), clickSoundPlay()">
                         <img class="picture" id="picture-a2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-a2.png" alt="" width="100%">
                     </div>
                 </div>
                 <div class="pic-box" id="pic-box-c2" onmouseover="hoverPicture('c2')" onmouseout="notHoverPicture('c2')">
-                    <button class="close-button background-transparent" id="close-button-c2" onclick="unselectPicture('c2')"></button>
-                    <div class="pic-wrap" id="pic-wrap-c2" onclick="selectPicture('c2')">
+                    <button class="close-button background-transparent" id="close-button-c2" onclick="unselectPicture('c2'), clickSoundPlay()"></button>
+                    <div class="pic-wrap" id="pic-wrap-c2" onclick="selectPicture('c2'), clickSoundPlay()">
                         <img class="picture" id="picture-c2" src="/Assets/PictureAndVdo/หน้าเลือกภาพ/ภาพแบบ ascii/ascii-c2.png" alt="" width="100%">
                     </div>
                 </div>
@@ -154,7 +155,7 @@
         </div>
         <div class="num-of-selected-pic">
             <div class="ok-button-area">
-                <button class="ok-button background-yellow font-dbHelvethaica font-blue" id="ok-button" onclick="setLocalSelectedPic(), loadHTML('/zone01/index.html', 500)">[ ตกลง ]</button>
+                <button class="ok-button background-yellow font-dbHelvethaica font-blue" id="ok-button" onclick="setLocalSelectedPic(), openFindTarget(), clickSoundPlay()">[ ตกลง ]</button>
             </div>
             <div class="num-of-selected-area">
                 <div class="selected-text-area">
@@ -167,6 +168,7 @@
         </div>
     </div>
 
+    <!-- Completed Select -->
     <div class="completed-select background-transparent" id="completed-select">
         <div class="completed-select-wrap">
             <img id="selected-text-background-image" src="/Assets/PictureAndVdo/ele_โหลดหาเป้าหมาย.png" alt="">
@@ -176,19 +178,51 @@
                 <p class="completed-select-text font-dbHelvethaica">คลิกกากบาทรูปที่ไม่ต้องการเพื่อนำออก</p>
             </div>
             <div class="completed-select-button-area">
-                <button class="completed-select-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedSelect()">ตกลง</button>
+                <button class="completed-select-button background-yellow font-dbHelvethaica font-blue" onclick="closeCompletedSelect(), clickSoundPlay()">ตกลง</button>
             </div>
         </div>
     </div>
+    <!--/ Completed Select -->
 
-
+    <!-- Find Target -->
+    <div class="find-target background-transparent" id="find-target">
+        <div class="find-target-wrap" id="find-target-wrap">
+            <img id="find-target-background-image" src="/Assets/PictureAndVdo/ele_โหลดหาเป้าหมาย.png" alt="">
+            <div class="find-target-text-area">
+                <p class="find-target-text font-dbHelvethaica">กำลังหากลุ่มเป้าหมาย<br>ที่เหมาะกับคุณ</p>
+            </div>
+            <div class="loading-target-area">
+                <div class="loading-target background-blue"></div>
+                <div class="loading-target background-blue"></div>
+                <div class="loading-target background-blue"></div>
+                <div class="loading-target background-blue"></div>
+            </div>
+        </div>
+        <div class="found-target-wrap" id="found-target-wrap">
+            <img id="found-target-background-image" src="/Assets/PictureAndVdo/ele_foundtarget.png" alt="">
+            <div class="found-target-topic-text-area">
+                <p class="found-target-topic-text font-ocrb font-blue">[ FOUND TARGET ]</p>
+            </div>
+            <div class="found-target-text-area">
+                <div class="found-target-next-text-area">
+                    <p class="found-target-next-text font-dbHelvethaica">คลิกเพื่อเข้าสู่<br>โซนการทำงาน</p>
+                </div>
+                <div class="found-target-next-button-area">
+                    <button class="found-target-next-button background-yellow" onclick="loadHTML('/zone01/index.html', 500), clickSoundPlay()">
+                        <img id="found-target-next-image" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Find Target -->
 
 
 
     <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
     <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose(), clickSoundPlay()">TASK</button>
 
     <!-- TASK BAR -->
     <div class="task-bar background-white1" id="task-bar">
@@ -213,7 +247,7 @@
             <div class="task-topics" id="database-tour">
                 <div class="square-check background-white"></div>
                 <div class="topic-text-box">
-                    <a href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</a>
+                    <p href="#" class="font-ocrb font-blue" id="database-tour-text">DATABASE TOUR</p>
                 </div>
             </div>
             <!-- Tasks -->
@@ -253,14 +287,14 @@
 
         <!-- TASK ROW 3 -->
         <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open'), clickSoundPlay()">ABOUT</a>
         </div>
         <!--/ TASK ROW 1 -->
 
         <!-- ABOUT -->
         <div class="task-hidden-about background-white1">
             <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close'), clickSoundPlay()">
                     <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
                 </button>
             </div>

@@ -13,10 +13,14 @@
     <script src="/js/task-bar.js"></script>
     <script src="/js/loadHTML.js"></script>
     <script src="/js/currentTime.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>Confidential</title>
 </head>
 <body class="background-dark-grey" onload="windowLoad()">
+    <!-- Background Sound -->
+    <audio src="/Assets/PictureAndVdo/เสียง_ในส่วนของดัง/สำเนาของ bg_con1-2.mp3"></audio>
+
     <!-- Left Nav -->
     <div class="task-space background-dark-grey"></div>
     <div class="all-content-area">
@@ -46,11 +50,11 @@
                             </div>
                         </div>
                         <div class="change-page-arrow-area">
-                             <button class="confidential-page-arrow-button background-yellow" id="arrow-left-button" onclick="changePage('left')" disabled>
+                             <button class="confidential-page-arrow-button background-yellow" id="arrow-left-button" onclick="changePage('left'), clickSoundPlay()" disabled>
                                 <img class="arrow-image" id="arrow-left-blue" src="/Assets/PictureAndVdo/confidential1/button_leftblue.png" alt="">
                                 <img class="arrow-image" id="arrow-left-grey" src="/Assets/PictureAndVdo/confidential1/button_leftgrey.png" alt="">
                             </button>
-                             <button class="confidential-page-arrow-button background-yellow" id="arrow-right-button" onclick="changePage('right')" >
+                             <button class="confidential-page-arrow-button background-yellow" id="arrow-right-button" onclick="changePage('right'), clickSoundPlay()" >
                                 <img class="arrow-image" id="arrow-right-blue" src="/Assets/PictureAndVdo/confidential1/button_rightblue.png" alt="">
                                 <img class="arrow-image" id="arrow-right-grey" src="/Assets/PictureAndVdo/confidential1/button_rightgrey.png" alt="">
                             </button>
@@ -97,7 +101,7 @@
                             <div class="postit-info">
                                 <!-- ANSWER 1 -->
                                 <div class="postit-answer" id="answer-1">
-                                    <button class="close-button background-transparent" id="close-button-1" onclick="closeAnswer(1)"></button>
+                                    <button class="close-button background-transparent" id="close-button-1" onclick="closeAnswer(1), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -122,7 +126,7 @@
                                 </div>
                                 <!-- ANSWER 2 -->
                                 <div class="postit-answer" id="answer-2">
-                                    <button class="close-button background-transparent" id="close-button-2" onclick="closeAnswer(2)"></button>
+                                    <button class="close-button background-transparent" id="close-button-2" onclick="closeAnswer(2), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -149,7 +153,7 @@
                                 </div>
                                 <!-- ANSWER 3 -->
                                 <div class="postit-answer" id="answer-3">
-                                    <button class="close-button background-transparent" id="close-button-3" onclick="closeAnswer(3)"></button>
+                                    <button class="close-button background-transparent" id="close-button-3" onclick="closeAnswer(3), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -163,7 +167,7 @@
                                 </div>
                                 <!-- ANSWER 4 -->
                                 <div class="postit-answer" id="answer-4">
-                                    <button class="close-button background-transparent" id="close-button-4" onclick="closeAnswer(4)"></button>
+                                    <button class="close-button background-transparent" id="close-button-4" onclick="closeAnswer(4), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -185,7 +189,7 @@
                                 </div>
                                 <!-- ANSWER 5 -->
                                 <div class="postit-answer" id="answer-5">
-                                    <button class="close-button background-transparent" id="close-button-5" onclick="closeAnswer(5)"></button>
+                                    <button class="close-button background-transparent" id="close-button-5" onclick="closeAnswer(5), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -201,7 +205,7 @@
                                 </div>
                                 <!-- ANSWER 6 -->
                                 <div class="postit-answer" id="answer-6">
-                                    <button class="close-button background-transparent" id="close-button-6" onclick="closeAnswer(6)"></button>
+                                    <button class="close-button background-transparent" id="close-button-6" onclick="closeAnswer(6), clickSoundPlay()"></button>
                                     <div class="blue-circle background-blue"></div>
                                     <div class="postit-answer-text-area">
                                         <p class="postit-answer-text font-baiJamjuree font-white">
@@ -242,8 +246,11 @@
             <div class="right-content background-dark-grey">
                 <!-- TEXT RUNNING -->
                 <div class="head background-white" id="right-top-text-run">
-                    <div class="font-ocrb font-blue" id="text-head1">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
-                    <div class="font-ocrb font-blue" id="text-head2">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
+                    <div class="text-area-running">
+                        <!-- TEXT RUNNING -->
+                        <div class="running-text font-ocrb font-blue" id="running-text-1">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
+                        <div class="running-text font-ocrb font-blue" id="running-text-2">do not publish ! do not publish ! do not publish ! do not publish ! do not publish !</div>
+                    </div>
                 </div>
                 <div class="right-bottom-content" id="right-bottom-content">
                     <!-- RIGHT CONTENT CONFIDENTIAL 1 -->
@@ -254,10 +261,10 @@
                         </div>
 
                         <!-- CASE BOX 1 -->
-                        <button class="back-button background-transparent" id="back-button-1" onclick="clickBackButton(1)">
+                        <button class="back-button background-transparent" id="back-button-1" onclick="clickBackButton(1), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-1" onmouseover="caseboxHover(1)" onmouseout="caseboxOut(1)" onclick="clickCasebox(1)">
+                        <div class="case-box background-white2" id="case-box-1" onmouseover="caseboxHover(1)" onmouseout="caseboxOut(1)" onclick="clickCasebox(1), clickSoundPlay(), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-1">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-1">CASE 01</p>
@@ -295,10 +302,10 @@
                         </div>
 
                         <!-- CASE BOX 2 -->
-                        <button class="back-button background-transparent" id="back-button-2" onclick="clickBackButton(2)">
+                        <button class="back-button background-transparent" id="back-button-2" onclick="clickBackButton(2), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-2" onmouseover="caseboxHover(2)" onmouseout="caseboxOut(2)" onclick="clickCasebox(2)">
+                        <div class="case-box background-white2" id="case-box-2" onmouseover="caseboxHover(2)" onmouseout="caseboxOut(2)" onclick="clickCasebox(2), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-2">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-2">CASE 02</p>
@@ -335,10 +342,10 @@
                         </div>
 
                         <!-- CASE BOX 3 -->
-                        <button class="back-button background-transparent" id="back-button-3" onclick="clickBackButton(3)">
+                        <button class="back-button background-transparent" id="back-button-3" onclick="clickBackButton(3), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-3" onmouseover="caseboxHover(3)" onmouseout="caseboxOut(3)" onclick="clickCasebox(3)">
+                        <div class="case-box background-white2" id="case-box-3" onmouseover="caseboxHover(3)" onmouseout="caseboxOut(3)" onclick="clickCasebox(3), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-3">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-3">CASE 03</p>
@@ -377,10 +384,10 @@
                         </div>
 
                         <!-- CASE BOX 4 -->
-                        <button class="back-button background-transparent" id="back-button-4" onclick="clickBackButton(4)">
+                        <button class="back-button background-transparent" id="back-button-4" onclick="clickBackButton(4), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-4" onmouseover="caseboxHover(4)" onmouseout="caseboxOut(4)" onclick="clickCasebox(4)">
+                        <div class="case-box background-white2" id="case-box-4" onmouseover="caseboxHover(4)" onmouseout="caseboxOut(4)" onclick="clickCasebox(4), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-4">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-4">CASE 04</p>
@@ -418,10 +425,10 @@
                         </div>
 
                         <!-- CASE BOX 5 -->
-                        <button class="back-button background-transparent" id="back-button-5" onclick="clickBackButton(5)">
+                        <button class="back-button background-transparent" id="back-button-5" onclick="clickBackButton(5), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-5" onmouseover="caseboxHover(5)" onmouseout="caseboxOut(5)" onclick="clickCasebox(5)">
+                        <div class="case-box background-white2" id="case-box-5" onmouseover="caseboxHover(5)" onmouseout="caseboxOut(5)" onclick="clickCasebox(5), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-5">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-5">CASE 05</p>
@@ -457,10 +464,10 @@
                         </div>
 
                         <!-- CASE BOX 6 -->
-                        <button class="back-button background-transparent" id="back-button-6" onclick="clickBackButton(6)">
+                        <button class="back-button background-transparent" id="back-button-6" onclick="clickBackButton(6), clickSoundPlay()">
                             <img class="back-arrow" src="/Assets/PictureAndVdo/button_arrow.png" alt="" width="100%">
                         </button>
-                        <div class="case-box background-white2" id="case-box-6" onmouseover="caseboxHover(6)" onmouseout="caseboxOut(6)" onclick="clickCasebox(6)">
+                        <div class="case-box background-white2" id="case-box-6" onmouseover="caseboxHover(6)" onmouseout="caseboxOut(6)" onclick="clickCasebox(6), clickSoundPlay()">
                             <div class="case-box-header" id="case-box-header-6">
                                 <div class="case-num">
                                     <p class="case-num-text font-dbHelvethaica font-blue" id="case-num-text-6">CASE 06</p>
@@ -515,22 +522,22 @@
                                 <img src="/Assets/PictureAndVdo/confidential2/box_คลิกที่คำถาม.png" alt="" width="100%">
                             </div>
 
-                            <button class="quiz-box background-transparent" id="quiz-1" onclick="openQuiz(1)">
+                            <button class="quiz-box background-transparent" id="quiz-1" onclick="openQuiz(1), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q1.png" alt="" width="100%">
                             </button>
-                            <button class="quiz-box background-transparent" id="quiz-2" onclick="openQuiz(2)">
+                            <button class="quiz-box background-transparent" id="quiz-2" onclick="openQuiz(2), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q2.png" alt="" width="100%">
                             </button>
-                            <button class="quiz-box background-transparent" id="quiz-3" onclick="openQuiz(3)">
+                            <button class="quiz-box background-transparent" id="quiz-3" onclick="openQuiz(3), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q3.png" alt="" width="100%">
                             </button>
-                            <button class="quiz-box background-transparent" id="quiz-4" onclick="openQuiz(4)">
+                            <button class="quiz-box background-transparent" id="quiz-4" onclick="openQuiz(4), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q4.png" alt="" width="100%">
                             </button>
-                            <button class="quiz-box background-transparent" id="quiz-5" onclick="openQuiz(5)">
+                            <button class="quiz-box background-transparent" id="quiz-5" onclick="openQuiz(5), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q5.png" alt="" width="100%">
                             </button>
-                            <button class="quiz-box background-transparent" id="quiz-6" onclick="openQuiz(6)">
+                            <button class="quiz-box background-transparent" id="quiz-6" onclick="openQuiz(6), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/confidential2/box_q6.png" alt="" width="100%">
                             </button>
                         </div>
@@ -539,8 +546,11 @@
                     <!-- RIGHT CONTENT CONFIDENTIAL 3 PRE -->
                     <div class="right-content-area confidential-3">
                         <div class="right-content-background background-grid-grey2"></div>
+                        <div class="con3-text-box">
+                            <img src="/Assets/PictureAndVdo/confidential3/box_1ทีนี้คุณก็ได้รู้.png" alt="" width="100%" height="100%">
+                        </div>
                         <label class="toggle">
-                            <input class="toggle-button" type="checkbox" onclick="loadHTML('confidentialConclusion.html', 500)">
+                            <input class="toggle-button" type="checkbox" onclick="loadHTML('confidentialConclusion.html', 500), clickSoundPlay()">
                             <span class="slider-circle"></span>
                         </label>
                     </div>
@@ -557,7 +567,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
     <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose(), clickSoundPlay()">TASK</button>
 
     <!-- TASK BAR -->
     <div class="task-bar background-white1" id="task-bar">
@@ -622,14 +632,14 @@
 
         <!-- TASK ROW 3 -->
         <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open'), clickSoundPlay()">ABOUT</a>
         </div>
         <!--/ TASK ROW 1 -->
 
         <!-- ABOUT -->
         <div class="task-hidden-about background-white1">
             <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close'), clickSoundPlay()">
                     <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" al width="100%"t="">
                 </button>
             </div>

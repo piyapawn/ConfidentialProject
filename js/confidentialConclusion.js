@@ -4,6 +4,7 @@ let categoriesInfoText
 let categoriesBoxText
 
 let leftText
+let leftContent
 let rightContentPre
 let rightContentConclusion
 let scrollButton
@@ -40,6 +41,10 @@ let periodDeletedText
 let profilePic
 let employeeProfilePic
 
+let allContent
+
+let selectWeavePicPage
+
 function windowLoad() {
     taskBarVariablesLoad()
     loadLocalStorageValue()
@@ -67,6 +72,7 @@ function windowLoad() {
     categoriesBoxText = document.getElementsByClassName('category-box-text')
 
     leftText = document.getElementById('left-text')
+    leftContent = document.getElementById('left-content')
     rightContentPre = document.getElementById('right-content-pre')
     rightContentConclusion = document.getElementById('right-content-conclusion')
 
@@ -104,6 +110,10 @@ function windowLoad() {
     profilePic = document.getElementById('profile-pic')
     employeeProfilePic = document.getElementById('employee-id-profile-pic')
 
+    allContent = document.getElementById('all-content')
+
+    selectWeavePicPage = document.getElementById('select-weave-pic')
+
     deleteGaugeSlider1.value = localSliderValue1
     deleteGaugeSlider2.value = localSliderValue2
 
@@ -115,6 +125,21 @@ function windowLoad() {
         noticeNext()
         noticeSelected(localNoticeSelected)
     }
+
+    if(localIsNextToConclusion) {
+        nextToConclusion()
+    }
+    else {
+        typingTextAnimtion(['คุณเองก็ถูกจับตามอง', 'และเป็นไปตามแผนที่เราวางไว้', 'เช่นเดียวกับผู้คนทั่วโลก', 'ที่ใช้อินเทอร์เน็ต'], 'span-text')
+    }
+
+    if(localIsDeletedData) {
+        allContent.addEventListener("scroll", allContentScroll)
+        revealElement(scrollButton, 'block')
+    }
+
+    const audio = document.querySelector("audio");
+    audio.play();
 }
 
 function fetchJsonFile() {
@@ -201,11 +226,55 @@ function findPersonalities() {
     return personalitiesType
 }
 
+function typingTextAnimtion(textList, className) {
+    let spanText = document.getElementsByClassName(className)
+
+    let letterArray = []
+    letterArray.push(0)
+    let letterNum = 0
+    for(let i = 0; i < textList.length; i++) {
+        letterArray.push(textList[i].length)
+        letterNum += letterArray[i]
+
+        setTimeout(() => {
+            for(let j = 0; j < textList[i].length; j++) {
+                setTimeout(() => {
+                    spanText[i].innerHTML += textList[i][j]
+                }, 100*j);
+            }
+        }, 100*letterNum);
+    }
+}
+
+function noticeBoxOpen() {
+    console.log('Notice')
+    notice.style.width = '100%'
+    
+    setTimeout(() => {
+        noticeTopic.style.opacity = 1
+        noticeTextBox.style.opacity = 1
+        noticeNextButton.style.opacity = 1
+    }, 1000)
+}
+
 function nextToConclusion() {
-    leftText.innerHTML = `ข้อมูลส่วนตัวของคุณ<br><span class="font-superSpace">จะยังคงเป็นส่วนตัว<br>อยู่จริงหรือ?</span>`
+    leftText.innerHTML = `
+    <span class="span-text-2"></span><br>
+    <span class="span-text-2 font-superSpace"></span><br>
+    <span class="span-text-2 font-superSpace"></span>`
+
+    typingTextAnimtion(['ข้อมูลส่วนตัวของคุณ', 'จะยังคงเป็นส่วนตัว', 'อยู่จริงหรือ?'], 'span-text-2')
     
     hideElement(rightContentPre)
     revealElement(rightContentConclusion, 'flex')
+
+    localStorage.setItem('next-to-conclusion', true)
+
+    if(localNoticeSelected == '') {
+        setTimeout(() => {
+            noticeBoxOpen()
+        }, 500)
+    }
 
     // Fetch Json File
     fetchJsonFile()
@@ -466,6 +535,8 @@ function continueDeleteClick() {
 
         hideElement(continueButton)
     }
+
+    allContent.addEventListener("scroll", allContentScroll)
 }
 
 function closeCompletedDelete() {
@@ -482,8 +553,7 @@ function revealElement(element, display) {
 
 function hideElement(element) {
     element.style.opacity = 0
-    setTimeout(() => {
-        
+    setTimeout(() => {  
         element.style.display = 'none'
     }, 250)
 }
@@ -507,4 +577,85 @@ function continueButtonState(bool) {
 // OPEN E-BOOK LINK
 function openEbookLink() {
     window.open("https://online.flippingbook.com/view/831297895/")
+}
+
+function allContentScroll() {
+    if(state == 0) {
+        console.log('Scroll')
+
+        // Close Conclusion Page
+        rightContentConclusion.style.transform = 'translateX(100vw)'
+        setTimeout(() => {
+            hideElement(rightContentConclusion)
+            hideElement(leftContent)
+        }, 500)
+
+        hideElement(deleteDataPage)
+
+        // Open Select Weave Pic Page
+        setTimeout(() => {
+            revealElement(selectWeavePicPage, 'flex')
+            loadWeavePic()
+        }, 1000)
+        
+        localStorage.setItem('select-weave-pic-page', true)
+    }
+}
+
+let isLoadWeavePic = false
+function loadWeavePic() {
+    if(!isLoadWeavePic) {
+        for(let i = 1; i <= 12; i++) {
+            selectWeavePicPage.innerHTML += `
+            <button class="weave-pic-button" id="weave-pic-button-${i}" onclick="selectWeavePic(${i}), clickSoundPlay()">
+                <img class="weave-pic" src="/Assets/PictureAndVdo/confidential3/button_ascii${i}.png" alt="">
+                <div class="weave-pic-hover background-yellow" id="weave-pic-hover-${i}">
+                    <p class="font-dbHelvethaica font-blue">( press )</p>
+                </div>
+                <div class="weave-pic-selected background-white1" id="weave-pic-selected-${i}">
+                    <p class="font-dbHelvethaica font-blue">weave</p>
+                </div>
+            </button>
+            `
+        }
+
+        setTimeout(() => {
+            for(let i = 1; i <= 12; i++) {
+                let weavePicButton = document.getElementById(`weave-pic-button-${i}`)
+    
+                setTimeout(() => {
+                    weavePicButton.style.display = 'block'
+                }, 100*i);
+            }
+        }, 2000)
+
+        isLoadWeavePic = true
+    }
+    else {
+        return
+    }
+}
+
+let selectedCount = 0
+let selectedArray = Array(12).fill(false)
+function selectWeavePic(numOfPic) {
+    let weavePicSelected = document.getElementById(`weave-pic-selected-${numOfPic}`)
+    let allWeavePicSelected = document.getElementsByClassName(`weave-pic-selected`)
+
+    if(!selectedArray[numOfPic-1] && selectedCount < 3) {
+        weavePicSelected.style.display = 'flex'
+        selectedCount++
+        console.log('Selected Count: ', selectedCount)
+
+        selectedArray[numOfPic-1] = true
+    }
+
+    if(selectedCount == 3) {
+        setTimeout(() => {
+            for(let i = 0; i < 12; i++) {
+                allWeavePicSelected[i].style.display = 'flex'
+            }
+        }, 1000)
+        loadHTML('confidentialPreEnd.html', 2000)
+    }
 }

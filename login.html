@@ -13,16 +13,19 @@
     <script src="/js/login.js"></script>
     <script src="/js/task-bar.js"></script>
     <script src="/js/loadHTML.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>World Wide Weave</title>
 </head>
 <body onload="windowLoad()">
     <div class="login-page background-white1">
         <!-- ~~~~~ HEADER ~~~~~ -->
-        <div class="head background-white">
-            <!-- TEXT RUNNING -->
-            <div class="font-ocrb font-blue" id="text-head1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
-            <div class="font-ocrb font-blue" id="text-head2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+        <div class="head background-white" id="head">
+            <div class="text-area-running">
+                <!-- TEXT RUNNING -->
+                <div class="running-text font-ocrb font-blue" id="running-text-1">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+                <div class="running-text font-ocrb font-blue" id="running-text-2">everything you see, we planned. everything you click, we planned. everything you buy, we planned.</div>
+            </div>
         </div>
         <!--/ ~~~~~ HEADER ~~~~~ -->
 
@@ -48,7 +51,7 @@
                         <div class="avatar-text"><p class="font-dbHelvethaica">ภาพประจำตัว</p></div>
                     </div>
                     <div class="arrow-button-area">
-                        <button class="arrow-button background-yellow" id="up-arrow" onclick="openAndCloseNav()">
+                        <button class="arrow-button background-yellow" id="up-arrow" onclick="openAndCloseNav(), clickSoundPlay()">
                             <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up"></i>
                         </button>
                     </div>
@@ -57,17 +60,17 @@
                 <div class="background-white2" id="picture-pick">
                     <div class="picture-wrap">
                         <div class="picture background-white2">
-                            <button class="img-select-button background-transparent" onclick="selectPic(1)">
+                            <button class="img-select-button background-transparent" onclick="selectPic(1), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/ASCII-art (63) 3.png" alt="">
                             </button>
                         </div>
                         <div class="picture background-white2">
-                            <button class="img-select-button background-transparent" onclick="selectPic(2)">
+                            <button class="img-select-button background-transparent" onclick="selectPic(2), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/ASCII-art (63) 4.png" alt="">
                             </button>
                         </div>
                         <div class="picture background-white2">
-                            <button class="img-select-button background-transparent" onclick="selectPic(3)">
+                            <button class="img-select-button background-transparent" onclick="selectPic(3), clickSoundPlay()">
                                 <img src="/Assets/PictureAndVdo/ASCII-art (63) 5.png" alt="">
                             </button>
                         </div>
@@ -105,7 +108,7 @@
                         <input class="inputClass background-transparent font-dbHelvethaica" id="input" type="text" placeholder="ชื่อ / USERNAME" value="">
                     </div>
                     <div class="arrow-button-area">
-                        <button class="arrow-button background-yellow" id="next-arrow" onclick="editUsername()">
+                        <button class="arrow-button background-yellow" id="next-arrow" onclick="editUsername(), clickSoundPlay()">
                             <i class="arrow-button-icon fa-sharp fa-solid fa-angle-up fa-rotate-90"></i>
                             <img src="/Assets/PictureAndVdo/icon_rename.png" id="edit-button-icon" alt="">
                         </button>
@@ -130,7 +133,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
         <!-- Task Button -->
-        <button class="background-black font-white" id="task-button" onclick="taskbarCheck()">TASK</button>
+        <button class="background-black font-white" id="task-button" onclick="taskbarCheck(), clickSoundPlay()">TASK</button>
 
         <!-- TASK BAR -->
         <div class="task-bar background-white1" id="task-bar">
@@ -155,7 +158,7 @@
                 <div class="task-topics" id="database-tour">
                     <div class="square-check background-white"></div>
                     <div class="topic-text-box">
-                        <a href="#" class="font-ocrb font-blue" id="database-tour-text" onclick="loadHTML('databaseTour.html', 500)">DATABASE TOUR</a>
+                        <a href="#" class="font-ocrb font-blue" id="database-tour-text" onclick="loadHTML('databaseTour.html', 500), clickSoundPlay()">DATABASE TOUR</a>
                     </div>
                 </div>
                 <!-- Tasks -->

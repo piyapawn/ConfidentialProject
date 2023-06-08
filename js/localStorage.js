@@ -12,6 +12,10 @@ let localZone3TimeStamp
 // Select Personalities Picture
 let localPersonalitiesSelectedPicture
 
+// Confidential Conclusion Page
+let localIsNextToConclusion
+let localIsSelectWeavePicPage
+
 // Notice Selected Text
 let localNoticeSelected
 
@@ -19,6 +23,9 @@ let localNoticeSelected
 let localSliderValue1
 let localSliderValue2
 let localIsDeletedData
+
+// Confidential End
+let localIsScrollEnd
 
 function loadLocalStorageValue() {
     // Login
@@ -34,6 +41,22 @@ function loadLocalStorageValue() {
     localPersonalitiesSelectedPicture = localStorage.getItem('personalities-selected-picture')
     if(localPersonalitiesSelectedPicture != '') {
         localPersonalitiesSelectedPicture = localPersonalitiesSelectedPicture.split(',')
+    }
+
+    // Confidential Conclusion Page
+    localIsNextToConclusion = localStorage.getItem('next-to-conclusion')
+    if(localIsNextToConclusion == 'true') {
+        localIsNextToConclusion = true
+    }
+    else if(localIsNextToConclusion == 'false') {
+        localIsNextToConclusion = false
+    }
+    localIsSelectWeavePicPage = localStorage.getItem('select-weave-pic-page')
+    if(localIsSelectWeavePicPage == 'true') {
+        localIsSelectWeavePicPage = true
+    }
+    else if(localIsSelectWeavePicPage == 'false') {
+        localIsSelectWeavePicPage = false
     }
 
     // Notice Selected Text
@@ -53,7 +76,15 @@ function loadLocalStorageValue() {
     else if(localIsDeletedData == 'false') {
         localIsDeletedData = false
     }
-    console.log('Deleted Data: ', localIsDeletedData)
+
+    // Confidential End
+    localIsScrollEnd = localStorage.getItem('scroll-end')
+    if(localIsScrollEnd == 'true') {
+        localIsScrollEnd = true
+    }
+    else if(localIsScrollEnd == 'false') {
+        localIsScrollEnd = false
+    }
 }
 
 function clearAllLocalData() {
@@ -69,6 +100,10 @@ function clearAllLocalData() {
     // Select Personalities Picture
     localPersonalitiesSelectedPicture = localStorage.setItem('personalities-selected-picture', '')
 
+    // Confidential Conclusion Page
+    localIsNextToConclusion = localStorage.setItem('next-to-conclusion', false)
+    localIsSelectWeavePicPage = localStorage.setItem('select-weave-pic-page', false)
+
     // Notice Selected Text
     localNoticeSelected = localStorage.setItem('notice-selected', '')
 
@@ -76,4 +111,7 @@ function clearAllLocalData() {
     localSliderValue1 = localStorage.setItem('slider-value1', 0)
     localSliderValue2 = localStorage.setItem('slider-value2', 0)
     localIsDeletedData = localStorage.setItem('is-deleted-data', false)
+
+    // Confidential End
+    localIsScrollEnd = localStorage.setItem('scroll-end', false)
 }

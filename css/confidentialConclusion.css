@@ -45,11 +45,14 @@ body {
     font-size: 1.8vw;
 }
 
-
 .all-content-area {
     position: relative;
     width: calc(var(--grid) * 38);
+    overflow: scroll;
     height: 100vh;
+}
+.all-content-area::-webkit-scrollbar {
+    display: none;
 }
 .content-area {
     position: relative;
@@ -65,6 +68,7 @@ body {
     width: calc(var(--grid) * 13);
     height: 100%;
     border-right: 1px solid white;
+    transition: 0.25s;
 }
 .right-content {
     position: relative;
@@ -136,6 +140,7 @@ body {
 #right-content-conclusion {
     display: none;
     position: relative;
+    transition: 1s;
     opacity: 1;
 }
 .conclusion-content {
@@ -160,6 +165,7 @@ body {
     height: calc(var(--grid) * 3);
 }
 .notice {
+    width: 0%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,7 +173,8 @@ body {
     align-items: center;
     height: calc(var(--grid) * 4);
     border: 1px solid black;
-    transition: 0.25s;
+    overflow: hidden;
+    transition: 1s;
 }
 .time-card {
     height: calc(var(--grid) * 4);
@@ -178,6 +185,8 @@ body {
     align-items: end;
     width: 100%;
     height: calc(var(--grid) * 1.5);
+    opacity: 0;
+    transition: 0.5s;
 }
 .notice-text-box {
     display: flex;
@@ -186,6 +195,8 @@ body {
     align-items: center;
     width: 60%;
     height: calc(var(--grid) * 3);
+    opacity: 0;
+    transition: 0.5s;
 }
 .notice-info {
     display: flex;
@@ -202,6 +213,8 @@ body {
     width: calc(var(--grid) * 1);
     height: calc(var(--grid) * 1);
     border: none;
+    opacity: 0;
+    transition: 0.5s;
     cursor: pointer;
 }
 .notice-select-box {
@@ -1052,6 +1065,174 @@ sup {
     color: white;
 }
 
+
+/* Select Pic Page */
+.select-weave-pic {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.25s;
+    opacity: 0;
+}
+#select-weave-text {
+    margin: 0;
+    font-size: 3.5vw;
+    text-align: center;
+}
+
+.weave-pic-button {
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.weave-pic, .weave-pic-hover, .weave-pic-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.weave-pic-hover, .weave-pic-selected {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+.weave-pic-hover {
+    z-index: 5;
+}
+.weave-pic-selected {
+    z-index: 10;
+}
+/* Weave Pic 1 */
+#weave-pic-button-1 {
+    top: 5.5vw;
+    left: 11vw;
+    width: calc(var(--grid)*4);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-1:hover #weave-pic-hover-1 {
+    display: flex;
+}
+/* Weave Pic 2 */
+#weave-pic-button-2 {
+    top: 25vw;
+    left: 8vw;
+    width: calc(var(--grid)*4);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-2:hover #weave-pic-hover-2 {
+    display: flex;
+}
+/* Weave Pic 3 */
+#weave-pic-button-3 {
+    top: 23.2vw;
+    left: 74vw;
+    width: calc(var(--grid)*2);
+    height: calc(var(--grid)*2);
+}
+#weave-pic-button-3:hover #weave-pic-hover-3 {
+    display: flex;
+}
+/* Weave Pic 4 */
+#weave-pic-button-4 {
+    top: 13.2vw;
+    left: 13.5vw;
+    width: calc(var(--grid)*8.5);
+    height: calc(var(--grid)*2);
+}
+#weave-pic-button-4:hover #weave-pic-hover-4 {
+    display: flex;
+}
+/* Weave Pic 5 */
+#weave-pic-button-5 {
+    top: 8vw;
+    left: 39vw;
+    width: calc(var(--grid)*3.5);
+    height: calc(var(--grid)*3.5);
+}
+#weave-pic-button-5:hover #weave-pic-hover-5 {
+    display: flex;
+}
+/* Weave Pic 6 */
+#weave-pic-button-6 {
+    top: 36vw;
+    left: 39.5vw;
+    width: calc(var(--grid)*7);
+    height: calc(var(--grid)*2);
+}
+#weave-pic-button-6:hover #weave-pic-hover-6 {
+    display: flex;
+}
+/* Weave Pic 7 */
+#weave-pic-button-7 {
+    top: 15.5vw;
+    left: 66.3vw;
+    width: calc(var(--grid)*3);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-7:hover #weave-pic-hover-7 {
+    display: flex;
+}
+/* Weave Pic 8*/
+#weave-pic-button-8{
+    top: 28vw;
+    left: 24vw;
+    width: calc(var(--grid)*4);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-8:hover #weave-pic-hover-8{
+    display: flex;
+}
+/* Weave Pic 9*/
+#weave-pic-button-9{
+    top: 10vw;
+    left: 79.1vw;
+    width: calc(var(--grid)*4);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-9:hover #weave-pic-hover-9{
+    display: flex;
+}
+/* Weave Pic 10*/
+#weave-pic-button-10{
+    top: 22.9vw;
+    left: 29.3vw;
+    width: calc(var(--grid)*4);
+    height: calc(var(--grid)*2);
+}
+#weave-pic-button-10:hover #weave-pic-hover-10{
+    display: flex;
+}
+/* Weave Pic 11*/
+#weave-pic-button-11{
+    top: 15.5vw;
+    left: 51vw;
+    width: calc(var(--grid)*6);
+    height: calc(var(--grid)*4);
+}
+#weave-pic-button-11:hover #weave-pic-hover-11{
+    display: flex;
+}
+/* Weave Pic 12*/
+#weave-pic-button-12{
+    top: 34.7vw;
+    left: 67vw;
+    width: calc(var(--grid)*3.5);
+    height: calc(var(--grid)*3);
+}
+#weave-pic-button-12:hover #weave-pic-hover-12{
+    display: flex;
+}
+
+
+
 /* TEXT RUN */
 .bottom-text-run {
     position: absolute;
@@ -1069,20 +1250,17 @@ sup {
     z-index: 0;
 }
 
-#text-head1, #text-head2 {
+.text-area-running {
+    display: flex;
+    animation: textRunning1 10s infinite linear;
+}
+.running-text {
     position: relative;
     display: inline-block;
     margin: 0;
     margin-left: 0.5vw;
     top: 0;
     left: 0;
-    font-size: 1.035vw;
+    font-size: 1.2vw;
     transform: translateX(0%);
-}
-#text-head1 {
-    animation: textRunning1 20s linear infinite;
-}
-#text-head2 {
-    animation: textRunning2 20s linear infinite;
-    animation-delay: 9.93s;
 }

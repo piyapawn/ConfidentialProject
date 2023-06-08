@@ -101,4 +101,11 @@
         linear-gradient(to bottom, var(--grey2) 1px, transparent 1px);
     opacity: 0.3;
 }
+.background-grid-black {
+    background-size: var(--grid) var(--grid);
+    background-image:
+        linear-gradient(to right, var(--black) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--black) 1px, transparent 1px);
+    opacity: 0.75;
+}
 /* BACKGROUND COLOR */
