@@ -20,386 +20,495 @@
     <script src="/js/databaseTour.js"></script>
     <script src="/js/task-bar.js"></script>
     <script src="/js/loadHTML.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <script src="/js/currentTime.js"></script>
     <title>Database Tour</title>
 </head>
-<body class="body" onload="windowLoad()" onscroll="scrollRevealText()">
-    <div class="bg background-transparent" id="bg" onscroll="scrollRevealText()">
-        <!-- <p id="scrollTop-text" class="font-baiJamjuree font-red">Scroll</p> -->
+<body onload="windowLoad()" onscroll="scrollAnimation()">
+    <!-- Scroll Offset -->
+    <!-- <div class="scroll-text">
+        <p class="font-baiJamjuree font-blue" style="margin:0;">Scroll : <span id="scroll-text-show">0</span></p>
+    </div> -->
 
-        <!-- Background Image -->
-        <img id="bg-image" src="/Assets/PictureAndVdo/bg_ไม่แยก-3 พาร์ทรวมกัน (เติมแล้ว).jpg" alt="" width="100%">
+    <!-- Scroll Arrow -->
+    <div class="scroll-arrow" id="scroll-arrow">
+        <img src="/Assets/PictureAndVdo/arrow down.png" alt="" width="100%">
+    </div>
 
-        <!-- Scroll Arrow -->
-        <img id="scroll-arrow" src="/Assets/PictureAndVdo/arrow down.png" alt="">
+    <div class="left-side-nav background-white1"></div>
 
-        <!-- Blue BG Text -->
-        <div class="blue-bg" id="blue-bg-text1">
-            <img id="blue-bg-pic1" src="/Assets/PictureAndVdo/box_1นี่คือสถานที่-.png" alt="" width="100%">
-        </div>
-        <div class="blue-bg" id="blue-bg-text2">
-            <img id="blue-bg-pic2" src="/Assets/PictureAndVdo/box_2หน้าที่ที่คุณ-.png" alt="" width="100%">
-        </div>
-        <div class="blue-bg" id="blue-bg-text3">
-            <img id="blue-bg-pic3" src="/Assets/PictureAndVdo/box_3ที่คุณเห็น-.png" alt="" width="100%">
-        </div>
-        <div class="blue-bg" id="blue-bg-text4">
-            <img id="blue-bg-pic4" src="/Assets/PictureAndVdo/box_4สิ่งที่อยู่เบื้องหน้า-.png" alt="" width="100%">
-        </div>
+    <div class="all-content">
 
-        <!-- Database 1 -->
-        <div class="database-area background-transparent" id="database1">
-            <button class="database-boxes background-white" id="box-1" onclick="databaseBoxClick(1)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-1"></div>
+        <div class="top-edge background-white1">
+            <div class="top-left-block"></div>
+            <div class="top-edge-text">
+                <div class="top-left-text">
+                    <p class="top-text font-dbHelvethaica">100</p>
                 </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">148.15.5.155</p>
+                <div class="top-mid-text">
+                    <p class="top-text font-dbHelvethaica">DATABASE</p>
                 </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-1" onmouseover="imageHover(1)" onmouseout="imageNotHover(1)">
-                <img id="img-1" src="/Assets/PictureAndVdo/profiledatabase1.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-1">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-1">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Chanon Komprach</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 26</p>
-                    <p class="info-text info-id font-dbHelvethaica">@14.659408, 100.447848</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.youtube.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                <div class="top-right-text">
+                    <p class="top-text font-dbHelvethaica">101</p>
                 </div>
             </div>
         </div>
-        <!--/ Database 1 -->
 
-        <!-- Database 2 -->
-        <div class="database-area background-transparent" id="database2">
-            <button class="database-boxes background-white" id="box-2" onclick="databaseBoxClick(2)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-2"></div>
+        <div class="edge-and-content">
+            <div class="left-edge background-white1">
+                <div class="left-edge-num-block" id="left-edge-num-block-1">
+                    <p class="left-text-num font-dbHelvethaica">14</p>
                 </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">255.5.55.155</p>
+                <div class="left-edge-num-block" id="left-edge-num-block-2">
+                    <p class="left-text-num font-dbHelvethaica">13</p>
                 </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-2" onmouseover="imageHover(2)" onmouseout="imageNotHover(2)">
-                <img id="img-2" src="/Assets/PictureAndVdo/profiledatabase2.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-2">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                <div class="left-edge-num-block" id="left-edge-num-block-3">
+                    <p class="left-text-num font-dbHelvethaica">12</p>
                 </div>
-                <div class="info-hidden-box background-yellow" id="info-2">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Parin Surasakudom</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 17</p>
-                    <p class="info-text info-id font-dbHelvethaica">@13.889909, 100.464674</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.twitter.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                <div class="left-edge-num-block" id="left-edge-num-block-4">
+                    <p class="left-text-num font-dbHelvethaica">11</p>
+                </div>
+                <div class="left-edge-num-block" id="left-edge-num-block-5">
+                    <p class="left-text-num font-dbHelvethaica">10</p>
+                </div>
+                <div class="left-edge-num-block" id="left-edge-num-block-6">
+                    <p class="left-text-num font-dbHelvethaica">09</p>
                 </div>
             </div>
-        </div>
-        <!--/ Database 2 -->
 
-        <!-- Database 3 -->
-        <div class="database-area background-transparent" id="database3">
-            <button class="database-boxes background-white" id="box-3" onclick="databaseBoxClick(3)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-3"></div>
-                </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">51.65.5.65</p>
-                </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-3" onmouseover="imageHover(3)" onmouseout="imageNotHover(3)">
-                <img id="img-3" src="/Assets/PictureAndVdo/profiledatabase3.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-3">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-3">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Pongsathorn Poomsonthi</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 32</p>
-                    <p class="info-text info-id font-dbHelvethaica">@14.150369, 101.125192</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.Motionworld.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ Database 3 -->
+            <div class="content">
 
-        <!-- Database 4 -->
-        <div class="database-area background-transparent" id="database4">
-            <button class="database-boxes background-white" id="box-4" onclick="databaseBoxClick(4)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-4"></div>
-                </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">84.6.5.68</p>
-                </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-4" onmouseover="imageHover(4)" onmouseout="imageNotHover(4)">
-                <img id="img-4" src="/Assets/PictureAndVdo/profiledatabase4.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-4">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-4">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Chanawan Pikulthep</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 21</p>
-                    <p class="info-text info-id font-dbHelvethaica">@12.514051, 99.522563</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.instagram.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ Database 4 -->
+                <!-- Database Content -->
+                <div class="database-content-area background-grey1" id="database-content-area">
+                    <div class="grid-bg background-grid-white1"></div>
 
-        <!-- Database 5 -->
-        <div class="database-area background-transparent" id="database5">
-            <button class="database-boxes background-white" id="box-5" onclick="databaseBoxClick(5)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-5"></div>
-                </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">120.244.186.5</p>
-                </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-5" onmouseover="imageHover(5)" onmouseout="imageNotHover(5)">
-                <img id="img-5" src="/Assets/PictureAndVdo/profiledatabase5.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-5">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-5">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Chalathip Posamran</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 13</p>
-                    <p class="info-text info-id font-dbHelvethaica">@11.720156, 99.645306</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.Dreamwood.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ Database 5 -->
-
-        <!-- Database 6 -->
-        <div class="database-area background-transparent" id="database6">
-            <button class="database-boxes background-white" id="box-6" onclick="databaseBoxClick(6)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-6"></div>
-                </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">250.16.148.47</p>
-                </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-6" onmouseover="imageHover(6)" onmouseout="imageNotHover(6)">
-                <img id="img-6" src="/Assets/PictureAndVdo/profiledatabase6.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-6">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-6">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Mariya Pongpaisan</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 45</p>
-                    <p class="info-text info-id font-dbHelvethaica">@10.055174, 99.132441</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.facebook.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ Database 6 -->
-
-        <!-- Database 7 -->
-        <div class="database-area background-transparent" id="database7">
-            <button class="database-boxes background-white" id="box-7" onclick="databaseBoxClick(7)">
-                <div class="dot-area">
-                    <div class="dot background-yellow" id="dot-7"></div>
-                </div>
-                <div class="num-area">
-                    <p class="num-text font-dbHelvethaica">102.31.156.84</p>
-                </div>
-            </button>
-            <div class="img-hidden background-transparent" id="img-box-7" onmouseover="imageHover(7)" onmouseout="imageNotHover(7)">
-                <img id="img-7" src="/Assets/PictureAndVdo/profiledatabase7.png" alt="" width="100%">
-                <div class="product-hidden background-white2" id="product-7">
-                    <p class="product-text font-dbHelvethaica">PRODUCT</p>
-                </div>
-                <div class="info-hidden-box background-yellow" id="info-7">
-                    <p class="info-text info-name font-dbHelvethaica font-blue">Thitapa Samransub</p>
-                    <p class="info-text info-age font-dbHelvethaica">Age : 38</p>
-                    <p class="info-text info-id font-dbHelvethaica">@9.944551, 99.121072</p>
-                    <p class="info-text info-link font-dbHelvethaica">@www.google.com</p>
-                    <p class="info-text info-time font-dbHelvethaica font-blue"></p>
-                </div>
-            </div>
-        </div>
-        <!--/ Database 7 -->
-
-
-
-        <div class="sticky-1" style="z-index: 1;">
-            <img src="/Assets/PictureAndVdo/bg_sticky-1.jpg" alt="" width="100%">
-            <div class="blue-bg" id="blue-bg-text5">
-                <img id="blue-bg-pic5" src="/Assets/PictureAndVdo/box_5เราเป็นผู้-.png" alt="" width="100%">
-            </div>
-            <!-- Sub Network 1 -->
-            <button class="sub-network background-white2" id="sub-net-1" onclick="subnetButtonClick()">
-                <div class="subnet-topic-area" id="subnet-topic-1">
-                    <p class="subnet-topic-text font-dbHelvethaica font-blue">ทั้ง Social Media</p>
-                    <div class="subnet-large-topic-area">
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">social</p>
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">media</p>
+                    <!-- Blue BG Text -->
+                    <div class="blue-bg" id="blue-bg-text1">
+                        <img id="blue-bg-pic1" src="/Assets/PictureAndVdo/box_1นี่คือสถานที่-.png" alt="" width="100%" height="100%">
                     </div>
-                    <div class="subnet-content-area">
-                        <p class="subnet-content-text font-dbHelvethaica">แพลตฟอร์มดิจิทัลที่ถูกนำ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">มาใช้เป็นเครื่องมือ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ในการสื่อสารแลกเปลี่ยน</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ความคิดเห็นและแบ่งปัน</p>
-                        <p class="subnet-content-text font-dbHelvethaica">เรื่องราวกับสาธารณชน</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ผ่านอินเทอร์เน็ต</p>
+                    <div class="blue-bg" id="blue-bg-text2">
+                        <img id="blue-bg-pic2" src="/Assets/PictureAndVdo/box_2หน้าที่ที่คุณ-.png" alt="" width="100%" height="100%">
                     </div>
-                </div>
-                <div class="subnet-pic-area" id="subnet-pic-1">
-                    <img src="/Assets/PictureAndVdo/ele_socialmedia.png" alt="" width="85%" style="position: absolute;">
-                </div>
-            </button>
-            <!--/ Sub Network 1 -->
+                    <div class="blue-bg" id="blue-bg-text3">
+                        <img id="blue-bg-pic3" src="/Assets/PictureAndVdo/box_3ที่คุณเห็น-.png" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="blue-bg" id="blue-bg-text4">
+                        <img id="blue-bg-pic4" src="/Assets/PictureAndVdo/box_4สิ่งที่อยู่เบื้องหน้า-.png" alt="" width="100%" height="100%">
+                    </div>
 
-            <!-- Sub Network 2 -->
-            <button class="sub-network background-white2" id="sub-net-2" onclick="subnetButtonClick()">
-                <div class="subnet-topic-area" id="subnet-topic-1">
-                    <p class="subnet-topic-text font-dbHelvethaica font-blue">เว็บไซต์ทั่วไป</p>
-                    <div class="subnet-large-topic-area">
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">web -</p>
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">sites</p>
-                    </div>
-                    <div class="subnet-content-area">
-                        <p class="subnet-content-text font-dbHelvethaica">หน้าเว็บเพจที่จัดทำขึ้น</p>
-                        <p class="subnet-content-text font-dbHelvethaica">เพื่อนำเสนอข้อมูลต่างๆ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ผ่านทางคอมพิวเตอร์และ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">อินเทอร์เน็ต และถูกจัดเก็บ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ไว้ใน www. (เวิลด์ไวด์เว็บ)</p>
-                    </div>
-                </div>
-                <div class="subnet-pic-area" id="subnet-pic-1">
-                    <img src="/Assets/PictureAndVdo/ele_website.png" alt="" width="80%" style="position: absolute;">
-                </div>
-            </button>
-            <!--/ Sub Network 2 -->
-
-            <!-- Sub Network 3 -->
-            <button class="sub-network background-white2" id="sub-net-3" onclick="subnetButtonClick()">
-                <div class="subnet-topic-area" id="subnet-topic-1">
-                    <p class="subnet-topic-text font-dbHelvethaica font-blue">data broker</p>
-                    <div class="subnet-large-topic-area">
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">data</p>
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">broker</p>
-                    </div>
-                    <div class="subnet-content-area">
-                        <p class="subnet-content-text font-dbHelvethaica">เป็นผู้เก็บรวบรวมและ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">จำหน่าย ให้สิทธิใช้งาน</p>
-                        <p class="subnet-content-text font-dbHelvethaica">หรือเปิดเผยข้อมูลส่วนตัว</p>
-                        <p class="subnet-content-text font-dbHelvethaica">กับบริษัทอื่นโดยที่ข้อมูลนั้น</p>
-                        <p class="subnet-content-text font-dbHelvethaica">เป็นของบุคคลใดบุคคลหนึ่ง</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ที่บริษัทไม่ได้มีความสัมพันธ์</p>
-                        <p class="subnet-content-text font-dbHelvethaica">โดยตรงแต่อย่างใด</p>
-                    </div>
-                </div>
-                <div class="subnet-pic-area" id="subnet-pic-1">
-                    <img src="/Assets/PictureAndVdo/ele_databroker.png" alt="" width="80%" style="position: absolute;">
-                </div>
-            </button>
-            <!--/ Sub Network 3 -->
-
-            <!-- Sub Network 4 -->
-            <button class="sub-network background-white2" id="sub-net-4" onclick="subnetButtonClick()">
-                <div class="subnet-topic-area" id="subnet-topic-1">
-                    <p class="subnet-topic-text font-dbHelvethaica font-blue">advertise service</p>
-                    <div class="subnet-large-topic-area">
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">advertise</p>
-                        <p class="subnet-large-topic-text font-gtFlexa font-blue">service</p>
-                    </div>
-                    <div class="subnet-content-area">
-                        <p class="subnet-content-text font-dbHelvethaica">บริการที่ถูกดำเนินโดย</p>
-                        <p class="subnet-content-text font-dbHelvethaica">เอเจนซี่โฆษณาขณะที่</p>
-                        <p class="subnet-content-text font-dbHelvethaica">ทำการออกแบบ/เพิ่มเติม</p>
-                        <p class="subnet-content-text font-dbHelvethaica">แคมเปญโฆษณาเพื่อ</p>
-                        <p class="subnet-content-text font-dbHelvethaica">โปรโมทสิ่งต่างๆ</p>
-                    </div>
-                </div>
-                <div class="subnet-pic-area" id="subnet-pic-1">
-                    <img src="/Assets/PictureAndVdo/ele_adsservice.png" alt="" width="70%" style="position: absolute;">
-                </div>
-            </button>
-            <!--/ Sub Network 4 -->
-        </div>
-
-        <div class="sticky-2" style="z-index: 1;">
-            <img src="/Assets/PictureAndVdo/bg_sticky-2.jpg" alt="" width="100%">
-            <div class="blue-bg" id="blue-bg-text6">
-                <img id="blue-bg-pic6" src="/Assets/PictureAndVdo/box_6องค์กรแบ่งเป็น.png" alt="" width="100%">
-            </div>
-            <div class="www background-transparent">
-                <div class="sub-www background-white2" id="world">
-                    <div class="www-content">
-                        <div class="www-content-topic">
-                            <p class="www-num font-dbHelvethaica">01</p>
-                            <p class="www-topic-font font-ocrb font-blue">WORLD</p>
-                        </div>
-                        <div class="www-content-pic">
-                            <img src="/Assets/PictureAndVdo/icon_world.png" alt="" width="25%">
-                        </div>
-                        <div class="www-content-info">
-                            <p class="www-info-font font-dbHelvethaica font-blue">: โซนที่ทำการเก็บข้อมูล</p>
-                            <p class="www-info-font font-dbHelvethaica font-blue">ของผู้ใช้อินเตอร์เน็ตทั่วโลก</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sub-www background-white2" id="wide">
-                    <div class="www-content">
-                        <div class="www-content-topic">
-                            <p class="www-num font-dbHelvethaica">02</p>
-                            <p class="www-topic-font font-ocrb font-blue">WIDE</p>
-                        </div>
-                        <div class="www-content-pic">
-                            <img src="/Assets/PictureAndVdo/icon_wide.png" alt="" width="25%">
-                        </div>
-                        <div class="www-content-info">
-                            <p class="www-info-font font-dbHelvethaica font-blue">: โซนกระจายขายข้อมูล</p>
-                            <p class="www-info-font font-dbHelvethaica font-blue">ให้แก่บริษัทและบุคคุลที่ต้องการ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sub-www background-white2" id="weave">
-                    <div class="www-content">
-                        <div class="www-content-topic">
-                            <p class="www-num font-dbHelvethaica">03</p>
-                            <p class="www-topic-font font-ocrb font-blue">WEAVE</p>
-                        </div>
-                        <div class="www-content-pic">
-                            <img src="/Assets/PictureAndVdo/icon_weave.png" alt="" width="25%">
-                        </div>
-                        <div class="www-content-info">
-                            <p class="www-info-font font-dbHelvethaica font-blue">: โซนควบคุมและวางแผน</p>
-                            <p class="www-info-font font-dbHelvethaica font-blue">พฤติกรรมของผู้ใช้อินเตอร์เน็ต</p>
-                        </div>
-                    </div>
-                    <div class="footer-next-page">
-                        <div class="before-pic-area">
-                            <div class="before-pic">
-                                <img src="/Assets/PictureAndVdo/ele_แต่ก่อนจะไปสู่โซนต่างๆ.png" alt="" width="100%">
+                    <!-- Database 1 -->
+                    <div class="database-area background-transparent" id="database-1">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-1" onclick="databaseBoxClick(1), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-1"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">148.15.5.155</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-1" onmouseover="imageHover(1)" onmouseout="imageNotHover(1)">
+                            <img id="img-1" src="/Assets/PictureAndVdo/profiledatabase1.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-1">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-1">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Chanon Komprach</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 26</p>
+                                <p class="info-text info-id font-dbHelvethaica">@14.659408, 100.447848</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.youtube.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
                             </div>
                         </div>
-                        <div class="before-button-area">
-                            <button class="before-button background-yellow font-dbHelvethaica font-blue" onclick="loadHTML('selectPic.html', 500)">[ ตกลง ]</button>
+                    </div>
+                    <!--/ Database 1 -->
+
+                    <!-- Database 2 -->
+                    <div class="database-area background-transparent" id="database-2">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-2" onclick="databaseBoxClick(2), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-2"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">51.65.5.65</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-2" onmouseover="imageHover(2)" onmouseout="imageNotHover(2)">
+                            <img id="img-2" src="/Assets/PictureAndVdo/profiledatabase2.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-2">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-2">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Parin Surasakudom</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 17</p>
+                                <p class="info-text info-id font-dbHelvethaica">@13.889909, 100.464674</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.twitter.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 2 -->
+
+                    <!-- Database 3 -->
+                    <div class="database-area background-transparent" id="database-3">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-3" onclick="databaseBoxClick(3), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-3"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">255.5.55.155</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-3" onmouseover="imageHover(3)" onmouseout="imageNotHover(3)">
+                            <img id="img-3" src="/Assets/PictureAndVdo/profiledatabase3.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-3">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-3">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Pongsathorn Poomsonthi</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 32</p>
+                                <p class="info-text info-id font-dbHelvethaica">@14.150369, 101.125192</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.Motionworld.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 3 -->
+
+                    <!-- Database 4 -->
+                    <div class="database-area background-transparent" id="database-4">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-4" onclick="databaseBoxClick(4), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-4"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">84.6.5.68</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-4" onmouseover="imageHover(4)" onmouseout="imageNotHover(4)">
+                            <img id="img-4" src="/Assets/PictureAndVdo/profiledatabase4.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-4">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-4">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Chanawan Pikulthep</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 21</p>
+                                <p class="info-text info-id font-dbHelvethaica">@12.514051, 99.522563</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.instagram.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 4 -->
+
+                    <!-- Database 5 -->
+                    <div class="database-area background-transparent" id="database-5">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-5" onclick="databaseBoxClick(5), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-5"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">120.244.186.5</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-5" onmouseover="imageHover(5)" onmouseout="imageNotHover(5)">
+                            <img id="img-5" src="/Assets/PictureAndVdo/profiledatabase5.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-5">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-5">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Chalathip Posamran</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 13</p>
+                                <p class="info-text info-id font-dbHelvethaica">@11.720156, 99.645306</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.Dreamwood.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 5 -->
+
+                    <!-- Database 6 -->
+                    <div class="database-area background-transparent" id="database-6">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-6" onclick="databaseBoxClick(6), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-6"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">250.16.148.47</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-6" onmouseover="imageHover(6)" onmouseout="imageNotHover(6)">
+                            <img id="img-6" src="/Assets/PictureAndVdo/profiledatabase6.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-6">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-6">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Mariya Pongpaisan</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 45</p>
+                                <p class="info-text info-id font-dbHelvethaica">@10.055174, 99.132441</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.facebook.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 6 -->
+
+                    <!-- Database 7 -->
+                    <div class="database-area background-transparent" id="database-7">
+                        <!-- Database Box -->
+                        <button class="database-box background-white" id="database-box-7" onclick="databaseBoxClick(7), clickSoundPlay()">
+                            <div class="yellow-dot-box">
+                                <div class="yellow-dot background-yellow" id="yellow-dot-7"></div>
+                            </div>
+                            <div class="address-number-box">
+                                <p class="address-number-text font-dbHelvethaica">102.31.156.84</p>
+                            </div>
+                        </button>
+                        <div class="img-hidden background-transparent" id="img-box-7" onmouseover="imageHover(7)" onmouseout="imageNotHover(7)">
+                            <img id="img-7" src="/Assets/PictureAndVdo/profiledatabase7.png" alt="" width="100%" height="100%">
+                            <div class="product-hidden background-white2" id="product-7">
+                                <p class="product-text font-dbHelvethaica">PRODUCT</p>
+                            </div>
+                            <div class="info-hidden-box background-yellow" id="info-7">
+                                <p class="info-text info-name font-dbHelvethaica font-blue">Thitapa Samransub</p>
+                                <p class="info-text info-age font-dbHelvethaica">Age : 38</p>
+                                <p class="info-text info-id font-dbHelvethaica">@9.944551, 99.121072</p>
+                                <p class="info-text info-link font-dbHelvethaica">@www.google.com</p>
+                                <p class="info-text info-time font-dbHelvethaica font-blue"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Database 7 -->
+
+                </div>
+                <!--/ Database Content -->
+
+                <div class="subnet-content-area-top" id="subnet-content-area-top"></div>
+
+                <!-- Subnet Content -->
+                <div class="subnet-content-area sticky-1 background-grey1" id="subnet-content-area">
+                    <div class="grid-bg background-grid-white1"></div>
+                    <div class="blue-bg" id="blue-bg-text5">
+                        <img id="blue-bg-pic5" src="/Assets/PictureAndVdo/box_5เราเป็นผู้-.png" alt="" width="100%">
+                    </div>
+
+                    <!-- Database Box Mock -->
+                    <div class="database-box-mock background-white" id="database-box-mock-1">
+                        <div class="yellow-dot-box">
+                            <div class="yellow-dot-mock background-yellow"></div>
+                        </div>
+                        <div class="address-number-box">
+                            <p class="address-number-text font-dbHelvethaica">65.46.2.89</p>
+                        </div>
+                    </div>
+                    <div class="database-box-mock background-white" id="database-box-mock-2">
+                        <div class="yellow-dot-box">
+                            <div class="yellow-dot-mock background-yellow"></div>
+                        </div>
+                        <div class="address-number-box">
+                            <p class="address-number-text font-dbHelvethaica">46.151.5.51</p>
+                        </div>
+                    </div>
+                    <div class="database-box-mock background-white" id="database-box-mock-3">
+                        <div class="yellow-dot-box">
+                            <div class="yellow-dot-mock background-yellow"></div>
+                        </div>
+                        <div class="address-number-box">
+                            <p class="address-number-text font-dbHelvethaica">21.201.54.64</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub Network 1 -->
+                    <button class="sub-network background-white2" id="sub-net-1" onclick="subnetButtonClick(), clickSoundPlay()">
+                        <div class="subnet-topic-area" id="subnet-topic-1">
+                            <p class="subnet-topic-text font-dbHelvethaica font-blue">ทั้ง Social Media</p>
+                            <div class="subnet-large-topic-area">
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">social</p>
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">media</p>
+                            </div>
+                            <div class="subnet-content-box-area">
+                                <p class="subnet-content-text font-dbHelvethaica">
+                                    แพลตฟอร์มดิจิทัลที่ถูกนำ
+                                <br>มาใช้เป็นเครื่องมือ
+                                <br>ในการสื่อสารแลกเปลี่ยน
+                                <br>ความคิดเห็นและแบ่งปัน
+                                <br>เรื่องราวกับสาธารณชน
+                                <br>ผ่านอินเทอร์เน็ต
+                                </p>
+                            </div>
+                        </div>
+                        <div class="subnet-pic-area" id="subnet-pic-1">
+                            <img src="/Assets/PictureAndVdo/ele_socialmedia.png" alt="" width="85%" style="position: absolute;">
+                        </div>
+                    </button>
+                    <!--/ Sub Network 1 -->
+
+                    <!-- Sub Network 2 -->
+                    <button class="sub-network background-white2" id="sub-net-2" onclick="subnetButtonClick(), clickSoundPlay()">
+                        <div class="subnet-topic-area" id="subnet-topic-1">
+                            <p class="subnet-topic-text font-dbHelvethaica font-blue">เว็บไซต์ทั่วไป</p>
+                            <div class="subnet-large-topic-area">
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">web -</p>
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">sites</p>
+                            </div>
+                            <div class="subnet-content-box-area">
+                                <p class="subnet-content-text font-dbHelvethaica">
+                                    หน้าเว็บเพจที่จัดทำขึ้น
+                                <br>เพื่อนำเสนอข้อมูลต่างๆ
+                                <br>ผ่านทางคอมพิวเตอร์และ
+                                <br>อินเทอร์เน็ต และถูกจัดเก็บ
+                                <br>ไว้ใน www. (เวิลด์ไวด์เว็บ)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="subnet-pic-area" id="subnet-pic-1">
+                            <img src="/Assets/PictureAndVdo/ele_website.png" alt="" width="80%" style="position: absolute;">
+                        </div>
+                    </button>
+                    <!--/ Sub Network 2 -->
+
+                    <!-- Sub Network 3 -->
+                    <button class="sub-network background-white2" id="sub-net-3" onclick="subnetButtonClick(), clickSoundPlay()">
+                        <div class="subnet-topic-area" id="subnet-topic-1">
+                            <p class="subnet-topic-text font-dbHelvethaica font-blue">data broker</p>
+                            <div class="subnet-large-topic-area">
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">data</p>
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">broker</p>
+                            </div>
+                            <div class="subnet-content-box-area">
+                                <p class="subnet-content-text font-dbHelvethaica">
+                                    เป็นผู้เก็บรวบรวมและ
+                                <br>จำหน่าย ให้สิทธิใช้งาน
+                                <br>หรือเปิดเผยข้อมูลส่วนตัว
+                                <br>กับบริษัทอื่นโดยที่ข้อมูลนั้น
+                                <br>เป็นของบุคคลใดบุคคลหนึ่ง
+                                <br>ที่บริษัทไม่ได้มีความสัมพันธ์
+                                <br>โดยตรงแต่อย่างใด
+                                </p>
+                            </div>
+                        </div>
+                        <div class="subnet-pic-area" id="subnet-pic-1">
+                            <img src="/Assets/PictureAndVdo/ele_databroker.png" alt="" width="80%" style="position: absolute;">
+                        </div>
+                    </button>
+                    <!--/ Sub Network 3 -->
+
+                    <!-- Sub Network 4 -->
+                    <button class="sub-network background-white2" id="sub-net-4" onclick="subnetButtonClick(), clickSoundPlay()">
+                        <div class="subnet-topic-area" id="subnet-topic-1">
+                            <p class="subnet-topic-text font-dbHelvethaica font-blue">advertise service</p>
+                            <div class="subnet-large-topic-area">
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">advertise</p>
+                                <p class="subnet-large-topic-text font-gtFlexa font-blue">service</p>
+                            </div>
+                            <div class="subnet-content-box-area">
+                                <p class="subnet-content-text font-dbHelvethaica">
+                                    บริการที่ถูกดำเนินโดย
+                                <br>เอเจนซี่โฆษณาขณะที่
+                                <br>ทำการออกแบบ/เพิ่มเติม
+                                <br>แคมเปญโฆษณาเพื่อ
+                                <br>โปรโมทสิ่งต่างๆ
+                                </p>
+                            </div>
+                        </div>
+                        <div class="subnet-pic-area" id="subnet-pic-1">
+                            <img src="/Assets/PictureAndVdo/ele_adsservice.png" alt="" width="70%" style="position: absolute;">
+                        </div>
+                    </button>
+                    <!--/ Sub Network 4 -->
+
+                </div>
+                <!--/ Subnet Content -->
+
+                <div class="www-content-area-top" id="www-content-area-top"></div>
+
+                <!-- WWW Content -->
+                <div class="www-content-area sticky-2 background-grey1" id="www-content-area">
+                    <div class="grid-bg background-grid-white1"></div>
+                    <div class="blue-bg" id="blue-bg-text6">
+                        <img id="blue-bg-pic6" src="/Assets/PictureAndVdo/box_6องค์กรแบ่งเป็น.png" alt="" width="100%">
+                    </div>
+
+                    <!-- WWW Area -->
+                    <div class="www background-transparent">
+                        <!-- World -->
+                        <div class="sub-www background-white2" id="world">
+                            <div class="www-content">
+                                <div class="www-content-topic">
+                                    <p class="www-num font-dbHelvethaica">01</p>
+                                    <p class="www-topic-font font-ocrb font-blue">WORLD</p>
+                                </div>
+                                <div class="www-content-pic">
+                                    <img src="/Assets/PictureAndVdo/icon_world.png" alt="" width="25%">
+                                </div>
+                                <div class="www-content-info">
+                                    <p class="www-info-font font-dbHelvethaica font-blue">: โซนที่ทำการเก็บข้อมูล</p>
+                                    <p class="www-info-font font-dbHelvethaica font-blue">ของผู้ใช้อินเตอร์เน็ตทั่วโลก</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Wide -->
+                        <div class="sub-www background-white2" id="wide">
+                            <div class="www-content">
+                                <div class="www-content-topic">
+                                    <p class="www-num font-dbHelvethaica">02</p>
+                                    <p class="www-topic-font font-ocrb font-blue">WIDE</p>
+                                </div>
+                                <div class="www-content-pic">
+                                    <img src="/Assets/PictureAndVdo/icon_wide.png" alt="" width="25%">
+                                </div>
+                                <div class="www-content-info">
+                                    <p class="www-info-font font-dbHelvethaica font-blue">: โซนกระจายขายข้อมูล</p>
+                                    <p class="www-info-font font-dbHelvethaica font-blue">ให้แก่บริษัทและบุคคุลที่ต้องการ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Weave -->
+                        <div class="sub-www background-white2" id="weave">
+                            <div class="www-content">
+                                <div class="www-content-topic">
+                                    <p class="www-num font-dbHelvethaica">03</p>
+                                    <p class="www-topic-font font-ocrb font-blue">WEAVE</p>
+                                </div>
+                                <div class="www-content-pic">
+                                    <img src="/Assets/PictureAndVdo/icon_weave.png" alt="" width="25%">
+                                </div>
+                                <div class="www-content-info">
+                                    <p class="www-info-font font-dbHelvethaica font-blue">: โซนควบคุมและวางแผน</p>
+                                    <p class="www-info-font font-dbHelvethaica font-blue">พฤติกรรมของผู้ใช้อินเตอร์เน็ต</p>
+                                </div>
+                            </div>
+                            <div class="footer-next-page" id="footer-next-page">
+                                <div class="before-pic-area">
+                                    <div class="before-pic">
+                                        <img src="/Assets/PictureAndVdo/ele_แต่ก่อนจะไปสู่โซนต่างๆ.png" alt="" width="100%">
+                                    </div>
+                                </div>
+                                <div class="before-button-area">
+                                    <button class="before-button background-yellow font-dbHelvethaica font-blue" onclick="loadHTML('selectPic.html', 500), clickSoundPlay()">[ ตกลง ]</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--/ WWW Content -->
             </div>
         </div>
     </div>
 
-    
 
-    <!-- ~~~~~ NAVIGATION ~~~~~ -->
+
+
+        <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
     <!-- Task Button -->
-    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+    <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose(), clickSoundPlay()">TASK</button>
 
     <!-- TASK BAR -->
     <div class="task-bar background-white1" id="task-bar">
@@ -464,14 +573,14 @@
 
         <!-- TASK ROW 3 -->
         <div class="task-row3">
-            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+            <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open'), clickSoundPlay()">ABOUT</a>
         </div>
         <!--/ TASK ROW 1 -->
 
         <!-- ABOUT -->
         <div class="task-hidden-about background-white1">
             <div class="about-info-row1">
-                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close'), clickSoundPlay()">
                     <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
                 </button>
             </div>
@@ -499,7 +608,6 @@
             triggerHook: 0,
             pushfollowers: true
         })
-        .addIndicators()
         .setPin('.sticky-1')
         .addTo(controller)
 
@@ -509,7 +617,6 @@
             triggerHook: 0,
             pushfollowers: true
         })
-        .addIndicators()
         .setPin('.sticky-2')
         .addTo(controller)
     </script>
