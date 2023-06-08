@@ -17,13 +17,18 @@ function showToolInfo(infoId, buttonId) {
 }
 
 function playVid(toolId, progressId, infoId) {
+    let toolVideo = document.getElementById(toolId);
+    let progressVideo = document.getElementById(progressId);
+
     clickSound.play();
 
     if(toolId == 'account-01'){
         document.getElementById('metaIs').style.opacity = '100%';
     }
-    document.getElementById(toolId).play();
-    document.getElementById(progressId).play();
+    toolVideo.style.visibility = 'visible';
+    progressVideo.style.visibility = 'visible';
+    toolVideo.play();
+    progressVideo.play();
     document.getElementById(infoId).style.display = "none";
 }
 
@@ -64,15 +69,27 @@ function playContVid(tool, progress, nextTool, nextProgress) {
 
 // show button to result , end zone01
 function toResult() {
-    document.getElementById('resultButton').style.zIndex = 2;
-    document.getElementById('hintButton').style.zIndex = -4;
+    const resultBt = document.getElementById('resultButton');
+    const hintBtn = document.getElementById('hintButton');
+    resultBt.style.zIndex = 2;
+    resultBt.style.visibility = "visible";
+
+    hintBtn.style.zIndex = -4;
+    hintBtn.style.visibility = "hidden";
 }
 
 function showResult() {
     clickSound.play();
-    document.getElementById('resultButton').style.zIndex = -4;
-    document.getElementById('endingResult').style.zIndex = 3;
-    document.getElementById('nextZoneButton').style.zIndex = 3;
+    const resultBt = document.getElementById('resultButton');
+    const endBg = document.getElementById('endingResult');
+    const nextZBt = document.getElementById('nextZoneButton');
+
+    resultBt.style.zIndex = -4;
+    resultBt.style.visibility = 'hidden';
+    endBg.style.zIndex = 3;
+    endBg.style.visibility = 'visible'
+    nextZBt.style.zIndex = 3;
+    nextZBt.style.visibility = 'visible'
 }
 
 // toggle tool info
@@ -113,7 +130,8 @@ function endIt() {
     endSound.play()
 
     clickSound.play();
-    document.getElementById('endingZone').style.zIndex = 4
-    document.getElementById('endingZone').style.animation = 'slideIn 1s 1'
-    document.getElementById('endingZone').style.animationFillMode = 'forwards'
+    const endZBt = document.getElementById('endingZone')
+    endZBt.style.zIndex = 4
+    endZBt.style.animation = 'slideIn 1s 1'
+    endZBt.style.animationFillMode = 'forwards'
 }
