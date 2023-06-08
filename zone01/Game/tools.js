@@ -63,8 +63,13 @@ function activeSocialZone() {
 
 function playContVid(tool, progress, nextTool, nextProgress) {
     disabledCurrentVid(tool, progress)
-    document.getElementById(nextTool).play();
-    document.getElementById(nextProgress).play();
+    const nextVid = document.getElementById(nextTool);
+    const nextProg = document.getElementById(nextProgress);
+
+    nextVid.style.visibility = 'visible';
+    nextProg.style.visibility = 'visible';
+    nextVid.play();
+    nextProg.play();
 }
 
 // show button to result , end zone01
@@ -132,6 +137,7 @@ function endIt() {
     clickSound.play();
     const endZBt = document.getElementById('endingZone')
     endZBt.style.zIndex = 4
+    endZBt.style.visibility = 'visible'
     endZBt.style.animation = 'slideIn 1s 1'
     endZBt.style.animationFillMode = 'forwards'
 }

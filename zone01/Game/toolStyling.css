@@ -284,6 +284,7 @@ button {
 
 #tab-social {
     background-color: #999999;
+    color: black;
     cursor: default;
 }
 
@@ -291,6 +292,10 @@ button {
 .using-tool video {
     height: initial;
     visibility: hidden;
+}
+
+.progress-vid {
+    border-left: solid 1px black;
 }
 
 .progress-vid video{
