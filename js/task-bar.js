@@ -20,12 +20,12 @@ function taskBarVariablesLoad() {
 let stateNumCheck = 0
 function taskBarOpenOrClose() {
     if(stateNumCheck%2 == 0) {
-        taskButtonTransform('x', 25)
-        taskBarTransslationX(0)
+        taskButtonTransform('x', 'calc(var(--grid)*10)')
+        taskBarTranslationX(0)
     }
     else {
-        taskButtonTransform('x', 0)
-        taskBarTransslationX(-25.1)
+        taskButtonTransform('x', '0%')
+        taskBarTranslationX(-100)
     }
     stateNumCheck++
 }
@@ -48,24 +48,24 @@ function taskButtonFlashing(state) {
 // Task Button Transform
 function taskButtonTransform(translation, distance) {
     if(translation === 'x') {
-        taskButton.style.transform = `translateX(${distance}vw) rotate(-90deg)`
+        taskButton.style.transform = `translateX(${distance}) rotate(-90deg)`
     }
     else if(translation === 'y') {
-        taskButton.style.transform = `translateY(${distance}vw) rotate(-90deg)`
+        taskButton.style.transform = `translateY(${distance}) rotate(-90deg)`
     }
 }
 
 // Task Button Translation X
-function taskBarTransslationX(distance) {
-    taskBar.style.transform = `translateX(${distance}vw)`
+function taskBarTranslationX(distance) {
+    taskBar.style.transform = `translateX(${distance}%)`
 }
 
 // Task Bar About Click
 function aboutClick(state) {
     if(state === 'open') {
-        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(0vw)'
+        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(0%)'
     }
     else if(state === 'close') {
-        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(-25vw)'
+        aboutInfo[0].style.transform = 'translateY(-95.5vh) translateX(-100%)'
     }
 }

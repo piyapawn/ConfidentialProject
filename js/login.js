@@ -39,7 +39,7 @@ function windowLoad() {
     document.getElementsByTagName("body")[0].style.animation = 'fade-in 0.5s'
 
     // Task Bar
-    taskButtonTransform('x', -5)
+    taskButtonTransform('x', '-100%')
 }
 
 function textRunningAnimation(numCount) {
@@ -87,13 +87,11 @@ function openAndCloseNav() {
             userpicBox.style.backgroundColor = 'var(--white2)'
             circleDot[0].style.animationPlayState = 'running'
             taskButtonFlashing('p')
-            taskButtonTransform('x', -5)
+            taskButtonTransform('x', '-100%')
             picSelectCheck = false
         }
     }
     check++
-
-    clickSound.play();
 }
 
 // Edit or Set Username
@@ -135,7 +133,7 @@ function editUsername() {
         usernameBox.style.backgroundColor = 'var(--white2)'
         circleDot[1].style.animationPlayState = 'running'
         taskButtonFlashing('p')
-        taskButtonTransform('y', -5)
+        taskButtonTransform('x', '-100%')
         nameFillCheck = false
     }
     editCheck++
@@ -178,7 +176,7 @@ function taskbarCheck() {
     }
     else {
         taskButtonFlashing('p')
-        taskButtonTransform('x', -5)
+        taskButtonTransform('x', '-100%')
         alert('Please fill out all fields.')
     }
 }

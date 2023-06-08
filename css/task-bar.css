@@ -13,10 +13,10 @@
     position: fixed;
     font-weight: var(--dbHelvethaicaX);
     font-size: 1.5vw;
-    width: 10.25vw;
-    height: 5vw;
-    bottom: 25.5vh;
-    left: -2.6vw;
+    width: calc(var(--grid) * 4);
+    height: calc(var(--grid) * 2);
+    bottom: calc(var(--grid) * 6.45);
+    left: calc(var(--grid) * -1);
     border: 1px solid black;
     transition: 0.5s;
     transform: rotate(-90deg) translateY(0vw);
@@ -37,12 +37,12 @@
     position: fixed;
     margin: 0;
     padding: 0;
-    width: 25vw;
-    height: 95.3vh;
+    width: calc(var(--grid) * 10);
+    height: 100%;
     bottom: 0;
     left: 0;
     border: 1px solid black;
-    transform: translateX(-25.1vw);
+    transform: translateX(-100%);
     transition: 0.5s;
     z-index: 100;
 }
