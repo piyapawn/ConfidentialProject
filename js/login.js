@@ -40,6 +40,39 @@ function windowLoad() {
 
     // Task Bar
     taskButtonTransform('x', '-100%')
+
+    console.log('Local Username: ', localUsername)
+    if(localUsername !== '' || localUsername !== null || localUsername !== undefined) {
+        input.value = localUsername
+        editUsername()
+    }
+
+    if(localProfilePicture == 'male') {
+        selectPic(1)
+
+        userpicBox.style.backgroundColor = 'white'
+        circleDot[0].style.animationPlayState = 'paused'
+        circleDot[0].style.backgroundColor = 'var(--yellow)'
+    }
+    else if(localProfilePicture == 'female') {
+        selectPic(2)
+
+        userpicBox.style.backgroundColor = 'white'
+        circleDot[0].style.animationPlayState = 'paused'
+        circleDot[0].style.backgroundColor = 'var(--yellow)'
+    }
+    else if(localProfilePicture == 'not specified') {
+        selectPic(3)
+
+        userpicBox.style.backgroundColor = 'white'
+        circleDot[0].style.animationPlayState = 'paused'
+        circleDot[0].style.backgroundColor = 'var(--yellow)'
+    }
+
+    if(localUsername !== '' && localProfilePicture !== '') {
+        taskButtonFlashing('r')
+        taskButtonTransform('y', 0)
+    }
 }
 
 function textRunningAnimation(numCount) {
@@ -98,9 +131,9 @@ function openAndCloseNav() {
 let editCheck = 0
 function editUsername() {
     if(input.value === null || input.value === '') {
-        alert('Please enter the name.')
         return
     }
+    console.log('Input: ', input.value)
     if(editCheck%2 == 0) {
         input.disabled = true
         input.style.borderBottom = '1px solid black'
@@ -147,7 +180,6 @@ function selectPic(picNum) {
         picNumber[2].style.border = 'none'
 
         localStorage.setItem('profile-picture', 'male')
-
     }
     else if(picNum === 2) {
         picNumber[0].style.border = 'none'
@@ -155,7 +187,6 @@ function selectPic(picNum) {
         picNumber[2].style.border = 'none'
 
         localStorage.setItem('profile-picture', 'female')
-
     }
     else if(picNum === 3) {
         picNumber[0].style.border = 'none'
@@ -164,6 +195,8 @@ function selectPic(picNum) {
 
         localStorage.setItem('profile-picture', 'not specified')
     }
+    
+    picSelectCheck = true
 }
 
 // Task Bar Check
@@ -177,6 +210,5 @@ function taskbarCheck() {
     else {
         taskButtonFlashing('p')
         taskButtonTransform('x', '-100%')
-        alert('Please fill out all fields.')
     }
 }
