@@ -11,7 +11,6 @@
 /* ~~~~~ TASK BUTTON ~~~~~ */
 #task-button {
     position: absolute;
-    font-weight: var(--dbHelvethaicaX);
     /* font-size: 1.5vw; */
     /* width: 10.25vw;
     height: 5vw;
@@ -44,7 +43,7 @@
     padding: 0;
     /* width: 25vw;
     height: 95.3vh; */
-    width: 25%;
+    width: calc(var(--grid)*10);
     height: 100%;
     bottom: 0;
     left: 0;
