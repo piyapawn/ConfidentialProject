@@ -103,6 +103,10 @@ function acceptFalse() {
     const btnSet1 = ['choose11', 'choose12', 'choose13', 'choose14', 'choose15', 'choose16', 'choose17'];
     const btnSet2 = ['choose21', 'choose22', 'choose23', 'choose24', 'choose25'];
     const btnSet3 = ['choose31', 'choose32', 'choose33', 'choose34', 'choose35'];
+    const sentBt1 = 'send01';
+    const sentBt2 = 'send02';
+    const sentBt3 = 'send03';
+
 
     var useSet = [];
     var useBtn = [];
@@ -114,24 +118,36 @@ function acceptFalse() {
         case 'unit1':
             useSet = userSet1;
             useBtn = btnSet1;
+            disableBt(sentBt1);
+            document.getElementById(sentBt1).style.background = 'none';
             break;
         case 'unit2':
             useSet = userSet2;
             useBtn = btnSet2;
+            disableBt(sentBt2);
+            document.getElementById(sentBt2).style.background = 'none';
             break;
         case 'unit3':
             useSet = userSet3;
             useBtn = btnSet3;
+            disableBt(sentBt3);
+            document.getElementById(sentBt3).style.background = 'none';
             break;
     }
+    // styling bg send button
 
     for (eachUser in useSet) {
         document.getElementById(useSet[eachUser]).style.border = "1px solid";
     }
     // enable the chooseBt of all user in that clients
     for (eachBtn in useBtn) {
-        disableBt(useBtn[eachBtn]);
+        enableBtall(useBtn[eachBtn]);
     }
+}
+
+function enableBtall(buttonId) {
+    document.getElementById(buttonId).disabled = false;
+    document.getElementById(buttonId).style.cursor = 'pointer';
 }
 
 // button

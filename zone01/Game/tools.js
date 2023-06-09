@@ -49,6 +49,7 @@ function activeNextBt(nextBt, currentTool, currentProgress) {
         document.getElementById('tab-normal').style.backgroundColor = 999999;
         document.getElementById('tab-social').style.backgroundColor = 'white';
         document.getElementById("tab-social").style.cursor = "pointer";
+        document.getElementsByClassName('col01')[0].style.width = '5.6%';
     }
 }
 
