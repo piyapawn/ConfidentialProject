@@ -142,9 +142,7 @@ function postItHover() {
         if(!checkArray[i]) {
             numOfFalse++
         }
-        console.log('I : ', checkArray[i])
     }
-    console.log('Num False: ', numOfFalse)
     if(numOfFalse > 0) {
         return
     }
@@ -160,8 +158,6 @@ function caseboxHover(idNum) {
     let caseTopic = document.getElementById(`case-topic-${idNum}`)
     let caseNumText = document.getElementById(`case-num-text-${idNum}`)
     let manyMoreText = document.getElementById('many-more-text')
-
-    console.log('checkArray: ', checkArray[idNum-1])
 
     if(checkArray[idNum-1]) {
         caseBox.style.backgroundColor = 'var(--yellow)'

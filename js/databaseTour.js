@@ -379,8 +379,6 @@ function subnetButtonClick() {
         subnetTopics[i].style.display = 'none'
         subnetLargeTopicAreas[i].style.display = 'flex'
         subnetContentBoxAreas[i].style.display = 'flex'
-
-        console.log('Button Click')
     }
 }
 

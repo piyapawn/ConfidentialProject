@@ -17,17 +17,12 @@ function windowLoadSection() {
     for(let k = 1; k <= 35; k++) {
         section[2].innerHTML += `<img class="sec4-allpic" id="sec4-pic${k}" src="/Assets/PictureAndVdo/ทุกสิ่งที่คุณกระทำ/ASCII-art-1-${k}.png" alt="">`
     }
-
-    console.log('Offset Sec2: '+section[0].offsetTop)
-    console.log('Offset Sec3: '+section[1].offsetTop)
-    console.log('Offset Sec4: '+section[2].offsetTop)
 }
 
 function loadPage(prevPageId, nextPageId) {
     let prevPage = document.getElementById(prevPageId)
     let nextPage = document.getElementById(nextPageId)
 
-    console.log("prev page: "+prevPageId+"| next page: "+nextPageId)
 
     document.documentElement.style.setProperty('--cursor', 'auto')
 
@@ -103,7 +98,6 @@ function intro2Scroll() {
     let sec2OffsetTop = section[0].offsetTop
     let sec3OffsetTop = section[1].offsetTop
 
-    console.log('Scroll Offset: '+page2.scrollTop)
 
     // Scroll Section 2
     let sec2AllTextBoxes = document.getElementsByClassName('sec2-all-text-boxes')
@@ -126,7 +120,6 @@ function intro2Scroll() {
     let sec4AllPic = document.getElementsByClassName('sec4-allpic')
     scrollReveal(4, sec4AllPic, 'pic', sec3OffsetTop)
 
-    // console.log('Sec 2: ', sec2AllTextBoxes[0].offsetTop)
 
     // // Intro Text Sound
     if(page2.scrollTop >= sec2AllTextBoxes[0].offsetTop+(0+(0.3*sec2OffsetTop)) && !introSoundPlayCheck[0]) {
@@ -200,14 +193,12 @@ function typingTextCheck(index, text, section) {
         if(typingCall3) {
             typingTextAnimtion(index, text, section)
             typingCall3 = false
-            console.log('Text 3')
         }
     }
     else if(section === 3 && index == 1) {
         if(typingCall4) {
             typingTextAnimtion(index, text, section)
             typingCall4 = false
-            console.log('Text 4')
         }
     }
     else if(section === 4 && index == 0) {

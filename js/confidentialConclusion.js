@@ -157,12 +157,8 @@ function fetchJsonFile() {
 }
 
 function appendData(data) {
-    // console.log('Personality Type: ', findPersonalities())
-    // console.log('Personality: ', data[0].personalities)
-    
     Object.keys(data).forEach((item) => {
         if(data[item].personalities == findPersonalities()) {
-            console.log('Personality: ', data[item].personalities)
 
             categoriesInfoText.innerText = data[item].info
             categoriesBoxText[0].innerText = data[item].categories1
@@ -247,7 +243,6 @@ function typingTextAnimtion(textList, className) {
 }
 
 function noticeBoxOpen() {
-    console.log('Notice')
     notice.style.width = '100%'
     
     setTimeout(() => {
@@ -370,7 +365,6 @@ function openActionClick() {
         }
     }
 
-    console.log('Open State: ', state)
 }
 
 function backActionClick() {
@@ -436,7 +430,6 @@ function backActionClick() {
         }
     }
 
-    console.log('Back State: ', state)
 }
 
 function deleteDataPageChange(width, height, bottom, right, border, borderRadius, background, cursor, animationTime) {
@@ -581,7 +574,6 @@ function openEbookLink() {
 
 function allContentScroll() {
     if(state == 0) {
-        console.log('Scroll')
 
         // Close Conclusion Page
         rightContentConclusion.style.transform = 'translateX(100vw)'
@@ -645,7 +637,6 @@ function selectWeavePic(numOfPic) {
     if(!selectedArray[numOfPic-1] && selectedCount < 3) {
         weavePicSelected.style.display = 'flex'
         selectedCount++
-        console.log('Selected Count: ', selectedCount)
 
         selectedArray[numOfPic-1] = true
     }

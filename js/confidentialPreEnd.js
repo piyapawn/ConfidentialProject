@@ -67,11 +67,6 @@ function windowLoad() {
     bottomLineActivate(2)
     revealListofElement([sg1LeftText, sg1MiddleText1, weaveBox1])
 
-    console.log('Ground 1 Top: ', ground1.offsetTop)
-    console.log('Ground 1 Bottom: ', ground1.offsetTop + ground1.offsetHeight)
-    console.log('TableBG 1 Top: ', tableBG1.offsetTop)
-    console.log('TableBG 1 Bottom: ', tableBG1.offsetTop + tableBG1.offsetHeight)
-
     const audio = document.querySelector("audio");
     audio.play();
 }

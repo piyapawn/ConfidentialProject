@@ -1,8 +1,5 @@
 function windowLoad() {
     taskBarVariablesLoad()
-
-    console.log('Per Pic: ', localPersonalitiesSelectedPicture)
-    
 }
 
 function closeGuide() {
@@ -54,7 +51,6 @@ function selectPicture(nameOfSelectedPic) {
     closeButton.style.display = 'block'
 
 
-    console.log('limitSelectCheck :', limitSelectCheck())
 }
 
 function unselectPicture(nameOfSelectedPic) {
@@ -67,7 +63,6 @@ function unselectPicture(nameOfSelectedPic) {
     closeButton.style.display = 'none'
 
     updateSelectCheck(false, nameOfSelectedPic)
-    console.log('limitSelectCheck :', limitSelectCheck())
 }
 
 function updateSelectCheck(boolean, nameOfSelectedPic) {
@@ -76,7 +71,6 @@ function updateSelectCheck(boolean, nameOfSelectedPic) {
             selectCheck[item] = boolean
         }
     })
-    console.log(`selectCheck: ${nameOfSelectedPic}`, selectCheck[nameOfSelectedPic])
 }
 
 function limitSelectCheck() {

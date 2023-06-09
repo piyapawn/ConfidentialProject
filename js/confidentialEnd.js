@@ -89,7 +89,6 @@ function fetchJsonFile() {
 }
 
 function appendData(data) {
-    console.log('Personality Type: ', findPersonalities())
     
     Object.keys(data).forEach((item) => {
         if(data[item].personalities == findPersonalities()) {
@@ -192,7 +191,6 @@ function moveText(elementText, position1, position2, numOfPos1, numOfPos2) {
 let elementOpenBool = false;
 
 function openConfidentialEndElement(element) {
-    console.log('Element Open?: ', elementOpenBool)
 
     if(!elementOpenBool) {
         if(element == 'share') {
@@ -210,7 +208,6 @@ function openConfidentialEndElement(element) {
 }
 
 function closeConfidentialEndElement(element) {
-    console.log('Element Open?: ', elementOpenBool)
 
     if(elementOpenBool) {
         if(element == 'share') {

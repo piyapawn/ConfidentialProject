@@ -41,7 +41,6 @@ function windowLoad() {
     // Task Bar
     taskButtonTransform('x', '-100%')
 
-    console.log('Local Username: ', localUsername)
     if(localUsername !== '' || localUsername !== null || localUsername !== undefined) {
         input.value = localUsername
         editUsername()
@@ -133,7 +132,6 @@ function editUsername() {
     if(input.value === null || input.value === '') {
         return
     }
-    console.log('Input: ', input.value)
     if(editCheck%2 == 0) {
         input.disabled = true
         input.style.borderBottom = '1px solid black'
@@ -201,7 +199,6 @@ function selectPic(picNum) {
 
 // Task Bar Check
 function taskbarCheck() {
-    console.log("Pic check: "+picSelectCheck+" Name check: "+nameFillCheck)
     if(picSelectCheck && nameFillCheck) {
         taskButtonFlashing('r')
         taskButtonTransform('y', 0)
