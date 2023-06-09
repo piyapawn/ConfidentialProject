@@ -7,6 +7,10 @@ const value = 71;
 const clickSource = "/zone01/audio/clickedS.mp3"
 const clickSound = new Audio(clickSource);
 
+function clickSoundPlay() {
+    clickSound.play();
+}
+
 function selectContent(vidId, clearVidId, crContentId, nContentId) {
     let currentContent = document.getElementById(crContentId);
     let nextContent = document.getElementById(nContentId);

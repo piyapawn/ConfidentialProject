@@ -10,6 +10,7 @@
     <script src="/zone03/zone03.js"></script>
     <script src="/js/currentTime.js"></script>
     <script src="/js/task-bar.js"></script>
+    <script src="/js/sound.js"></script>
     <script src="/js/localStorage.js"></script>
     <title>ZONE 03</title>
 </head>
@@ -107,7 +108,7 @@
         <!-- ~~~~~ NAVIGATION ~~~~~ -->
 
         <!-- Task Button -->
-        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose()">TASK</button>
+        <button class="task-button-hover background-black font-white" id="task-button" onclick="taskBarOpenOrClose(), clickSoundPlay()">TASK</button>
 
         <!-- TASK BAR -->
         <div class="task-bar background-white1" id="task-bar">
@@ -172,14 +173,14 @@
 
             <!-- TASK ROW 3 -->
             <div class="task-row3">
-                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open')">ABOUT</a>
+                <a href="#" class="font-ocrb font-blue" id="about-text" onclick="aboutClick('open'), clickSoundPlay()">ABOUT</a>
             </div>
             <!--/ TASK ROW 1 -->
 
             <!-- ABOUT -->
             <div class="task-hidden-about background-white1">
                 <div class="about-info-row1">
-                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close')">
+                    <button class="background-transparent" id="about-info-backbutton" onclick="aboutClick('close'), clickSoundPlay()">
                         <img id="back-arrow-pic" src="/Assets/PictureAndVdo/button_arrow.png" alt="">
                     </button>
                 </div>

@@ -12,6 +12,10 @@ var isQuiz03Done = false;
 const clickSource = "/zone01/audio/clickedS.mp3"
 const clickSound = new Audio(clickSource);
 
+function clickSoundPlay() {
+    clickSound.play();
+}
+
 // Add quantity of user that selected
 function addQuant(quantityId, answer, sendBtId, buttonId, userBtId) {
     clickSound.play();

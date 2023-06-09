@@ -6,6 +6,10 @@ function windowLoad() {
 const clickSource = "/zone01/audio/clickedS.mp3"
 const clickSound = new Audio(clickSource);
 
+function clickSoundPlay() {
+    clickSound.play();
+}
+
 function showToolInfo(infoId, buttonId) {
     clickSound.play();
 

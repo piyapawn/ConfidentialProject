@@ -48,7 +48,7 @@
     bottom: 0;
     left: 0;
     border: 1px solid black;
-    transform: translateX(-25.1vw);
+    transform: translateX(-100%);
     transition: 0.5s;
     z-index: 100;
 }
